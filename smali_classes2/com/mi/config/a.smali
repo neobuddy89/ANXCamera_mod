@@ -1247,16 +1247,8 @@
 
 .method public Sa()Z
     .locals 2
-
-    const-string v0, "c_0x44"
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/camera/data/data/DataItemBase;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result p0
-
-    return p0
+    const/4 v1, 0x1
+    return v1
 .end method
 
 .method public Sb()Z
