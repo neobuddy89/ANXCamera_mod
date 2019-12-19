@@ -106,7 +106,7 @@
 
     invoke-direct {p0, v1, v1, v5, v2}, Lcom/android/camera/data/data/ComponentDataItem;-><init>(IIILjava/lang/String;)V
 
-    invoke-interface {v0, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    #invoke-interface {v0, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     return-object v0
 
@@ -365,7 +365,7 @@
 
     invoke-direct {v3, v1, v1, v5, v7}, Lcom/android/camera/data/data/ComponentDataItem;-><init>(IIILjava/lang/String;)V
 
-    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    #invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_b
     invoke-virtual {v2}, Lcom/mi/config/a;->uc()Z
@@ -444,7 +444,7 @@
 
     invoke-direct {v3, v1, v1, v5, v4}, Lcom/android/camera/data/data/ComponentDataItem;-><init>(IIILjava/lang/String;)V
 
-    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    #invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_e
     invoke-virtual {v2}, Lcom/mi/config/a;->tc()Z
