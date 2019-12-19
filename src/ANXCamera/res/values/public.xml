@@ -2256,6 +2256,9 @@
     <public type="layout" name="zoom_top_tip_layout" id="0x7f0b008b" />
     <public type="mipmap" name="ic_launcher_camera" id="0x7f0c0000" />
     <public type="mipmap" name="ic_mimoji" id="0x7f0c0001" />
+    <public type="mipmap" name="adaptiveproduct_pixelcamera_launcher" id="0x7f0c0002" />
+    <public type="mipmap" name="adaptiveproduct_pixelcamera_background_color_108" id="0x7f0c0003" />
+    <public type="mipmap" name="adaptiveproduct_pixelcamera_foreground_color_108" id="0x7f0c0004" />
     <public type="plurals" name="accessibility_focus_face_detect" id="0x7f0d0000" />
     <public type="plurals" name="toast_burst_snap_finished_summary" id="0x7f0d0001" />
     <public type="raw" name="backdropper" id="0x7f0e0000" />
