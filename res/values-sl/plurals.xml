@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <plurals name="accessibility_focus_face_detect">
-        <item quantity="other">Fokusirano. Najdeno %d obrazov</item>
-        <item quantity="one">Fokusirano. Najden %d obraz</item>
+        <item quantity="other">Osredotočen. %d zaznanih obrazov</item>
+        <item quantity="one">Osredotočen. %d zaznan obraz</item>
+        <item quantity="two">Osredotočen. %d zaznana obraza</item>
+        <item quantity="few">Osredotočen. %d zaznani obrazi</item>
     </plurals>
     <plurals name="toast_burst_snap_finished_summary">
-        <item quantity="other">Hitro zaporedno snemanje končano, posneto fotografij: %1$s</item>
-        <item quantity="one">Hitro zaporedno snemanje končano, posneta %1$s fotografija</item>
+        <item quantity="other">Serija slika je končana, %1$s slik je bilo zajeto</item>
+        <item quantity="one">Serija slika je končana, %1$s slika je bila zajeta</item>
+        <item quantity="two">Serija slika je končana, %1$s sliki sta bili zajeti</item>
+        <item quantity="few">Serija slika je končana, %1$s slike so bile zajete</item>
     </plurals>
 </resources>
