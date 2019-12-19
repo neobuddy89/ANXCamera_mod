@@ -322,7 +322,7 @@
 
     move-result-object p2
 
-    const v3, 0x7f0f03ca
+    const v3, 0x7f0f03b9
 
     invoke-virtual {p2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -346,7 +346,7 @@
 
     invoke-virtual {v3, v4, v5, p2, v6}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    const p2, 0x7f090195
+    const p2, 0x7f090165
 
     invoke-virtual {v2, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

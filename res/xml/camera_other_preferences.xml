@@ -67,8 +67,5 @@
         <com.android.camera.ui.PreviewListPreference android:persistent="false" android:entries="@array/pref_camera_sharpness_entries" android:title="@string/pref_camera_sharpness_title" android:key="pref_qc_camera_sharpness_key" android:defaultValue="@string/pref_camera_sharpness_default" android:entryValues="@array/pref_camera_sharpness_entryvalues" />
     </PreferenceCategory>
     <Preference android:persistent="false" android:title="@string/pref_privacy_title" android:key="pref_privacy" />
-    <Preference android:persistent="false" android:title="@string/pref_anxcamera_title" android:key="pref_anxcamera" />
-    <Preference android:persistent="false" android:title="@string/pref_anxbattle_title" android:key="pref_anxbattle" />
     <Preference android:persistent="false" android:title="@string/confirm_restore_title" android:key="pref_restore" />
-    <Preference android:persistent="false" android:title="@string/pref_anxupdate_title" android:key="pref_checkupdate" />
 </PreferenceScreen>

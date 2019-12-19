@@ -3090,7 +3090,7 @@
 
     if-eqz v0, :cond_2
 
-    invoke-static {p0}, Lcom/android/camera/ActivityLauncher;->launchANXBattle(Landroid/content/Context;)V
+    invoke-static {p0}, Lcom/android/camera/ActivityLauncher;->launchPrivacyPolicyWebpage(Landroid/content/Context;)V
 
     return v2
 
