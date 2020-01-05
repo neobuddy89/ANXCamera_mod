@@ -766,32 +766,7 @@
 .method protected getKeyguardFlag()Z
     .locals 2
 
-    invoke-static {}, Lcom/android/camera/data/DataRepository;->dataItemFeature()Lcom/mi/config/a;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/mi/config/a;->Sa()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
     invoke-direct {p0}, Lcom/android/camera/ActivityBase;->getAndroidOneKeyguardFlag()Z
-
-    move-result p0
-
-    return p0
-
-    :cond_0
-    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
-
-    move-result-object p0
-
-    const/4 v0, 0x0
-
-    const-string v1, "StartActivityWhenLocked"
-
-    invoke-virtual {p0, v1, v0}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result p0
 

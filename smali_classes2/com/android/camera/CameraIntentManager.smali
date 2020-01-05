@@ -1363,80 +1363,88 @@
 .end method
 
 .method public isQuickLaunch()Z
-    .locals 4
+    .locals 5
 
-    invoke-static {}, Lcom/android/camera/data/DataRepository;->dataItemFeature()Lcom/mi/config/a;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/mi/config/a;->Sa()Z
-
-    move-result v0
+    .line 340
+    const/4 v0, 0x1
 
     const/4 v1, 0x1
 
-    const-string v2, "android.media.action.STILL_IMAGE_CAMERA"
-
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     if-eqz v0, :cond_3
 
+    .line 341
     iget-object v0, p0, Lcom/android/camera/CameraIntentManager;->mIntent:Landroid/content/Intent;
 
     invoke-virtual {v0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    .line 342
+    .local v0, "action":Ljava/lang/String;
+    const-string v3, "android.media.action.STILL_IMAGE_CAMERA"
 
-    move-result v2
+    invoke-static {v0, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    if-nez v2, :cond_0
+    move-result v3
 
-    const-string v2, "android.media.action.STILL_IMAGE_CAMERA_SECURE"
+    if-nez v3, :cond_0
 
-    invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    const-string v3, "android.media.action.STILL_IMAGE_CAMERA_SECURE"
 
-    move-result v0
+    .line 343
+    invoke-static {v0, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    if-nez v0, :cond_0
+    move-result v3
 
-    return v3
+    if-nez v3, :cond_0
 
+    .line 344
+    return v2
+
+    .line 346
     :cond_0
-    iget-object p0, p0, Lcom/android/camera/CameraIntentManager;->mIntent:Landroid/content/Intent;
+    iget-object v3, p0, Lcom/android/camera/CameraIntentManager;->mIntent:Landroid/content/Intent;
 
-    const-string v0, "com.android.systemui.camera_launch_source"
+    const-string v4, "com.android.systemui.camera_launch_source"
 
-    invoke-virtual {p0, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v3, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object v3
 
-    const-string v0, "lockscreen_affordance"
+    .line 347
+    .local v3, "src":Ljava/lang/String;
+    const-string v4, "lockscreen_affordance"
 
-    invoke-static {p0, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-static {v3, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    move-result v0
+    move-result v4
 
-    if-nez v0, :cond_2
+    if-nez v4, :cond_2
 
-    const-string v0, "power_double_tap"
+    const-string v4, "power_double_tap"
 
-    invoke-static {p0, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-static {v3, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    move-result p0
+    move-result v4
 
-    if-eqz p0, :cond_1
+    if-eqz v4, :cond_1
 
     goto :goto_0
 
     :cond_1
-    move v1, v3
+    move v1, v2
+
+    nop
 
     :cond_2
     :goto_0
     return v1
 
+    .line 349
+    .end local v0    # "action":Ljava/lang/String;
+    .end local v3    # "src":Ljava/lang/String;
     :cond_3
     iget-object v0, p0, Lcom/android/camera/CameraIntentManager;->mIntent:Landroid/content/Intent;
 
@@ -1444,40 +1452,49 @@
 
     move-result-object v0
 
-    invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    .line 350
+    .restart local v0    # "action":Ljava/lang/String;
+    const-string v3, "android.media.action.STILL_IMAGE_CAMERA"
 
-    move-result v0
+    invoke-static {v0, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    if-nez v0, :cond_4
+    move-result v3
 
-    return v3
+    if-nez v3, :cond_4
 
+    .line 351
+    return v2
+
+    .line 354
     :cond_4
-    iget-object v0, p0, Lcom/android/camera/CameraIntentManager;->mIntent:Landroid/content/Intent;
+    iget-object v3, p0, Lcom/android/camera/CameraIntentManager;->mIntent:Landroid/content/Intent;
 
-    const-string v2, "StartActivityWhenLocked"
+    const-string v4, "StartActivityWhenLocked"
 
-    invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    invoke-virtual {v3, v4, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
-    move-result v0
+    move-result v3
 
-    if-eqz v0, :cond_5
+    if-eqz v3, :cond_5
 
-    iget-object p0, p0, Lcom/android/camera/CameraIntentManager;->mIntent:Landroid/content/Intent;
+    iget-object v3, p0, Lcom/android/camera/CameraIntentManager;->mIntent:Landroid/content/Intent;
 
-    const-string v0, "ShowCameraWhenLocked"
+    const-string v4, "ShowCameraWhenLocked"
 
-    invoke-virtual {p0, v0, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    .line 355
+    invoke-virtual {v3, v4, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
-    move-result p0
+    move-result v3
 
-    if-eqz p0, :cond_5
+    if-eqz v3, :cond_5
 
     goto :goto_1
 
     :cond_5
-    move v1, v3
+    move v1, v2
 
+    .line 356
+    .local v1, "hasExtra":Z
     :goto_1
     return v1
 .end method
