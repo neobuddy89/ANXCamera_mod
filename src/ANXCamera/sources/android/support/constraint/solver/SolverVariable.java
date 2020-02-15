@@ -1,7 +1,7 @@
 package android.support.constraint.solver;
 
-import com.android.gallery3d.exif.ExifInterface;
 import java.util.Arrays;
+import miui.reflect.Field;
 
 public class SolverVariable {
     private static final boolean INTERNAL_DEBUG = false;
@@ -83,14 +83,14 @@ public class SolverVariable {
             return sb.toString();
         } else if (i == 2) {
             StringBuilder sb2 = new StringBuilder();
-            sb2.append("C");
+            sb2.append(Field.CHAR_SIGNATURE_PRIMITIVE);
             int i3 = uniqueConstantId + 1;
             uniqueConstantId = i3;
             sb2.append(i3);
             return sb2.toString();
         } else if (i == 3) {
             StringBuilder sb3 = new StringBuilder();
-            sb3.append(ExifInterface.GpsLatitudeRef.SOUTH);
+            sb3.append("S");
             int i4 = uniqueSlackId + 1;
             uniqueSlackId = i4;
             sb3.append(i4);
@@ -104,7 +104,7 @@ public class SolverVariable {
             return sb4.toString();
         } else if (i == 5) {
             StringBuilder sb5 = new StringBuilder();
-            sb5.append(ExifInterface.GpsStatus.INTEROPERABILITY);
+            sb5.append("V");
             int i6 = uniqueId + 1;
             uniqueId = i6;
             sb5.append(i6);

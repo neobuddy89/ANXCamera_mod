@@ -894,7 +894,7 @@ public class VideoModule extends VideoBase implements Camera2Proxy.VideoRecordSt
         Class[] clsArr = {MediaRecorder.class};
         Method method = Util.getMethod(clsArr, "setParameter", "(Ljava/lang/String;)V");
         if (method != null) {
-            method.invoke(clsArr[0], mediaRecorder, new Object[]{str});
+            method.invoke(clsArr[0], mediaRecorder, str);
         }
     }
 

@@ -4,6 +4,7 @@ import android.support.constraint.solver.LinearSystem;
 import android.support.constraint.solver.widgets.ConstraintAnchor;
 import android.support.constraint.solver.widgets.ConstraintWidget;
 import java.util.ArrayList;
+import miui.reflect.Field;
 
 public class ConstraintTableLayout extends ConstraintWidgetContainer {
     public static final int ALIGN_CENTER = 0;
@@ -213,7 +214,7 @@ public class ConstraintTableLayout extends ConstraintWidgetContainer {
 
     public String getColumnAlignmentRepresentation(int i) {
         int i2 = this.mVerticalSlices.get(i).alignment;
-        return i2 == 1 ? "L" : i2 == 0 ? "C" : i2 == 3 ? "F" : i2 == 2 ? "R" : "!";
+        return i2 == 1 ? "L" : i2 == 0 ? Field.CHAR_SIGNATURE_PRIMITIVE : i2 == 3 ? Field.FLOAT_SIGNATURE_PRIMITIVE : i2 == 2 ? "R" : "!";
     }
 
     public String getColumnsAlignmentRepresentation() {
@@ -224,9 +225,9 @@ public class ConstraintTableLayout extends ConstraintWidgetContainer {
             if (i2 == 1) {
                 str = str + "L";
             } else if (i2 == 0) {
-                str = str + "C";
+                str = str + Field.CHAR_SIGNATURE_PRIMITIVE;
             } else if (i2 == 3) {
-                str = str + "F";
+                str = str + Field.FLOAT_SIGNATURE_PRIMITIVE;
             } else if (i2 == 2) {
                 str = str + "R";
             }

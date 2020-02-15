@@ -40,11 +40,11 @@ public class GeneralUtils {
     }
 
     public static Field miuiResArrayField(String str, String str2) {
-        return Field.of(R.array.class, str, str2);
+        return Field.of((Class<?>) R.array.class, str, str2);
     }
 
     public static Field miuiResBoolField(String str, String str2) {
-        return Field.of(R.bool.class, str, str2);
+        return Field.of((Class<?>) R.bool.class, str, str2);
     }
 
     public static int miuiWidgetButtonDialog() {

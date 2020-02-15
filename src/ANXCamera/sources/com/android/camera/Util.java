@@ -2935,7 +2935,7 @@ public final class Util {
                                 int attributeIntValue = getAttributeIntValue(xmlPullParser, "CCT", 0);
                                 int attributeIntValue2 = getAttributeIntValue(xmlPullParser, "R", 0);
                                 int attributeIntValue3 = getAttributeIntValue(xmlPullParser, "G", 0);
-                                int attributeIntValue4 = getAttributeIntValue(xmlPullParser, "B", 0);
+                                int attributeIntValue4 = getAttributeIntValue(xmlPullParser, Field.BYTE_SIGNATURE_PRIMITIVE, 0);
                                 COLOR_TEMPERATURE_LIST.add(Integer.valueOf(attributeIntValue));
                                 COLOR_TEMPERATURE_MAP.add(Integer.valueOf(Color.rgb(attributeIntValue2, attributeIntValue3, attributeIntValue4)));
                             }
@@ -3028,7 +3028,7 @@ public final class Util {
         try {
             Object packageInstallObserver = CompatibilityUtils.getPackageInstallObserver(packageInstallerListener);
             Class<?> cls = Class.forName("miui.content.pm.PreloadedAppPolicy");
-            boolean invokeBoolean = Method.of(cls, "installPreloadedDataApp", CompatibilityUtils.getInstallMethodDescription()).invokeBoolean(cls, (Object) null, new Object[]{context, str, packageInstallObserver, Integer.valueOf(z ? 1 : z2 ? 2 : 0)});
+            boolean invokeBoolean = Method.of(cls, "installPreloadedDataApp", CompatibilityUtils.getInstallMethodDescription()).invokeBoolean(cls, (Object) null, context, str, packageInstallObserver, Integer.valueOf(z ? 1 : z2 ? 2 : 0));
             Log.d(TAG, "installPackage: result=" + invokeBoolean);
         } catch (Exception e2) {
             Log.e(TAG, e2.getMessage(), (Throwable) e2);

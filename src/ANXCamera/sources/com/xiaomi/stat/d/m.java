@@ -10,6 +10,7 @@ import com.android.gallery3d.exif.ExifInterface;
 import java.lang.reflect.Method;
 import java.util.Locale;
 import java.util.TimeZone;
+import miui.reflect.Field;
 
 public class m {
 
@@ -144,7 +145,7 @@ public class m {
             return "";
         }
         try {
-            return ((Boolean) cls.getField("IS_ALPHA_BUILD").get((Object) null)).booleanValue() ? ExifInterface.GpsStatus.IN_PROGRESS : ((Boolean) f518e.getField("IS_DEVELOPMENT_VERSION").get((Object) null)).booleanValue() ? "D" : ((Boolean) f518e.getField("IS_STABLE_VERSION").get((Object) null)).booleanValue() ? ExifInterface.GpsLatitudeRef.SOUTH : "";
+            return ((Boolean) cls.getField("IS_ALPHA_BUILD").get((Object) null)).booleanValue() ? ExifInterface.GpsStatus.IN_PROGRESS : ((Boolean) f518e.getField("IS_DEVELOPMENT_VERSION").get((Object) null)).booleanValue() ? Field.DOUBLE_SIGNATURE_PRIMITIVE : ((Boolean) f518e.getField("IS_STABLE_VERSION").get((Object) null)).booleanValue() ? "S" : "";
         } catch (Exception e2) {
             Log.e(f515b, "getRomBuildCode failed: " + e2.toString());
             return "";

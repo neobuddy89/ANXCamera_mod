@@ -95,21 +95,21 @@
 
     const v3, 0x11040018
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
+    # invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
 
-    move-result v1
+    # move-result v1
 
-    sput-boolean v1, Lmiui/os/DeviceFeature;->SUPPORT_DISPLAYFEATURE_CALLBACK:Z
+    # sput-boolean v1, Lmiui/os/DeviceFeature;->SUPPORT_DISPLAYFEATURE_CALLBACK:Z
 
     sget-object v1, Lmiui/os/DeviceFeature;->SYSTEM_RESOURCES:Landroid/content/res/Resources;
 
     const v3, 0x11040024
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
+    # invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
 
-    move-result v1
+    # move-result v1
 
-    sput-boolean v1, Lmiui/os/DeviceFeature;->SUPPORT_NIGHT_LIGHT:Z
+    # sput-boolean v1, Lmiui/os/DeviceFeature;->SUPPORT_NIGHT_LIGHT:Z
 
     const-string/jumbo v1, "support_papermode_animation"
 
@@ -123,21 +123,21 @@
 
     const v3, 0x11040023
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
+    # invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
 
-    move-result v1
+    # move-result v1
 
-    sput-boolean v1, Lmiui/os/DeviceFeature;->SUPPORT_NIGHT_LIGHT_ADJ:Z
+    # sput-boolean v1, Lmiui/os/DeviceFeature;->SUPPORT_NIGHT_LIGHT_ADJ:Z
 
     sget-object v1, Lmiui/os/DeviceFeature;->SYSTEM_RESOURCES:Landroid/content/res/Resources;
 
     const v3, 0x110a0010
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
+    # invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
-    move-result v1
+    # move-result v1
 
-    sput v1, Lmiui/os/DeviceFeature;->BACKLIGHT_BIT:I
+    # sput v1, Lmiui/os/DeviceFeature;->BACKLIGHT_BIT:I
 
     const-string/jumbo v1, "sys.persist_screen_effect"
 
