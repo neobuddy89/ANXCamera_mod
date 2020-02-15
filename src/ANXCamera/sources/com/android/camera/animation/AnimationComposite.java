@@ -1,6 +1,7 @@
 package com.android.camera.animation;
 
 import android.animation.ValueAnimator;
+import android.provider.MiuiSettings;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewCompat;
 import android.util.Log;
@@ -129,14 +130,14 @@ public class AnimationComposite implements Consumer<Integer> {
     public void disposeRotation(int i) {
         int i2;
         int i3;
-        int i4 = 360;
-        int i5 = i >= 0 ? i % 360 : (i % 360) + 360;
+        int i4 = MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
+        int i5 = i >= 0 ? i % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT : (i % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT) + MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
         int i6 = this.mOrientation;
         if (i6 != i5) {
             boolean z = i6 != -1;
             int i7 = i5 - this.mOrientation;
             if (i7 < 0) {
-                i7 += 360;
+                i7 += MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
             }
             if (i7 > 180) {
                 i7 += VEResult.TER_EGL_BAD_MATCH;
@@ -144,7 +145,7 @@ public class AnimationComposite implements Consumer<Integer> {
             boolean z2 = i7 <= 0;
             this.mOrientation = i5;
             if (this.mOrientation != 0 || this.mCurrentDegree != 0) {
-                this.mTargetDegree = (360 - i5) % 360;
+                this.mTargetDegree = (360 - i5) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
                 final ArrayList<View> arrayList = new ArrayList<>();
                 for (int i8 = 0; i8 < this.mResourceSparseArray.size(); i8++) {
                     AnimationDelegate.AnimationResource valueAt = this.mResourceSparseArray.valueAt(i8);

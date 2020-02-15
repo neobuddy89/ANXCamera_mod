@@ -5,6 +5,8 @@ import android.os.Build;
 import android.os.IPowerManager;
 import android.os.RemoteException;
 import android.os.ServiceManager;
+import android.os.SystemProperties;
+import android.provider.MiuiSettings;
 import android.text.TextUtils;
 import com.miui.internal.cust.PrivateConfig;
 import com.miui.internal.cust.PrivateWaterMarkerConfig;
@@ -25,7 +27,7 @@ public class Build extends android.os.Build {
     public static final boolean IS_CU_CUSTOMIZATION_TEST = "cu".equals(SystemProperties.get("ro.cust.test"));
     public static final boolean IS_DEBUGGABLE = (SystemProperties.getInt("ro.debuggable", 0) == 1);
     public static final boolean IS_DEVELOPMENT_VERSION = (!TextUtils.isEmpty(Build.VERSION.INCREMENTAL) && Build.VERSION.INCREMENTAL.matches(REGULAR_EXPRESSION_FOR_DEVELOPMENT));
-    public static final boolean IS_FUNCTION_LIMITED = "1".equals(SystemProperties.get("persist.sys.func_limit_switch"));
+    public static final boolean IS_FUNCTION_LIMITED = "1".equals(SystemProperties.get(MiuiSettings.System.KEY_FUNCTION_LIMIT_SWITCH));
     public static final boolean IS_GLOBAL_BUILD = SystemProperties.get("ro.product.mod_device", "").endsWith("_global");
     public static final boolean IS_HONGMI = (IS_HONGMI_TWO || IS_HONGMI_THREE || IS_HONGMI_TWOX || IS_HONGMI_THREE_LTE || IS_HONGMI_TWOX_LC || IS_HONGMI_TWOS_LTE_MTK || IS_HONGMI_THREEX);
     public static final boolean IS_HONGMI2_TDSCDMA = "HM2013022".equals(DEVICE);

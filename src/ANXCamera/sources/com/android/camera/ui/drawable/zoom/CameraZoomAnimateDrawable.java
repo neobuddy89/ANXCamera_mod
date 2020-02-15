@@ -125,7 +125,6 @@ public class CameraZoomAnimateDrawable extends Drawable implements Animatable {
     public void stop() {
     }
 
-    /* JADX WARNING: type inference failed for: r1v1, types: [com.android.camera.ui.drawable.zoom.CameraZoomAnimateDrawable$2, android.animation.TimeInterpolator] */
     public void stopTouchUpAnimation() {
         if (isAnimatorRunning(this.mTouchDownAnimator)) {
             this.mTouchDownAnimator.cancel();
@@ -136,7 +135,7 @@ public class CameraZoomAnimateDrawable extends Drawable implements Animatable {
         ofFloat.setDuration(300);
         ofFloat.setInterpolator(new CubicEaseOutInterpolator() {
             public float getInterpolation(float f2) {
-                float interpolation = CameraZoomAnimateDrawable.super.getInterpolation(f2);
+                float interpolation = super.getInterpolation(f2);
                 CameraZoomAnimateDrawable.this.mCameraZoomAdjustPaint.updateSliderPositionForBackAnim(interpolation);
                 CameraZoomAnimateDrawable.this.invalidateSelf();
                 return interpolation;

@@ -10,6 +10,7 @@ import android.media.Image;
 import android.opengl.GLES20;
 import android.os.Environment;
 import android.os.Handler;
+import android.provider.MiuiSettings;
 import android.text.TextUtils;
 import android.view.Surface;
 import com.android.camera.ActivityBase;
@@ -493,7 +494,7 @@ public class LiveSubVVImpl implements ModeProtocol.LiveConfigVV, SurfaceTextureS
             }
         });
         this.mEffectMediaPlayer.SetViewSurface(surface);
-        this.mEffectMediaPlayer.setGravity(EffectMediaPlayer.SurfaceGravity.SurfaceGravityResizeAspectFit, 1920, 1080);
+        this.mEffectMediaPlayer.setGravity(EffectMediaPlayer.SurfaceGravity.SurfaceGravityResizeAspectFit, 1920, MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_END_DEAULT);
         this.mEffectMediaPlayer.SetPlayLoop(true);
         this.mEffectMediaPlayer.SetGraphLoop(true);
         this.mEffectMediaPlayer.StartPreView();

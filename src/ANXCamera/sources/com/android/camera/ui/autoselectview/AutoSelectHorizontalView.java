@@ -1,6 +1,7 @@
 package com.android.camera.ui.autoselectview;
 
 import android.content.Context;
+import android.provider.MiuiSettings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
@@ -356,7 +357,7 @@ public class AutoSelectHorizontalView extends RecyclerView {
             if (!isLayoutRTL) {
                 i2 = 1;
             }
-            this.mScroller.startScroll(getScrollX(), getScrollY(), (int) ((curTotalLength * ((float) i2)) - ((float) this.mDeltaX)), 0, 500);
+            this.mScroller.startScroll(getScrollX(), getScrollY(), (int) ((curTotalLength * ((float) i2)) - ((float) this.mDeltaX)), 0, MiuiSettings.System.SCREEN_KEY_LONG_PRESS_TIMEOUT_DEFAULT);
             postInvalidate();
         }
     }

@@ -231,7 +231,6 @@ public class CameraFocusSplitAnimateDrawable extends Drawable implements Animata
         this.mFocusingAnimator.start();
     }
 
-    /* JADX WARNING: type inference failed for: r1v2, types: [android.animation.TimeInterpolator, com.android.camera.ui.drawable.focus.CameraFocusSplitAnimateDrawable$5] */
     private void startNormalFocusSuccessAnimation(final CameraPaintBase cameraPaintBase, final CameraFocusPaintCenterIndicator cameraFocusPaintCenterIndicator) {
         Log.d(TAG, "startNormalFocusSuccessAnimation");
         cameraPaintBase.setTargetWidthPercent(1.0f);
@@ -240,7 +239,7 @@ public class CameraFocusSplitAnimateDrawable extends Drawable implements Animata
         ofFloat.setDuration(200);
         ofFloat.setInterpolator(new CubicEaseInOutInterpolator() {
             public float getInterpolation(float f2) {
-                float interpolation = CameraFocusSplitAnimateDrawable.super.getInterpolation(f2);
+                float interpolation = super.getInterpolation(f2);
                 cameraPaintBase.updateValue(interpolation);
                 cameraFocusPaintCenterIndicator.updateValue(interpolation);
                 CameraFocusSplitAnimateDrawable.this.invalidateSelf();
@@ -390,7 +389,6 @@ public class CameraFocusSplitAnimateDrawable extends Drawable implements Animata
     public void start() {
     }
 
-    /* JADX WARNING: type inference failed for: r1v3, types: [android.animation.TimeInterpolator, com.android.camera.ui.drawable.focus.CameraFocusSplitAnimateDrawable$14] */
     public void startFocusFailAnimation() {
         cancelFocusingAnimation();
         if (isAnimatorRunning(this.mTouchDownAnimator)) {
@@ -404,7 +402,7 @@ public class CameraFocusSplitAnimateDrawable extends Drawable implements Animata
             ofFloat.setDuration(200);
             ofFloat.setInterpolator(new CubicEaseInOutInterpolator() {
                 public float getInterpolation(float f2) {
-                    float interpolation = CameraFocusSplitAnimateDrawable.super.getInterpolation(f2);
+                    float interpolation = super.getInterpolation(f2);
                     CameraFocusSplitAnimateDrawable.this.mSplitBigCircle.updateValue(interpolation);
                     CameraFocusSplitAnimateDrawable.this.mPaintFocusCenterIndicator.updateValue(interpolation);
                     CameraFocusSplitAnimateDrawable.this.invalidateSelf();
@@ -459,7 +457,6 @@ public class CameraFocusSplitAnimateDrawable extends Drawable implements Animata
         }
     }
 
-    /* JADX WARNING: type inference failed for: r1v8, types: [android.animation.TimeInterpolator, com.android.camera.ui.drawable.focus.CameraFocusSplitAnimateDrawable$1] */
     public void startTouchDownAnimation(final int i) {
         Log.d(TAG, "startTouchDownAnimation");
         cancelFocusingAnimation();
@@ -476,7 +473,7 @@ public class CameraFocusSplitAnimateDrawable extends Drawable implements Animata
         this.mTouchDownAnimator.setDuration(300);
         this.mTouchDownAnimator.setInterpolator(new CubicEaseOutInterpolator() {
             public float getInterpolation(float f2) {
-                float interpolation = CameraFocusSplitAnimateDrawable.super.getInterpolation(f2);
+                float interpolation = super.getInterpolation(f2);
                 CameraFocusSplitAnimateDrawable.this.mSplitBigCircle.updateValue(interpolation);
                 CameraFocusSplitAnimateDrawable.this.mPaintFocusCenterIndicator.updateValue(interpolation);
                 CameraFocusSplitAnimateDrawable.this.invalidateSelf();

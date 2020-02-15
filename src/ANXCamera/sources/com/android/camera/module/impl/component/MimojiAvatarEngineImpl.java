@@ -16,6 +16,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
+import android.provider.MiuiSettings;
 import android.text.TextUtils;
 import android.util.Size;
 import android.widget.Toast;
@@ -263,19 +264,18 @@ public class MimojiAvatarEngineImpl implements ModeProtocol.MimojiAvatarEngine, 
                 if (this.mIsFrontCamera) {
                     int i5 = this.mDeviceRotation;
                     if (i5 % 180 == 0) {
-                        i = (i5 + 180) % 360;
+                        i = (i5 + 180) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
                         Thumbnail createThumbnail = Thumbnail.createThumbnail((Uri) null, this.mIsFrontCamera ? createBitmap : createBitmap2, i, this.mIsFrontCamera);
                         createThumbnail.startWaitingForUri();
                         this.mActivityBase.getThumbnailUpdater().setThumbnail(createThumbnail, true, true);
                         LiveModule liveModule = (LiveModule) this.mActivityBase.getCurrentModule();
                         ParallelTaskData parallelTaskData = new ParallelTaskData(liveModule != null ? liveModule.getActualCameraId() : 0, System.currentTimeMillis(), -4, (String) null);
                         parallelTaskData.fillJpegData(bitmapData, 0);
-                        boolean z2 = this.mIsFrontCamera;
-                        int i6 = this.mDeviceRotation;
+                        int jpegRotation = (Util.getJpegRotation(this.mIsFrontCamera ? 1 : 0, this.mDeviceRotation) + 270) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
                         Size size = this.mDrawSize;
                         ParallelTaskDataParameter.Builder builder = new ParallelTaskDataParameter.Builder(size, size, size, 256);
                         Location currentLocation = LocationManager.instance().getCurrentLocation();
-                        ParallelTaskDataParameter.Builder filterId = builder.setHasDualWaterMark(CameraSettings.isDualCameraWaterMarkOpen()).setJpegRotation((Util.getJpegRotation(z2 ? 1 : 0, i6) + 270) % 360).setJpegQuality(CameraSettings.getEncodingQuality(false).toInteger(false)).setFilterId(FilterInfo.FILTER_ID_NONE);
+                        ParallelTaskDataParameter.Builder filterId = builder.setHasDualWaterMark(CameraSettings.isDualCameraWaterMarkOpen()).setJpegRotation(jpegRotation).setJpegQuality(CameraSettings.getEncodingQuality(false).toInteger(false)).setFilterId(FilterInfo.FILTER_ID_NONE);
                         i2 = this.mOrientation;
                         if (-1 != i2) {
                             i4 = i2;
@@ -294,12 +294,11 @@ public class MimojiAvatarEngineImpl implements ModeProtocol.MimojiAvatarEngine, 
                 LiveModule liveModule2 = (LiveModule) this.mActivityBase.getCurrentModule();
                 ParallelTaskData parallelTaskData2 = new ParallelTaskData(liveModule2 != null ? liveModule2.getActualCameraId() : 0, System.currentTimeMillis(), -4, (String) null);
                 parallelTaskData2.fillJpegData(bitmapData, 0);
-                boolean z22 = this.mIsFrontCamera;
-                int i62 = this.mDeviceRotation;
+                int jpegRotation2 = (Util.getJpegRotation(this.mIsFrontCamera ? 1 : 0, this.mDeviceRotation) + 270) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
                 Size size2 = this.mDrawSize;
                 ParallelTaskDataParameter.Builder builder2 = new ParallelTaskDataParameter.Builder(size2, size2, size2, 256);
                 Location currentLocation2 = LocationManager.instance().getCurrentLocation();
-                ParallelTaskDataParameter.Builder filterId2 = builder2.setHasDualWaterMark(CameraSettings.isDualCameraWaterMarkOpen()).setJpegRotation((Util.getJpegRotation(z22 ? 1 : 0, i62) + 270) % 360).setJpegQuality(CameraSettings.getEncodingQuality(false).toInteger(false)).setFilterId(FilterInfo.FILTER_ID_NONE);
+                ParallelTaskDataParameter.Builder filterId2 = builder2.setHasDualWaterMark(CameraSettings.isDualCameraWaterMarkOpen()).setJpegRotation(jpegRotation2).setJpegQuality(CameraSettings.getEncodingQuality(false).toInteger(false)).setFilterId(FilterInfo.FILTER_ID_NONE);
                 i2 = this.mOrientation;
                 if (-1 != i2) {
                 }
@@ -322,12 +321,11 @@ public class MimojiAvatarEngineImpl implements ModeProtocol.MimojiAvatarEngine, 
             LiveModule liveModule22 = (LiveModule) this.mActivityBase.getCurrentModule();
             ParallelTaskData parallelTaskData22 = new ParallelTaskData(liveModule22 != null ? liveModule22.getActualCameraId() : 0, System.currentTimeMillis(), -4, (String) null);
             parallelTaskData22.fillJpegData(bitmapData2, 0);
-            boolean z222 = this.mIsFrontCamera;
-            int i622 = this.mDeviceRotation;
+            int jpegRotation22 = (Util.getJpegRotation(this.mIsFrontCamera ? 1 : 0, this.mDeviceRotation) + 270) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
             Size size22 = this.mDrawSize;
             ParallelTaskDataParameter.Builder builder22 = new ParallelTaskDataParameter.Builder(size22, size22, size22, 256);
             Location currentLocation22 = LocationManager.instance().getCurrentLocation();
-            ParallelTaskDataParameter.Builder filterId22 = builder22.setHasDualWaterMark(CameraSettings.isDualCameraWaterMarkOpen()).setJpegRotation((Util.getJpegRotation(z222 ? 1 : 0, i622) + 270) % 360).setJpegQuality(CameraSettings.getEncodingQuality(false).toInteger(false)).setFilterId(FilterInfo.FILTER_ID_NONE);
+            ParallelTaskDataParameter.Builder filterId22 = builder22.setHasDualWaterMark(CameraSettings.isDualCameraWaterMarkOpen()).setJpegRotation(jpegRotation22).setJpegQuality(CameraSettings.getEncodingQuality(false).toInteger(false)).setFilterId(FilterInfo.FILTER_ID_NONE);
             i2 = this.mOrientation;
             if (-1 != i2) {
             }

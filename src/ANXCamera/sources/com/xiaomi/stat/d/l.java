@@ -6,6 +6,7 @@ import android.net.NetworkInfo;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.Build;
+import android.provider.MiuiSettings;
 import android.text.TextUtils;
 import com.xiaomi.stat.I;
 import java.util.Iterator;
@@ -64,7 +65,7 @@ public class l {
         private static String b(Context context) {
             try {
                 if (Build.VERSION.SDK_INT >= 22) {
-                    int frequency = ((WifiManager) context.getSystemService("wifi")).getConnectionInfo().getFrequency();
+                    int frequency = ((WifiManager) context.getSystemService(MiuiSettings.System.WIFI_SHARE)).getConnectionInfo().getFrequency();
                     if (!a(frequency)) {
                         if (!b(frequency)) {
                             return "";
@@ -73,7 +74,7 @@ public class l {
                     }
                 } else {
                     char c2 = 65535;
-                    WifiManager wifiManager = (WifiManager) context.getSystemService("wifi");
+                    WifiManager wifiManager = (WifiManager) context.getSystemService(MiuiSettings.System.WIFI_SHARE);
                     String ssid = wifiManager.getConnectionInfo().getSSID();
                     String substring = ssid.substring(1, ssid.length() - 1);
                     if (ssid != null && ssid.length() > 2) {

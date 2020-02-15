@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
+import android.provider.MiuiSettings;
 import android.support.annotation.StringRes;
 import android.util.AttributeSet;
 import android.util.Range;
@@ -473,7 +474,7 @@ public class FocusView extends View implements FocusIndicator, V6FunctionUI, Rot
         if (this.mCursorState == 2) {
             int i2 = this.mCurrentViewState;
             if (!(i2 == 3 || i2 == 4)) {
-                i = Util.clamp(this.mCurrentItem >= this.mAdapter.getCenterIndex() ? ((this.mCurrentItem - this.mAdapter.getCenterIndex()) * 360) / this.mAdapter.getCenterIndex() : 0, 0, 360);
+                i = Util.clamp(this.mCurrentItem >= this.mAdapter.getCenterIndex() ? ((this.mCurrentItem - this.mAdapter.getCenterIndex()) * MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT) / this.mAdapter.getCenterIndex() : 0, 0, (int) MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT);
                 return 360 - i;
             }
         }
@@ -481,7 +482,7 @@ public class FocusView extends View implements FocusIndicator, V6FunctionUI, Rot
         if (i3 == 1) {
             int clamp = Util.clamp(this.mBottomRelative - this.mCurrentDistanceY, 0, MAX_SLIDE_DISTANCE);
             int i4 = MAX_SLIDE_DISTANCE;
-            i = Util.clamp(clamp >= i4 / 2 ? ((clamp - (i4 / 2)) * 360) / (i4 / 2) : 0, 0, 360);
+            i = Util.clamp(clamp >= i4 / 2 ? ((clamp - (i4 / 2)) * MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT) / (i4 / 2) : 0, 0, (int) MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT);
             return 360 - i;
         } else if (i3 == 3) {
             return Util.clamp((int) (this.mEVAnimationRatio * 2.0f * 135.0f), 0, 135);

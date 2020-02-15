@@ -3,6 +3,7 @@ package com.android.camera.network.util;
 import android.app.Application;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.statistics.E2EScenario;
 import com.android.camera.CameraSettings;
 import com.android.camera.network.live.TTLiveStickerResourceRequest;
 import com.android.camera.network.net.base.ErrorCode;
@@ -47,7 +48,7 @@ public class NetworkUtils {
     }
 
     public static void tryRequestTTSticker() {
-        new TTLiveStickerResourceRequest(CameraSettings.isLiveStickerInternalChannel() ? EffectConstants.CHANNEL_LOCAL_TEST : "default", "default").execute(new ResponseListener() {
+        new TTLiveStickerResourceRequest(CameraSettings.isLiveStickerInternalChannel() ? EffectConstants.CHANNEL_LOCAL_TEST : E2EScenario.DEFAULT_CATEGORY, E2EScenario.DEFAULT_CATEGORY).execute(new ResponseListener() {
             public void onResponse(Object... objArr) {
             }
 

@@ -7,6 +7,7 @@ import android.graphics.RectF;
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
 import android.os.Build;
+import android.provider.MiuiSettings;
 import android.support.annotation.Keep;
 import android.support.v4.app.NotificationManagerCompat;
 import android.text.TextUtils;
@@ -297,7 +298,7 @@ public class CameraInstance {
     public int setOrientationDegrees(int i) {
         Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
         Camera.getCameraInfo(this.mDefaultCameraID, cameraInfo);
-        int i2 = cameraInfo.facing == 1 ? ((360 - ((cameraInfo.orientation + i) % 360)) + 180) % 360 : ((cameraInfo.orientation - i) + 360) % 360;
+        int i2 = cameraInfo.facing == 1 ? ((360 - ((cameraInfo.orientation + i) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT)) + 180) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT : ((cameraInfo.orientation - i) + MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
         try {
             this.mCameraDevice.setDisplayOrientation(i2);
         } catch (Exception unused) {

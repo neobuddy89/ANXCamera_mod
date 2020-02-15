@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Rect;
 import android.net.Uri;
+import android.os.statistics.E2EScenario;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -286,7 +287,7 @@ public class FragmentLiveSticker extends FragmentLiveBase implements CtaNoticeFr
     }
 
     private void updateData() {
-        new TTLiveStickerResourceRequest(CameraSettings.isLiveStickerInternalChannel() ? EffectConstants.CHANNEL_LOCAL_TEST : "default", "default").execute(!CameraSettings.isLiveStickerInternalChannel(), new ResponseListener() {
+        new TTLiveStickerResourceRequest(CameraSettings.isLiveStickerInternalChannel() ? EffectConstants.CHANNEL_LOCAL_TEST : E2EScenario.DEFAULT_CATEGORY, E2EScenario.DEFAULT_CATEGORY).execute(!CameraSettings.isLiveStickerInternalChannel(), new ResponseListener() {
             public void onResponse(Object... objArr) {
                 final List list = objArr[0];
                 Completable.fromAction(new Action() {

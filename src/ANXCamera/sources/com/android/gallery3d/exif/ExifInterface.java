@@ -3,6 +3,7 @@ package com.android.gallery3d.exif;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
+import android.provider.MiuiSettings;
 import android.support.v4.internal.view.SupportMenu;
 import android.util.Log;
 import android.util.SparseIntArray;
@@ -520,9 +521,9 @@ public class ExifInterface {
     }
 
     public static short getExifOrientationValue(int i) {
-        int i2 = i % 360;
+        int i2 = i % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
         if (i2 < 0) {
-            i2 += 360;
+            i2 += MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
         }
         if (i2 < 90) {
             return 1;

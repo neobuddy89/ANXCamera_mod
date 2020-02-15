@@ -696,7 +696,6 @@ public class FaceView extends FrameView {
         Log.v(TAG, "mCameraDisplayOrientation=" + i);
     }
 
-    /* JADX WARNING: type inference failed for: r0v0, types: [android.animation.TimeInterpolator, com.android.camera.ui.FaceView$2] */
     public void setFaceRectVisible(int i, int i2) {
         cancelHideAnimator();
         if (i2 == 0) {
@@ -706,7 +705,7 @@ public class FaceView extends FrameView {
         this.mFaceRectHideAnimator = ValueAnimator.ofFloat(new float[]{0.0f, 1.0f});
         this.mFaceRectHideAnimator.setInterpolator(new CubicEaseOutInterpolator() {
             public float getInterpolation(float f2) {
-                float interpolation = FaceView.super.getInterpolation(f2);
+                float interpolation = super.getInterpolation(f2);
                 FaceView.this.mNormalRectPaint.setAlpha((int) ((1.0f - interpolation) * 255.0f));
                 FaceView.this.invalidate();
                 return interpolation;

@@ -27,6 +27,7 @@ import android.os.Message;
 import android.os.ParcelFileDescriptor;
 import android.os.SystemClock;
 import android.os.SystemProperties;
+import android.provider.MiuiSettings;
 import android.text.format.DateFormat;
 import android.util.Size;
 import android.view.KeyEvent;
@@ -1168,7 +1169,7 @@ public class Panorama3Module extends BaseModule implements ModeProtocol.CameraAc
         if (!(i == 0 || i == 90 || i == 180 || i == 270)) {
             i = 0;
         }
-        return (i + this.mDeviceOrientationAtCapture) % 360;
+        return (i + this.mDeviceOrientationAtCapture) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
     }
 
     /* access modifiers changed from: private */
@@ -1265,9 +1266,9 @@ public class Panorama3Module extends BaseModule implements ModeProtocol.CameraAc
         int displayRotation = Util.getDisplayRotation(this.mActivity);
         int i = this.mOrientation;
         if (i == -1) {
-            this.mInitParam.output_rotation = ((this.mCameraOrientation + displayRotation) + 360) % 360;
+            this.mInitParam.output_rotation = ((this.mCameraOrientation + displayRotation) + MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
         } else {
-            this.mInitParam.output_rotation = (((this.mCameraOrientation + displayRotation) + i) + 360) % 360;
+            this.mInitParam.output_rotation = (((this.mCameraOrientation + displayRotation) + i) + MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
         }
         String cameraLensType = CameraSettings.getCameraLensType(166);
         String str2 = TAG;

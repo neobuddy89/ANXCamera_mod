@@ -2,6 +2,7 @@ package com.android.camera.panorama;
 
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.provider.MiuiSettings;
 import android.view.ViewGroup;
 import com.android.camera.Util;
 import com.android.camera.log.Log;
@@ -129,7 +130,7 @@ public class PositionDetector {
         if (i7 == 0) {
             int i8 = this.mInitParam.output_rotation;
             int i9 = this.mCameraOrientation;
-            if ((i8 + i9) % 360 == 90 || (i8 + i9) % 360 == 180) {
+            if ((i8 + i9) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT == 90 || (i8 + i9) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT == 180) {
                 this.peak = (double) i5;
             } else {
                 this.peak = 0.0d;
@@ -144,7 +145,7 @@ public class PositionDetector {
         } else if (i7 == 1) {
             int i10 = this.mInitParam.output_rotation;
             int i11 = this.mCameraOrientation;
-            if ((i10 + i11) % 360 == 90 || (i10 + i11) % 360 == 180) {
+            if ((i10 + i11) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT == 90 || (i10 + i11) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT == 180) {
                 this.peak = 0.0d;
             } else {
                 this.peak = (double) i5;
@@ -159,7 +160,7 @@ public class PositionDetector {
         } else if (i7 == 2) {
             int i12 = this.mInitParam.output_rotation;
             int i13 = this.mCameraOrientation;
-            if ((i12 + i13) % 360 == 90 || (i12 + i13) % 360 == 180) {
+            if ((i12 + i13) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT == 90 || (i12 + i13) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT == 180) {
                 this.peak = (double) i6;
             } else {
                 this.peak = 0.0d;
@@ -174,7 +175,7 @@ public class PositionDetector {
         } else if (i7 == 3) {
             int i14 = this.mInitParam.output_rotation;
             int i15 = this.mCameraOrientation;
-            if ((i14 + i15) % 360 == 90 || (i14 + i15) % 360 == 180) {
+            if ((i14 + i15) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT == 90 || (i14 + i15) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT == 180) {
                 this.peak = 0.0d;
             } else {
                 this.peak = (double) i6;
@@ -270,10 +271,10 @@ public class PositionDetector {
     }
 
     /* JADX WARNING: Code restructure failed: missing block: B:11:0x0054, code lost:
-        if (((r7 + r12) % 360) != 270) goto L_0x006a;
+        if (((r7 + r12) % android.provider.MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT) != 270) goto L_0x006a;
      */
     /* JADX WARNING: Code restructure failed: missing block: B:16:0x0067, code lost:
-        if (((r7 + r12) % 360) != 180) goto L_0x006a;
+        if (((r7 + r12) % android.provider.MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT) != 180) goto L_0x006a;
      */
     /* JADX WARNING: Code restructure failed: missing block: B:17:0x006a, code lost:
         r7 = true;
@@ -305,12 +306,12 @@ public class PositionDetector {
         if (i3 == 1 || i3 == 3) {
             int i4 = this.mInitParam.output_rotation;
             int i5 = this.mCameraOrientation;
-            if ((i4 + i5) % 360 != 90) {
+            if ((i4 + i5) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT != 90) {
             }
         } else {
             int i6 = this.mInitParam.output_rotation;
             int i7 = this.mCameraOrientation;
-            if ((i6 + i7) % 360 != 0) {
+            if ((i6 + i7) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT != 0) {
             }
         }
         boolean z3 = false;
@@ -320,7 +321,7 @@ public class PositionDetector {
             }
             int i8 = this.mInitParam.output_rotation;
             int i9 = this.mCameraOrientation;
-            if ((i8 + i9) % 360 == 90 || (i8 + i9) % 360 == 180) {
+            if ((i8 + i9) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT == 90 || (i8 + i9) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT == 180) {
                 int i10 = this.direction;
                 if (i10 != 0) {
                     if (i10 != 1) {

@@ -25,6 +25,7 @@ import android.os.HandlerThread;
 import android.os.Message;
 import android.os.ParcelFileDescriptor;
 import android.os.Process;
+import android.provider.MiuiSettings;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.view.OrientationEventListener;
@@ -334,11 +335,11 @@ public class SnapCamera implements MediaRecorder.OnErrorListener, MediaRecorder.
     public static boolean isSnapEnabled(Context context) {
         String string = DataRepository.dataItemGlobal().getString("pref_camera_snap_key", (String) null);
         if (string != null) {
-            Settings.Secure.putString(context.getContentResolver(), "key_long_press_volume_down", CameraSettings.getMiuiSettingsKeyForStreetSnap(string));
+            Settings.Secure.putString(context.getContentResolver(), MiuiSettings.Key.LONG_PRESS_VOLUME_DOWN, CameraSettings.getMiuiSettingsKeyForStreetSnap(string));
             DataRepository.dataItemGlobal().editor().remove("pref_camera_snap_key").apply();
         }
-        String string2 = Settings.Secure.getString(context.getContentResolver(), "key_long_press_volume_down");
-        return "Street-snap-picture".equals(string2) || "Street-snap-movie".equals(string2);
+        String string2 = Settings.Secure.getString(context.getContentResolver(), MiuiSettings.Key.LONG_PRESS_VOLUME_DOWN);
+        return MiuiSettings.Key.LONG_PRESS_VOLUME_DOWN_STREET_SNAP_PICTURE.equals(string2) || MiuiSettings.Key.LONG_PRESS_VOLUME_DOWN_STREET_SNAP_MOVIE.equals(string2);
     }
 
     /* access modifiers changed from: private */
@@ -374,7 +375,7 @@ public class SnapCamera implements MediaRecorder.OnErrorListener, MediaRecorder.
     private void setRecorderOrientationHint() {
         int sensorOrientation = this.mCameraCapabilities.getSensorOrientation();
         if (this.mOrientation != -1) {
-            sensorOrientation = this.mCameraCapabilities.getFacing() == 0 ? ((sensorOrientation - this.mOrientation) + 360) % 360 : (sensorOrientation + this.mOrientation) % 360;
+            sensorOrientation = this.mCameraCapabilities.getFacing() == 0 ? ((sensorOrientation - this.mOrientation) + MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT : (sensorOrientation + this.mOrientation) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
         }
         String str = TAG;
         Log.d(str, "setOrientationHint: " + sensorOrientation);

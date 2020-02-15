@@ -8,6 +8,7 @@ import android.os.IHwBinder;
 import android.os.IHwInterface;
 import android.os.NativeHandle;
 import android.os.RemoteException;
+import android.os.statistics.E2EScenario;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -550,7 +551,7 @@ public interface c extends a.a.a.a.b {
     }
 
     static c getService() throws RemoteException {
-        return getService("default");
+        return getService(E2EScenario.DEFAULT_CATEGORY);
     }
 
     static c getService(String str) throws RemoteException {
@@ -562,7 +563,7 @@ public interface c extends a.a.a.a.b {
     }
 
     static c getService(boolean z) throws RemoteException {
-        return getService("default", z);
+        return getService(E2EScenario.DEFAULT_CATEGORY, z);
     }
 
     int a(String str, String str2, String str3, int i, byte b2) throws RemoteException;

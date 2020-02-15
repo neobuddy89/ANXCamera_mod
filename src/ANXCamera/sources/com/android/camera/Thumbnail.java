@@ -17,6 +17,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
+import android.provider.MiuiSettings;
 import android.text.TextUtils;
 import com.android.camera.lib.compatibility.util.CompatibilityUtils;
 import com.android.camera.log.Log;
@@ -122,7 +123,7 @@ public class Thumbnail {
         options.inSampleSize = i2;
         options.inPurgeable = true;
         Bitmap decodeByteArray = BitmapFactory.decodeByteArray(bArr, 0, bArr.length, options);
-        int i3 = i % 360;
+        int i3 = i % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
         if (decodeByteArray != null && (i3 != 0 || z)) {
             Matrix matrix = new Matrix();
             Matrix matrix2 = new Matrix();

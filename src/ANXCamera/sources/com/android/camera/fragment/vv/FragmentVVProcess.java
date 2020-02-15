@@ -13,6 +13,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.MiuiSettings;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.Surface;
@@ -202,7 +203,7 @@ public class FragmentVVProcess extends BaseFragment implements View.OnClickListe
             public void onSurfaceReady(Surface surface) {
                 if (FragmentVVProcess.this.mWaitingResultSurfaceTexture) {
                     boolean unused = FragmentVVProcess.this.mWaitingResultSurfaceTexture = false;
-                    FragmentVVProcess.this.mTextureVideoView.setVideoSpecifiedSize(1920, 1080);
+                    FragmentVVProcess.this.mTextureVideoView.setVideoSpecifiedSize(1920, MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_END_DEAULT);
                     FragmentVVProcess.this.startPlay(surface);
                 }
             }

@@ -207,7 +207,6 @@ public class CameraSnapAnimateDrawable extends Drawable implements Animatable {
         }
     }
 
-    /* JADX WARNING: type inference failed for: r0v6, types: [android.animation.TimeInterpolator, com.android.camera.ui.drawable.snap.CameraSnapAnimateDrawable$12] */
     public void finishRecord(BottomAnimationConfig bottomAnimationConfig) {
         if (this.mRecordingPaint == null || bottomAnimationConfig.mIsInMimojiCreate) {
             invalidateSelf();
@@ -221,7 +220,7 @@ public class CameraSnapAnimateDrawable extends Drawable implements Animatable {
             this.mTimeAnimator.setDuration(260);
             this.mTimeAnimator.setInterpolator(new CubicEaseInInterpolator() {
                 public float getInterpolation(float f2) {
-                    float interpolation = CameraSnapAnimateDrawable.super.getInterpolation(f2);
+                    float interpolation = super.getInterpolation(f2);
                     CameraSnapAnimateDrawable.this.mRoundPaintItem.updateValue(interpolation);
                     CameraSnapAnimateDrawable.this.mRecordingPaint.updateValue(interpolation);
                     CameraSnapAnimateDrawable.this.invalidateSelf();
@@ -680,7 +679,6 @@ public class CameraSnapAnimateDrawable extends Drawable implements Animatable {
         this.mRingAnimator.start();
     }
 
-    /* JADX WARNING: type inference failed for: r1v2, types: [android.animation.TimeInterpolator, com.android.camera.ui.drawable.snap.CameraSnapAnimateDrawable$2] */
     public void startScaleDownAnimation() {
         CameraSnapPaintRound cameraSnapPaintRound = this.mRoundPaintItem;
         cameraSnapPaintRound.setTargetValues(0.63296f, cameraSnapPaintRound.mCurrentColor, cameraSnapPaintRound.mCurrentAlpha, cameraSnapPaintRound.mCurrentStrokeWidth);
@@ -688,7 +686,7 @@ public class CameraSnapAnimateDrawable extends Drawable implements Animatable {
         ofFloat.setDuration(200);
         ofFloat.setInterpolator(new CubicEaseOutInterpolator() {
             public float getInterpolation(float f2) {
-                float interpolation = CameraSnapAnimateDrawable.super.getInterpolation(f2);
+                float interpolation = super.getInterpolation(f2);
                 CameraSnapAnimateDrawable.this.mRoundPaintItem.updateValue(interpolation);
                 CameraSnapAnimateDrawable.this.invalidateSelf();
                 return interpolation;
@@ -698,14 +696,13 @@ public class CameraSnapAnimateDrawable extends Drawable implements Animatable {
         ofFloat.start();
     }
 
-    /* JADX WARNING: type inference failed for: r2v2, types: [android.animation.TimeInterpolator, com.android.camera.ui.drawable.snap.CameraSnapAnimateDrawable$3] */
     public void startScaleUpAnimation(long j, Animator.AnimatorListener animatorListener) {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(new float[]{0.0f, 1.0f});
         ofFloat.setStartDelay(j);
         ofFloat.setDuration(200);
         ofFloat.setInterpolator(new CubicEaseOutInterpolator() {
             public float getInterpolation(float f2) {
-                float interpolation = CameraSnapAnimateDrawable.super.getInterpolation(f2);
+                float interpolation = super.getInterpolation(f2);
                 CameraSnapAnimateDrawable.this.mRoundPaintItem.updateValue(interpolation);
                 CameraSnapAnimateDrawable.this.invalidateSelf();
                 return interpolation;

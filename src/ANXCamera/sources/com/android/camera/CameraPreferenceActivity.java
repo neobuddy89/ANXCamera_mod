@@ -12,6 +12,7 @@ import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
+import android.provider.MiuiSettings;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -88,7 +89,7 @@ public class CameraPreferenceActivity extends BasePreferenceActivity {
                         } else if (preference instanceof PreviewListPreference) {
                             ((PreviewListPreference) preference).setValue(str);
                         }
-                        Settings.Secure.putString(CameraPreferenceActivity.this.getContentResolver(), "key_long_press_volume_down", CameraSettings.getMiuiSettingsKeyForStreetSnap(str));
+                        Settings.Secure.putString(CameraPreferenceActivity.this.getContentResolver(), MiuiSettings.Key.LONG_PRESS_VOLUME_DOWN, CameraSettings.getMiuiSettingsKeyForStreetSnap(str));
                     } else if (i == -2) {
                         CameraPreferenceActivity.this.mDoubleConfirmActionChooseDialog.dismiss();
                         AlertDialog unused2 = CameraPreferenceActivity.this.mDoubleConfirmActionChooseDialog = null;
@@ -491,9 +492,9 @@ public class CameraPreferenceActivity extends BasePreferenceActivity {
     }
 
     private void resetSnapSetting() {
-        String string = Settings.Secure.getString(getContentResolver(), "key_long_press_volume_down");
-        if ("Street-snap-picture".equals(string) || "Street-snap-movie".equals(string)) {
-            Settings.Secure.putString(getContentResolver(), "key_long_press_volume_down", "none");
+        String string = Settings.Secure.getString(getContentResolver(), MiuiSettings.Key.LONG_PRESS_VOLUME_DOWN);
+        if (MiuiSettings.Key.LONG_PRESS_VOLUME_DOWN_STREET_SNAP_PICTURE.equals(string) || MiuiSettings.Key.LONG_PRESS_VOLUME_DOWN_STREET_SNAP_MOVIE.equals(string)) {
+            Settings.Secure.putString(getContentResolver(), MiuiSettings.Key.LONG_PRESS_VOLUME_DOWN, "none");
         }
     }
 
@@ -534,16 +535,16 @@ public class CameraPreferenceActivity extends BasePreferenceActivity {
         }
         if (checkBoxPreference2 != null && b.bl()) {
             checkBoxPreference2.setChecked(false);
-            String string2 = Settings.Secure.getString(getContentResolver(), "key_long_press_volume_down");
-            if ("public_transportation_shortcuts".equals(string2) || "none".equals(string2)) {
+            String string2 = Settings.Secure.getString(getContentResolver(), MiuiSettings.Key.LONG_PRESS_VOLUME_DOWN);
+            if (MiuiSettings.Key.LONG_PRESS_VOLUME_DOWN_PAY.equals(string2) || "none".equals(string2)) {
                 checkBoxPreference2.setChecked(false);
             } else {
                 String string3 = DataRepository.dataItemGlobal().getString("pref_camera_snap_key", (String) null);
                 if (string3 != null) {
-                    Settings.Secure.putString(getContentResolver(), "key_long_press_volume_down", CameraSettings.getMiuiSettingsKeyForStreetSnap(string3));
+                    Settings.Secure.putString(getContentResolver(), MiuiSettings.Key.LONG_PRESS_VOLUME_DOWN, CameraSettings.getMiuiSettingsKeyForStreetSnap(string3));
                     DataRepository.dataItemGlobal().editor().remove("pref_camera_snap_key").apply();
                     checkBoxPreference2.setChecked(getSnapBoolValue(string3));
-                } else if ("Street-snap-picture".equals(string2) || "Street-snap-movie".equals(string2)) {
+                } else if (MiuiSettings.Key.LONG_PRESS_VOLUME_DOWN_STREET_SNAP_PICTURE.equals(string2) || MiuiSettings.Key.LONG_PRESS_VOLUME_DOWN_STREET_SNAP_MOVIE.equals(string2)) {
                     checkBoxPreference2.setChecked(true);
                 }
             }
@@ -691,11 +692,11 @@ public class CameraPreferenceActivity extends BasePreferenceActivity {
             } else if (obj instanceof String) {
                 string = (String) obj;
             }
-            if ((string.equals(getString(R.string.pref_camera_snap_value_take_picture)) || string.equals(getString(R.string.pref_camera_snap_value_take_movie))) && "public_transportation_shortcuts".equals(Settings.Secure.getString(getContentResolver(), "key_long_press_volume_down"))) {
+            if ((string.equals(getString(R.string.pref_camera_snap_value_take_picture)) || string.equals(getString(R.string.pref_camera_snap_value_take_movie))) && MiuiSettings.Key.LONG_PRESS_VOLUME_DOWN_PAY.equals(Settings.Secure.getString(getContentResolver(), MiuiSettings.Key.LONG_PRESS_VOLUME_DOWN))) {
                 bringUpDoubleConfirmDlg(preference, string);
                 return false;
             }
-            Settings.Secure.putString(getContentResolver(), "key_long_press_volume_down", CameraSettings.getMiuiSettingsKeyForStreetSnap(string));
+            Settings.Secure.putString(getContentResolver(), MiuiSettings.Key.LONG_PRESS_VOLUME_DOWN, CameraSettings.getMiuiSettingsKeyForStreetSnap(string));
             MistatsWrapper.settingClickEvent(MistatsConstants.Setting.PARAM_CAMERA_SNAP, string);
             return true;
         }

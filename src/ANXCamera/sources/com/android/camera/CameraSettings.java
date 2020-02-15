@@ -7,6 +7,7 @@ import android.hardware.input.InputManager;
 import android.media.MediaCodecInfo;
 import android.media.MediaCodecList;
 import android.os.SystemProperties;
+import android.provider.MiuiSettings;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
@@ -794,7 +795,7 @@ public class CameraSettings {
     }
 
     public static String getMiuiSettingsKeyForStreetSnap(String str) {
-        return (str.equals(getString(R.string.pref_camera_snap_value_take_picture)) || str.equals(getString(R.string.pref_camera_snap_value_take_movie))) ? "Street-snap-picture" : "none";
+        return (str.equals(getString(R.string.pref_camera_snap_value_take_picture)) || str.equals(getString(R.string.pref_camera_snap_value_take_movie))) ? MiuiSettings.Key.LONG_PRESS_VOLUME_DOWN_STREET_SNAP_PICTURE : "none";
     }
 
     public static boolean getMovieSolidSettingNeedRemove(int i, boolean z) {
@@ -1012,7 +1013,7 @@ public class CameraSettings {
         if (!b.Qk()) {
             return 0;
         }
-        return (Settings.System.getInt(context.getContentResolver(), EDGE_HANDGRIP_MODE_SCREENSHOT, 0) | ((Settings.System.getInt(context.getContentResolver(), EDGE_HANDGRIP_MODE, 0) | Settings.System.getInt(context.getContentResolver(), EDGE_HANDGRIP_MODE_CLEAN, 0)) | Settings.System.getInt(context.getContentResolver(), EDGE_HANDGRIP_MODE_BACK, 0))) == 1 ? 2 : 0;
+        return (Settings.System.getInt(context.getContentResolver(), "edge_handgrip_screenshot", 0) | ((Settings.System.getInt(context.getContentResolver(), "edge_handgrip", 0) | Settings.System.getInt(context.getContentResolver(), "edge_handgrip_clean", 0)) | Settings.System.getInt(context.getContentResolver(), "edge_handgrip_back", 0))) == 1 ? 2 : 0;
     }
 
     public static String getTTLiveMusicJsonCache() {
@@ -1816,7 +1817,7 @@ public class CameraSettings {
     public static void readEdgePhotoSetting(Context context) {
         if (b.Qk()) {
             boolean z = false;
-            if (Settings.System.getInt(context.getContentResolver(), EDGE_HANDGRIP_MODE_PHOTO, 0) == 1) {
+            if (Settings.System.getInt(context.getContentResolver(), "edge_handgrip_photo", 0) == 1) {
                 z = true;
             }
             sEdgePhotoEnable = z;

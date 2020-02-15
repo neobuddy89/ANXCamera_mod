@@ -18,6 +18,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.ParcelFileDescriptor;
 import android.os.SystemClock;
+import android.provider.MiuiSettings;
 import android.support.v4.app.FrameMetricsAggregator;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
@@ -714,7 +715,7 @@ public abstract class VideoBase extends BaseModule implements Camera2Proxy.FaceD
 
     /* access modifiers changed from: protected */
     public int getCameraRotation() {
-        return ((this.mOrientationCompensation - this.mDisplayRotation) + 360) % 360;
+        return ((this.mOrientationCompensation - this.mDisplayRotation) + MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
     }
 
     public CameraSize getVideoSize() {

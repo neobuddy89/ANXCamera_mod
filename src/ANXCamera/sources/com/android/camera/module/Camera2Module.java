@@ -24,6 +24,7 @@ import android.os.Message;
 import android.os.RemoteException;
 import android.os.SystemClock;
 import android.os.SystemProperties;
+import android.provider.MiuiSettings;
 import android.text.TextUtils;
 import android.util.Range;
 import android.util.Size;
@@ -379,7 +380,7 @@ public class Camera2Module extends BaseModule implements FocusManager2.Listener,
             Camera2Module.this.mHandler.removeMessages(33);
             if (!Camera2Module.this.mPaused && !z && f2 != -1.0f) {
                 int roundOrientation = Util.roundOrientation(Math.round(f2), Camera2Module.this.mOrientation);
-                Camera2Module.this.mHandler.obtainMessage(33, roundOrientation, (Util.getDisplayRotation(Camera2Module.this.mActivity) + roundOrientation) % 360).sendToTarget();
+                Camera2Module.this.mHandler.obtainMessage(33, roundOrientation, (Util.getDisplayRotation(Camera2Module.this.mActivity) + roundOrientation) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT).sendToTarget();
             }
         }
 
@@ -797,7 +798,7 @@ public class Camera2Module extends BaseModule implements FocusManager2.Listener,
                                                     ModeProtocol.ConfigChanges configChanges = (ModeProtocol.ConfigChanges) ModeCoordinatorImpl.getInstance().getAttachProtocol(164);
                                                     if (configChanges != null) {
                                                         int i2 = message.arg2;
-                                                        configChanges.configRotationChange(message.arg1, (360 - (i2 >= 0 ? i2 % 360 : (i2 % 360) + 360)) % 360);
+                                                        configChanges.configRotationChange(message.arg1, (360 - (i2 >= 0 ? i2 % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT : (i2 % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT) + MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT)) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT);
                                                         return;
                                                     }
                                                     return;

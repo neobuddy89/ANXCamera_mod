@@ -87,9 +87,9 @@ public class k {
         if (TextUtils.isEmpty(str2)) {
             return;
         }
-        if (str2.length() > f502c) {
-            a(i, str, str2.substring(0, f502c), (Throwable) null);
-            b(i, str, str2.substring(f502c, str2.length()), (Throwable) null);
+        if (str2.length() > 4000) {
+            a(i, str, str2.substring(0, 4000), (Throwable) null);
+            b(i, str, str2.substring(4000, str2.length()), (Throwable) null);
             return;
         }
         a(i, str, str2, th);

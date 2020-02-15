@@ -7,6 +7,7 @@ import android.media.AudioManager;
 import android.media.Image;
 import android.os.Handler;
 import android.os.Looper;
+import android.provider.MiuiSettings;
 import android.text.TextUtils;
 import com.android.camera.ActivityBase;
 import com.android.camera.CameraScreenNail;
@@ -211,7 +212,7 @@ public class MiLiveConfigChangesImpl implements ModeProtocol.MiLiveConfigChanges
 
     public void initPreview(int i, int i2, int i3, CameraScreenNail cameraScreenNail) {
         if (this.mRecorder == null) {
-            MiLiveRecorder build = new MiLiveRecorder.Builder(this.mActivity, VIDEO_WIDTH, VIDEO_HEIGHT).setStateListener(this).setHandler(this.mUIHandler).setRecordingTimeListener(this.mRecordingTimeListener).setMaxDuration(15400).setBitrate(DEFAULT_RECORD_BITRATE).setFps(30).setVideoSaveDirPath(FileUtils.VIDEO_TMP).setSegmentData(DataRepository.dataItemLive().getMiLiveSegmentData()).build();
+            MiLiveRecorder build = new MiLiveRecorder.Builder(this.mActivity, VIDEO_WIDTH, 1080).setStateListener(this).setHandler(this.mUIHandler).setRecordingTimeListener(this.mRecordingTimeListener).setMaxDuration(15400).setBitrate(DEFAULT_RECORD_BITRATE).setFps(30).setVideoSaveDirPath(FileUtils.VIDEO_TMP).setSegmentData(DataRepository.dataItemLive().getMiLiveSegmentData()).build();
             this.mRender = build;
             this.mRecorder = build;
         }
@@ -377,7 +378,7 @@ public class MiLiveConfigChangesImpl implements ModeProtocol.MiLiveConfigChanges
         if (this.mRecorder != null && !isRecording()) {
             FileUtils.deleteSubFiles(FileUtils.VIDEO_TMP);
             requestAudioFocus();
-            this.mRecorder.setOrientation((this.mCurrentOrientation + 90) % 360);
+            this.mRecorder.setOrientation((this.mCurrentOrientation + 90) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT);
             this.mRecorder.startRecording();
         }
     }

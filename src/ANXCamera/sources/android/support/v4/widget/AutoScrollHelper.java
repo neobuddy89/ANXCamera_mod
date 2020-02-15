@@ -2,6 +2,7 @@ package android.support.v4.widget;
 
 import android.content.res.Resources;
 import android.os.SystemClock;
+import android.provider.MiuiSettings;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewCompat;
 import android.view.MotionEvent;
@@ -185,8 +186,8 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
         setRelativeEdges(DEFAULT_RELATIVE_EDGE, DEFAULT_RELATIVE_EDGE);
         setRelativeVelocity(1.0f, 1.0f);
         setActivationDelay(DEFAULT_ACTIVATION_DELAY);
-        setRampUpDuration(500);
-        setRampDownDuration(500);
+        setRampUpDuration(MiuiSettings.System.SCREEN_KEY_LONG_PRESS_TIMEOUT_DEFAULT);
+        setRampDownDuration(MiuiSettings.System.SCREEN_KEY_LONG_PRESS_TIMEOUT_DEFAULT);
     }
 
     private float computeTargetVelocity(int i, float f2, float f3, float f4) {

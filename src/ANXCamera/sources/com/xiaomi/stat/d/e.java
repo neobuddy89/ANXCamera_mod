@@ -17,6 +17,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.Process;
 import android.os.RemoteException;
+import android.provider.MiuiSettings;
 import android.provider.Settings;
 import android.support.v4.os.EnvironmentCompat;
 import android.telephony.TelephonyManager;
@@ -420,7 +421,7 @@ public class e {
         if (a(context, "android.permission.ACCESS_WIFI_STATE")) {
             if (Build.VERSION.SDK_INT < 23) {
                 try {
-                    str = ((WifiManager) context.getSystemService("wifi")).getConnectionInfo().getMacAddress();
+                    str = ((WifiManager) context.getSystemService(MiuiSettings.System.WIFI_SHARE)).getConnectionInfo().getMacAddress();
                 } catch (Exception e2) {
                     k.d(f473a, "getMAC exception: ", e2);
                 }

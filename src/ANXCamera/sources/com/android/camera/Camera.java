@@ -15,6 +15,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
 import android.os.SystemProperties;
+import android.provider.MiuiSettings;
 import android.support.annotation.MainThread;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
@@ -332,7 +333,7 @@ public class Camera extends ActivityBase implements ActivityCompat.OnRequestPerm
                 }
                 Camera camera4 = Camera.this;
                 int i2 = camera4.mOrientation;
-                camera4.mOrientationCompensation = (camera4.mDisplayRotation + i2) % 360;
+                camera4.mOrientationCompensation = (camera4.mDisplayRotation + i2) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
                 Module module = camera4.mCurrentModule;
                 if (module != null) {
                     module.onOrientationChanged(i2, camera4.mOrientationCompensation, i);

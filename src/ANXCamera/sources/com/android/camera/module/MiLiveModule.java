@@ -16,6 +16,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
+import android.provider.MiuiSettings;
 import android.support.annotation.MainThread;
 import android.support.annotation.NonNull;
 import android.telephony.PhoneStateListener;
@@ -590,7 +591,7 @@ public class MiLiveModule extends BaseModule implements ILiveModule, Camera2Prox
         int preferVideoQuality = CameraSettings.getPreferVideoQuality(this.mActualCameraId, this.mModuleIndex);
         this.mVideoSize = null;
         if (preferVideoQuality != 5) {
-            this.mVideoSize = new CameraSize(1920, 1080);
+            this.mVideoSize = new CameraSize(1920, MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_END_DEAULT);
         } else {
             this.mVideoSize = new CameraSize(1280, Util.LIMIT_SURFACE_WIDTH);
         }

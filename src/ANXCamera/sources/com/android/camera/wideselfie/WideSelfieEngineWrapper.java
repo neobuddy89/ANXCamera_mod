@@ -14,6 +14,7 @@ import android.hardware.camera2.CameraManager;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.provider.MiuiSettings;
 import android.text.TextUtils;
 import android.util.SizeF;
 import com.android.camera.R;
@@ -304,7 +305,7 @@ public class WideSelfieEngineWrapper {
         defaultInitParams.maxResultWidth = i;
         defaultInitParams.progressBarThumbHeight = this.mWideSelfieOrientation % 180 == 90 ? this.nThumbnailWidth : this.nThumbnailHeight;
         defaultInitParams.thumbnailWidth = 480;
-        defaultInitParams.thumbnailHeight = 360;
+        defaultInitParams.thumbnailHeight = MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
         defaultInitParams.guideStopBarThumbHeight = 0;
         defaultInitParams.cameraViewAngleForWidth = this.mAngleSize.getWidth();
         defaultInitParams.cameraViewAngleForHeight = this.mAngleSize.getHeight();

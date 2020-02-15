@@ -12,6 +12,7 @@ import android.media.Image;
 import android.os.CountDownTimer;
 import android.os.ParcelFileDescriptor;
 import android.os.SystemClock;
+import android.provider.MiuiSettings;
 import android.support.annotation.MainThread;
 import android.telephony.TelephonyManager;
 import android.util.Range;
@@ -304,7 +305,7 @@ public class FunModule extends VideoBase implements ModeProtocol.StickerProtocol
     }
 
     private void updatePictureAndPreviewSize() {
-        this.mPreviewSize = Util.getOptimalPreviewSize(false, this.mBogusCameraId, this.mCameraCapabilities.getSupportedOutputSizeWithAssignedMode(SurfaceTexture.class), (double) CameraSettings.getPreviewAspectRatio(16, 9), CameraSettings.getPreferVideoQuality(this.mActualCameraId, this.mModuleIndex) != 5 ? new CameraSize(1920, 1080) : new CameraSize(1280, Util.LIMIT_SURFACE_WIDTH));
+        this.mPreviewSize = Util.getOptimalPreviewSize(false, this.mBogusCameraId, this.mCameraCapabilities.getSupportedOutputSizeWithAssignedMode(SurfaceTexture.class), (double) CameraSettings.getPreviewAspectRatio(16, 9), CameraSettings.getPreferVideoQuality(this.mActualCameraId, this.mModuleIndex) != 5 ? new CameraSize(1920, MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_END_DEAULT) : new CameraSize(1280, Util.LIMIT_SURFACE_WIDTH));
         CameraSize cameraSize = this.mPreviewSize;
         updateCameraScreenNailSize(cameraSize.width, cameraSize.height);
         String str = VideoBase.TAG;
@@ -735,7 +736,7 @@ public class FunModule extends VideoBase implements ModeProtocol.StickerProtocol
 
     /* access modifiers changed from: protected */
     public void resizeForPreviewAspectRatio() {
-        if (((this.mCameraCapabilities.getSensorOrientation() - Util.getDisplayRotation(this.mActivity)) + 360) % 180 == 0) {
+        if (((this.mCameraCapabilities.getSensorOrientation() - Util.getDisplayRotation(this.mActivity)) + MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT) % 180 == 0) {
             ModeProtocol.MainContentProtocol mainContentProtocol = this.mMainProtocol;
             CameraSize cameraSize = this.mPreviewSize;
             mainContentProtocol.setPreviewAspectRatio(((float) cameraSize.height) / ((float) cameraSize.width));

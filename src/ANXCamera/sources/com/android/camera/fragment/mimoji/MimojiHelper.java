@@ -5,6 +5,7 @@ import android.graphics.ImageFormat;
 import android.graphics.Rect;
 import android.media.Image;
 import android.os.Environment;
+import android.provider.MiuiSettings;
 import com.android.camera.R;
 import com.android.camera.log.Log;
 import java.io.File;
@@ -138,7 +139,7 @@ public class MimojiHelper {
 
     public static int getOutlineOrientation(int i, int i2, boolean z) {
         mCurrentOrientation = roundOrientation(i2, mCurrentOrientation);
-        int i3 = z ? ((i - mCurrentOrientation) + 360) % 360 : (mCurrentOrientation + i) % 360;
+        int i3 = z ? ((i - mCurrentOrientation) + MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT : (mCurrentOrientation + i) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
         Log.d("OrientationUtil", "cameraRotation = " + i + " sensorOrientation = " + mCurrentOrientation + "outlineOrientation = " + i3);
         return i3;
     }
@@ -189,6 +190,6 @@ public class MimojiHelper {
                 z = false;
             }
         }
-        return z ? (((i + 45) / 90) * 90) % 360 : i2;
+        return z ? (((i + 45) / 90) * 90) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT : i2;
     }
 }

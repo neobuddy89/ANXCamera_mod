@@ -7,6 +7,7 @@ import android.opengl.GLES20;
 import android.os.Build;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.provider.MiuiSettings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
@@ -422,7 +423,7 @@ public class TERecorder implements a, AudioDataProcessThread.OnProcessDataListen
                 i = 270;
             }
         }
-        return camera_facing_id == VECameraSettings.CAMERA_FACING_ID.FACING_FRONT ? (540 - ((this.mCameraSettings.getOrientation() + i) % 360)) % 360 : ((this.mCameraSettings.getOrientation() - i) + 360) % 360;
+        return camera_facing_id == VECameraSettings.CAMERA_FACING_ID.FACING_FRONT ? (540 - ((this.mCameraSettings.getOrientation() + i) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT)) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT : ((this.mCameraSettings.getOrientation() - i) + MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT) % MiuiSettings.ScreenEffect.SCREEN_PAPER_MODE_TWILIGHT_START_DEAULT;
     }
 
     private void initAudioPlayerIfNeed(int i) {
