@@ -43,18 +43,14 @@ Steps to Port MiuiCamera from scratch:
 1. Unpack System of Miui ROM
 2. Setup Original files for Decompiling
    1. Copy following to ANXCamera10\orig\MiuiFrameworks. Files to be taken from Unpacked ROM above 
-      1. framework\framework-ext-res\framework-ext-res.apk
-      2. framework\framework-res.apk
-      3. app\miui\miui.apk
-      4. app\miuisystem\miuisystem.apk
+      1. framework\framework-res.apk
+      2. app\miui\miui.apk
    2. Copy following to ANXCamera10\orig
       1. priv-app\MiuiCamera\MiuiCamera.apk
 3. Prepare APKTool for decompiling
    1. Install above framework files by running following commands
       1. `java  -jar ..\ANXMiuiPortTools\apktool.jar if -p ..\ANXMiuiPortTools\MiuiFrameworks .\orig\MiuiFrameworks\framework-res.apk`
       2. `java  -jar ..\ANXMiuiPortTools\apktool.jar if -p ..\ANXMiuiPortTools\MiuiFrameworks .\orig\MiuiFrameworks\miui.apk`
-      3. `java  -jar ..\ANXMiuiPortTools\apktool.jar if -p ..\ANXMiuiPortTools\MiuiFrameworks .\orig\MiuiFrameworks\framework-ext-res.apk`
-      4. `java  -jar ..\ANXMiuiPortTools\apktool.jar if -p ..\ANXMiuiPortTools\MiuiFrameworks .\orig\MiuiFrameworks\miuisystem.apk`
 4. Decompile MiuiCamera by running
    1. `java  -jar ..\ANXMiuiPortTools\apktool.jar d -p ..\ANXMiuiPortTools\MiuiFrameworks -f -b -o .\src\ANXCamera .\orig\MiuiCamera.apk`
    2. Parameters
