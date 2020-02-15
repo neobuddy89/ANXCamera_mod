@@ -62,8 +62,10 @@
             android:value="2.2"/>
         <uses-library android:name="zxing.jar" 
             android:required="false"/>
-        <uses-library android:name="cloud-common.jar"/>
-        <uses-library android:name="volley.jar"/>
+        <uses-library android:name="cloud-common.jar" 
+            android:required="false"/>
+        <uses-library android:name="volley.jar" 
+            android:required="false"/>
         <service android:exported="false" 
             android:name="com.android.camera.snap.SnapService" 
             android:permission="android.permission.BIND_JOB_SERVICE"/>

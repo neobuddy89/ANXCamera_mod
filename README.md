@@ -59,27 +59,17 @@ Steps to Port MiuiCamera from scratch:
    1. Run `recompile.bat` just to check whether we are able to recompile without any modification
    2. Run `sign.bat` to sign and zipalign
    3. Run `jadx.bat` to create java code from compiled apk. This fails, don't worry, it does whatever it can
-7. Next we will Deodex rom and decompile the required libs
-   1. Run in WSL or Linux `$ /<path to vdexExtractor>/tools/deodex/run.sh -i /<path to system>/framework -o /<path to deodex destination>/framework`
-   2. Above will deodex the system framework
-   3. Now we decompile the required libs
-      1. Copy latest baksmali.*.jar to `<path to deodex destination>`
-      2. To identify what libs you need to decompile. Open `src\ANXCamera\AndroidManifest.xml`
-         1. Find the `uses-library` XML Nodes. We need to decompile these
-         2. We will skip `miui-stat.jar` as we will disable miui-stats from sending data to miui.
-      3. Open a cmd inside `<path to deodex destination>` folder. And run the following:
-         1. `java -jar baksmali-2.2.7.jar d -o android-support-v7-recyclerview .\framework\vdexExtractor_deodexed\android-support-v7-recyclerview\android-support-v7-recyclerview_classes.dex.dex`
-         2. `java -jar baksmali-2.2.7.jar d -o android-support-v13 .\framework\vdexExtractor_deodexed\android-support-v13\android-support-v13_classes.dex.dex`
-         3. `java -jar baksmali-2.2.7.jar d -o boot-framework .\framework\vdexExtractor_deodexed\boot-framework\boot-framework_classes.dex`
-         4. `java -jar baksmali-2.2.7.jar d -o boot-framework2 .\framework\vdexExtractor_deodexed\boot-framework\boot-framework_classes2.dex`
-         5. `java -jar baksmali-2.2.7.jar d -o boot-framework3 .\framework\vdexExtractor_deodexed\boot-framework\boot-framework_classes3.dex`
-         6. `java -jar baksmali-2.2.7.jar d -o boot-miui .\framework\vdexExtractor_deodexed\boot-miui\boot-miui_classes.dex`
-         7. `java -jar baksmali-2.2.7.jar d -o boot-miuisystem .\framework\vdexExtractor_deodexed\boot-miuisystem\boot-miuisystem_classes.dex`
-         8. `java -jar baksmali-2.2.7.jar d -o gson .\framework\vdexExtractor_deodexed\gson\gson_classes.dex.dex`
-         9. `java -jar baksmali-2.2.7.jar d -o volley .\framework\vdexExtractor_deodexed\volley\volley_classes.dex.dex`
-         10. `java -jar baksmali-2.2.7.jar d -o zxing .\framework\vdexExtractor_deodexed\zxing\zxing_classes.dex.dex`
+7. Next we decompile the required fw files
+   1. Copy latest baksmali to extracted rom destination
+   2. Disable some required libs. Open `src\ANXCamera\AndroidManifest.xml`
+      1. Find the `uses-library` XML Nodes. We need to disable this
+      2. We will skip `miui-stat.jar` as we will disable miui-stats from sending data to miui.
+   3. Open a cmd inside `<path to deodex destination>` folder. And run the following:
+      1. `java  -jar ..\ANXMiuiPortTools\apktool.jar d -p ..\ANXMiuiPortTools\MiuiFrameworks -f -b -o G:\ROOT\phoenix\framework G:\ROOT\phoenix\system\system\framework\framework.jar`
+      2. `java  -jar ..\ANXMiuiPortTools\apktool.jar d -p ..\ANXMiuiPortTools\MiuiFrameworks -f -b -o G:\ROOT\phoenix\miui G:\ROOT\phoenix\system\system\app\miui\miui.apk`
+      3. `java  -jar ..\ANXMiuiPortTools\apktool.jar d -p ..\ANXMiuiPortTools\MiuiFrameworks -f -b -o G:\ROOT\phoenix\miuisystem G:\ROOT\phoenix\system\system\app\miuisystem\miuisystem.apk`
 8. Now we will add **few** of the above decompiles libs to our code
-   1. Create a folder `src\ANXCamera\smali_classes2`
+   1. Create a folder `src\ANXCamera\smali_classes5`
    2. Copy the **contents** of 
       1. `<path to deodex destination>\android-support-v7-recyclerview`
       2. `<path to deodex destination>\android-support-v13`

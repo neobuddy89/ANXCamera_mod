@@ -137,6 +137,9 @@
 .method private initializeSdk()Z
     .locals 8
 
+    const/4 v1, 0x1
+    return v1
+
     const-string v0, "initialize"
 
     const/4 v1, 0x0
@@ -208,6 +211,9 @@
 .method private loadSdk()Z
     .locals 5
 
+    const/4 v1, 0x1
+    return v1
+
     const-string v0, "com.miui.core"
 
     const/4 v1, 0x0
@@ -267,6 +273,9 @@
 .method private startSdk()Z
     .locals 7
 
+    const/4 v1, 0x1
+    return v1
+    
     const-string v0, "start"
 
     const/4 v1, 0x0

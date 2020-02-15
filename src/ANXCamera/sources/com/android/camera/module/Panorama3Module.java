@@ -1457,7 +1457,7 @@ public class Panorama3Module extends BaseModule implements ModeProtocol.CameraAc
     /* JADX WARNING: type inference failed for: r10v1 */
     /* JADX WARNING: type inference failed for: r10v2 */
     /* access modifiers changed from: private */
-    /* JADX WARNING: Incorrect type for immutable var: ssa=int, code=?, for r10v0, types: [int, boolean] */
+    /* JADX WARNING: Incorrect type for immutable var: ssa=int, code=?, for r10v0, types: [boolean, int] */
     /* JADX WARNING: Removed duplicated region for block: B:32:0x0082  */
     /* JADX WARNING: Removed duplicated region for block: B:34:0x008c  */
     public boolean savePanoramaFile(String str, int i, int i2) {

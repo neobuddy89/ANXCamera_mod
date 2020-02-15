@@ -3,10 +3,7 @@ package miui.external;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.util.Log;
-import com.android.camera.statistic.MistatsConstants;
 import java.lang.reflect.InvocationTargetException;
-import java.util.HashMap;
-import java.util.Map;
 import miui.external.SdkConstants;
 
 public class Application extends android.app.Application implements SdkConstants {
@@ -42,50 +39,15 @@ public class Application extends android.app.Application implements SdkConstants
     }
 
     private boolean initializeSdk() {
-        try {
-            HashMap hashMap = new HashMap();
-            int intValue = ((Integer) SdkEntranceHelper.getSdkEntrance().getMethod("initialize", new Class[]{android.app.Application.class, Map.class}).invoke((Object) null, new Object[]{this, hashMap})).intValue();
-            if (intValue == 0) {
-                return true;
-            }
-            handleUnknownError("initialize", intValue);
-            return false;
-        } catch (Throwable th) {
-            handleGenericError(th);
-            return false;
-        }
+        return true;
     }
 
     private boolean loadSdk() {
-        try {
-            if (SdkHelper.isMiuiSystem() || SdkLoader.load(SdkHelper.getApkPath((Context) null, PACKAGE_NAME, "miui"), (String) null, SdkHelper.getLibPath((Context) null, PACKAGE_NAME), Application.class.getClassLoader())) {
-                return true;
-            }
-            SdkErrorInstrumentation.handleSdkError(SdkConstants.SdkError.NO_SDK);
-            return false;
-        } catch (Throwable th) {
-            handleGenericError(th);
-            return false;
-        }
+        return true;
     }
 
     private boolean startSdk() {
-        try {
-            HashMap hashMap = new HashMap();
-            int intValue = ((Integer) SdkEntranceHelper.getSdkEntrance().getMethod(MistatsConstants.BaseEvent.START, new Class[]{Map.class}).invoke((Object) null, new Object[]{hashMap})).intValue();
-            if (intValue == 1) {
-                SdkErrorInstrumentation.handleSdkError(SdkConstants.SdkError.LOW_SDK_VERSION);
-                return false;
-            } else if (intValue == 0) {
-                return true;
-            } else {
-                handleUnknownError(MistatsConstants.BaseEvent.START, intValue);
-                return false;
-            }
-        } catch (Throwable th) {
-            handleGenericError(th);
-            return false;
-        }
+        return true;
     }
 
     /* access modifiers changed from: protected */
