@@ -1,0 +1,36 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: MiuiCamera.apk
+compressionType: false
+doNotCompress:
+- dex
+- arsc
+- ogg
+- mp3
+- zip
+- png
+- assets/model/actionmodel/tt_action_detection_v4.0.model
+- assets/model/ar_scan/tt_arscan_raw_v2.0.dat
+- assets/model/audiorecognize/kws_v2.0.model
+- assets/model/facefitting/tt_facefitting_v2.1.model
+- webp
+- jpg
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
+sdkInfo: null
+sharedLibrary: false
+sparseResources: false
+unknownFiles:
+  MODULE_LICENSE_BSD: '0'
+  NOTICE: '8'
+  okhttp3/internal/publicsuffix/publicsuffixes.gz: '8'
+usesFramework:
+  ids:
+  - 1
+  - 16
+  tag: null
+version: 2.4.1-661f92-SNAPSHOT
+versionInfo:
+  versionCode: '3'
+  versionName: '3.0'
