@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" 
     android:compileSdkVersion="29" 
-    android:compileSdkVersionCodename="10" 
+    android:compileSdkVersionCodename="10"  
+    android:versionCode="194" 
+    android:versionName="194.GreatWearyArcticduck" 
     package="com.android.camera" 
     platformBuildVersionCode="29" 
     platformBuildVersionName="10">
+    <uses-sdk android:minSdkVersion="26" 
+        android:targetSdkVersion="29"/>
     <original-package android:name="com.android.camera"/>
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-feature android:name="android.hardware.camera"/>

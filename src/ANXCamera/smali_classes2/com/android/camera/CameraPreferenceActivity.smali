@@ -1479,7 +1479,7 @@
 
     const v0, 0x7f0f035e
 
-    invoke-virtual {p0, v0}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1491,7 +1491,7 @@
 
     const v0, 0x7f0f035d
 
-    invoke-virtual {p0, v0}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
@@ -1522,7 +1522,7 @@
 
     const p1, 0x7f0f035e
 
-    invoke-virtual {p0, p1}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
@@ -1531,7 +1531,7 @@
     :cond_0
     const p1, 0x7f0f035c
 
-    invoke-virtual {p0, p1}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
@@ -1541,7 +1541,7 @@
 .method private initializeActivity()V
     .locals 2
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v0
 
@@ -1558,9 +1558,9 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lmiui/preference/PreferenceActivity;->addPreferencesFromResource(I)V
+    invoke-virtual {p0, v0}, Landroid/preference/PreferenceActivity;->addPreferencesFromResource(I)V
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v0
 
@@ -1576,7 +1576,7 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/log/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->finish()V
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->finish()V
 
     :cond_1
     invoke-direct {p0}, Lcom/android/camera/CameraPreferenceActivity;->isHeicImageFormatSelectable()Z
@@ -2044,7 +2044,7 @@
 .method private resetSnapSetting()V
     .locals 3
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
@@ -2071,7 +2071,7 @@
     if-eqz v0, :cond_1
 
     :cond_0
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object p0
 
@@ -2115,7 +2115,7 @@
 
     invoke-direct {p0}, Lcom/android/camera/CameraPreferenceActivity;->initializeActivity()V
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -2242,7 +2242,7 @@
 
     const v5, 0x7f0f022e
 
-    invoke-virtual {p0, v5}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v5}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -2253,7 +2253,7 @@
     :cond_0
     if-eqz v1, :cond_1
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -2284,7 +2284,7 @@
 
     invoke-virtual {v2, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v5
 
@@ -2325,7 +2325,7 @@
 
     if-eqz v7, :cond_3
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v5
 
@@ -2400,25 +2400,25 @@
     :cond_7
     const v2, 0x7f0f037d
 
-    invoke-virtual {p0, v2}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v2}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
     const v3, 0x7f0f037f
 
-    invoke-virtual {p0, v3}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v3}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
     const v5, 0x7f0f0381
 
-    invoke-virtual {p0, v5}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v5}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
     const v6, 0x7f0f0383
 
-    invoke-virtual {p0, v6}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v6}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
@@ -2457,7 +2457,7 @@
 
     if-eqz v0, :cond_9
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -2477,7 +2477,7 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setDefaultValue(Ljava/lang/Object;)V
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
 
@@ -2527,7 +2527,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0, v1}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v1}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
@@ -2546,7 +2546,7 @@
 
     if-eqz v0, :cond_2
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -2564,7 +2564,7 @@
 
     if-eqz v0, :cond_2
 
-    invoke-virtual {p0, v1}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v1}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
@@ -2583,7 +2583,7 @@
 
     if-eqz v0, :cond_3
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -2601,7 +2601,7 @@
 
     if-eqz p1, :cond_3
 
-    invoke-virtual {p0, v1}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v1}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
@@ -2612,7 +2612,7 @@
     :cond_3
     const p1, 0x7f0f03c5
 
-    invoke-virtual {p0, p1}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
@@ -2721,7 +2721,7 @@
     :cond_1
     const p1, 0x7f0f0416
 
-    invoke-virtual {p0, p1}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
@@ -2732,7 +2732,7 @@
     :cond_2
     const p1, 0x7f0f0415
 
-    invoke-virtual {p0, p1}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
@@ -2765,7 +2765,7 @@
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getPackageName()Ljava/lang/String;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
@@ -2783,7 +2783,7 @@
 
     invoke-direct {p1, v0, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    invoke-virtual {p0, p1}, Lmiui/preference/PreferenceActivity;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity;->startActivity(Landroid/content/Intent;)V
 
     return-void
 .end method
@@ -2791,7 +2791,7 @@
 .method protected filterByIntent()V
     .locals 3
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
@@ -2843,7 +2843,7 @@
 
     invoke-direct {p0}, Lcom/android/camera/CameraPreferenceActivity;->resetTimeOutFlag()V
 
-    invoke-super {p0}, Lmiui/preference/PreferenceActivity;->onBackPressed()V
+    invoke-super {p0}, Landroid/preference/PreferenceActivity;->onBackPressed()V
 
     return-void
 .end method
@@ -2859,7 +2859,7 @@
 
     iput-boolean p1, p0, Lcom/android/camera/CameraPreferenceActivity;->mIsFrontCamera:Z
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object p1
 
@@ -2873,7 +2873,7 @@
 
     iput p1, p0, Lcom/android/camera/CameraPreferenceActivity;->mFromWhere:I
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object p1
 
@@ -2887,11 +2887,11 @@
 
     const/4 p1, 0x1
 
-    invoke-virtual {p0, p1}, Lmiui/preference/PreferenceActivity;->setShowWhenLocked(Z)V
+    invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity;->setShowWhenLocked(Z)V
 
     const-string p1, "keyguard"
 
-    invoke-virtual {p0, p1}, Lmiui/preference/PreferenceActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -2915,7 +2915,9 @@
 
     invoke-direct {p0}, Lcom/android/camera/CameraPreferenceActivity;->initializeActivity()V
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getIntent()Landroid/content/Intent;
+    return-void
+    
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object p1
 
@@ -2927,7 +2929,7 @@
 
     if-eqz p1, :cond_1
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getActionBar()Lmiui/app/ActionBar;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getActionBar()Lmiui/app/ActionBar;
 
     move-result-object p0
 
@@ -2954,14 +2956,14 @@
 
     invoke-direct {p0}, Lcom/android/camera/CameraPreferenceActivity;->resetTimeOutFlag()V
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->finish()V
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->finish()V
 
     const/4 p0, 0x1
 
     return p0
 
     :cond_0
-    invoke-super {p0, p1}, Lmiui/preference/PreferenceActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    invoke-super {p0, p1}, Landroid/preference/PreferenceActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
     move-result p0
 
@@ -3089,7 +3091,7 @@
     :cond_7
     const v0, 0x7f0f035c
 
-    invoke-virtual {p0, v0}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -3122,7 +3124,7 @@
     :goto_2
     const p2, 0x7f0f035e
 
-    invoke-virtual {p0, p2}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, p2}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3136,7 +3138,7 @@
 
     const p2, 0x7f0f035d
 
-    invoke-virtual {p0, p2}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, p2}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3147,7 +3149,7 @@
     if-eqz p2, :cond_b
 
     :cond_a
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object p2
 
@@ -3168,7 +3170,7 @@
     return v5
 
     :cond_b
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object p0
 
@@ -3330,19 +3332,19 @@
 
     const p1, 0x7f0f00b4
 
-    invoke-virtual {p0, p1}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
     const p1, 0x7f0f00b3
 
-    invoke-virtual {p0, p1}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
     const p1, 0x7f0f0125
 
-    invoke-virtual {p0, p1}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
@@ -3350,7 +3352,7 @@
 
     invoke-direct {v7, p0}, Lcom/android/camera/e;-><init>(Lcom/android/camera/CameraPreferenceActivity;)V
 
-    invoke-virtual {p0, v1}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v1}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v8
 
@@ -3381,7 +3383,7 @@
     invoke-direct {p1, p0, v0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
     :try_start_0
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
@@ -3396,7 +3398,7 @@
     :cond_2
     iput-boolean v2, p0, Lcom/android/camera/CameraPreferenceActivity;->mGoToActivity:Z
 
-    invoke-virtual {p0, p1}, Lmiui/preference/PreferenceActivity;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity;->startActivity(Landroid/content/Intent;)V
 
     new-instance p0, Ljava/util/HashMap;
 
@@ -3432,7 +3434,7 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
@@ -3447,7 +3449,7 @@
     :cond_3
     iput-boolean v2, p0, Lcom/android/camera/CameraPreferenceActivity;->mGoToActivity:Z
 
-    invoke-virtual {p0, p1}, Lmiui/preference/PreferenceActivity;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity;->startActivity(Landroid/content/Intent;)V
 
     return v2
 
@@ -3478,19 +3480,19 @@
 
     const p1, 0x7f0f00bd
 
-    invoke-virtual {p0, p1}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
     const p1, 0x7f0f00bc
 
-    invoke-virtual {p0, p1}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
     const p1, 0x104000a
 
-    invoke-virtual {p0, p1}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
@@ -3498,7 +3500,7 @@
 
     invoke-direct {v7, p0}, Lcom/android/camera/d;-><init>(Lcom/android/camera/CameraPreferenceActivity;)V
 
-    invoke-virtual {p0, v1}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v1}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v8
 
@@ -3550,7 +3552,7 @@
         .end annotation
     .end param
 
-    invoke-super {p0, p1, p2, p3}, Lmiui/preference/PreferenceActivity;->onRequestPermissionsResult(I[Ljava/lang/String;[I)V
+    invoke-super {p0, p1, p2, p3}, Landroid/preference/PreferenceActivity;->onRequestPermissionsResult(I[Ljava/lang/String;[I)V
 
     sget-object p2, Lcom/android/camera/CameraPreferenceActivity;->TAG:Ljava/lang/String;
 
@@ -3675,7 +3677,7 @@
 .method protected onRestart()V
     .locals 2
 
-    invoke-super {p0}, Lmiui/preference/PreferenceActivity;->onRestart()V
+    invoke-super {p0}, Landroid/preference/PreferenceActivity;->onRestart()V
 
     iget-boolean v0, p0, Lcom/android/camera/CameraPreferenceActivity;->mGoToActivity:Z
 
@@ -3704,13 +3706,13 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getReferrer()Landroid/net/Uri;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getReferrer()Landroid/net/Uri;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getReferrer()Landroid/net/Uri;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getReferrer()Landroid/net/Uri;
 
     move-result-object v0
 
@@ -3718,7 +3720,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->getPackageName()Ljava/lang/String;
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getPackageName()Ljava/lang/String;
 
     move-result-object v1
 
@@ -3728,7 +3730,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0}, Lmiui/preference/PreferenceActivity;->finish()V
+    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->finish()V
 
     goto :goto_0
 
@@ -3742,7 +3744,7 @@
 .method protected onResume()V
     .locals 2
 
-    invoke-super {p0}, Lmiui/preference/PreferenceActivity;->onResume()V
+    invoke-super {p0}, Landroid/preference/PreferenceActivity;->onResume()V
 
     invoke-direct {p0}, Lcom/android/camera/CameraPreferenceActivity;->updateQRCodeEntry()V
 
@@ -3924,7 +3926,7 @@
 
     const v5, 0x7f0f03af
 
-    invoke-virtual {p0, v5}, Lmiui/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v5}, Landroid/preference/PreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 

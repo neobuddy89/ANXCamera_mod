@@ -39,7 +39,6 @@ import android.os.Build;
 import android.os.CountDownTimer;
 import android.os.Environment;
 import android.os.ParcelFileDescriptor;
-import android.os.ServiceManager;
 import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.os.UserHandle;
@@ -525,15 +524,7 @@ public final class Util {
     }
 
     public static boolean checkDeviceHasNavigationBar(Context context) {
-        if (sWindowManager == null) {
-            sWindowManager = IWindowManager.Stub.asInterface(ServiceManager.getService("window"));
-            try {
-                sHasNavigationBar = CompatibilityUtils.hasNavigationBar(context, sWindowManager);
-            } catch (Exception unused) {
-                Log.e(TAG, "checkDeviceHasNavigationBar exception");
-            }
-        }
-        return sHasNavigationBar;
+        return true;
     }
 
     public static void checkLockedOrientation(Activity activity) {
@@ -2952,7 +2943,7 @@ public final class Util {
     }
 
     public static void initStatusBarHeight(Context context) {
-        sNavigationBarHeight = checkDeviceHasNavigationBar(context) ? getNavigationBarHeight(context) : calcNavigationBarHeight(context);
+        sNavigationBarHeight = getNavigationBarHeight(context);
         if (isNotchDevice || isCameraUnderScreen()) {
             if (isLongRatioScreen) {
                 sStatusBarHeight = getStatusBarHeight(context);

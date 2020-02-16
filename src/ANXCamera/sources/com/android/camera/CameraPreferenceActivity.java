@@ -37,7 +37,6 @@ import com.mi.config.b;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import miui.app.ActionBar;
 
 public class CameraPreferenceActivity extends BasePreferenceActivity {
     public static final String IS_IMAGE_CAPTURE_INTENT = "IsCaptureIntent";
@@ -74,7 +73,6 @@ public class CameraPreferenceActivity extends BasePreferenceActivity {
     protected PreferenceScreen mPreferenceGroup;
     private Preference mWatermark;
 
-    /* JADX WARNING: type inference failed for: r2v0, types: [android.content.Context, com.android.camera.CameraPreferenceActivity] */
     private void bringUpDoubleConfirmDlg(final Preference preference, final String str) {
         if (this.mDoubleConfirmActionChooseDialog == null) {
             final boolean snapBoolValue = getSnapBoolValue(str);
@@ -397,12 +395,11 @@ public class CameraPreferenceActivity extends BasePreferenceActivity {
     /* access modifiers changed from: private */
     public void installQRCodeReceiver() {
         new AsyncTask<Void, Void, Void>() {
-            /* JADX WARNING: type inference failed for: r3v1, types: [android.content.Context, com.android.camera.CameraPreferenceActivity] */
             /* access modifiers changed from: protected */
             public Void doInBackground(Void... voidArr) {
                 Log.v(CameraPreferenceActivity.TAG, "install...");
-                ? r3 = CameraPreferenceActivity.this;
-                Util.installPackage(r3, "com.xiaomi.scanner", r3.mAppInstalledListener, false, true);
+                CameraPreferenceActivity cameraPreferenceActivity = CameraPreferenceActivity.this;
+                Util.installPackage(cameraPreferenceActivity, "com.xiaomi.scanner", cameraPreferenceActivity.mAppInstalledListener, false, true);
                 return null;
             }
         }.execute(new Void[0]);
@@ -583,7 +580,6 @@ public class CameraPreferenceActivity extends BasePreferenceActivity {
         }
     }
 
-    /* JADX WARNING: type inference failed for: r4v0, types: [android.content.Context, com.android.camera.CameraPreferenceActivity, com.android.camera.BasePreferenceActivity] */
     private void updateQRCodeEntry() {
         CheckBoxPreference checkBoxPreference = (CheckBoxPreference) this.mPreferenceGroup.findPreference("pref_scan_qrcode_key");
         if (checkBoxPreference != null && this.mPreferences.getBoolean("pref_scan_qrcode_key", checkBoxPreference.isChecked()) && !CameraSettings.isQRCodeReceiverAvailable(this)) {
@@ -629,10 +625,9 @@ public class CameraPreferenceActivity extends BasePreferenceActivity {
 
     public void onBackPressed() {
         resetTimeOutFlag();
-        CameraPreferenceActivity.super.onBackPressed();
+        super.onBackPressed();
     }
 
-    /* JADX WARNING: type inference failed for: r2v0, types: [android.content.Context, com.android.camera.CameraPreferenceActivity, miui.preference.PreferenceActivity, com.android.camera.BasePreferenceActivity] */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.mIsFrontCamera = CameraSettings.isFrontCamera();
@@ -646,24 +641,17 @@ public class CameraPreferenceActivity extends BasePreferenceActivity {
         CameraSettings.upgradeGlobalPreferences();
         Storage.initStorage(this);
         initializeActivity();
-        if (getIntent().getCharSequenceExtra(":miui:starting_window_label") != null) {
-            ActionBar actionBar = getActionBar();
-            if (actionBar != null) {
-                actionBar.setTitle(R.string.pref_camera_settings_category);
-            }
-        }
     }
 
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         if (menuItem.getItemId() != 16908332) {
-            return CameraPreferenceActivity.super.onOptionsItemSelected(menuItem);
+            return super.onOptionsItemSelected(menuItem);
         }
         resetTimeOutFlag();
         finish();
         return true;
     }
 
-    /* JADX WARNING: type inference failed for: r6v0, types: [com.android.camera.CameraPreferenceActivity, miui.preference.PreferenceActivity, android.app.Activity, com.android.camera.BasePreferenceActivity] */
     public boolean onPreferenceChange(Preference preference, Object obj) {
         String key = preference.getKey();
         if (TextUtils.isEmpty(key)) {
@@ -703,7 +691,6 @@ public class CameraPreferenceActivity extends BasePreferenceActivity {
         return super.onPreferenceChange(preference, obj);
     }
 
-    /* JADX WARNING: type inference failed for: r10v0, types: [android.content.Context, com.android.camera.CameraPreferenceActivity, miui.preference.PreferenceActivity] */
     /* JADX WARNING: Can't fix incorrect switch cases order */
     public boolean onPreferenceClick(Preference preference) {
         char c2;
@@ -801,9 +788,8 @@ public class CameraPreferenceActivity extends BasePreferenceActivity {
         return false;
     }
 
-    /* JADX WARNING: type inference failed for: r1v0, types: [android.content.Context, com.android.camera.CameraPreferenceActivity, miui.preference.PreferenceActivity, android.app.Activity] */
     public void onRequestPermissionsResult(int i, @NonNull String[] strArr, @NonNull int[] iArr) {
-        CameraPreferenceActivity.super.onRequestPermissionsResult(i, strArr, iArr);
+        super.onRequestPermissionsResult(i, strArr, iArr);
         String str = TAG;
         Log.d(str, "onRequestPermissionsResult: requestCode = " + i);
         if (i == PermissionManager.getCameraLocationPermissionRequestCode() && !PermissionManager.checkCameraLocationPermissions()) {
@@ -821,7 +807,7 @@ public class CameraPreferenceActivity extends BasePreferenceActivity {
 
     /* access modifiers changed from: protected */
     public void onRestart() {
-        CameraPreferenceActivity.super.onRestart();
+        super.onRestart();
         if (this.mGoToActivity) {
             updateWaterMark(this.mPreferences, (ValuePreference) this.mWatermark);
             updatePhotoAssistanceTips(this.mPreferences, (ValuePreference) this.mPhotoAssistanceTips);
@@ -833,10 +819,9 @@ public class CameraPreferenceActivity extends BasePreferenceActivity {
         }
     }
 
-    /* JADX WARNING: type inference failed for: r2v0, types: [android.content.Context, com.android.camera.CameraPreferenceActivity, miui.preference.PreferenceActivity] */
     /* access modifiers changed from: protected */
     public void onResume() {
-        CameraPreferenceActivity.super.onResume();
+        super.onResume();
         updateQRCodeEntry();
         if (Util.isLabOptionsVisible()) {
             Toast.makeText(this, R.string.camera_facedetection_sub_option_hint, 1).show();

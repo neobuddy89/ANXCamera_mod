@@ -72,7 +72,7 @@ public class PhotoAssistanceTipsActivity extends BasePreferenceActivity {
 
     /* access modifiers changed from: protected */
     public void onRestart() {
-        PhotoAssistanceTipsActivity.super.onRestart();
+        super.onRestart();
         updatePreferences(this.mPreferenceGroup, this.mPreferences);
     }
 

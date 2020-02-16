@@ -94,7 +94,6 @@ public class WatermarkActivity extends BasePreferenceActivity implements TextWat
         return SensitiveFilter.getInstance().getSensitiveWord((String) charSequence);
     }
 
-    /* JADX WARNING: type inference failed for: r2v0, types: [android.content.Context, miui.preference.PreferenceActivity, com.android.camera.WatermarkActivity] */
     private boolean checkContentlength(CharSequence charSequence) {
         StringBuilder sb = new StringBuilder(32);
         sb.append(charSequence);
@@ -120,7 +119,6 @@ public class WatermarkActivity extends BasePreferenceActivity implements TextWat
         }
     }
 
-    /* JADX WARNING: type inference failed for: r3v0, types: [android.content.Context, miui.preference.PreferenceActivity, com.android.camera.WatermarkActivity] */
     /* access modifiers changed from: private */
     public void doInMainThread(Message message) {
         if (message.what == 2) {
@@ -226,7 +224,6 @@ public class WatermarkActivity extends BasePreferenceActivity implements TextWat
         }
     }
 
-    /* JADX WARNING: type inference failed for: r5v0, types: [android.content.Context, miui.preference.PreferenceActivity, com.android.camera.WatermarkActivity, android.text.TextWatcher] */
     private void showDialog() {
         AlertDialog alertDialog = this.mAlertDialog;
         if (alertDialog == null) {
@@ -372,7 +369,7 @@ public class WatermarkActivity extends BasePreferenceActivity implements TextWat
             editText.removeTextChangedListener(this);
             this.mEtUserDefineWords.setTransformationMethod((TransformationMethod) null);
         }
-        WatermarkActivity.super.onDestroy();
+        super.onDestroy();
         release();
     }
 
@@ -423,7 +420,7 @@ public class WatermarkActivity extends BasePreferenceActivity implements TextWat
 
     /* access modifiers changed from: protected */
     public void onRestart() {
-        WatermarkActivity.super.onRestart();
+        super.onRestart();
         updateEntries();
         updatePreferences(this.mPreferenceGroup, this.mPreferences);
     }
