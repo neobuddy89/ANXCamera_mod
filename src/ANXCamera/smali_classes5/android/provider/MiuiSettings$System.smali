@@ -800,29 +800,29 @@
 
     sput-object v0, Landroid/provider/MiuiSettings$System;->POWER_MODE_VALUES:[Ljava/lang/String;
 
-    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
+    # invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
-    move-result-object v0
+    # move-result-object v0
 
-    const v1, 0x11050002
+    # const v1, 0x11050002
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
+    # invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
-    move-result v0
+    # move-result v0
 
-    sput v0, Landroid/provider/MiuiSettings$System;->CALL_BREATHING_LIGHT_COLOR_DEFAULT:I
+    # sput v0, Landroid/provider/MiuiSettings$System;->CALL_BREATHING_LIGHT_COLOR_DEFAULT:I
 
-    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
+    # invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
-    move-result-object v0
+    # move-result-object v0
 
-    const v1, 0x110a001b
+    # const v1, 0x110a001b
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
+    # invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
-    move-result v0
+    # move-result v0
 
-    sput v0, Landroid/provider/MiuiSettings$System;->CALL_BREATHING_LIGHT_FREQ_DEFAULT:I
+    # sput v0, Landroid/provider/MiuiSettings$System;->CALL_BREATHING_LIGHT_FREQ_DEFAULT:I
 
     nop
 

@@ -1566,7 +1566,7 @@ public class MiuiSettings {
                     Bundle extras = cursor.getExtras();
                     if (extras != null && !extras.isEmpty()) {
                         ArrayList parcelableArrayList = cursor.getExtras().getParcelableArrayList(PRODUCT_DATA);
-                        IOUtils.closeQuietly(cursor);
+                        IOUtils.closeQuietly((Closeable) cursor);
                         return parcelableArrayList;
                     }
                 }
@@ -1576,7 +1576,7 @@ public class MiuiSettings {
                 IOUtils.closeQuietly((Closeable) null);
                 throw th;
             }
-            IOUtils.closeQuietly(cursor);
+            IOUtils.closeQuietly((Closeable) cursor);
             return null;
         }
 
@@ -1600,7 +1600,7 @@ public class MiuiSettings {
                         Bundle extras = cursor.getExtras();
                         if (extras != null && !extras.isEmpty()) {
                             CloudData cloudData = (CloudData) cursor.getExtras().getParcelable(PRODUCT_DATA);
-                            IOUtils.closeQuietly(cursor);
+                            IOUtils.closeQuietly((Closeable) cursor);
                             return cloudData;
                         }
                     }
@@ -1610,7 +1610,7 @@ public class MiuiSettings {
                     IOUtils.closeQuietly((Closeable) null);
                     throw th;
                 }
-                IOUtils.closeQuietly(cursor);
+                IOUtils.closeQuietly((Closeable) cursor);
                 return null;
             } else {
                 throw new NullPointerException("Want cache, but key or propertyName is null");
@@ -1727,9 +1727,9 @@ public class MiuiSettings {
         public static final String BREATHING_LIGHT_FREQ = "breathing_light_freq";
         public static final String CALENDAR_ALERT = "calendar_alert";
         public static final String CALL_BREATHING_LIGHT_COLOR = "call_breathing_light_color";
-        public static final int CALL_BREATHING_LIGHT_COLOR_DEFAULT = Resources.getSystem().getColor(285540354);
+        public static final int CALL_BREATHING_LIGHT_COLOR_DEFAULT = 0;
         public static final String CALL_BREATHING_LIGHT_FREQ = "call_breathing_light_freq";
-        public static final int CALL_BREATHING_LIGHT_FREQ_DEFAULT = Resources.getSystem().getInteger(285868059);
+        public static final int CALL_BREATHING_LIGHT_FREQ_DEFAULT = 0;
         public static final String CAMERA_KEY_PREFERRED_ACTION_APP_COMPONENT = "camera_key_preferred_action_app_component";
         public static final String CAMERA_KEY_PREFERRED_ACTION_SHORTCUT_ID = "camera_key_preferred_action_shortcut_id";
         public static final int CAMERA_KEY_PREFERRED_ACTION_SHORTCUT_ID_CALL = 3;
@@ -2139,7 +2139,7 @@ public class MiuiSettings {
             PUBLIC_SETTINGS.add("livetalk_dial_range");
             PUBLIC_SETTINGS.add("livetalk_available_status");
             PUBLIC_SETTINGS.add("livetalk_remain_minutes");
-            PUBLIC_SETTINGS.add("lock_wallpaper_provider_authority");
+            PUBLIC_SETTINGS.add(SystemSettings.System.LOCK_WALLPAPER_PROVIDER_AUTHORITY);
             Set<String> set = PUBLIC_SETTINGS;
             set.add("clock_changed_time_" + "1x2");
             Set<String> set2 = PUBLIC_SETTINGS;

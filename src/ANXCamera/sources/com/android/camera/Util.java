@@ -1982,7 +1982,7 @@ public final class Util {
         try {
             FileInputStream fileInputStream = new FileInputStream(str);
             try {
-                bArr = IOUtils.toByteArray(fileInputStream);
+                bArr = IOUtils.toByteArray((InputStream) fileInputStream);
                 try {
                     $closeResource((Throwable) null, fileInputStream);
                 } catch (IOException e2) {
