@@ -432,7 +432,6 @@ public class a extends DataItemBase implements c {
 
     public boolean Sc() {
         if (Util.isGlobalVersion()) {
-            return false;
         }
         return getBoolean(c.Vr, false);
     }

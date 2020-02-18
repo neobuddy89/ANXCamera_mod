@@ -14,7 +14,7 @@
 
 .field public static final MIMOJI_DIR:Ljava/lang/String;
 
-.field public static final MIMOJI_PREFIX:Ljava/lang/String; = "vendor/camera/mimoji/"
+.field public static final MIMOJI_PREFIX:Ljava/lang/String; = "system/etc/ANXCamera/mimoji/"
 
 .field public static final MODEL_PATH:Ljava/lang/String;
 

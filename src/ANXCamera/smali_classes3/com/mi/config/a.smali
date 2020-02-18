@@ -1832,7 +1832,7 @@
 
     if-eqz v0, :cond_0
 
-    return v1
+    # return v1
 
     :cond_0
     const-string v0, "c_0x00_s_l_s"

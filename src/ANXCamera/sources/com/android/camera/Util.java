@@ -2173,11 +2173,11 @@ public final class Util {
     }
 
     public static Typeface getLanTineGBTypeface(Context context) {
-        return getTypefaceFromFile(context, "vendor/camera/fonts/MI+LanTing_GB+Outside+YS_V2.3_20160322.ttf");
+        return getTypefaceFromFile(context, "system/etc/ANXCamera/fonts/MI+LanTing_GB+Outside+YS_V2.3_20160322.ttf");
     }
 
     public static Typeface getMFYueYuanTypeface(Context context) {
-        return getTypefaceFromFile(context, "vendor/camera/fonts/MFYueYuan-Regular.ttf");
+        return getTypefaceFromFile(context, "system/etc/ANXCamera/fonts/MFYueYuan-Regular.ttf");
     }
 
     public static Method getMethod(Class<?>[] clsArr, String str, String str2) {

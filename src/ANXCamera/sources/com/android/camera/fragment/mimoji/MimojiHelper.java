@@ -19,7 +19,7 @@ public class MimojiHelper {
     public static final String CUSTOM_DIR = (ROOT_DIR + "custom/");
     public static final String DATA_DIR = (MIMOJI_DIR + "data/");
     public static final String MIMOJI_DIR = (ROOT_DIR + "mimoji/");
-    public static final String MIMOJI_PREFIX = "vendor/camera/mimoji/";
+    public static final String MIMOJI_PREFIX = "system/etc/ANXCamera/mimoji/";
     public static final String MODEL_PATH = (MIMOJI_DIR + "model/");
     private static final int ORIENTATION_HYSTERESIS = 5;
     public static final String ROOT_DIR = (Environment.getExternalStorageDirectory().getPath() + "/MIUI/Camera/");
