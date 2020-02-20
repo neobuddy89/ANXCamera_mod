@@ -108,7 +108,7 @@ e ajustar preferências automaticamente"</string>
     <string name="camcorder_tip_8k_max_video_duration">Pode gravar até 6 minutos em 8K</string>
     <string name="camera_disabled">A câmara foi desativada</string>
     <string name="camera_error_title">Erro da câmara</string>
-    <string name="camera_label">Câmara</string>
+    <string name="camera_label">ANXCâmara</string>
     <string name="camera_liveshot_off_tip">Capturas dinâmicas desligadas</string>
     <string name="camera_liveshot_on_tip">Capturas dinâmicas</string>
     <string name="camera_mode_options">Modos</string>

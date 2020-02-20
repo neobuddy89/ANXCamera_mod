@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">8K တွင် ၆ မိနစ်အထိ ရိုက်ကူးနိုင်သည်</string>
     <string name="camera_disabled">ကင်မရာအား ပိတ်ထားသည်</string>
     <string name="camera_error_title">ကင်မရာ အမှား</string>
-    <string name="camera_label">ကင်မရာ</string>
+    <string name="camera_label">ANXကင်မရာ</string>
     <string name="camera_liveshot_off_tip">လှုပ်လှုပ်ရှားရှား ဓာတ်ပုံအား ပိတ်ထားသည်</string>
     <string name="camera_liveshot_on_tip">လှုပ်လှုပ်ရှားရှား ဓာတ်ပုံ</string>
     <string name="camera_mode_options">မုဒ်များ</string>

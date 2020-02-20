@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">អ្នកអាចថតបានរហូតដល់ 6 នាទីក្នុងទម្រង់ 8K</string>
     <string name="camera_disabled">ម៉ាស៊ីនថតត្រូវបានបិទ</string>
     <string name="camera_error_title">កំហុសកាមេរ៉ា</string>
-    <string name="camera_label">កាមេរ៉ា</string>
+    <string name="camera_label">ANXកាមេរ៉ា</string>
     <string name="camera_liveshot_off_tip">បានបិទការថតរូបដែលផ្លាស់ទី</string>
     <string name="camera_liveshot_on_tip">ថតរូបដែលផ្លាស់ទី</string>
     <string name="camera_mode_options">ម៉ូដ</string>

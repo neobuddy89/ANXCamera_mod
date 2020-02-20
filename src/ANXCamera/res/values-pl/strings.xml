@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">Możesz nagrać do 6 minut w 8K</string>
     <string name="camera_disabled">Aparat został zablokowany</string>
     <string name="camera_error_title">Błąd aparatu</string>
-    <string name="camera_label">Aparat</string>
+    <string name="camera_label">ANXAparat</string>
     <string name="camera_liveshot_off_tip">Wyłączono dynamiczne ujęcia</string>
     <string name="camera_liveshot_on_tip">Dynamiczne ujęcia</string>
     <string name="camera_mode_options">Tryby</string>

@@ -108,7 +108,7 @@ ja kohandage eelistusi automaatselt"</string>
     <string name="camcorder_tip_8k_max_video_duration">8K-ga saate salvestada kuni 6 minutit</string>
     <string name="camera_disabled">Kaamera on keelatud</string>
     <string name="camera_error_title">Kaamera viga</string>
-    <string name="camera_label">Kaamera</string>
+    <string name="camera_label">ANXKaamera</string>
     <string name="camera_liveshot_off_tip">Dünaamilised kaadrid välja lülitatud</string>
     <string name="camera_liveshot_on_tip">Dünaamilised kaadrid</string>
     <string name="camera_mode_options">Režiimid</string>

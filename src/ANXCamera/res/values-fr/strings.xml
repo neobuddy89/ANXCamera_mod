@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">"Vous pouvez enregistrer jusqu'à 6 minutes en 8K"</string>
     <string name="camera_disabled">"L'appareil photo a été désactivé"</string>
     <string name="camera_error_title">"Erreur de l'appareil photo"</string>
-    <string name="camera_label">App. photo</string>
+    <string name="camera_label">ANXApp. photo</string>
     <string name="camera_liveshot_off_tip">Clichés dynamiques désactivés</string>
     <string name="camera_liveshot_on_tip">Clichés dynamiques</string>
     <string name="camera_mode_options">Modes</string>

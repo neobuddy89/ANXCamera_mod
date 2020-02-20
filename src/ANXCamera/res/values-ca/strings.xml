@@ -108,7 +108,7 @@ i ajusta les preferències automàticament"</string>
     <string name="camcorder_tip_8k_max_video_duration">Pots gravar fins a 6 minuts en 8K</string>
     <string name="camera_disabled">"S'ha desactivat la càmera"</string>
     <string name="camera_error_title">Error de la càmera</string>
-    <string name="camera_label">Càmera</string>
+    <string name="camera_label">ANXCàmera</string>
     <string name="camera_liveshot_off_tip">"S'han desactivat els trets dinàmics"</string>
     <string name="camera_liveshot_on_tip">Trets dinàmics</string>
     <string name="camera_mode_options">Modes</string>

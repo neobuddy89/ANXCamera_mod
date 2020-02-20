@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">8Kは最大で6分間録画できます</string>
     <string name="camera_disabled">カメラが無効になっています</string>
     <string name="camera_error_title">カメラエラー</string>
-    <string name="camera_label">カメラ</string>
+    <string name="camera_label">ANXカメラ</string>
     <string name="camera_liveshot_off_tip">ダイナミック撮影をオフにしました</string>
     <string name="camera_liveshot_on_tip">ダイナミック撮影</string>
     <string name="camera_mode_options">モード</string>

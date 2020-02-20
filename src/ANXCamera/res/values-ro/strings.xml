@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">Puteți înregistra până la 6 minute în 8K</string>
     <string name="camera_disabled">Aparatul foto a fost dezactivat</string>
     <string name="camera_error_title">Eroare aparat de fotografiat</string>
-    <string name="camera_label">Aparat foto</string>
+    <string name="camera_label">ANXAparat foto</string>
     <string name="camera_liveshot_off_tip">Dezactivați fotografiile dinamice</string>
     <string name="camera_liveshot_on_tip">Fotografii dinamice</string>
     <string name="camera_mode_options">Moduri</string>

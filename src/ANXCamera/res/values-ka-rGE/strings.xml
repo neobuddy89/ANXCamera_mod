@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">თქვენ შეგიძლიათ ჩაწეროთ 8K ვიდეო 6 წუთის განმავლობაში</string>
     <string name="camera_disabled">კამერა გათიშულია</string>
     <string name="camera_error_title">კამერის შეცდომა</string>
-    <string name="camera_label">კამერა</string>
+    <string name="camera_label">ANXკამერა</string>
     <string name="camera_liveshot_off_tip">დინამიური გადაღების რეჟიმის გამორთვა</string>
     <string name="camera_liveshot_on_tip">დინამიური გადაღების რეჟიმი</string>
     <string name="camera_mode_options">რეჟიმები</string>

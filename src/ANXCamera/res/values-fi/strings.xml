@@ -108,7 +108,7 @@ ja säädä asetuksia automaattisesti"</string>
     <string name="camcorder_tip_8k_max_video_duration">Voit tallentaa jopa 6 minuuttia 8K-muodossa</string>
     <string name="camera_disabled">Kamera on otettu pois käytöstä</string>
     <string name="camera_error_title">Kameravirhe</string>
-    <string name="camera_label">Kamera</string>
+    <string name="camera_label">ANXKamera</string>
     <string name="camera_liveshot_off_tip">Dynaamiset otokset pois päältä</string>
     <string name="camera_liveshot_on_tip">Dynaamiset otokset</string>
     <string name="camera_mode_options">Tilat</string>

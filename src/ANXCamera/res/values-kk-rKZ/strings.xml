@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">Сіз 8K-да 6 минутқа дейін жаза аласыз</string>
     <string name="camera_disabled">Камера қауіпсіздік саясат бойынша өшірілген</string>
     <string name="camera_error_title">Камераның қатесі</string>
-    <string name="camera_label">Камера</string>
+    <string name="camera_label">ANXКамера</string>
     <string name="camera_liveshot_off_tip">Динамикалық суреттер өшірілді</string>
     <string name="camera_liveshot_on_tip">Динамикалық суреттер</string>
     <string name="camera_mode_options">Режимдер</string>

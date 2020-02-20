@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">ਤੁਸੀਂ 8K ਵਿੱਚ 6 ਮਿੰਟਾਂ ਤੱਕ ਰਿਕਾਰਡ ਕਰ ਸਕਦੇ ਹੋ</string>
     <string name="camera_disabled">ਕੈਮਰਾ ਬੰਦ ਕਰ ਦਿੱਤਾ ਗਿਆ ਹੈ।</string>
     <string name="camera_error_title">ਕੈਮਰਾ ਖ਼ਰਾਬੀ</string>
-    <string name="camera_label">ਕੈਮਰਾ</string>
+    <string name="camera_label">ANXਕੈਮਰਾ</string>
     <string name="camera_liveshot_off_tip">ਡਾਇਨੈਮਿਕ ਸ਼ੋਟ ਬੰਦ ਕਰ ਦਿੱਤੇ ਗਏ ਹਨ</string>
     <string name="camera_liveshot_on_tip">ਡਾਇਨੈਮਿਕ ਸ਼ੋਟ</string>
     <string name="camera_mode_options">ਮੋਡ</string>

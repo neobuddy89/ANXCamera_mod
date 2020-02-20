@@ -108,7 +108,7 @@ en voorkeuren automatisch aanpassen"</string>
     <string name="camcorder_tip_8k_max_video_duration">U kunt maximaal 6 minuten opnemen in 8K</string>
     <string name="camera_disabled">Camera is uitgeschakeld</string>
     <string name="camera_error_title">Camerafout</string>
-    <string name="camera_label">Camera</string>
+    <string name="camera_label">ANXCamera</string>
     <string name="camera_liveshot_off_tip">Dynamische opnames uitgeschakeld</string>
     <string name="camera_liveshot_on_tip">Dynamische opnames</string>
     <string name="camera_mode_options">Modi</string>

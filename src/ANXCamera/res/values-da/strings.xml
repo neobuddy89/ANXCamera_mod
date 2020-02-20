@@ -107,7 +107,7 @@
     <string name="camcorder_tip_8k_max_video_duration">Du kan optage op til 6 minutter på 8K</string>
     <string name="camera_disabled">Kamera er blevet deaktiveret.</string>
     <string name="camera_error_title">Kamerafejl</string>
-    <string name="camera_label">Kamera</string>
+    <string name="camera_label">ANXKamera</string>
     <string name="camera_liveshot_off_tip">Slog dynamiske optagelser fra</string>
     <string name="camera_liveshot_on_tip">Dynamiske optagelser</string>
     <string name="camera_mode_options">Tilstande</string>

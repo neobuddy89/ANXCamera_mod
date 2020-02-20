@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">می‌توانید تا ۶ دقیقه با کیفیت 8K ضبط کنید</string>
     <string name="camera_disabled">دوربین غیرفعال شده است</string>
     <string name="camera_error_title">خطای دوربین</string>
-    <string name="camera_label">دوربین</string>
+    <string name="camera_label">ANXدوربین</string>
     <string name="camera_liveshot_off_tip">تصاویر متحرک خاموش شدند</string>
     <string name="camera_liveshot_on_tip">تصاویر متحرک</string>
     <string name="camera_mode_options">حالت‌ها</string>

@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">8K에서는 최대 6분 녹화 가능</string>
     <string name="camera_disabled">카메라가 비활성화되었습니다.</string>
     <string name="camera_error_title">카메라 오류</string>
-    <string name="camera_label">카메라</string>
+    <string name="camera_label">ANX카메라</string>
     <string name="camera_liveshot_off_tip">다이나믹샷 꺼짐</string>
     <string name="camera_liveshot_on_tip">다이나믹샷</string>
     <string name="camera_mode_options">모드</string>

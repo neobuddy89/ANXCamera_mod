@@ -108,7 +108,7 @@ və tərcihləri avtomatik tənzimləyin"</string>
     <string name="camcorder_tip_8k_max_video_duration">8K-də 6 dəqiqəyə qədər qeyd edə bilərsiniz</string>
     <string name="camera_disabled">Kamera söndürüldü</string>
     <string name="camera_error_title">Kamera xətası</string>
-    <string name="camera_label">Kamera</string>
+    <string name="camera_label">ANXKamera</string>
     <string name="camera_liveshot_off_tip">Dinamik çəkilişlər söndürüldü</string>
     <string name="camera_liveshot_on_tip">Dinamik çəkilişlər</string>
     <string name="camera_mode_options">Rejimlər</string>

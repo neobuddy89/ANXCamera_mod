@@ -108,7 +108,7 @@ un automātiski pielāgojiet preferences"</string>
     <string name="camcorder_tip_8k_max_video_duration">Jūs varat ierakstīt līdz 6 minūtēm 8K</string>
     <string name="camera_disabled">Kamera tika atvienota</string>
     <string name="camera_error_title">Kameras kļūda</string>
-    <string name="camera_label">Kamera</string>
+    <string name="camera_label">ANXKamera</string>
     <string name="camera_liveshot_off_tip">Dinamiskie kadri izslēgti</string>
     <string name="camera_liveshot_on_tip">Dinamiski kadri</string>
     <string name="camera_mode_options">Režīmi</string>
