@@ -457,7 +457,7 @@ public class VideoModule extends VideoBase implements Camera2Proxy.VideoRecordSt
     }
 
     private boolean is4K60FpsEISSupported() {
-        return false;
+        return true;
     }
 
     private boolean is8KCamcorder() {

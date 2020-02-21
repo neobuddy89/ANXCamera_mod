@@ -8,10 +8,12 @@ import io.reactivex.internal.util.QueueDrainHelper;
 
 public abstract class QueueDrainObserver<T, U, V> extends QueueDrainSubscriberPad2 implements Observer<T>, ObservableQueueDrain<U, V> {
     protected final Observer<? super V> actual;
-    protected volatile boolean cancelled;
+    /* access modifiers changed from: protected */
+    public volatile boolean cancelled;
     protected volatile boolean done;
     protected Throwable error;
-    protected final SimplePlainQueue<U> queue;
+    /* access modifiers changed from: protected */
+    public final SimplePlainQueue<U> queue;
 
     public QueueDrainObserver(Observer<? super V> observer, SimplePlainQueue<U> simplePlainQueue) {
         this.actual = observer;

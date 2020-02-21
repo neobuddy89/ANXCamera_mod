@@ -141,9 +141,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lmiui/app/AlertDialog;
+    check-cast v0, Landroid/app/AlertDialog;
 
-    invoke-virtual {v0}, Lmiui/app/AlertDialog;->isChecked()Z
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->isChecked()Z
 
     move-result v0
 
@@ -186,9 +186,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lmiui/app/AlertDialog;
+    check-cast v0, Landroid/app/AlertDialog;
 
-    invoke-virtual {v0}, Lmiui/app/AlertDialog;->isChecked()Z
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->isChecked()Z
 
     move-result v0
 
@@ -413,21 +413,21 @@
 
     invoke-static {v5, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v0, Lmiui/app/AlertDialog$Builder;
+    new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-virtual {p0}, Landroid/app/DialogFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lmiui/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     const v1, 0x7f0f01bc
 
-    invoke-virtual {v0, v1}, Lmiui/app/AlertDialog$Builder;->setTitle(I)Lmiui/app/AlertDialog$Builder;
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lmiui/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lmiui/app/AlertDialog$Builder;
+    invoke-virtual {v0, p1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object p1
 
@@ -437,7 +437,7 @@
 
     invoke-direct {v1, p0}, Lcom/android/camera/fragment/b;-><init>(Lcom/android/camera/fragment/CtaNoticeFragment;)V
 
-    invoke-virtual {p1, v0, v1}, Lmiui/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Lmiui/app/AlertDialog$Builder;
+    invoke-virtual {p1, v0, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object p1
 
@@ -447,7 +447,7 @@
 
     invoke-direct {v1, p0}, Lcom/android/camera/fragment/a;-><init>(Lcom/android/camera/fragment/CtaNoticeFragment;)V
 
-    invoke-virtual {p1, v0, v1}, Lmiui/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Lmiui/app/AlertDialog$Builder;
+    invoke-virtual {p1, v0, v1}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object p1
 
@@ -465,10 +465,10 @@
 
     move-result-object p0
 
-    invoke-virtual {p1, v3, p0}, Lmiui/app/AlertDialog$Builder;->setCheckBox(ZLjava/lang/CharSequence;)Lmiui/app/AlertDialog$Builder;
+    invoke-virtual {p1, v3, p0}, Landroid/app/AlertDialog$Builder;->setCheckBox(ZLjava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     :cond_2
-    invoke-virtual {p1}, Lmiui/app/AlertDialog$Builder;->create()Lmiui/app/AlertDialog;
+    invoke-virtual {p1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object p0
 
@@ -486,9 +486,9 @@
 
     if-eqz p0, :cond_0
 
-    check-cast p0, Lmiui/app/AlertDialog;
+    check-cast p0, Landroid/app/AlertDialog;
 
-    invoke-virtual {p0}, Lmiui/app/AlertDialog;->getMessageView()Landroid/widget/TextView;
+    invoke-virtual {p0}, Landroid/app/AlertDialog;->getMessageView()Landroid/widget/TextView;
 
     move-result-object p0
 

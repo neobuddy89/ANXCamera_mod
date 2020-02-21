@@ -58,13 +58,13 @@ public class IOUtils {
     }, 2);
 
     static {
-        StringWriter stringWriter = (StringWriter) lS.acquire();
-        PrintWriter printWriter = new PrintWriter(stringWriter);
+        StringWriter acquire = lS.acquire();
+        PrintWriter printWriter = new PrintWriter(acquire);
         printWriter.println();
         printWriter.flush();
-        LINE_SEPARATOR = stringWriter.toString();
+        LINE_SEPARATOR = acquire.toString();
         printWriter.close();
-        lS.release(stringWriter);
+        lS.release(acquire);
     }
 
     protected IOUtils() throws InstantiationException {
@@ -187,50 +187,50 @@ public class IOUtils {
     }
 
     public static byte[] toByteArray(InputStream inputStream) throws IOException {
-        ByteArrayOutputStream byteArrayOutputStream = (ByteArrayOutputStream) jS.acquire();
-        copy(inputStream, (OutputStream) byteArrayOutputStream);
-        byte[] byteArray = byteArrayOutputStream.toByteArray();
-        jS.release(byteArrayOutputStream);
+        ByteArrayOutputStream acquire = jS.acquire();
+        copy(inputStream, (OutputStream) acquire);
+        byte[] byteArray = acquire.toByteArray();
+        jS.release(acquire);
         return byteArray;
     }
 
     public static byte[] toByteArray(Reader reader) throws IOException {
-        ByteArrayOutputStream byteArrayOutputStream = (ByteArrayOutputStream) jS.acquire();
-        copy(reader, (OutputStream) byteArrayOutputStream);
-        byte[] byteArray = byteArrayOutputStream.toByteArray();
-        jS.release(byteArrayOutputStream);
+        ByteArrayOutputStream acquire = jS.acquire();
+        copy(reader, (OutputStream) acquire);
+        byte[] byteArray = acquire.toByteArray();
+        jS.release(acquire);
         return byteArray;
     }
 
     public static byte[] toByteArray(Reader reader, String str) throws IOException {
-        ByteArrayOutputStream byteArrayOutputStream = (ByteArrayOutputStream) jS.acquire();
-        copy(reader, (OutputStream) byteArrayOutputStream, str);
-        byte[] byteArray = byteArrayOutputStream.toByteArray();
-        jS.release(byteArrayOutputStream);
+        ByteArrayOutputStream acquire = jS.acquire();
+        copy(reader, (OutputStream) acquire, str);
+        byte[] byteArray = acquire.toByteArray();
+        jS.release(acquire);
         return byteArray;
     }
 
     public static char[] toCharArray(InputStream inputStream) throws IOException {
-        CharArrayWriter charArrayWriter = (CharArrayWriter) kS.acquire();
-        copy(inputStream, (Writer) charArrayWriter);
-        char[] charArray = charArrayWriter.toCharArray();
-        kS.release(charArrayWriter);
+        CharArrayWriter acquire = kS.acquire();
+        copy(inputStream, (Writer) acquire);
+        char[] charArray = acquire.toCharArray();
+        kS.release(acquire);
         return charArray;
     }
 
     public static char[] toCharArray(InputStream inputStream, String str) throws IOException {
-        CharArrayWriter charArrayWriter = (CharArrayWriter) kS.acquire();
-        copy(inputStream, (Writer) charArrayWriter, str);
-        char[] charArray = charArrayWriter.toCharArray();
-        kS.release(charArrayWriter);
+        CharArrayWriter acquire = kS.acquire();
+        copy(inputStream, (Writer) acquire, str);
+        char[] charArray = acquire.toCharArray();
+        kS.release(acquire);
         return charArray;
     }
 
     public static char[] toCharArray(Reader reader) throws IOException {
-        CharArrayWriter charArrayWriter = (CharArrayWriter) kS.acquire();
-        copy(reader, (Writer) charArrayWriter);
-        char[] charArray = charArrayWriter.toCharArray();
-        kS.release(charArrayWriter);
+        CharArrayWriter acquire = kS.acquire();
+        copy(reader, (Writer) acquire);
+        char[] charArray = acquire.toCharArray();
+        kS.release(acquire);
         return charArray;
     }
 
@@ -243,27 +243,27 @@ public class IOUtils {
     }
 
     public static String toString(InputStream inputStream) throws IOException {
-        StringWriter stringWriter = (StringWriter) lS.acquire();
-        copy(inputStream, (Writer) stringWriter);
-        String stringWriter2 = stringWriter.toString();
-        lS.release(stringWriter);
-        return stringWriter2;
+        StringWriter acquire = lS.acquire();
+        copy(inputStream, (Writer) acquire);
+        String stringWriter = acquire.toString();
+        lS.release(acquire);
+        return stringWriter;
     }
 
     public static String toString(InputStream inputStream, String str) throws IOException {
-        StringWriter stringWriter = (StringWriter) lS.acquire();
-        copy(inputStream, (Writer) stringWriter, str);
-        String stringWriter2 = stringWriter.toString();
-        lS.release(stringWriter);
-        return stringWriter2;
+        StringWriter acquire = lS.acquire();
+        copy(inputStream, (Writer) acquire, str);
+        String stringWriter = acquire.toString();
+        lS.release(acquire);
+        return stringWriter;
     }
 
     public static String toString(Reader reader) throws IOException {
-        StringWriter stringWriter = (StringWriter) lS.acquire();
-        copy(reader, (Writer) stringWriter);
-        String stringWriter2 = stringWriter.toString();
-        lS.release(stringWriter);
-        return stringWriter2;
+        StringWriter acquire = lS.acquire();
+        copy(reader, (Writer) acquire);
+        String stringWriter = acquire.toString();
+        lS.release(acquire);
+        return stringWriter;
     }
 
     public static void write(OutputStream outputStream, String str) throws IOException {

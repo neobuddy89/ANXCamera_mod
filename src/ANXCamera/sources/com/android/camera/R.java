@@ -2295,6 +2295,14 @@ public final class R {
     public static final class mipmap {
         public static final int ic_launcher_camera = 2131492864;
         public static final int ic_mimoji = 2131492865;
+        /* added by JADX */
+        public static final int ic_launcher = 2131492866;
+        /* added by JADX */
+        public static final int ic_launcher_background = 2131492867;
+        /* added by JADX */
+        public static final int ic_launcher_foreground = 2131492868;
+        /* added by JADX */
+        public static final int ic_launcher_round = 2131492869;
     }
 
     public static final class plurals {

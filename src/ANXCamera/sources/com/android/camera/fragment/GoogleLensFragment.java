@@ -1,5 +1,6 @@
 package com.android.camera.fragment;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.Fragment;
@@ -7,7 +8,6 @@ import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import com.android.camera.R;
-import miui.app.AlertDialog;
 
 public class GoogleLensFragment extends DialogFragment {
     public static final String TAG = "GoogleLensFragment";

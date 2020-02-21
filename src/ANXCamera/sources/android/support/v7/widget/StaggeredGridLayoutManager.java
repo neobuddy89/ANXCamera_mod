@@ -1002,7 +1002,7 @@ public class StaggeredGridLayoutManager extends RecyclerView.LayoutManager imple
     }
 
     /* JADX WARNING: type inference failed for: r9v0 */
-    /* JADX WARNING: type inference failed for: r9v1, types: [int, boolean] */
+    /* JADX WARNING: type inference failed for: r9v1, types: [boolean, int] */
     /* JADX WARNING: type inference failed for: r9v4 */
     private int fill(RecyclerView.Recycler recycler, LayoutState layoutState, RecyclerView.State state) {
         Span span;

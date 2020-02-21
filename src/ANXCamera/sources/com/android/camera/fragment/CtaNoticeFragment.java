@@ -1,5 +1,6 @@
 package com.android.camera.fragment;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.Fragment;
@@ -16,7 +17,6 @@ import com.android.camera.data.data.global.DataItemGlobal;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.Locale;
-import miui.app.AlertDialog;
 
 public class CtaNoticeFragment extends DialogFragment {
     public static final String TAG = "CtaNoticeFragment";
@@ -88,7 +88,7 @@ public class CtaNoticeFragment extends DialogFragment {
     }
 
     public /* synthetic */ void a(DialogInterface dialogInterface, int i) {
-        CTA.setCanConnectNetwork(!this.mShowRemindButton || getDialog().isChecked(), true);
+        CTA.setCanConnectNetwork(!this.mShowRemindButton || ((AlertDialog) getDialog()).isChecked(), true);
         OnCtaNoticeClickListener onCtaNoticeClickListener = this.mClickListener;
         if (onCtaNoticeClickListener != null) {
             onCtaNoticeClickListener.onPositiveClick(dialogInterface, i);
@@ -96,7 +96,7 @@ public class CtaNoticeFragment extends DialogFragment {
     }
 
     public /* synthetic */ void b(DialogInterface dialogInterface, int i) {
-        CTA.setCanConnectNetwork(!this.mShowRemindButton || getDialog().isChecked(), false);
+        CTA.setCanConnectNetwork(!this.mShowRemindButton || ((AlertDialog) getDialog()).isChecked(), false);
         OnCtaNoticeClickListener onCtaNoticeClickListener = this.mClickListener;
         if (onCtaNoticeClickListener != null) {
             onCtaNoticeClickListener.onNegativeClick(dialogInterface, i);
@@ -138,9 +138,9 @@ public class CtaNoticeFragment extends DialogFragment {
 
     public void onStart() {
         super.onStart();
-        AlertDialog dialog = getDialog();
+        Dialog dialog = getDialog();
         if (dialog != null) {
-            dialog.getMessageView().setMovementMethod(LinkMovementMethod.getInstance());
+            ((AlertDialog) dialog).getMessageView().setMovementMethod(LinkMovementMethod.getInstance());
         }
     }
 }
