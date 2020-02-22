@@ -694,7 +694,6 @@ public class Camera extends ActivityBase implements ActivityCompat.OnRequestPerm
     }
 
     private void showDebug() {
-        ToastUtils.showToast((Context) this, "ANXCamera \non\n " + Build.ANXDEVICE);
         if (Util.isShowDebugInfo()) {
             TextView textView = this.mDebugInfoView;
             if (textView != null) {
