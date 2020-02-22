@@ -184,23 +184,36 @@
 .method private Cl()Z
     .locals 2
 
-    invoke-static {}, Lcom/mi/config/b;->hk()Z
+    # invoke-static {}, Lcom/mi/config/b;->hk()Z
 
-    move-result v0
+    # move-result v0
+
+    # const/4 v1, 0x0
+
+    # if-nez v0, :cond_1
+
+    # invoke-static {}, Lcom/mi/config/b;->ik()Z
+
+    # move-result v0
+
+    # if-eqz v0, :cond_0
+
+    # goto :goto_0
+
+    # :cond_0
+    # const-string v0, "c_16001_0x0001"
+
+    # invoke-virtual {p0, v0, v1}, Lcom/android/camera/data/data/DataItemBase;->getBoolean(Ljava/lang/String;Z)Z
+
+    # move-result p0
+
+    # return p0
+
+    # :cond_1
+    # :goto_0
+    # return v1
 
     const/4 v1, 0x0
-
-    if-nez v0, :cond_1
-
-    invoke-static {}, Lcom/mi/config/b;->ik()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
     const-string v0, "c_16001_0x0001"
 
     invoke-virtual {p0, v0, v1}, Lcom/android/camera/data/data/DataItemBase;->getBoolean(Ljava/lang/String;Z)Z
@@ -208,10 +221,6 @@
     move-result p0
 
     return p0
-
-    :cond_1
-    :goto_0
-    return v1
 .end method
 
 .method private Dl()Z

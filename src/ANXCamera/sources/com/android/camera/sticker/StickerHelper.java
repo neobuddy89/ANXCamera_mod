@@ -13,7 +13,7 @@ public class StickerHelper {
     private static final String STICKER_RES_PATH = "sticker_res";
     private static StickerHelper mInstance;
     public static String[] sStickLocal = {"rabbiteating.zip", "bunny.zip"};
-    private static boolean sStickerEnable = false;
+    private static boolean sStickerEnable = true;
     private Context mContext;
 
     private StickerHelper() {

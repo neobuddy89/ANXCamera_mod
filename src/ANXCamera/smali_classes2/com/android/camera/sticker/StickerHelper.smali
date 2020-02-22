@@ -35,7 +35,7 @@
 
     sput-object v0, Lcom/android/camera/sticker/StickerHelper;->sStickLocal:[Ljava/lang/String;
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     sput-boolean v0, Lcom/android/camera/sticker/StickerHelper;->sStickerEnable:Z
 

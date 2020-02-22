@@ -65,9 +65,6 @@ public class a extends DataItemBase implements c {
     }
 
     private boolean Cl() {
-        if (b.hk() || b.ik()) {
-            return false;
-        }
         return getBoolean(c.mu, false);
     }
 

@@ -123,5 +123,6 @@
     "o_0x06_is_support_peaking_mf": true,
     "o_0x12_magic_mirror": false,
     "o_0x13_age_detection": false,
-    "o_0x18_support_camera_quick_snap": true
+    "o_0x18_support_camera_quick_snap": true,
+  "c_19039_0x0004": "2:9248x6944"
 }
