@@ -148,7 +148,7 @@
 .method private inRegion(II)Z
     .locals 2
 
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v1, "hercules"
 

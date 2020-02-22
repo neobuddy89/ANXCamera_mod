@@ -41,7 +41,7 @@
 
     iget-object v2, p0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
-    sget-object v4, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v4, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v3, "Android"
 

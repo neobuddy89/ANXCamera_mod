@@ -199,7 +199,7 @@
 
     move-result v0
 
-    sget-object v1, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v1, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string/jumbo v2, "lithium"
 

@@ -1784,7 +1784,7 @@
     return v1
 
     :cond_0
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v2, "lcsh92_wet_jb9"
 
@@ -1910,7 +1910,7 @@
     return v1
 
     :cond_0
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v2, "persist.radio.modem"
 

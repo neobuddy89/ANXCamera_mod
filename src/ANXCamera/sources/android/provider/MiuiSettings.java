@@ -2678,7 +2678,7 @@ public class MiuiSettings {
 
         public static int getCallWaitingTone(Context context) {
             int i = Settings.System.getInt(context.getContentResolver(), CALL_WAITING_TONE, 0);
-            if (!"lithium".equals(miui.os.Build.DEVICE) || i != 2) {
+            if (!"lithium".equals(miui.os.Build.ANXDEVICE) || i != 2) {
                 return i;
             }
             return 0;

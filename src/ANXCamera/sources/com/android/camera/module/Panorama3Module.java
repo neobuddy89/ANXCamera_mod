@@ -20,7 +20,6 @@ import android.location.Location;
 import android.media.Image;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -102,6 +101,7 @@ import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import miui.os.Build;
 
 @TargetApi(21)
 public class Panorama3Module extends BaseModule implements ModeProtocol.CameraAction, Camera2Proxy.CameraPreviewCallback {
@@ -1275,7 +1275,7 @@ public class Panorama3Module extends BaseModule implements ModeProtocol.CameraAc
         Log.d(str2, "lensType " + cameraLensType);
         if (ComponentManuallyDualLens.LENS_WIDE.equals(cameraLensType)) {
             this.mInitParam.goal_angle = (double) this.mGoalAngle;
-        } else if (Build.DEVICE.equals("cepheus")) {
+        } else if (Build.ANXDEVICE.equals("cepheus")) {
             this.mInitParam.goal_angle = 152.18d;
         } else {
             this.mInitParam.goal_angle = ((double) this.mGoalAngle) * 0.6265d;

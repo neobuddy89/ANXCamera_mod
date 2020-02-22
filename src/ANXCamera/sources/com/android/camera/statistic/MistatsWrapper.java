@@ -22,7 +22,7 @@ import miui.os.Build;
 public class MistatsWrapper {
     private static final String APP_ID = "2882303761517373386";
     private static final String APP_KEY = "5641737344386";
-    private static final String CHANNEL = SystemProperties.get("ro.product.mod_device", Build.DEVICE);
+    private static final String CHANNEL = SystemProperties.get("ro.product.mod_device", Build.ANXDEVICE);
     private static final String TAG = "MistatsWrapper";
     private static boolean sDumpStatEvent;
     private static boolean sIsAnonymous;

@@ -19,6 +19,7 @@ import android.os.Process;
 import android.os.RemoteException;
 import android.provider.MiuiSettings;
 import android.provider.Settings;
+import android.support.v4.os.EnvironmentCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.view.Display;
@@ -736,7 +737,7 @@ public class e {
         if ("dsds".equals(b("persist.radio.multisim.config"))) {
             return true;
         }
-        String str = Build.DEVICE;
+        String str = miui.os.Build.ANXDEVICE;
         return "lcsh92_wet_jb9".equals(str) || "lcsh92_wet_tdd".equals(str) || "HM2013022".equals(str) || "HM2013023".equals(str) || "armani".equals(str) || "HM2014011".equals(str) || "HM2014012".equals(str);
     }
 
@@ -756,7 +757,7 @@ public class e {
         if (Build.VERSION.SDK_INT >= 21) {
             return false;
         }
-        String str = Build.DEVICE;
+        String str = miui.os.Build.ANXDEVICE;
         String b2 = b("persist.radio.modem");
         if ("HM2014812".equals(str) || "HM2014821".equals(str)) {
             return true;
@@ -981,7 +982,7 @@ public class e {
                 k.b(f473a, "querySerial failed ex: " + e2.getMessage());
             }
         }
-        if (TextUtils.isEmpty(str) || "unknown".equals(str)) {
+        if (TextUtils.isEmpty(str) || EnvironmentCompat.MEDIA_UNKNOWN.equals(str)) {
             return "";
         }
         r = str;

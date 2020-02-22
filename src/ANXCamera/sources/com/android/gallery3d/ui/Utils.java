@@ -182,7 +182,7 @@ public class Utils {
     public static String getUserAgent(Context context) {
         try {
             PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
-            return String.format("%s/%s; %s/%s/%s/%s; %s/%s/%s", new Object[]{packageInfo.packageName, packageInfo.versionName, Build.BRAND, Build.DEVICE, Build.MODEL, Build.ID, Build.VERSION.SDK, Build.VERSION.RELEASE, Build.VERSION.INCREMENTAL});
+            return String.format("%s/%s; %s/%s/%s/%s; %s/%s/%s", new Object[]{packageInfo.packageName, packageInfo.versionName, Build.BRAND, miui.os.Build.ANXDEVICE, Build.MODEL, Build.ID, Build.VERSION.SDK, Build.VERSION.RELEASE, Build.VERSION.INCREMENTAL});
         } catch (PackageManager.NameNotFoundException unused) {
             throw new IllegalStateException("getPackageInfo failed");
         }

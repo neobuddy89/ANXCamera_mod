@@ -3235,7 +3235,7 @@
     :cond_2
     iget-object v1, p0, Lcom/ss/android/vesdk/TERecorder;->mNativeInvoker:Lcom/ss/android/medialib/FaceBeautyInvoker;
 
-    sget-object v3, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v3, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     invoke-virtual {v1, p1, v3, v0, v2}, Lcom/ss/android/medialib/FaceBeautyInvoker;->startPlay(Landroid/view/Surface;Ljava/lang/String;II)I
 

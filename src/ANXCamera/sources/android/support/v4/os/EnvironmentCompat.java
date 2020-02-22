@@ -18,10 +18,10 @@ public final class EnvironmentCompat {
             return Environment.getStorageState(file);
         }
         try {
-            return file.getCanonicalPath().startsWith(Environment.getExternalStorageDirectory().getCanonicalPath()) ? Environment.getExternalStorageState() : "unknown";
+            return file.getCanonicalPath().startsWith(Environment.getExternalStorageDirectory().getCanonicalPath()) ? Environment.getExternalStorageState() : MEDIA_UNKNOWN;
         } catch (IOException e2) {
             Log.w(TAG, "Failed to resolve canonical path: " + e2);
-            return "unknown";
+            return MEDIA_UNKNOWN;
         }
     }
 }

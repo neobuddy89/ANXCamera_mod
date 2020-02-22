@@ -1947,7 +1947,25 @@
 .end method
 
 .method private showDebug()V
-    .locals 2
+    .locals 5
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    
+    const-string v4, "ANXCamera \non\n "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget-object v2, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {p0, v2}, Lcom/android/camera/ToastUtils;->showToast(Landroid/content/Context;Ljava/lang/String;)V
 
     invoke-static {}, Lcom/android/camera/Util;->isShowDebugInfo()Z
 

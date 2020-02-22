@@ -4,6 +4,9 @@
 
 
 # static fields
+
+.field public static final ANXDEVICE:Ljava/lang/String;
+
 .field public static final HAS_CUST_PARTITION:Z
 
 .field public static final IS_ALPHA_BUILD:Z
@@ -157,9 +160,17 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 9
+    .locals 10
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    const-string v9, "ro.product.vendor.device"
+
+    invoke-static {v9}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+    
+    move-result-object v0
+
+    sput-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v1, "mione"
 
@@ -173,7 +184,7 @@
 
     if-nez v0, :cond_1
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v3, "mione_plus"
 
@@ -231,7 +242,7 @@
     :goto_3
     sput-boolean v0, Lmiui/os/Build;->IS_MI1S:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v3, "aries"
 
@@ -241,7 +252,7 @@
 
     if-nez v0, :cond_5
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v3, "taurus"
 
@@ -251,7 +262,7 @@
 
     if-nez v0, :cond_5
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v3, "taurus_td"
 
@@ -309,7 +320,7 @@
     :goto_7
     sput-boolean v0, Lmiui/os/Build;->IS_MI2A:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v3, "pisces"
 
@@ -321,7 +332,7 @@
 
     if-nez v0, :cond_9
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -353,7 +364,7 @@
     :goto_9
     sput-boolean v0, Lmiui/os/Build;->IS_MITHREE:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -381,7 +392,7 @@
     :goto_a
     sput-boolean v0, Lmiui/os/Build;->IS_MIFOUR:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v3, "virgo"
 
@@ -425,7 +436,7 @@
     :goto_c
     sput-boolean v0, Lmiui/os/Build;->IS_XIAOMI:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v3, "mocha"
 
@@ -435,7 +446,7 @@
 
     sput-boolean v0, Lmiui/os/Build;->IS_MIPAD:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v3, "flo"
 
@@ -445,7 +456,7 @@
 
     sput-boolean v0, Lmiui/os/Build;->IS_N7:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v3, "armani"
 
@@ -455,7 +466,7 @@
 
     sput-boolean v0, Lmiui/os/Build;->IS_HONGMI_TWO_A:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v3, "HM2014011"
 
@@ -465,7 +476,7 @@
 
     if-nez v0, :cond_e
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v3, "HM2014012"
 
@@ -489,7 +500,7 @@
     :goto_e
     sput-boolean v0, Lmiui/os/Build;->IS_HONGMI_TWO_S:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v3, "HM2014501"
 
@@ -499,7 +510,7 @@
 
     sput-boolean v0, Lmiui/os/Build;->IS_HONGMI_TWOS_LTE_MTK:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v3, "HM2013022"
 
@@ -509,7 +520,7 @@
 
     if-nez v0, :cond_10
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v4, "HM2013023"
 
@@ -541,7 +552,7 @@
     :goto_10
     sput-boolean v0, Lmiui/os/Build;->IS_HONGMI_TWO:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v4, "lcsh92_wet_jb9"
 
@@ -551,7 +562,7 @@
 
     if-nez v0, :cond_12
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v4, "lcsh92_wet_tdd"
 
@@ -575,7 +586,7 @@
     :goto_12
     sput-boolean v0, Lmiui/os/Build;->IS_HONGMI_THREE:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v4, "dior"
 
@@ -639,7 +650,7 @@
     :goto_14
     sput-boolean v0, Lmiui/os/Build;->IS_HONGMI_THREE_LTE_CU:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v4, "HM2014811"
 
@@ -649,7 +660,7 @@
 
     sput-boolean v0, Lmiui/os/Build;->IS_HONGMI_TWOX_CU:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v4, "HM2014812"
 
@@ -659,7 +670,7 @@
 
     if-nez v0, :cond_16
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v4, "HM2014821"
 
@@ -683,7 +694,7 @@
     :goto_16
     sput-boolean v0, Lmiui/os/Build;->IS_HONGMI_TWOX_CT:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v4, "HM2014813"
 
@@ -693,7 +704,7 @@
 
     if-nez v0, :cond_18
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v4, "HM2014112"
 
@@ -717,7 +728,7 @@
     :goto_18
     sput-boolean v0, Lmiui/os/Build;->IS_HONGMI_TWOX_CM:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v4, "HM2014818"
 
@@ -727,7 +738,7 @@
 
     sput-boolean v0, Lmiui/os/Build;->IS_HONGMI_TWOX_IN:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v4, "HM2014817"
 
@@ -737,7 +748,7 @@
 
     sput-boolean v0, Lmiui/os/Build;->IS_HONGMI_TWOX_SA:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v4, "HM2014819"
 
@@ -785,7 +796,7 @@
     :goto_1a
     sput-boolean v0, Lmiui/os/Build;->IS_HONGMI_TWOX:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v4, "lte26007"
 
@@ -795,7 +806,7 @@
 
     sput-boolean v0, Lmiui/os/Build;->IS_HONGMI_TWOX_LC:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v4, "gucci"
 
@@ -1207,7 +1218,7 @@
     :goto_2a
     sput-boolean v0, Lmiui/os/Build;->IS_MIFOUR_LTE_SEASA:Z
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

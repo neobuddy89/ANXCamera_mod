@@ -724,7 +724,7 @@
 
     const/4 p0, 0x3
 
-    sget-object v1, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v1, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     aput-object v1, v0, p0
 

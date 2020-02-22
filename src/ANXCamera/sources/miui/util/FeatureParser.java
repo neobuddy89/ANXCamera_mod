@@ -48,7 +48,7 @@ public class FeatureParser {
     }
 
     public static String getDeviceFeaturesDir() {
-        return (("umi".equals(Build.DEVICE) || "cmi".equals(Build.DEVICE) || "lmi".equals(Build.DEVICE) || "picasso".equals(Build.DEVICE) || "picassoin".equals(Build.DEVICE)) && Build.VERSION.SDK_INT >= 29) ? VENDOR_DIR : SYSTEM_DIR;
+        return (("umi".equals(Build.ANXDEVICE) || "cmi".equals(Build.ANXDEVICE) || "lmi".equals(Build.ANXDEVICE) || "picasso".equals(Build.ANXDEVICE) || "picassoin".equals(Build.ANXDEVICE)) && Build.VERSION.SDK_INT >= 29) ? VENDOR_DIR : SYSTEM_DIR;
     }
 
     public static Float getFloat(String str, float f2) {
@@ -138,8 +138,8 @@ public class FeatureParser {
         FileInputStream fileInputStream = null;
         String str = null;
         try {
-            if (!"cancro".equals(miui.os.Build.DEVICE)) {
-                str = miui.os.Build.DEVICE + ".xml";
+            if (!"cancro".equals(miui.os.Build.ANXDEVICE)) {
+                str = miui.os.Build.ANXDEVICE + ".xml";
             } else if (miui.os.Build.MODEL.startsWith("MI 3")) {
                 str = "cancro_MI3.xml";
             } else if (miui.os.Build.MODEL.startsWith("MI 4")) {

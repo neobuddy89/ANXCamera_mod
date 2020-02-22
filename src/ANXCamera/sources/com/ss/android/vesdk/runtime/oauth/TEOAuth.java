@@ -1,10 +1,10 @@
 package com.ss.android.vesdk.runtime.oauth;
 
 import android.content.Context;
-import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import com.ss.android.ttve.nativePort.TENativeLibsLoader;
+import miui.os.Build;
 
 public class TEOAuth {
     static {
@@ -12,7 +12,7 @@ public class TEOAuth {
     }
 
     public static TEOAuthResult activate(Context context, @NonNull String str, @NonNull String str2, @Nullable String str3) {
-        return TEOAuthResult.from(nativeActivate(str, str2, context.getApplicationInfo().packageName, "Android", Build.DEVICE, str3));
+        return TEOAuthResult.from(nativeActivate(str, str2, context.getApplicationInfo().packageName, "Android", Build.ANXDEVICE, str3));
     }
 
     public static String getActivationCode() {

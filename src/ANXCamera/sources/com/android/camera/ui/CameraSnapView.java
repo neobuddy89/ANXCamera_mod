@@ -9,7 +9,6 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MiuiSettings;
@@ -24,6 +23,7 @@ import com.android.camera.log.Log;
 import com.android.camera.ui.drawable.snap.CameraSnapAnimateDrawable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import miui.os.Build;
 
 public class CameraSnapView extends View {
     private static final int LONG_PRESS_TIME = 800;
@@ -102,7 +102,7 @@ public class CameraSnapView extends View {
     }
 
     private boolean inRegion(int i, int i2) {
-        if ("hercules".equals(Build.DEVICE)) {
+        if ("hercules".equals(Build.ANXDEVICE)) {
             i2 -= 96;
         }
         Rect rect = new Rect();

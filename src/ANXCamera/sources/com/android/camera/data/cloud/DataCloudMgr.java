@@ -2,7 +2,6 @@ package com.android.camera.data.cloud;
 
 import android.app.Application;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.provider.MiuiSettings;
 import android.text.TextUtils;
 import android.util.SparseArray;
@@ -21,6 +20,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.schedulers.Schedulers;
 import java.io.File;
+import miui.os.Build;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -61,7 +61,7 @@ public class DataCloudMgr implements DataCloud.CloudManager {
         getCloudSensitiveWords();
         String cloudDataString = getCloudDataString(CLOUD_DATA_MODULE_NAME, "version", (String) null);
         String cloudDataCommonVersion = getCloudDataCommonVersion();
-        String cloudDataString2 = getCloudDataString("camera_settings_v3_" + Build.DEVICE, "version", (String) null);
+        String cloudDataString2 = getCloudDataString("camera_settings_v3_" + Build.ANXDEVICE, "version", (String) null);
         String cloudDataDeviceVersion = getCloudDataDeviceVersion();
         this.mDataCloudGlobal.setReady(false);
         DataCloudFeature().setReady(false);
@@ -79,7 +79,7 @@ public class DataCloudMgr implements DataCloud.CloudManager {
             setCloudDataDeviceVersion(cloudDataString2);
             StringBuilder sb = new StringBuilder();
             sb.append("camera_settings_v3_");
-            sb.append(Build.DEVICE);
+            sb.append(Build.ANXDEVICE);
             updateSettingsFromCloudData(sb.toString());
         }
         this.mDataCloudGlobal.setReady(true);

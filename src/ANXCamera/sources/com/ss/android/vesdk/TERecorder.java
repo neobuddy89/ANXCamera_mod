@@ -992,7 +992,7 @@ public class TERecorder implements a, AudioDataProcessThread.OnProcessDataListen
         if (this.mCameraSettings != null && this.mCameraSettings.getFacingID() == VECameraSettings.CAMERA_FACING_ID.FACING_FRONT) {
             i = 1;
         }
-        startPlay = this.mNativeInvoker.startPlay(surface, Build.DEVICE, rotation, i);
+        startPlay = this.mNativeInvoker.startPlay(surface, miui.os.Build.ANXDEVICE, rotation, i);
         if (startPlay != 0) {
             VELogUtil.e(TAG, "NativeInvoker startPlay() failed. ret = " + startPlay);
         } else {

@@ -46,6 +46,7 @@ import android.provider.MiuiSettings;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FrameMetricsAggregator;
+import android.support.v4.os.EnvironmentCompat;
 import android.support.v4.view.ViewCompat;
 import android.telephony.TelephonyManager;
 import android.text.SpannableStringBuilder;
@@ -223,10 +224,10 @@ public final class Util {
     private static final String TAG = "CameraUtil";
     private static final String TEMP_SUFFIX = ".tmp";
     public static final String WATERMARK_DEFAULT_FILE_NAME = "dualcamera.png";
-    public static final String WATERMARK_FRONT_FILE_NAME = (android.os.Build.DEVICE + "_front_watermark.png");
+    public static final String WATERMARK_FRONT_FILE_NAME = (Build.ANXDEVICE + "_front_watermark.png");
     public static String WATERMARK_SPACE = null;
     public static final String WATERMARK_STORAGE_DIRECTORY = "/mnt/vendor/persist/camera/";
-    public static final String WATERMARK_ULTRA_PIXEL_FILE_NAME = (android.os.Build.DEVICE + "_" + WATERMARK_SPACE + "_ultra_pixel_custom_watermark.png");
+    public static final String WATERMARK_ULTRA_PIXEL_FILE_NAME = (Build.ANXDEVICE + "_" + WATERMARK_SPACE + "_ultra_pixel_custom_watermark.png");
     private static final String ZOOM_ANIMATION_PROPERTY = "camera_zoom_animation";
     public static boolean isDarkMode = false;
     public static boolean isLongRatioScreen = false;
@@ -1088,7 +1089,7 @@ public final class Util {
             return "null";
         }
         int intValue = num.intValue();
-        return intValue != 0 ? intValue != 1 ? intValue != 2 ? intValue != 3 ? "unknown" : "locked" : "converged" : "searching" : "inactive";
+        return intValue != 0 ? intValue != 1 ? intValue != 2 ? intValue != 3 ? EnvironmentCompat.MEDIA_UNKNOWN : "locked" : "converged" : "searching" : "inactive";
     }
 
     public static String convertOutputFormatToFileExt(int i) {
@@ -1552,7 +1553,7 @@ public final class Util {
         options.inPurgeable = true;
         options.inPremultiplied = true;
         if (DataRepository.dataItemFeature().xc()) {
-            Bitmap loadAppCameraWatermark = loadAppCameraWatermark(CameraAppImpl.getAndroidContext(), options, android.os.Build.DEVICE);
+            Bitmap loadAppCameraWatermark = loadAppCameraWatermark(CameraAppImpl.getAndroidContext(), options, miui.os.Build.ANXDEVICE);
             if (loadAppCameraWatermark == null) {
                 loadAppCameraWatermark = loadAppCameraWatermark(CameraAppImpl.getAndroidContext(), options, "common");
             }
@@ -1571,7 +1572,7 @@ public final class Util {
             bitmap = CustomTextWaterMark.newInstance(loadAppCameraWatermark, (float) i, (float) CameraAppImpl.getAndroidContext().getResources().getInteger(R.integer.custom_watermark_starty), string, CameraSettings.getResourceFloat(R.dimen.custom_watermark_letter_spacing, 0.0f)).drawToBitmap();
         } else {
             Context androidContext = CameraAppImpl.getAndroidContext();
-            bitmap = loadAppCameraWatermark(androidContext, options, android.os.Build.DEVICE + CameraSettings.getString(R.string.device_ultra_pixel_app_watermark_family_name_suffix));
+            bitmap = loadAppCameraWatermark(androidContext, options, miui.os.Build.ANXDEVICE + CameraSettings.getString(R.string.device_ultra_pixel_app_watermark_family_name_suffix));
         }
         saveCustomWatermark2File(bitmap, true, false);
         return bitmap;
@@ -1586,7 +1587,7 @@ public final class Util {
         if (!DataRepository.dataItemFeature().ke() && !DataRepository.dataItemFeature().Be()) {
             return null;
         }
-        Bitmap loadAppCameraWatermark = loadAppCameraWatermark(CameraAppImpl.getAndroidContext(), options, android.os.Build.DEVICE);
+        Bitmap loadAppCameraWatermark = loadAppCameraWatermark(CameraAppImpl.getAndroidContext(), options, miui.os.Build.ANXDEVICE);
         if (loadAppCameraWatermark == null) {
             loadAppCameraWatermark = loadAppCameraWatermark(CameraAppImpl.getAndroidContext(), options, "common");
         }
@@ -1899,7 +1900,7 @@ public final class Util {
         if (!DataRepository.dataItemFeature().xc() || !DataRepository.dataItemFeature().Be()) {
             return WATERMARK_DEFAULT_FILE_NAME;
         }
-        return android.os.Build.DEVICE + "_" + WATERMARK_SPACE + "_custom_watermark.png";
+        return miui.os.Build.ANXDEVICE + "_" + WATERMARK_SPACE + "_custom_watermark.png";
     }
 
     public static int getDialogTopMargin(int i) {
@@ -2094,7 +2095,7 @@ public final class Util {
         Bitmap decodeByteArray;
         Throwable th;
         int[] iArr2 = iArr;
-        String str = android.os.Build.DEVICE + "_front" + b.Sj() + ".webp";
+        String str = miui.os.Build.ANXDEVICE + "_front" + b.Sj() + ".webp";
         try {
             InputStream open = CameraAppImpl.getAndroidContext().getAssets().open("watermarks/" + str);
             try {
@@ -2966,7 +2967,7 @@ public final class Util {
         updateDeviceConfig(context);
         sIsnotchScreenHidden = isNotchScreenHidden(context);
         isNotchDevice = SystemProperties.getInt("ro.miui.notch", 0) == 1 && !sIsnotchScreenHidden;
-        if (android.os.Build.DEVICE.equalsIgnoreCase("laurel_sprout") || android.os.Build.DEVICE.equalsIgnoreCase("picasso")) {
+        if (miui.os.Build.ANXDEVICE.equalsIgnoreCase("laurel_sprout") || miui.os.Build.ANXDEVICE.equalsIgnoreCase("picasso")) {
             isNotchDevice = !sIsnotchScreenHidden;
         }
         sIsFullScreenNavBarHidden = isFullScreenNavBarHidden(context);
@@ -2986,7 +2987,7 @@ public final class Util {
             sWindowWidth = i2;
             sWindowHeight = i;
         }
-        if ("hercules".equals(android.os.Build.DEVICE)) {
+        if ("hercules".equals(miui.os.Build.ANXDEVICE)) {
             sWindowHeight = 2244;
         }
         sCenterDisplayHeight = (int) (((float) (sWindowWidth * 16)) / 9.0f);
@@ -3249,7 +3250,7 @@ public final class Util {
 
     private static boolean isLongRatioScreen(int i, int i2) {
         float f2 = ((float) i2) / ((float) i);
-        return ((double) Math.abs(f2 - 2.1666667f)) < 0.02d || ((double) Math.abs(f2 - 2.1111112f)) < 0.02d || ((double) Math.abs(f2 - 2.2222223f)) < 0.02d || "hercules".equals(android.os.Build.DEVICE) || "draco".equals(android.os.Build.DEVICE);
+        return ((double) Math.abs(f2 - 2.1666667f)) < 0.02d || ((double) Math.abs(f2 - 2.1111112f)) < 0.02d || ((double) Math.abs(f2 - 2.2222223f)) < 0.02d || "hercules".equals(miui.os.Build.ANXDEVICE) || "draco".equals(miui.os.Build.ANXDEVICE);
     }
 
     public static boolean isMemoryRich(Context context) {
@@ -3437,7 +3438,7 @@ public final class Util {
         options.inScaled = false;
         options.inPurgeable = true;
         options.inPremultiplied = true;
-        return loadAppCameraWatermark(context, options, android.os.Build.DEVICE + "_960fps");
+        return loadAppCameraWatermark(context, options, miui.os.Build.ANXDEVICE + "_960fps");
     }
 
     /* JADX WARNING: Code restructure failed: missing block: B:24:0x0063, code lost:
@@ -3483,7 +3484,7 @@ public final class Util {
         options.inScaled = false;
         options.inPurgeable = true;
         options.inPremultiplied = true;
-        return loadAppCameraWatermark(context, options, android.os.Build.DEVICE + "_front");
+        return loadAppCameraWatermark(context, options, miui.os.Build.ANXDEVICE + "_front");
     }
 
     private static double log2(double d2) {

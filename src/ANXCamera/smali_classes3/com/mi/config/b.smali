@@ -140,7 +140,7 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    sget-object v0, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
+    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
 
     sput-object v0, Lcom/mi/config/b;->xm:Ljava/lang/String;
 
