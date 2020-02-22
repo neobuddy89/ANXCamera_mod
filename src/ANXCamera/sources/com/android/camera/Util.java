@@ -46,7 +46,6 @@ import android.provider.MiuiSettings;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FrameMetricsAggregator;
-import android.support.v4.os.EnvironmentCompat;
 import android.support.v4.view.ViewCompat;
 import android.telephony.TelephonyManager;
 import android.text.SpannableStringBuilder;
@@ -1089,7 +1088,7 @@ public final class Util {
             return "null";
         }
         int intValue = num.intValue();
-        return intValue != 0 ? intValue != 1 ? intValue != 2 ? intValue != 3 ? EnvironmentCompat.MEDIA_UNKNOWN : "locked" : "converged" : "searching" : "inactive";
+        return intValue != 0 ? intValue != 1 ? intValue != 2 ? intValue != 3 ? "unknown" : "locked" : "converged" : "searching" : "inactive";
     }
 
     public static String convertOutputFormatToFileExt(int i) {

@@ -19,7 +19,6 @@ import android.os.Process;
 import android.os.RemoteException;
 import android.provider.MiuiSettings;
 import android.provider.Settings;
-import android.support.v4.os.EnvironmentCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.view.Display;
@@ -982,7 +981,7 @@ public class e {
                 k.b(f473a, "querySerial failed ex: " + e2.getMessage());
             }
         }
-        if (TextUtils.isEmpty(str) || EnvironmentCompat.MEDIA_UNKNOWN.equals(str)) {
+        if (TextUtils.isEmpty(str) || "unknown".equals(str)) {
             return "";
         }
         r = str;

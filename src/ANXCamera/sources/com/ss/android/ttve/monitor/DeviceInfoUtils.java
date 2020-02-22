@@ -9,7 +9,6 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
 import android.support.v4.media.session.PlaybackStateCompat;
-import android.support.v4.os.EnvironmentCompat;
 import android.support.v4.util.ArraySet;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -115,9 +114,9 @@ public class DeviceInfoUtils {
     public static String getProperty(String str) {
         try {
             Class<?> cls = Class.forName("android.os.SystemProperties");
-            return (String) cls.getMethod("get", new Class[]{String.class, String.class}).invoke(cls, new Object[]{str, EnvironmentCompat.MEDIA_UNKNOWN});
+            return (String) cls.getMethod("get", new Class[]{String.class, String.class}).invoke(cls, new Object[]{str, "unknown"});
         } catch (Exception unused) {
-            return EnvironmentCompat.MEDIA_UNKNOWN;
+            return "unknown";
         }
     }
 
