@@ -278,7 +278,7 @@ public class a extends DataItemBase implements c {
     }
 
     public boolean Hd() {
-        return Tb() && Oc();
+        return Oc();
     }
 
     public boolean He() {
