@@ -1,5 +1,6 @@
 package com.android.camera.data.cloud;
 
+import aeonax.Build;
 import android.app.Application;
 import android.content.SharedPreferences;
 import android.provider.MiuiSettings;
@@ -20,7 +21,6 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.schedulers.Schedulers;
 import java.io.File;
-import miui.os.Build;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

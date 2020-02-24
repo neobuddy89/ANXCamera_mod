@@ -65,7 +65,7 @@ public class b {
     public static final boolean un = Build.IS_CM_CUSTOMIZATION;
     private static final int vn = 1;
     private static final int wn = 4;
-    public static final String xm = Build.ANXDEVICE;
+    public static final String xm = aeonax.Build.ANXDEVICE;
     private static final int xn = 8;
     public static final String ym = "qcom";
     private static ArrayList<String> yn = null;

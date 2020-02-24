@@ -1,5 +1,6 @@
 package miui.util;
 
+import aeonax.Build;
 import android.content.res.Resources;
 import android.os.Build;
 import android.util.Log;
@@ -8,7 +9,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import miui.os.Build;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -138,8 +138,8 @@ public class FeatureParser {
         FileInputStream fileInputStream = null;
         String str = null;
         try {
-            if (!"cancro".equals(miui.os.Build.ANXDEVICE)) {
-                str = miui.os.Build.ANXDEVICE + ".xml";
+            if (!"cancro".equals(aeonax.Build.ANXDEVICE)) {
+                str = aeonax.Build.ANXDEVICE + ".xml";
             } else if (miui.os.Build.MODEL.startsWith("MI 3")) {
                 str = "cancro_MI3.xml";
             } else if (miui.os.Build.MODEL.startsWith("MI 4")) {

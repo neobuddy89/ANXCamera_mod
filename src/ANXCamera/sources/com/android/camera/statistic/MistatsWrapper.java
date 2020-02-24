@@ -1,5 +1,6 @@
 package com.android.camera.statistic;
 
+import aeonax.Build;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.SystemProperties;
@@ -17,7 +18,6 @@ import java.lang.annotation.RetentionPolicy;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import miui.os.Build;
 
 public class MistatsWrapper {
     private static final String APP_ID = "2882303761517373386";
@@ -198,7 +198,7 @@ public class MistatsWrapper {
         sIsEnabled = resources.getBoolean(R.bool.pref_camera_statistic_default);
         if (sIsEnabled) {
             sIsCounterEventEnabled = resources.getBoolean(R.bool.pref_camera_statistic_counter_event_default);
-            sIsAnonymous = Build.IS_INTERNATIONAL_BUILD;
+            sIsAnonymous = miui.os.Build.IS_INTERNATIONAL_BUILD;
             MiStat.initialize(context, APP_ID, APP_KEY, false, CHANNEL);
             MiStat.setExceptionCatcherEnabled(!sIsAnonymous);
             if (sDumpStatEvent) {

@@ -737,7 +737,7 @@ public class e {
         if ("dsds".equals(b("persist.radio.multisim.config"))) {
             return true;
         }
-        String str = miui.os.Build.ANXDEVICE;
+        String str = aeonax.Build.ANXDEVICE;
         return "lcsh92_wet_jb9".equals(str) || "lcsh92_wet_tdd".equals(str) || "HM2013022".equals(str) || "HM2013023".equals(str) || "armani".equals(str) || "HM2014011".equals(str) || "HM2014012".equals(str);
     }
 
@@ -757,7 +757,7 @@ public class e {
         if (Build.VERSION.SDK_INT >= 21) {
             return false;
         }
-        String str = miui.os.Build.ANXDEVICE;
+        String str = aeonax.Build.ANXDEVICE;
         String b2 = b("persist.radio.modem");
         if ("HM2014812".equals(str) || "HM2014821".equals(str)) {
             return true;

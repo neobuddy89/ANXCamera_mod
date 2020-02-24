@@ -1957,7 +1957,7 @@
 
     # invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    # sget-object v2, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    # sget-object v2, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     # invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

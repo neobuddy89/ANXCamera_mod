@@ -193,7 +193,7 @@
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v11, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v11, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -343,7 +343,7 @@
 
     invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v4, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v4, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

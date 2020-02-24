@@ -366,7 +366,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v1, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -384,7 +384,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v1, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5895,7 +5895,7 @@
 
     move-result-object v3
 
-    sget-object v4, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v4, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     invoke-static {v3, v0, v4}, Lcom/android/camera/Util;->loadAppCameraWatermark(Landroid/content/Context;Landroid/graphics/BitmapFactory$Options;Ljava/lang/String;)Landroid/graphics/Bitmap;
 
@@ -6046,7 +6046,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v5, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v5, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6126,7 +6126,7 @@
 
     move-result-object v4
 
-    sget-object v5, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v5, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     invoke-static {v4, v2, v5}, Lcom/android/camera/Util;->loadAppCameraWatermark(Landroid/content/Context;Landroid/graphics/BitmapFactory$Options;Ljava/lang/String;)Landroid/graphics/Bitmap;
 
@@ -8040,7 +8040,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v1, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -8839,7 +8839,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v2, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -12750,7 +12750,7 @@
     :goto_0
     sput-boolean v1, Lcom/android/camera/Util;->isNotchDevice:Z
 
-    sget-object v1, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v1, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v3, "laurel_sprout"
 
@@ -12760,7 +12760,7 @@
 
     if-nez v1, :cond_1
 
-    sget-object v1, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v1, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v3, "picasso"
 
@@ -12846,7 +12846,7 @@
     sput v3, Lcom/android/camera/Util;->sWindowHeight:I
 
     :goto_1
-    sget-object v1, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v1, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v3, "hercules"
 
@@ -14318,7 +14318,7 @@
 
     if-ltz p0, :cond_1
 
-    sget-object p0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object p0, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string p1, "hercules"
 
@@ -14328,7 +14328,7 @@
 
     if-nez p0, :cond_1
 
-    sget-object p0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object p0, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string p1, "draco"
 
@@ -15412,7 +15412,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v2, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -15596,7 +15596,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v2, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -35,7 +35,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v1, "ro.product.mod_device"
 

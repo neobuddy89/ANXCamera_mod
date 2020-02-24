@@ -185,7 +185,7 @@
 
     sput-boolean v1, Lmiui/os/DeviceFeature;->SUPPORT_GAME_MODE:Z
 
-    sget-object v1, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v1, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string/jumbo v3, "sagit"
 
@@ -209,7 +209,7 @@
     :goto_3
     sput-boolean v1, Lmiui/os/DeviceFeature;->SUPPORT_LAB_GESTURE:Z
 
-    sget-object v1, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v1, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string/jumbo v3, "pyxis"
 
@@ -219,7 +219,7 @@
 
     if-nez v1, :cond_7
 
-    sget-object v1, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v1, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string/jumbo v3, "vela"
 
@@ -243,7 +243,7 @@
     :goto_5
     sput-boolean v1, Lmiui/os/DeviceFeature;->SUPPORT_CAMERA_ANIMATION:Z
 
-    sget-object v1, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v1, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v3, "cepheus"
 
@@ -276,7 +276,7 @@
 .method public static final hasFlipSupport()Z
     .locals 2
 
-    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v1, "draco"
 
@@ -290,7 +290,7 @@
 .method public static final hasMirihiSupport()Z
     .locals 2
 
-    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string/jumbo v1, "perseus"
 
@@ -300,7 +300,7 @@
 
     if-nez v0, :cond_1
 
-    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v1, "andromeda"
 
@@ -328,7 +328,7 @@
 .method public static final hasPopupCameraSupport()Z
     .locals 2
 
-    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string/jumbo v1, "raphael"
 
@@ -338,7 +338,7 @@
 
     if-nez v0, :cond_1
 
-    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v1, "davinci"
 
@@ -348,7 +348,7 @@
 
     if-nez v0, :cond_1
 
-    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string/jumbo v1, "raphaelin"
 
@@ -358,7 +358,7 @@
 
     if-nez v0, :cond_1
 
-    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v1, "davinciin"
 

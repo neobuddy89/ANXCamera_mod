@@ -186,7 +186,7 @@
 .method public static getDeviceFeaturesDir()Ljava/lang/String;
     .locals 3
 
-    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v1, "umi"
 
@@ -198,7 +198,7 @@
 
     if-nez v0, :cond_0
 
-    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v2, "cmi"
 
@@ -208,7 +208,7 @@
 
     if-nez v0, :cond_0
 
-    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v2, "lmi"
 
@@ -218,7 +218,7 @@
 
     if-nez v0, :cond_0
 
-    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v2, "picasso"
 
@@ -228,7 +228,7 @@
 
     if-nez v0, :cond_0
 
-    sget-object v0, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     const-string v2, "picassoin"
 
@@ -491,7 +491,7 @@
     :try_start_0
     const-string v4, "cancro"
 
-    sget-object v5, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v5, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -537,7 +537,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v5, Lmiui/os/Build;->ANXDEVICE:Ljava/lang/String;
+    sget-object v5, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

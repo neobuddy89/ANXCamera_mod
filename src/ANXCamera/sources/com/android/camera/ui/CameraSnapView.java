@@ -1,5 +1,6 @@
 package com.android.camera.ui;
 
+import aeonax.Build;
 import android.animation.Animator;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -23,7 +24,6 @@ import com.android.camera.log.Log;
 import com.android.camera.ui.drawable.snap.CameraSnapAnimateDrawable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-import miui.os.Build;
 
 public class CameraSnapView extends View {
     private static final int LONG_PRESS_TIME = 800;

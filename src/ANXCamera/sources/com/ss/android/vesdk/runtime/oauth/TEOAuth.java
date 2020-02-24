@@ -1,10 +1,10 @@
 package com.ss.android.vesdk.runtime.oauth;
 
+import aeonax.Build;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import com.ss.android.ttve.nativePort.TENativeLibsLoader;
-import miui.os.Build;
 
 public class TEOAuth {
     static {
