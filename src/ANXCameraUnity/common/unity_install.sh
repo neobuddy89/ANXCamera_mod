@@ -1,7 +1,28 @@
 
 ROPRODEV=$(getprop ro.product.device)
 
-ui_print "Your device is recognized as ->$ROPRODEV<-" 
+
+no_notch_devices="
+raphael
+polaris
+perseus
+whyred
+gemini
+sirius
+davinci"
+
+case $no_notch_devices in
+    *${ROPRODEV}*)
+        echo "ro.miui.notch=0" > $TMPDIR/common/system.prop
+        notch="hasn't"
+        ;;
+    *)
+        echo "ro.miui.notch=1" > $TMPDIR/common/system.prop
+        notch="has"
+        ;;
+esac
+
+ui_print "Your device is recognized as ->$ROPRODEV<- and it $notch got notch"
 ui_print "It should be one of below:" 
 ui_print "  beryllium"
 ui_print "  violet"
