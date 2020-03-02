@@ -195,7 +195,7 @@ and optimizes your photos based on this info"</string>
     <string name="custom_watermark_words_save_success">Saved successfully</string>
     <string name="device_india_watermark_default_text" />
     <string name="device_ultra_pixel_app_watermark_family_name_suffix">_64m</string>
-    <string name="device_ultra_pixel_watermark_default_text">64MP ANXCamera</string>
+    <string name="device_ultra_pixel_watermark_default_text">BigPixel ANXCamera</string>
     <string name="device_watermark_default_text">With ANXCamera</string>
     <string name="dialog_google_lens_option_0">Google Lens (Recommended)</string>
     <string name="dialog_ok">OK</string>
@@ -435,7 +435,7 @@ look larger on photos"</string>
     <string name="module_name_manual">Manual</string>
     <string name="module_name_new_slow_motion">Slow motion</string>
     <string name="module_name_panorama">Panorama</string>
-    <string name="module_name_pixel">64M</string>
+    <string name="module_name_pixel">UltraPixel</string>
     <string name="module_name_portrait">Portrait</string>
     <string name="module_name_professional">Pro</string>
     <string name="module_name_square">Square</string>
@@ -1111,7 +1111,7 @@ Keep the subject sharp while blurring the background."</string>
     <string name="ultra_pixel_32mp">32MP</string>
     <string name="ultra_pixel_48mp">48MP</string>
     <string name="ultra_pixel_64mp">64MP</string>
-    <string name="ultra_pixel_device">64MP</string>
+    <string name="ultra_pixel_device">BigPixel</string>
     <string name="ultra_pixel_photography_close_tip">%s Ultra HD is off</string>
     <string name="ultra_pixel_photography_open_tip">%s Ultra HD is on</string>
     <string name="ultra_pixel_portrait_hint">Low light portrait</string>
