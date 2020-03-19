@@ -406,7 +406,7 @@
 .end method
 
 .method private d(Ljava/lang/String;Z)V
-    .locals 8
+    .locals 11#8
 
     invoke-static {}, Lcom/android/camera/CameraAppImpl;->getAndroidContext()Landroid/content/Context;
 
@@ -481,12 +481,30 @@
     new-instance v6, Ljava/io/BufferedReader;
 
     new-instance v7, Ljava/io/InputStreamReader;
+    
+    new-instance v8, Ljava/io/FileInputStream;
+    
+    new-instance v9, Ljava/lang/StringBuilder;
+    
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    
+    const-string v10, "/system/etc/ANXCamera/cheatcodes/"
+    
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
+    move-result-object v9
 
-    move-result-object v0
+    invoke-direct {v8, v9}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v7, v0}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
+    invoke-direct {v7, v8}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
+
+    # invoke-virtual {v0, v1}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
+
+    # move-result-object v0
+
+    # invoke-direct {v7, v0}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
 
     invoke-direct {v6, v7}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
     :try_end_0

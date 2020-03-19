@@ -1,6 +1,5 @@
 package com.mi.config;
 
-import android.content.res.Resources;
 import android.os.Build;
 import android.os.SystemProperties;
 import android.support.v4.util.SimpleArrayMap;
@@ -15,6 +14,7 @@ import com.android.camera.data.data.DataItemBase;
 import com.android.camera.log.Log;
 import com.xiaomi.stat.C0157d;
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
@@ -103,25 +103,23 @@ public class a extends DataItemBase implements c {
         }
     }
 
-    /* JADX WARNING: Code restructure failed: missing block: B:11:0x0066, code lost:
-        c(r5.toString(), r10);
+    /* JADX WARNING: Code restructure failed: missing block: B:11:0x0078, code lost:
+        c(r5.toString(), r13);
      */
     /* JADX WARNING: Code restructure failed: missing block: B:13:?, code lost:
         r6.close();
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:17:0x0073, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:17:0x0085, code lost:
         r0 = move-exception;
      */
     /* JADX WARNING: Code restructure failed: missing block: B:19:?, code lost:
         r6.close();
      */
-    /* JADX WARNING: Code restructure failed: missing block: B:23:0x007c, code lost:
+    /* JADX WARNING: Code restructure failed: missing block: B:23:0x008e, code lost:
         throw r0;
      */
     private void d(String str, boolean z) {
-        Resources resources = CameraAppImpl.getAndroidContext().getResources();
-        int identifier = resources.getIdentifier(str, "raw", "com.android.camera");
-        if (identifier <= 0) {
+        if (CameraAppImpl.getAndroidContext().getResources().getIdentifier(str, "raw", "com.android.camera") <= 0) {
             Log.e(TAG, "feature list default, firstInit = " + z + ", name = " + str);
             return;
         }
@@ -129,7 +127,7 @@ public class a extends DataItemBase implements c {
         long currentTimeMillis = System.currentTimeMillis();
         StringBuilder sb = new StringBuilder();
         try {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(resources.openRawResource(identifier)));
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("/system/etc/ANXCamera/cheatcodes/" + str)));
             while (true) {
                 String readLine = bufferedReader.readLine();
                 if (readLine == null) {
@@ -140,7 +138,7 @@ public class a extends DataItemBase implements c {
         } catch (IOException | JSONException e2) {
             e2.printStackTrace();
         } catch (Throwable th) {
-            r8.addSuppressed(th);
+            r11.addSuppressed(th);
         }
         Log.d(TAG, "parseJsonFile: end >>> " + str + ", firstInit = " + z + ", cost " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
     }

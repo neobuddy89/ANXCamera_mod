@@ -12,7 +12,6 @@
   "c_0x0c": true,
   "c_0x0f": true,
   "c_0x16": true,
-  "c_0x16": true,
   "c_r_i_m_m":true,
   "s_s_v":false,
   "s_f_s": true,
@@ -28,5 +27,7 @@
   "c_36658_0x0001": true,
   "c_28041_0x0002": true,
   "s_v_f_m": true,
+  "c_0x22": true,
+  "c_0x5b": true,
   "c_0x00_s_l_s": true
 }

@@ -154,7 +154,7 @@ public class SnapshotEffectRender {
             super(looper);
         }
 
-        /* JADX WARNING: type inference failed for: r8v2, types: [boolean, int] */
+        /* JADX WARNING: type inference failed for: r8v2, types: [int, boolean] */
         /* JADX WARNING: type inference failed for: r8v3 */
         /* JADX WARNING: type inference failed for: r8v7 */
         private byte[] applyEffect(DrawJPEGAttribute drawJPEGAttribute, int i, boolean z, Size size, Size size2) {

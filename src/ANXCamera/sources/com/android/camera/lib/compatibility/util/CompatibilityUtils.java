@@ -73,7 +73,7 @@ public class CompatibilityUtils {
     }
 
     public static StreamConfigurationMap createStreamConfigMap(List<StreamConfiguration> list, CameraCharacteristics cameraCharacteristics) {
-        return V29Utils.createStreamConfigMap(list, cameraCharacteristics);
+        return Build.VERSION.SDK_INT >= 29 ? V29Utils.createStreamConfigMap(list, cameraCharacteristics) : V28Utils.createStreamConfigMap(list, cameraCharacteristics);
     }
 
     public static Bitmap createVideoThumbnailBitmap(String str, FileDescriptor fileDescriptor, int i, int i2) {
@@ -101,7 +101,10 @@ public class CompatibilityUtils {
     }
 
     public static int getScaledMinimumScalingSpan(Context context) {
-        return V29Utils.getScaledMinimumScalingSpan(context);
+        if (Build.VERSION.SDK_INT >= 29) {
+            return V29Utils.getScaledMinimumScalingSpan(context);
+        }
+        return 0;
     }
 
     public static String getSdcardPath(Context context) {
