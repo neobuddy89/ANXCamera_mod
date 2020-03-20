@@ -39,7 +39,7 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Recompile
       run: |
-        java  -jar ./ANXMiuiPortTools/apktool.jar b -p ../ANXMiuiPortTools/MiuiFrameworks -o ./ANXCamera/out/ANXCamera-Unsigned.apk ./ANXCamera/src/ANXCamera
+        java  -jar ./ANXMiuiPortTools/apktool.jar b -p ./ANXMiuiPortTools/MiuiFrameworks -o ./ANXCamera/out/ANXCamera-Unsigned.apk ./ANXCamera/src/ANXCamera
 
     - name: Sign
       run: |
