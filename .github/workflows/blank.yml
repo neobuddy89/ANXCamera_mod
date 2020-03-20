@@ -43,12 +43,12 @@ jobs:
 
     - name: Sign
       run: |
-        chmod +x ./ANXMiuiPortTools/apksigner
-        chmod +x ./ANXMiuiPortTools/zipalign
+        chmod +x ./ANXMiuiPortTools/lapksigner
+        chmod +x ./ANXMiuiPortTools/lzipalign
         cp ./ANXCamera/out/ANXCamera-Unsigned.apk ./ANXCamera/out/ANXCamera-to-be-signed.apk
-        ./ANXMiuiPortTools/apksigner sign --key ./ANXMiuiPortTools/testkey.pk8 --cert ./ANXMiuiPortTools/testkey.x509.pem ./ANXCamera/out/ANXCamera-to-be-signed.apk
+        ./ANXMiuiPortTools/lapksigner sign --key ./ANXMiuiPortTools/testkey.pk8 --cert ./ANXMiuiPortTools/testkey.x509.pem ./ANXCamera/out/ANXCamera-to-be-signed.apk
         mv ./ANXCamera/out/ANXCamera-to-be-signed.apk ./ANXCamera/out/ANXCamera-Unaligned.apk
-        ./ANXMiuiPortTools/zipalign -f 4  ./ANXCamera/out/ANXCamera-Unaligned.apk ./ANXCamera/out/ANXCamera.apk
+        ./ANXMiuiPortTools/lzipalign -f 4  ./ANXCamera/out/ANXCamera-Unaligned.apk ./ANXCamera/out/ANXCamera.apk
         
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
