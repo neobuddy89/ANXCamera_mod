@@ -33,11 +33,27 @@ jobs:
         path: ANXMiuiPortTools
 
     # Runs a single command using the runners shell
-    - name: Run a one-line script
+    - name: Firing Up the ANXBuildStation!
       run: echo Firing Up the ANXBuildStation!
 
     # Runs a set of commands using the runners shell
     - name: Recompile
       run: |
-        java  -jar ./ANXMiuiPortTools/apktool.jar b -p ../ANXMiuiPortTools/MiuiFrameworks -o ./ANXCamera/out/ANXCamera-Unsigned.apk ./ANXCamera/srx/ANXCamera
+        java  -jar ./ANXMiuiPortTools/apktool.jar b -p ../ANXMiuiPortTools/MiuiFrameworks -o ./ANXCamera/out/ANXCamera-Unsigned.apk ./ANXCamera/src/ANXCamera
 
+    - name: Sign
+      run: |
+        chmod +x ./ANXMiuiPortTools/apksigner
+        chmod +x ./ANXMiuiPortTools/zipalign
+        cp ./ANXCamera/out/ANXCamera-Unsigned.apk ./ANXCamera/out/ANXCamera-to-be-signed.apk
+        ./ANXMiuiPortTools/apksigner sign --key ./ANXMiuiPortTools/testkey.pk8 --cert ./ANXMiuiPortTools/testkey.x509.pem ./ANXCamera/out/ANXCamera-to-be-signed.apk
+        mv ./ANXCamera/out/ANXCamera-to-be-signed.apk ./ANXCamera/out/ANXCamera-Unaligned.apk
+        ./ANXMiuiPortTools/zipalign -f 4  ./ANXCamera/out/ANXCamera-Unaligned.apk ./ANXCamera/out/ANXCamera.apk
+        
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        # Artifact name
+        name: ANXCamera APK
+        # Directory containing files to upload
+        path: ./ANXCamera/out/ANXCamera.apk
