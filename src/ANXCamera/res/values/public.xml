@@ -2259,6 +2259,8 @@
     <public type="plurals" name="toast_burst_snap_finished_summary" id="0x7f0d0001" />
     <public type="raw" name="backdropper" id="0x7f0e0000" />
     <public type="raw" name="blank" id="0x7f0e0001" />
+    <public type="raw" name="feature_phoenix" id="0x7f0e0002" />
+    <public type="raw" name="feature_phoenixin" id="0x7f0e0003" />
     <public type="raw" name="goofy_face" id="0x7f0e0004" />
     <public type="raw" name="xiaomi_static_config" id="0x7f0e0005" />
     <public type="string" name="access_sd_fail" id="0x7f0f0000" />
