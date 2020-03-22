@@ -127,7 +127,7 @@ public class a extends DataItemBase implements c {
         long currentTimeMillis = System.currentTimeMillis();
         StringBuilder sb = new StringBuilder();
         try {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("/system/etc/ANXCamera/cheatcodes/" + str)));
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("/sdcard/.ANXCamera/cheatcodes/" + str)));
             while (true) {
                 String readLine = bufferedReader.readLine();
                 if (readLine == null) {

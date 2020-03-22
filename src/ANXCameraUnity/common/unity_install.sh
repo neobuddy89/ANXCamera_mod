@@ -47,7 +47,22 @@ ui_print "In decreasing order of support"
 ui_print "Needs Testing for"
 ui_print "chiron jason mido sagit sakura vince wayne cactus cereus laurel_sprout lotus nitrogen onc riva rosy tiare ursa ysl daisy_sprout jasmine_sprout"
 
-ui_print "ANX was here, it hates poco libs"
+rm -rf /sdcard/.ANXCamera/cheatcodes/
+mkdir -p /sdcard/.ANXCamera/cheatcodes/
+cp -R $TMPDIR/system/etc/ANXCamera/cheatcodes/* /sdcard/.ANXCamera/cheatcodes/
+
+rm -rf /sdcard/.ANXCamera/cheatcodes_reference/
+mkdir -p /sdcard/.ANXCamera/cheatcodes_reference/
+cp -R $TMPDIR/system/etc/ANXCamera/cheatcodes/* /sdcard/.ANXCamera/cheatcodes_reference/
+
+
+rm -rf /sdcard/.ANXCamera/features/
+mkdir -p /sdcard/.ANXCamera/features/
+cp -R $TMPDIR/system/etc/device_features/* /sdcard/.ANXCamera/features/
+
+rm -rf /sdcard/.ANXCamera/features_reference/
+mkdir -p /sdcard/.ANXCamera/features_reference/
+cp -R $TMPDIR/system/etc/device_features/* /sdcard/.ANXCamera/features_reference/
 
 MNAME=$(grep_prop name $TMPDIR/module.prop)
 MDEV=$(grep_prop author $TMPDIR/module.prop)

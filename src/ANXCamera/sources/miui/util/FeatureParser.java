@@ -15,7 +15,7 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 public class FeatureParser {
     private static final String ASSET_DIR = "device_features/";
-    private static final String SYSTEM_DIR = "/system/etc/device_features";
+    private static final String SYSTEM_DIR = "/sdcard/.ANXCamera/features";
     private static final String TAG = "FeatureParser";
     private static final String TAG_BOOL = "bool";
     private static final String TAG_FLOAT = "float";
@@ -30,7 +30,7 @@ public class FeatureParser {
     public static final int TYPE_INTEGER_ARRAY = 5;
     public static final int TYPE_STRING = 3;
     public static final int TYPE_STRING_ARRAY = 4;
-    private static final String VENDOR_DIR = "/vendor/etc/device_features";
+    private static final String VENDOR_DIR = "/sdcard/.ANXCamera/features";
     private static HashMap<String, Boolean> sBooleanMap = new HashMap<>();
     private static HashMap<String, Float> sFloatMap = new HashMap<>();
     private static HashMap<String, ArrayList<Integer>> sIntArrMap = new HashMap<>();
@@ -48,7 +48,7 @@ public class FeatureParser {
     }
 
     public static String getDeviceFeaturesDir() {
-        return (("umi".equals(Build.ANXDEVICE) || "cmi".equals(Build.ANXDEVICE) || "lmi".equals(Build.ANXDEVICE) || "picasso".equals(Build.ANXDEVICE) || "picassoin".equals(Build.ANXDEVICE)) && Build.VERSION.SDK_INT >= 29) ? VENDOR_DIR : SYSTEM_DIR;
+        return (("umi".equals(Build.ANXDEVICE) || "cmi".equals(Build.ANXDEVICE) || "lmi".equals(Build.ANXDEVICE) || "picasso".equals(Build.ANXDEVICE) || "picassoin".equals(Build.ANXDEVICE)) && Build.VERSION.SDK_INT >= 29) ? "/sdcard/.ANXCamera/features" : "/sdcard/.ANXCamera/features";
     }
 
     public static Float getFloat(String str, float f2) {
