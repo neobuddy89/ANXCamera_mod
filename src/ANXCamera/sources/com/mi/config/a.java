@@ -324,7 +324,7 @@ public class a extends DataItemBase implements c {
     }
 
     public boolean Lc() {
-        return getBoolean(c.jt, false) && !miui.os.Build.IS_INTERNATIONAL_BUILD;
+        return getBoolean(c.jt, false);
     }
 
     public int Ld() {
