@@ -50,6 +50,10 @@ jobs:
         ./ANXMiuiPortTools/lapksigner sign --key ./ANXMiuiPortTools/testkey.pk8 --cert ./ANXMiuiPortTools/testkey.x509.pem ./ANXCamera/out/ANXCamera-to-be-signed.apk
         mv ./ANXCamera/out/ANXCamera-to-be-signed.apk ./ANXCamera/out/ANXCamera-Unaligned.apk
         ./ANXMiuiPortTools/lzipalign -f 4  ./ANXCamera/out/ANXCamera-Unaligned.apk ./ANXCamera/out/ANXCamera.apk
+        mkdir ./ANXCamera/src/ANXCameraUnity/system/priv-app/
+        mkdir ./ANXCamera/src/ANXCameraUnity/system/priv-app/ANXCamera/
+        mkdir ./ANXCamera/src/ANXCameraUnity/system/priv-app/ANXCamera/lib/
+        cp ./ANXCamera/out/ANXCamera.apk ./ANXCamera/src/ANXCameraUnity/system/priv-app/ANXCamera/ANXCamera.apk
         
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
@@ -86,12 +90,6 @@ jobs:
         file: mimoji.zip
         token: ${{ secrets.downloadToken }}
 
-    - name: Create Directories
-      run: |
-        mkdir ./ANXCamera/src/ANXCameraUnity/system/priv-app/
-        mkdir ./ANXCamera/src/ANXCameraUnity/system/priv-app/ANXCamera/
-        mkdir ./ANXCamera/src/ANXCameraUnity/system/priv-app/ANXCamera/lib/
-
     - name: Extract Libs
       uses: montudor/action-zip@v0.1.0
       with:
@@ -108,16 +106,10 @@ jobs:
       with:
         args: unzip -qq ./mimoji.zip -d ./ANXCamera/src/ANXCameraUnity/system/etc/ANXCamera/
 
-
-    - name: Pack Zip
-      uses: montudor/action-zip@v0.1.0
-      with:
-        args: zip -qq -r ./ANXCamera/out/ANXCameraUnity.zip ./ANXCamera/src/ANXCameraUnity
-
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
         # Artifact name
-        name: ANXCamera ZIP
+        name: ANXCameraUnity
         # Directory containing files to upload
-        path: ./ANXCamera/out/ANXCameraUnity.zip
+        path: ./ANXCamera/out/ANXCameraUnity
