@@ -58,3 +58,64 @@ jobs:
         name: ANXCamera APK
         # Directory containing files to upload
         path: ./ANXCamera/out/ANXCamera.apk
+        
+    - name: Download Libs
+      uses: noobly314/download-release-asset@v1
+      with:
+        owner: XEonAX
+        repo: ANXCamera
+        tag: 174.singularity
+        file: arm64.zip
+        token: ${{ secrets.downloadToken }}
+        
+    - name: Download Fonts
+      uses: noobly314/download-release-asset@v1
+      with:
+        owner: XEonAX
+        repo: ANXCamera
+        tag: 174.singularity
+        file: fonts.zip
+        token: ${{ secrets.downloadToken }}
+
+    - name: Download Mimoji
+      uses: noobly314/download-release-asset@v1
+      with:
+        owner: XEonAX
+        repo: ANXCamera
+        tag: 174.singularity
+        file: mimoji.zip
+        token: ${{ secrets.downloadToken }}
+
+    - name: Create Directories
+      run: |
+        mkdir ./ANXCamera/src/ANXCameraUnity/system/priv-app/ANXCamera/lib/
+
+    - name: Extract Libs
+      uses: montudor/action-zip@v0.1.0
+      with:
+        args: unzip -qq ./arm64.zip -d ./ANXCamera/src/ANXCameraUnity/system/priv-app/ANXCamera/lib/
+        
+    - name: Extract Fonts
+      uses: montudor/action-zip@v0.1.0
+      with:
+        args: unzip -qq ./fonts.zip -d ./ANXCamera/src/ANXCameraUnity/system/etc/ANXCamera/
+
+
+    - name: Extract Mimoji
+      uses: montudor/action-zip@v0.1.0
+      with:
+        args: unzip -qq ./mimoji.zip -d ./ANXCamera/src/ANXCameraUnity/system/etc/ANXCamera/
+
+
+    - name: Pack Zip
+      uses: montudor/action-zip@v0.1.0
+      with:
+        args: zip -qq -r ./ANXCamera/out/ANXCameraUnity.zip ./ANXCamera/src/ANXCameraUnity
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        # Artifact name
+        name: ANXCamera ZIP
+        # Directory containing files to upload
+        path: ./ANXCamera/out/ANXCameraUnity.zip
