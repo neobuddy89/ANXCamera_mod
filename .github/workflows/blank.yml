@@ -110,6 +110,6 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
         # Artifact name
-        name: ANXCameraUnity.zip
+        name: ANXCameraUnity
         # Directory containing files to upload
         path: ./ANXCamera/src/ANXCameraUnity
