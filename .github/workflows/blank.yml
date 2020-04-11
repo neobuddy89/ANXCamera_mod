@@ -88,6 +88,8 @@ jobs:
 
     - name: Create Directories
       run: |
+        mkdir ./ANXCamera/src/ANXCameraUnity/system/priv-app/
+        mkdir ./ANXCamera/src/ANXCameraUnity/system/priv-app/ANXCamera/
         mkdir ./ANXCamera/src/ANXCameraUnity/system/priv-app/ANXCamera/lib/
 
     - name: Extract Libs
