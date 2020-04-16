@@ -900,7 +900,7 @@ public class DrawerLayout extends ViewGroup {
         float f2 = this.mScrimOpacity;
         if (f2 > 0.0f && isContentView) {
             int i5 = this.mScrimColor;
-            this.mScrimPaint.setColor((i5 & ViewCompat.MEASURED_SIZE_MASK) | (((int) (((float) ((-16777216 & i5) >>> 24)) * f2)) << 24));
+            this.mScrimPaint.setColor((i5 & 16777215) | (((int) (((float) ((-16777216 & i5) >>> 24)) * f2)) << 24));
             canvas.drawRect((float) i2, 0.0f, (float) i, (float) getHeight(), this.mScrimPaint);
         } else if (this.mShadowLeftResolved != null && checkDrawerViewAbsoluteGravity(view2, 3)) {
             int intrinsicWidth = this.mShadowLeftResolved.getIntrinsicWidth();
@@ -1391,11 +1391,11 @@ public class DrawerLayout extends ViewGroup {
         }
         int i4 = savedState.lockModeStart;
         if (i4 != 3) {
-            setDrawerLockMode(i4, (int) GravityCompat.START);
+            setDrawerLockMode(i4, 8388611);
         }
         int i5 = savedState.lockModeEnd;
         if (i5 != 3) {
-            setDrawerLockMode(i5, (int) GravityCompat.END);
+            setDrawerLockMode(i5, 8388613);
         }
     }
 
@@ -1612,9 +1612,9 @@ public class DrawerLayout extends ViewGroup {
 
     public void setDrawerShadow(Drawable drawable, int i) {
         if (!SET_DRAWER_SHADOW_FROM_ELEVATION) {
-            if ((i & GravityCompat.START) == 8388611) {
+            if ((i & 8388611) == 8388611) {
                 this.mShadowStart = drawable;
-            } else if ((i & GravityCompat.END) == 8388613) {
+            } else if ((i & 8388613) == 8388613) {
                 this.mShadowEnd = drawable;
             } else if ((i & 3) == 3) {
                 this.mShadowLeft = drawable;

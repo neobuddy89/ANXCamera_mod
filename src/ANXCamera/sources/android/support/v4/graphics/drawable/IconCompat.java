@@ -34,7 +34,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.os.BuildCompat;
 import android.support.v4.util.Preconditions;
-import android.support.v4.view.ViewCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import androidx.versionedparcelable.a;
@@ -161,7 +160,7 @@ public class IconCompat extends a {
             canvas.drawCircle(f3, f3, f4, paint);
             paint.clearShadowLayer();
         }
-        paint.setColor(ViewCompat.MEASURED_STATE_MASK);
+        paint.setColor(-16777216);
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
         Matrix matrix = new Matrix();

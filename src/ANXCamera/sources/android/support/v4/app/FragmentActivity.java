@@ -17,7 +17,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RestrictTo;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.internal.view.SupportMenu;
 import android.support.v4.util.SparseArrayCompat;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -162,7 +161,7 @@ public class FragmentActivity extends SupportActivity implements ViewModelStoreO
     }
 
     static void checkForValidRequestCode(int i) {
-        if ((i & SupportMenu.CATEGORY_MASK) != 0) {
+        if ((i & -65536) != 0) {
             throw new IllegalArgumentException("Can only use lower 16 bits for requestCode");
         }
     }
@@ -273,7 +272,7 @@ public class FragmentActivity extends SupportActivity implements ViewModelStoreO
                 Log.w(TAG, "Activity result no fragment exists for who: " + str);
                 return;
             }
-            findFragmentByWho.onActivityResult(i & SupportMenu.USER_MASK, i2, intent);
+            findFragmentByWho.onActivityResult(i & 65535, i2, intent);
             return;
         }
         ActivityCompat.PermissionCompatDelegate permissionCompatDelegate = ActivityCompat.getPermissionCompatDelegate();
@@ -447,7 +446,7 @@ public class FragmentActivity extends SupportActivity implements ViewModelStoreO
 
     public void onRequestPermissionsResult(int i, @NonNull String[] strArr, @NonNull int[] iArr) {
         this.mFragments.noteStateNotSaved();
-        int i2 = (i >> 16) & SupportMenu.USER_MASK;
+        int i2 = (i >> 16) & 65535;
         if (i2 != 0) {
             int i3 = i2 - 1;
             String str = this.mPendingFragmentActivityResults.get(i3);
@@ -461,7 +460,7 @@ public class FragmentActivity extends SupportActivity implements ViewModelStoreO
                 Log.w(TAG, "Activity result no fragment exists for who: " + str);
                 return;
             }
-            findFragmentByWho.onRequestPermissionsResult(i & SupportMenu.USER_MASK, strArr, iArr);
+            findFragmentByWho.onRequestPermissionsResult(i & 65535, strArr, iArr);
         }
     }
 
@@ -557,7 +556,7 @@ public class FragmentActivity extends SupportActivity implements ViewModelStoreO
         checkForValidRequestCode(i);
         try {
             this.mRequestedPermissionsFromFragment = true;
-            ActivityCompat.requestPermissions(this, strArr, ((allocateRequestIndex(fragment) + 1) << 16) + (i & SupportMenu.USER_MASK));
+            ActivityCompat.requestPermissions(this, strArr, ((allocateRequestIndex(fragment) + 1) << 16) + (i & 65535));
             this.mRequestedPermissionsFromFragment = false;
         } catch (Throwable th) {
             this.mRequestedPermissionsFromFragment = false;
@@ -601,7 +600,7 @@ public class FragmentActivity extends SupportActivity implements ViewModelStoreO
             }
         } else {
             checkForValidRequestCode(i);
-            ActivityCompat.startActivityForResult(this, intent, ((allocateRequestIndex(fragment) + 1) << 16) + (i & SupportMenu.USER_MASK), bundle);
+            ActivityCompat.startActivityForResult(this, intent, ((allocateRequestIndex(fragment) + 1) << 16) + (i & 65535), bundle);
             this.mStartedActivityFromFragment = false;
         }
     }
@@ -631,7 +630,7 @@ public class FragmentActivity extends SupportActivity implements ViewModelStoreO
             }
         } else {
             checkForValidRequestCode(i);
-            ActivityCompat.startIntentSenderForResult(this, intentSender, ((allocateRequestIndex(fragment) + 1) << 16) + (i5 & SupportMenu.USER_MASK), intent, i2, i3, i4, bundle);
+            ActivityCompat.startIntentSenderForResult(this, intentSender, ((allocateRequestIndex(fragment) + 1) << 16) + (i5 & 65535), intent, i2, i3, i4, bundle);
             this.mStartedIntentSenderFromFragment = false;
         }
     }

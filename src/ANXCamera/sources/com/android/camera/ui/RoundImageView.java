@@ -9,7 +9,6 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.graphics.Xfermode;
-import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 import com.android.camera.R;
@@ -31,7 +30,7 @@ public class RoundImageView extends ImageView {
         super(context, attributeSet);
         this.mDrawFilter = new PaintFlagsDrawFilter(0, 3);
         this.mPaint = new Paint();
-        this.mPaint.setColor(ViewCompat.MEASURED_STATE_MASK);
+        this.mPaint.setColor(-16777216);
         this.mPaint.setAntiAlias(true);
         this.mSrcSize = getResources().getDimension(R.dimen.live_filter_item_size);
         float f2 = this.mSrcSize;
@@ -41,7 +40,7 @@ public class RoundImageView extends ImageView {
         float f3 = this.mSrcSize;
         this.mMaskBitmap = Bitmap.createBitmap((int) f3, (int) f3, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(this.mMaskBitmap);
-        new Paint().setColor(ViewCompat.MEASURED_STATE_MASK);
+        new Paint().setColor(-16777216);
         RectF rectF = this.mSrcRectF;
         float f4 = this.mRadius;
         canvas.drawRoundRect(rectF, f4, f4, this.mPaint);

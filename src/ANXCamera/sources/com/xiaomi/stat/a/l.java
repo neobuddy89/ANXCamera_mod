@@ -2,8 +2,8 @@ package com.xiaomi.stat.a;
 
 import android.content.Context;
 import android.text.TextUtils;
-import com.xiaomi.stat.C0155b;
-import com.xiaomi.stat.C0157d;
+import com.xiaomi.stat.C0159b;
+import com.xiaomi.stat.C0161d;
 import com.xiaomi.stat.H;
 import com.xiaomi.stat.HttpEvent;
 import com.xiaomi.stat.I;
@@ -130,26 +130,26 @@ public class l {
         lVar.f353c = "track";
         lVar.f355e = r.b();
         H h = new H();
-        boolean q = C0155b.q();
+        boolean q = C0159b.q();
         if (q) {
-            C0155b.e(false);
+            C0159b.e(false);
         }
-        h.putInt(C0157d.B, q ? 1 : 0);
+        h.putInt(C0161d.B, q ? 1 : 0);
         Context a2 = I.a();
-        h.putString(C0157d.C, e.b(a2));
-        h.putString(C0157d.D, e.c(a2));
-        h.putString(C0157d.E, e.e(a2));
-        h.putString(C0157d.F, e.f(a2));
-        h.putString(C0157d.G, e.h(a2));
-        h.putString(C0157d.H, e.i(a2));
+        h.putString(C0161d.C, e.b(a2));
+        h.putString(C0161d.D, e.c(a2));
+        h.putString(C0161d.E, e.e(a2));
+        h.putString(C0161d.F, e.f(a2));
+        h.putString(C0161d.G, e.h(a2));
+        h.putString(C0161d.H, e.i(a2));
         h.putString("ii", e.d());
-        h.putString(C0157d.J, e.k(a2));
-        h.putString(C0157d.K, e.l(a2));
-        h.putString(C0157d.L, e.n(a2));
+        h.putString(C0161d.J, e.k(a2));
+        h.putString(C0161d.K, e.l(a2));
+        h.putString(C0161d.L, e.n(a2));
         h.putString("bs", e.o(a2));
-        h.putString(C0157d.O, e.q(a2));
+        h.putString(C0161d.O, e.q(a2));
         h.putString("ai", e.p(a2));
-        h.putString(C0157d.P, e.x(a2));
+        h.putString(C0161d.P, e.x(a2));
         lVar.f354d = h;
         a(lVar);
         return lVar;
@@ -162,7 +162,7 @@ public class l {
         lVar.f353c = "track";
         lVar.f355e = r.b();
         H h = new H();
-        h.putInt(C0157d.S, i);
+        h.putInt(C0161d.S, i);
         lVar.f354d = h;
         a(lVar);
         return lVar;
@@ -203,7 +203,7 @@ public class l {
         lVar.f355e = r.b();
         H h = new H();
         h.putString("ur", httpEvent.getUrl());
-        h.putLong(C0157d.Q, httpEvent.getTimeCost());
+        h.putLong(C0161d.Q, httpEvent.getTimeCost());
         h.putInt("rc", httpEvent.getResponseCode());
         h.putLong("nf", httpEvent.getNetFlow());
         h.putString("ecn", httpEvent.getExceptionName());
@@ -218,7 +218,7 @@ public class l {
         lVar.f353c = "profile_set";
         lVar.f355e = r.b();
         lVar.f354d = new H(miStatParams);
-        if (C0155b.e()) {
+        if (C0159b.e()) {
             lVar.g = !z;
         } else {
             lVar.g = false;
@@ -236,7 +236,7 @@ public class l {
         lVar.f355e = r.b();
         H h = new H();
         if (!isEmpty) {
-            h.putString(C0157d.t, str);
+            h.putString(C0161d.t, str);
         }
         lVar.f354d = h;
         a(lVar);
@@ -258,7 +258,7 @@ public class l {
         lVar.f353c = "track";
         lVar.f355e = r.b();
         H h = new H(miStatParams);
-        h.putString(C0157d.aa, str);
+        h.putString(C0161d.aa, str);
         h.putLong("bt", j);
         h.putLong("et", j2);
         lVar.f354d = h;
@@ -276,7 +276,7 @@ public class l {
         lVar.f353c = "track";
         lVar.f355e = r.b();
         lVar.f354d = new H(miStatParams);
-        if (C0155b.e()) {
+        if (C0159b.e()) {
             lVar.g = !z;
         } else {
             lVar.g = false;
@@ -307,19 +307,19 @@ public class l {
         lVar.f355e = r.b();
         H h = new H();
         lVar.f354d = h;
-        h.putString(C0157d.ah, str);
+        h.putString(C0161d.ah, str);
         h.putInt("et", z ? 1 : 0);
         StringWriter stringWriter = new StringWriter();
         th.printStackTrace(new PrintWriter(stringWriter));
-        h.putString(C0157d.af, stringWriter.toString());
-        h.putString(C0157d.ag, th.getMessage());
+        h.putString(C0161d.af, stringWriter.toString());
+        h.putString(C0161d.ag, th.getMessage());
         a(lVar);
         a(lVar, str2);
         return lVar;
     }
 
     private static void a(l lVar) {
-        if (C0155b.e()) {
+        if (C0159b.e()) {
             lVar.g = true;
         } else {
             lVar.g = false;

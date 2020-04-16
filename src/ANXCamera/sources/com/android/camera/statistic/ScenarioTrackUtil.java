@@ -10,7 +10,7 @@ import android.provider.MiuiSettings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import com.android.camera.log.Log;
-import com.xiaomi.stat.C0155b;
+import com.xiaomi.stat.C0159b;
 import java.util.Iterator;
 import java.util.Map;
 import org.json.JSONObject;
@@ -141,10 +141,10 @@ public class ScenarioTrackUtil {
             try {
                 jSONObject = new JSONObject(string);
                 try {
-                    if (SystemClock.uptimeMillis() - Long.parseLong(jSONObject.optString(C0155b.j)) < 1000) {
+                    if (SystemClock.uptimeMillis() - Long.parseLong(jSONObject.optString(C0159b.j)) < 1000) {
                         z = true;
                     }
-                    jSONObject.remove(C0155b.j);
+                    jSONObject.remove(C0159b.j);
                 } catch (Exception e2) {
                     e = e2;
                     Log.w(TAG, "Exception", (Throwable) e);

@@ -19,7 +19,6 @@ import android.os.Message;
 import android.os.ParcelFileDescriptor;
 import android.os.SystemClock;
 import android.provider.MiuiSettings;
-import android.support.v4.app.FrameMetricsAggregator;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -690,7 +689,7 @@ public abstract class VideoBase extends BaseModule implements Camera2Proxy.FaceD
             str2 = Storage.generateFilepath(str4);
         } else {
             String generatePrimaryDirectoryPath = Storage.generatePrimaryDirectoryPath();
-            Util.mkdirs(new File(generatePrimaryDirectoryPath), FrameMetricsAggregator.EVERY_DURATION, -1, -1);
+            Util.mkdirs(new File(generatePrimaryDirectoryPath), 511, -1, -1);
             if (Util.isPathExist(generatePrimaryDirectoryPath)) {
                 str3 = Storage.generatePrimaryFilepath(str4);
             } else {

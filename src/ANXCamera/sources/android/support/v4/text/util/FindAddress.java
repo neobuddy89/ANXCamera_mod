@@ -2,7 +2,7 @@ package android.support.v4.text.util;
 
 import android.support.annotation.RestrictTo;
 import android.support.annotation.VisibleForTesting;
-import com.xiaomi.stat.C0157d;
+import com.xiaomi.stat.C0161d;
 import java.util.Locale;
 import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
@@ -167,7 +167,7 @@ class FindAddress {
         String str2 = "th";
         if (i3 == 1) {
             if (parseInt % 100 != 11) {
-                str2 = C0157d.n;
+                str2 = C0161d.n;
             }
             return lowerCase.equals(str2);
         } else if (i3 == 2) {
@@ -179,7 +179,7 @@ class FindAddress {
             return lowerCase.equals(str2);
         } else {
             if (parseInt % 100 != 13) {
-                str2 = C0157d.Z;
+                str2 = C0161d.Z;
             }
             return lowerCase.equals(str2);
         }

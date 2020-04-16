@@ -13,7 +13,7 @@ import com.android.camera.data.data.ComponentDataItem;
 import com.android.camera.log.Log;
 import com.android.camera.module.loader.camera2.Camera2DataContainer;
 import com.android.camera2.CameraCapabilities;
-import com.xiaomi.stat.C0155b;
+import com.xiaomi.stat.C0159b;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -40,14 +40,14 @@ public class ComponentManuallyEV extends ComponentData {
         CameraCapabilities capabilitiesByBogusCameraId = Camera2DataContainer.getInstance().getCapabilitiesByBogusCameraId(DataRepository.dataItemGlobal().getCurrentCameraId(), DataRepository.dataItemGlobal().getCurrentMode());
         Range<Integer> exposureCompensationRange = capabilitiesByBogusCameraId.getExposureCompensationRange();
         float intValue = ((float) exposureCompensationRange.getUpper().intValue()) * capabilitiesByBogusCameraId.getExposureCompensationStep();
-        DecimalFormat decimalFormat = new DecimalFormat(C0155b.k);
+        DecimalFormat decimalFormat = new DecimalFormat(C0159b.k);
         DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.ENGLISH);
         decimalFormatSymbols.setDecimalSeparator('.');
         decimalFormat.setDecimalFormatSymbols(decimalFormatSymbols);
         float exposureCompensationStep = capabilitiesByBogusCameraId.getExposureCompensationStep() * 2.0f;
         for (float intValue2 = ((float) exposureCompensationRange.getLower().intValue()) * capabilitiesByBogusCameraId.getExposureCompensationStep(); intValue2 < FLOAT_ERROR + intValue; intValue2 += exposureCompensationStep) {
             String format = decimalFormat.format((double) intValue2);
-            if (format.equals("-0.0") || format.equals(C0155b.k)) {
+            if (format.equals("-0.0") || format.equals(C0159b.k)) {
                 format = "0";
             }
             if (intValue2 > 0.01f) {

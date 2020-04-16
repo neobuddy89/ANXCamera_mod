@@ -123,7 +123,7 @@ public class Person {
     @NonNull
     public static Person fromBundle(@NonNull Bundle bundle) {
         Bundle bundle2 = bundle.getBundle("icon");
-        return new Builder().setName(bundle.getCharSequence(NAME_KEY)).setIcon(bundle2 != null ? IconCompat.createFromBundle(bundle2) : null).setUri(bundle.getString(URI_KEY)).setKey(bundle.getString(KEY_KEY)).setBot(bundle.getBoolean(IS_BOT_KEY)).setImportant(bundle.getBoolean(IS_IMPORTANT_KEY)).build();
+        return new Builder().setName(bundle.getCharSequence("name")).setIcon(bundle2 != null ? IconCompat.createFromBundle(bundle2) : null).setUri(bundle.getString(URI_KEY)).setKey(bundle.getString(KEY_KEY)).setBot(bundle.getBoolean(IS_BOT_KEY)).setImportant(bundle.getBoolean(IS_IMPORTANT_KEY)).build();
     }
 
     @Nullable
@@ -169,7 +169,7 @@ public class Person {
     @NonNull
     public Bundle toBundle() {
         Bundle bundle = new Bundle();
-        bundle.putCharSequence(NAME_KEY, this.mName);
+        bundle.putCharSequence("name", this.mName);
         IconCompat iconCompat = this.mIcon;
         bundle.putBundle("icon", iconCompat != null ? iconCompat.toBundle() : null);
         bundle.putString(URI_KEY, this.mUri);

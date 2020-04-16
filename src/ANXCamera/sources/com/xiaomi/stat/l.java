@@ -13,9 +13,9 @@ class l implements Runnable {
     final /* synthetic */ String f566b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ C0158e f567c;
+    final /* synthetic */ C0162e f567c;
 
-    l(C0158e eVar, boolean z, String str) {
+    l(C0162e eVar, boolean z, String str) {
         this.f567c = eVar;
         this.f565a = z;
         this.f566b = str;
@@ -23,11 +23,11 @@ class l implements Runnable {
 
     public void run() {
         if (!m.a()) {
-            C0155b.c(this.f565a);
+            C0159b.c(this.f565a);
             f.a().a(this.f565a);
         }
-        if (C0155b.e() && !TextUtils.isEmpty(this.f566b)) {
-            C0155b.a(this.f566b);
+        if (C0159b.e() && !TextUtils.isEmpty(this.f566b)) {
+            C0159b.a(this.f566b);
             f.a().a(this.f566b);
         }
     }

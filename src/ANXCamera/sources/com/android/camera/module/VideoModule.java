@@ -28,7 +28,6 @@ import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.provider.MiuiSettings;
 import android.support.annotation.MainThread;
-import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.media.MediaPlayer2;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -2219,7 +2218,7 @@ public class VideoModule extends VideoBase implements Camera2Proxy.VideoRecordSt
             if (this.mCaptureTimeLapse) {
                 preferVideoQuality += 1000;
                 if (preferVideoQuality < 1000 || preferVideoQuality > 1008) {
-                    preferVideoQuality += NotificationManagerCompat.IMPORTANCE_UNSPECIFIED;
+                    preferVideoQuality -= 1000;
                     this.mCaptureTimeLapse = false;
                     forceToNormalMode();
                     this.mActivity.runOnUiThread(new G(this));

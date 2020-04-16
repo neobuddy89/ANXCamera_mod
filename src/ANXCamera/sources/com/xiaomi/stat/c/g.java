@@ -8,7 +8,7 @@ import android.os.Looper;
 import android.os.Message;
 import com.android.camera.statistic.MistatsConstants;
 import com.ss.android.ugc.effectmanager.link.model.configuration.LinkSelectorConfiguration;
-import com.xiaomi.stat.C0155b;
+import com.xiaomi.stat.C0159b;
 import com.xiaomi.stat.I;
 import com.xiaomi.stat.a.c;
 import com.xiaomi.stat.d.k;
@@ -82,11 +82,11 @@ public class g extends Handler {
     }
 
     private int d() {
-        int a2 = a(C0155b.m());
+        int a2 = a(C0159b.m());
         if (a2 > 0) {
             return a2 * 1000;
         }
-        int a3 = a(C0155b.j());
+        int a3 = a(C0159b.j());
         if (a3 > 0) {
             return a3 * 1000;
         }

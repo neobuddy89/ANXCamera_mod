@@ -6,14 +6,14 @@ class u implements Runnable {
     final /* synthetic */ boolean f587a;
 
     /* renamed from: b  reason: collision with root package name */
-    final /* synthetic */ C0158e f588b;
+    final /* synthetic */ C0162e f588b;
 
-    u(C0158e eVar, boolean z) {
+    u(C0162e eVar, boolean z) {
         this.f588b = eVar;
         this.f587a = z;
     }
 
     public void run() {
-        C0155b.a(this.f587a);
+        C0159b.a(this.f587a);
     }
 }

@@ -23,7 +23,6 @@ import android.os.ParcelFileDescriptor;
 import android.os.StatFs;
 import android.os.UserHandle;
 import android.os.storage.StorageManager;
-import android.support.v4.app.FrameMetricsAggregator;
 import android.text.TextUtils;
 import android.util.Size;
 import com.android.camera.ActivityBase;
@@ -668,7 +667,7 @@ public class Storage {
             return -1;
         }
         File file = new File(str);
-        boolean mkdirs = isUseDocumentMode() ? FileCompat.mkdirs(str) : Util.mkdirs(file, FrameMetricsAggregator.EVERY_DURATION, -1, -1);
+        boolean mkdirs = isUseDocumentMode() ? FileCompat.mkdirs(str) : Util.mkdirs(file, 511, -1, -1);
         if (!file.exists() || !file.isDirectory()) {
             Log.w(TAG, "getAvailableSpace path = " + str + ", exists = " + file.exists() + ", isDirectory = " + file.isDirectory() + ", canWrite = " + file.canWrite());
             return -1;

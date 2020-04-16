@@ -5,7 +5,6 @@ import android.content.res.AssetManager;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
-import com.android.camera.statistic.MistatsConstants;
 import com.bef.effectsdk.EffectSDKUtils;
 import com.bef.effectsdk.ResourceFinder;
 import com.ss.android.medialib.VideoSdkCore;
@@ -216,7 +215,7 @@ public class VERuntime {
             VideoSdkCore.init(context);
             initConfig();
             VEKeyValue vEKeyValue = new VEKeyValue();
-            vEKeyValue.add("iesve_vesdk_init_finish_result", MistatsConstants.BaseEvent.VALUE_SUCCESS);
+            vEKeyValue.add("iesve_vesdk_init_finish_result", "success");
             vEKeyValue.add("iesve_vesdk_init_finish_reason", "null");
             MonitorUtils.monitorStatistics("iesve_vesdk_init_finish", 1, vEKeyValue);
         }

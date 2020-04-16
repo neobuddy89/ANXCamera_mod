@@ -49,20 +49,20 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
             }
             if (Build.VERSION.SDK_INT < 20) {
                 if (builder.mLocalOnly) {
-                    this.mExtras.putBoolean(NotificationCompatExtras.EXTRA_LOCAL_ONLY, true);
+                    this.mExtras.putBoolean("android.support.localOnly", true);
                 }
                 String str = builder.mGroupKey;
                 if (str != null) {
-                    this.mExtras.putString(NotificationCompatExtras.EXTRA_GROUP_KEY, str);
+                    this.mExtras.putString("android.support.groupKey", str);
                     if (builder.mGroupSummary) {
-                        this.mExtras.putBoolean(NotificationCompatExtras.EXTRA_GROUP_SUMMARY, true);
+                        this.mExtras.putBoolean("android.support.isGroupSummary", true);
                     } else {
-                        this.mExtras.putBoolean(NotificationManagerCompat.EXTRA_USE_SIDE_CHANNEL, true);
+                        this.mExtras.putBoolean("android.support.useSideChannel", true);
                     }
                 }
                 String str2 = builder.mSortKey;
                 if (str2 != null) {
-                    this.mExtras.putString(NotificationCompatExtras.EXTRA_SORT_KEY, str2);
+                    this.mExtras.putString("android.support.sortKey", str2);
                 }
             }
             this.mContentView = builder.mContentView;
@@ -75,7 +75,7 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
                 if (arrayList != null && !arrayList.isEmpty()) {
                     Bundle bundle2 = this.mExtras;
                     ArrayList<String> arrayList2 = builder.mPeople;
-                    bundle2.putStringArray(NotificationCompat.EXTRA_PEOPLE, (String[]) arrayList2.toArray(new String[arrayList2.size()]));
+                    bundle2.putStringArray("android.people", (String[]) arrayList2.toArray(new String[arrayList2.size()]));
                 }
             }
         }
@@ -261,7 +261,7 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
         } else if (i >= 19) {
             SparseArray<Bundle> buildActionExtrasMap = NotificationCompatJellybean.buildActionExtrasMap(this.mActionExtrasList);
             if (buildActionExtrasMap != null) {
-                this.mExtras.putSparseParcelableArray(NotificationCompatExtras.EXTRA_ACTION_EXTRAS, buildActionExtrasMap);
+                this.mExtras.putSparseParcelableArray("android.support.actionExtras", buildActionExtrasMap);
             }
             this.mBuilder.setExtras(this.mExtras);
             Notification build4 = this.mBuilder.build();
@@ -288,7 +288,7 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
             extras.putAll(bundle);
             SparseArray<Bundle> buildActionExtrasMap2 = NotificationCompatJellybean.buildActionExtrasMap(this.mActionExtrasList);
             if (buildActionExtrasMap2 != null) {
-                NotificationCompat.getExtras(build5).putSparseParcelableArray(NotificationCompatExtras.EXTRA_ACTION_EXTRAS, buildActionExtrasMap2);
+                NotificationCompat.getExtras(build5).putSparseParcelableArray("android.support.actionExtras", buildActionExtrasMap2);
             }
             RemoteViews remoteViews8 = this.mContentView;
             if (remoteViews8 != null) {

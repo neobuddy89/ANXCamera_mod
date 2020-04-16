@@ -4,9 +4,9 @@ import android.content.Context;
 import android.text.TextUtils;
 import com.android.camera.module.loader.FunctionParseBeautyBodySlimCount;
 import com.xiaomi.stat.A;
-import com.xiaomi.stat.C0154a;
-import com.xiaomi.stat.C0155b;
-import com.xiaomi.stat.C0157d;
+import com.xiaomi.stat.C0158a;
+import com.xiaomi.stat.C0159b;
+import com.xiaomi.stat.C0161d;
 import com.xiaomi.stat.I;
 import com.xiaomi.stat.c.c;
 import com.xiaomi.stat.d.e;
@@ -73,7 +73,7 @@ public class d {
     }
 
     private void e() {
-        if (!C0155b.a() || !C0155b.b()) {
+        if (!C0159b.a() || !C0159b.b()) {
             k.c(f379c, "request abort: statistic or network is not enabled");
         } else if (l.a()) {
             int i2 = 1;
@@ -148,15 +148,15 @@ public class d {
         if (bArr != null) {
             str = com.xiaomi.stat.d.d.a(g.a(bArr, true).getBytes());
         }
-        hashMap.put(C0157d.f452b, C0154a.g);
+        hashMap.put(C0161d.f452b, C0158a.g);
         if (str == null) {
             str = "";
         }
         hashMap.put("p", str);
         hashMap.put("ai", I.b());
         hashMap.put("gzip", "0");
-        hashMap.put(C0157d.ak, h.a().c());
-        hashMap.put(C0157d.g, h.a().b());
+        hashMap.put(C0161d.ak, h.a().c());
+        hashMap.put(C0161d.g, h.a().b());
         return hashMap;
     }
 
@@ -169,7 +169,7 @@ public class d {
     }
 
     public synchronized String b() {
-        if (C0155b.e()) {
+        if (C0159b.e()) {
             this.v = e.d();
         } else if (!d()) {
             e();

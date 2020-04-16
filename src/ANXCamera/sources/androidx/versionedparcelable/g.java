@@ -10,7 +10,7 @@ import android.util.SparseIntArray;
 
 @RestrictTo({RestrictTo.Scope.LIBRARY})
 /* compiled from: VersionedParcelParcel */
-class g extends VersionedParcel {
+class g extends C0173VersionedParcel {
     private static final boolean DEBUG = false;
     private static final String TAG = "VersionedParcelParcel";
     private final SparseIntArray _a;
@@ -63,7 +63,7 @@ class g extends VersionedParcel {
     }
 
     /* access modifiers changed from: protected */
-    public VersionedParcel Ga() {
+    public C0173VersionedParcel Ga() {
         Parcel parcel = this.mParcel;
         int dataPosition = parcel.dataPosition();
         int i = this.eb;

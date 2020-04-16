@@ -3,7 +3,7 @@ package com.ss.android.vesdk.settings;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import com.xiaomi.stat.C0154a;
+import com.xiaomi.stat.C0158a;
 
 public enum VEVideoEncodeProfile implements Parcelable {
     ENCODE_PROFILE_UNKNOWN,
@@ -27,7 +27,7 @@ public enum VEVideoEncodeProfile implements Parcelable {
 
     public static VEVideoEncodeProfile valueOfString(String str) {
         VEVideoEncodeProfile vEVideoEncodeProfile = ENCODE_PROFILE_UNKNOWN;
-        return !TextUtils.isEmpty(str) ? "baseline".equals(str) ? ENCODE_PROFILE_BASELINE : C0154a.f314d.equals(str) ? ENCODE_PROFILE_MAIN : "high".equals(str) ? ENCODE_PROFILE_HIGH : vEVideoEncodeProfile : vEVideoEncodeProfile;
+        return !TextUtils.isEmpty(str) ? "baseline".equals(str) ? ENCODE_PROFILE_BASELINE : C0158a.f314d.equals(str) ? ENCODE_PROFILE_MAIN : "high".equals(str) ? ENCODE_PROFILE_HIGH : vEVideoEncodeProfile : vEVideoEncodeProfile;
     }
 
     public int describeContents() {

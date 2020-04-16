@@ -7,7 +7,6 @@ import android.support.annotation.IntRange;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.annotation.VisibleForTesting;
-import android.support.v4.view.ViewCompat;
 import java.util.Objects;
 
 public final class ColorUtils {
@@ -333,7 +332,7 @@ public final class ColorUtils {
     @ColorInt
     public static int setAlphaComponent(@ColorInt int i, @IntRange(from = 0, to = 255) int i2) {
         if (i2 >= 0 && i2 <= 255) {
-            return (i & ViewCompat.MEASURED_SIZE_MASK) | (i2 << 24);
+            return (i & 16777215) | (i2 << 24);
         }
         throw new IllegalArgumentException("alpha must be between 0 and 255.");
     }

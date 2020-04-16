@@ -10,7 +10,6 @@ import android.graphics.drawable.Drawable;
 import android.support.annotation.IntRange;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.internal.view.SupportMenu;
 import com.android.camera.Util;
 import com.android.camera.ui.drawable.CameraPaintBase;
 
@@ -29,7 +28,7 @@ public class CameraExposureDrawable extends Drawable {
         this.mPaintEvAdjust = new CameraFocusPaintEvAdjust(context);
         this.mPaintEvText = new CameraFocusPaintEvText(context);
         this.mPaintCenterIndicator = new CameraFocusPaintCenterIndicator(context);
-        this.mPaintBigCircle.setTargetValues(1.0f, SupportMenu.CATEGORY_MASK, 205, (float) Util.dpToPixel(1.0f));
+        this.mPaintBigCircle.setTargetValues(1.0f, -65536, 205, (float) Util.dpToPixel(1.0f));
         this.mPaintEvAdjust.setTargetValues(1.0f, BASE_COLOR, CameraPaintBase.ALPHA_OPAQUE, (float) Util.dpToPixel(1.0f));
         this.mPaintEvText.setTargetValues(1.0f, BASE_COLOR, CameraPaintBase.ALPHA_OPAQUE, (float) Util.dpToPixel(1.0f));
         this.mPaintCenterIndicator.setTargetValues(1.0f, BASE_COLOR, 240, (float) Util.dpToPixel(1.3f));

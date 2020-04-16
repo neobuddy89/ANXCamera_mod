@@ -6,7 +6,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
-import android.support.v4.view.ViewCompat;
 import com.android.camera.R;
 import com.android.camera.Util;
 import com.android.camera.ui.drawable.CameraPaintBase;
@@ -98,7 +97,7 @@ public class CameraZoomAdjustPaint extends CameraPaintBase {
         if (f2 <= this.mMinZoomRatio) {
             z = false;
             if (this.mAnimState == 1) {
-                this.mLinePaint.setColor(ViewCompat.MEASURED_STATE_MASK);
+                this.mLinePaint.setColor(-16777216);
                 this.mLinePaint.setAlpha(64);
             } else {
                 this.mLinePaint.setColor(-1);

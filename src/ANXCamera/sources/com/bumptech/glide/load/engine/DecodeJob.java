@@ -108,7 +108,7 @@ class DecodeJob<R> implements f.a, Runnable, Comparable<DecodeJob<?>>, d.c {
         /* access modifiers changed from: package-private */
         public void a(d dVar, com.bumptech.glide.load.g gVar) {
             try {
-                dVar.C().a(this.key, new C0146e(this.encoder, this.Re, gVar));
+                dVar.C().a(this.key, new C0150e(this.encoder, this.Re, gVar));
             } finally {
                 this.Re.unlock();
             }
@@ -199,7 +199,7 @@ class DecodeJob<R> implements f.a, Runnable, Comparable<DecodeJob<?>>, d.c {
             return new B(this.Ve, this);
         }
         if (i == 2) {
-            return new C0144c(this.Ve, this);
+            return new C0148c(this.Ve, this);
         }
         if (i == 3) {
             return new E(this.Ve, this);
@@ -461,7 +461,7 @@ class DecodeJob<R> implements f.a, Runnable, Comparable<DecodeJob<?>>, d.c {
         if (iVar2 != null) {
             int i = h.Qe[encodeStrategy.ordinal()];
             if (i == 1) {
-                c2 = new C0145d(this.gf, this.signature);
+                c2 = new C0149d(this.gf, this.signature);
             } else if (i == 2) {
                 C c3 = new C(this.Ve.ka(), this.gf, this.signature, this.width, this.height, jVar, cls, this.options);
                 c2 = c3;

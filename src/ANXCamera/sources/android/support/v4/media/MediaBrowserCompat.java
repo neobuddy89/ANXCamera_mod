@@ -25,7 +25,7 @@ import android.support.v4.media.MediaBrowserCompatApi23;
 import android.support.v4.media.MediaBrowserCompatApi26;
 import android.support.v4.media.session.IMediaSession;
 import android.support.v4.media.session.MediaSessionCompat;
-import android.support.v4.os.ResultReceiver;
+import android.support.v4.os.C0171ResultReceiver;
 import android.support.v4.util.ArrayMap;
 import android.text.TextUtils;
 import android.util.Log;
@@ -164,7 +164,7 @@ public final class MediaBrowserCompat {
         }
     }
 
-    private static class CustomActionResultReceiver extends ResultReceiver {
+    private static class CustomActionResultReceiver extends C0171ResultReceiver {
         private final String mAction;
         private final CustomActionCallback mCallback;
         private final Bundle mExtras;
@@ -230,7 +230,7 @@ public final class MediaBrowserCompat {
         }
     }
 
-    private static class ItemReceiver extends ResultReceiver {
+    private static class ItemReceiver extends C0171ResultReceiver {
         private final ItemCallback mCallback;
         private final String mMediaId;
 
@@ -1206,7 +1206,7 @@ public final class MediaBrowserCompat {
         }
     }
 
-    private static class SearchResultReceiver extends ResultReceiver {
+    private static class SearchResultReceiver extends C0171ResultReceiver {
         private final SearchCallback mCallback;
         private final Bundle mExtras;
         private final String mQuery;
@@ -1280,7 +1280,7 @@ public final class MediaBrowserCompat {
         }
 
         /* access modifiers changed from: package-private */
-        public void getMediaItem(String str, ResultReceiver resultReceiver, Messenger messenger) throws RemoteException {
+        public void getMediaItem(String str, C0171ResultReceiver resultReceiver, Messenger messenger) throws RemoteException {
             Bundle bundle = new Bundle();
             bundle.putString(MediaBrowserProtocol.DATA_MEDIA_ITEM_ID, str);
             bundle.putParcelable(MediaBrowserProtocol.DATA_RESULT_RECEIVER, resultReceiver);
@@ -1304,7 +1304,7 @@ public final class MediaBrowserCompat {
         }
 
         /* access modifiers changed from: package-private */
-        public void search(String str, Bundle bundle, ResultReceiver resultReceiver, Messenger messenger) throws RemoteException {
+        public void search(String str, Bundle bundle, C0171ResultReceiver resultReceiver, Messenger messenger) throws RemoteException {
             Bundle bundle2 = new Bundle();
             bundle2.putString(MediaBrowserProtocol.DATA_SEARCH_QUERY, str);
             bundle2.putBundle(MediaBrowserProtocol.DATA_SEARCH_EXTRAS, bundle);
@@ -1313,7 +1313,7 @@ public final class MediaBrowserCompat {
         }
 
         /* access modifiers changed from: package-private */
-        public void sendCustomAction(String str, Bundle bundle, ResultReceiver resultReceiver, Messenger messenger) throws RemoteException {
+        public void sendCustomAction(String str, Bundle bundle, C0171ResultReceiver resultReceiver, Messenger messenger) throws RemoteException {
             Bundle bundle2 = new Bundle();
             bundle2.putString(MediaBrowserProtocol.DATA_CUSTOM_ACTION, str);
             bundle2.putBundle(MediaBrowserProtocol.DATA_CUSTOM_ACTION_EXTRAS, bundle);

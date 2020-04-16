@@ -5,9 +5,9 @@ import android.os.Parcelable;
 import android.support.annotation.IntRange;
 import android.support.annotation.Keep;
 import android.support.annotation.NonNull;
-import android.support.v4.os.EnvironmentCompat;
 import android.text.TextUtils;
 import android.util.Log;
+import com.google.android.gms.common.Scopes;
 import com.ss.android.vesdk.runtime.VERuntime;
 import com.ss.android.vesdk.runtime.cloudconfig.PerformanceConfig;
 import com.ss.android.vesdk.runtime.cloudconfig.VECloudConfig;
@@ -246,7 +246,7 @@ public class VEVideoEncodeSettings implements Parcelable {
             VEVideoCompileEncodeSettings vEVideoCompileEncodeSettings = new VEVideoCompileEncodeSettings();
             try {
                 String string = jSONObject.getString("encode_mode");
-                if (EnvironmentCompat.MEDIA_UNKNOWN.equals(string)) {
+                if ("unknown".equals(string)) {
                     if (this.mUsage == 2) {
                         vEVideoCompileEncodeSettings.useHWEncoder = this.exportVideoEncodeSettings.useHWEncoder;
                         VEVideoHWEncodeSettings vEVideoHWEncodeSettings = vEVideoCompileEncodeSettings.mHWEncodeSetting;
@@ -258,7 +258,7 @@ public class VEVideoEncodeSettings implements Parcelable {
                                     vEVideoHWEncodeSettings.mBitrate = j;
                                     VEVideoHWEncodeSettings vEVideoHWEncodeSettings2 = vEVideoCompileEncodeSettings.mHWEncodeSetting;
                                     if (this.mUsage == 2) {
-                                        if (EnvironmentCompat.MEDIA_UNKNOWN.equals(jSONObject.getJSONObject("hw").getString("profile"))) {
+                                        if ("unknown".equals(jSONObject.getJSONObject("hw").getString(Scopes.PROFILE))) {
                                             i = this.exportVideoEncodeSettings.useHWEncoder ? this.exportVideoEncodeSettings.encodeProfile : vEVideoCompileEncodeSettings.mHWEncodeSetting.mProfile;
                                             vEVideoHWEncodeSettings2.mProfile = i;
                                             VEVideoHWEncodeSettings vEVideoHWEncodeSettings3 = vEVideoCompileEncodeSettings.mHWEncodeSetting;
@@ -282,14 +282,14 @@ public class VEVideoEncodeSettings implements Parcelable {
                                                                         if (jSONObject.getJSONObject("sw").getInt("preset") == -1) {
                                                                             i4 = this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mPreset : this.exportVideoEncodeSettings.swPreset;
                                                                             vEVideoSWEncodeSettings3.mPreset = i4;
-                                                                            vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile = (this.mUsage == 2 || !EnvironmentCompat.MEDIA_UNKNOWN.equals(jSONObject.getJSONObject("sw").getString("profile"))) ? VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("sw").getString("profile")).ordinal() : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile : this.exportVideoEncodeSettings.encodeProfile;
+                                                                            vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile = (this.mUsage == 2 || !"unknown".equals(jSONObject.getJSONObject("sw").getString(Scopes.PROFILE))) ? VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("sw").getString(Scopes.PROFILE)).ordinal() : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile : this.exportVideoEncodeSettings.encodeProfile;
                                                                             vEVideoCompileEncodeSettings.mSWEncodeSetting.mGop = (this.mUsage == 2 || jSONObject.getJSONObject("sw").getInt("gop") != -1) ? jSONObject.getJSONObject("sw").getInt("gop") : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mGop : this.exportVideoEncodeSettings.gopSize;
                                                                             return vEVideoCompileEncodeSettings;
                                                                         }
                                                                     }
                                                                     i4 = jSONObject.getJSONObject("sw").getInt("preset");
                                                                     vEVideoSWEncodeSettings3.mPreset = i4;
-                                                                    vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile = (this.mUsage == 2 || !EnvironmentCompat.MEDIA_UNKNOWN.equals(jSONObject.getJSONObject("sw").getString("profile"))) ? VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("sw").getString("profile")).ordinal() : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile : this.exportVideoEncodeSettings.encodeProfile;
+                                                                    vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile = (this.mUsage == 2 || !"unknown".equals(jSONObject.getJSONObject("sw").getString(Scopes.PROFILE))) ? VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("sw").getString(Scopes.PROFILE)).ordinal() : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile : this.exportVideoEncodeSettings.encodeProfile;
                                                                     vEVideoCompileEncodeSettings.mSWEncodeSetting.mGop = (this.mUsage == 2 || jSONObject.getJSONObject("sw").getInt("gop") != -1) ? jSONObject.getJSONObject("sw").getInt("gop") : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mGop : this.exportVideoEncodeSettings.gopSize;
                                                                     return vEVideoCompileEncodeSettings;
                                                                 }
@@ -301,7 +301,7 @@ public class VEVideoEncodeSettings implements Parcelable {
                                                             }
                                                             i4 = jSONObject.getJSONObject("sw").getInt("preset");
                                                             vEVideoSWEncodeSettings32.mPreset = i4;
-                                                            vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile = (this.mUsage == 2 || !EnvironmentCompat.MEDIA_UNKNOWN.equals(jSONObject.getJSONObject("sw").getString("profile"))) ? VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("sw").getString("profile")).ordinal() : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile : this.exportVideoEncodeSettings.encodeProfile;
+                                                            vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile = (this.mUsage == 2 || !"unknown".equals(jSONObject.getJSONObject("sw").getString(Scopes.PROFILE))) ? VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("sw").getString(Scopes.PROFILE)).ordinal() : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile : this.exportVideoEncodeSettings.encodeProfile;
                                                             vEVideoCompileEncodeSettings.mSWEncodeSetting.mGop = (this.mUsage == 2 || jSONObject.getJSONObject("sw").getInt("gop") != -1) ? jSONObject.getJSONObject("sw").getInt("gop") : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mGop : this.exportVideoEncodeSettings.gopSize;
                                                             return vEVideoCompileEncodeSettings;
                                                         }
@@ -318,7 +318,7 @@ public class VEVideoEncodeSettings implements Parcelable {
                                                     }
                                                     i4 = jSONObject.getJSONObject("sw").getInt("preset");
                                                     vEVideoSWEncodeSettings322.mPreset = i4;
-                                                    vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile = (this.mUsage == 2 || !EnvironmentCompat.MEDIA_UNKNOWN.equals(jSONObject.getJSONObject("sw").getString("profile"))) ? VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("sw").getString("profile")).ordinal() : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile : this.exportVideoEncodeSettings.encodeProfile;
+                                                    vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile = (this.mUsage == 2 || !"unknown".equals(jSONObject.getJSONObject("sw").getString(Scopes.PROFILE))) ? VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("sw").getString(Scopes.PROFILE)).ordinal() : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile : this.exportVideoEncodeSettings.encodeProfile;
                                                     vEVideoCompileEncodeSettings.mSWEncodeSetting.mGop = (this.mUsage == 2 || jSONObject.getJSONObject("sw").getInt("gop") != -1) ? jSONObject.getJSONObject("sw").getInt("gop") : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mGop : this.exportVideoEncodeSettings.gopSize;
                                                     return vEVideoCompileEncodeSettings;
                                                 }
@@ -341,12 +341,12 @@ public class VEVideoEncodeSettings implements Parcelable {
                                             }
                                             i4 = jSONObject.getJSONObject("sw").getInt("preset");
                                             vEVideoSWEncodeSettings3222.mPreset = i4;
-                                            vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile = (this.mUsage == 2 || !EnvironmentCompat.MEDIA_UNKNOWN.equals(jSONObject.getJSONObject("sw").getString("profile"))) ? VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("sw").getString("profile")).ordinal() : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile : this.exportVideoEncodeSettings.encodeProfile;
+                                            vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile = (this.mUsage == 2 || !"unknown".equals(jSONObject.getJSONObject("sw").getString(Scopes.PROFILE))) ? VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("sw").getString(Scopes.PROFILE)).ordinal() : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile : this.exportVideoEncodeSettings.encodeProfile;
                                             vEVideoCompileEncodeSettings.mSWEncodeSetting.mGop = (this.mUsage == 2 || jSONObject.getJSONObject("sw").getInt("gop") != -1) ? jSONObject.getJSONObject("sw").getInt("gop") : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mGop : this.exportVideoEncodeSettings.gopSize;
                                             return vEVideoCompileEncodeSettings;
                                         }
                                     }
-                                    i = VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("hw").getString("profile")).ordinal();
+                                    i = VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("hw").getString(Scopes.PROFILE)).ordinal();
                                     vEVideoHWEncodeSettings2.mProfile = i;
                                     VEVideoHWEncodeSettings vEVideoHWEncodeSettings32 = vEVideoCompileEncodeSettings.mHWEncodeSetting;
                                     if (this.mUsage == 2) {
@@ -369,7 +369,7 @@ public class VEVideoEncodeSettings implements Parcelable {
                                     }
                                     i4 = jSONObject.getJSONObject("sw").getInt("preset");
                                     vEVideoSWEncodeSettings32222.mPreset = i4;
-                                    vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile = (this.mUsage == 2 || !EnvironmentCompat.MEDIA_UNKNOWN.equals(jSONObject.getJSONObject("sw").getString("profile"))) ? VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("sw").getString("profile")).ordinal() : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile : this.exportVideoEncodeSettings.encodeProfile;
+                                    vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile = (this.mUsage == 2 || !"unknown".equals(jSONObject.getJSONObject("sw").getString(Scopes.PROFILE))) ? VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("sw").getString(Scopes.PROFILE)).ordinal() : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile : this.exportVideoEncodeSettings.encodeProfile;
                                     vEVideoCompileEncodeSettings.mSWEncodeSetting.mGop = (this.mUsage == 2 || jSONObject.getJSONObject("sw").getInt("gop") != -1) ? jSONObject.getJSONObject("sw").getInt("gop") : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mGop : this.exportVideoEncodeSettings.gopSize;
                                     return vEVideoCompileEncodeSettings;
                                 }
@@ -378,7 +378,7 @@ public class VEVideoEncodeSettings implements Parcelable {
                                 VEVideoHWEncodeSettings vEVideoHWEncodeSettings22 = vEVideoCompileEncodeSettings.mHWEncodeSetting;
                                 if (this.mUsage == 2) {
                                 }
-                                i = VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("hw").getString("profile")).ordinal();
+                                i = VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("hw").getString(Scopes.PROFILE)).ordinal();
                                 vEVideoHWEncodeSettings22.mProfile = i;
                                 VEVideoHWEncodeSettings vEVideoHWEncodeSettings322 = vEVideoCompileEncodeSettings.mHWEncodeSetting;
                                 if (this.mUsage == 2) {
@@ -401,7 +401,7 @@ public class VEVideoEncodeSettings implements Parcelable {
                                 }
                                 i4 = jSONObject.getJSONObject("sw").getInt("preset");
                                 vEVideoSWEncodeSettings322222.mPreset = i4;
-                                vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile = (this.mUsage == 2 || !EnvironmentCompat.MEDIA_UNKNOWN.equals(jSONObject.getJSONObject("sw").getString("profile"))) ? VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("sw").getString("profile")).ordinal() : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile : this.exportVideoEncodeSettings.encodeProfile;
+                                vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile = (this.mUsage == 2 || !"unknown".equals(jSONObject.getJSONObject("sw").getString(Scopes.PROFILE))) ? VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("sw").getString(Scopes.PROFILE)).ordinal() : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile : this.exportVideoEncodeSettings.encodeProfile;
                                 vEVideoCompileEncodeSettings.mSWEncodeSetting.mGop = (this.mUsage == 2 || jSONObject.getJSONObject("sw").getInt("gop") != -1) ? jSONObject.getJSONObject("sw").getInt("gop") : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mGop : this.exportVideoEncodeSettings.gopSize;
                                 return vEVideoCompileEncodeSettings;
                             }
@@ -412,7 +412,7 @@ public class VEVideoEncodeSettings implements Parcelable {
                         VEVideoHWEncodeSettings vEVideoHWEncodeSettings222 = vEVideoCompileEncodeSettings.mHWEncodeSetting;
                         if (this.mUsage == 2) {
                         }
-                        i = VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("hw").getString("profile")).ordinal();
+                        i = VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("hw").getString(Scopes.PROFILE)).ordinal();
                         vEVideoHWEncodeSettings222.mProfile = i;
                         VEVideoHWEncodeSettings vEVideoHWEncodeSettings3222 = vEVideoCompileEncodeSettings.mHWEncodeSetting;
                         if (this.mUsage == 2) {
@@ -435,7 +435,7 @@ public class VEVideoEncodeSettings implements Parcelable {
                         }
                         i4 = jSONObject.getJSONObject("sw").getInt("preset");
                         vEVideoSWEncodeSettings3222222.mPreset = i4;
-                        vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile = (this.mUsage == 2 || !EnvironmentCompat.MEDIA_UNKNOWN.equals(jSONObject.getJSONObject("sw").getString("profile"))) ? VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("sw").getString("profile")).ordinal() : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile : this.exportVideoEncodeSettings.encodeProfile;
+                        vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile = (this.mUsage == 2 || !"unknown".equals(jSONObject.getJSONObject("sw").getString(Scopes.PROFILE))) ? VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("sw").getString(Scopes.PROFILE)).ordinal() : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile : this.exportVideoEncodeSettings.encodeProfile;
                         vEVideoCompileEncodeSettings.mSWEncodeSetting.mGop = (this.mUsage == 2 || jSONObject.getJSONObject("sw").getInt("gop") != -1) ? jSONObject.getJSONObject("sw").getInt("gop") : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mGop : this.exportVideoEncodeSettings.gopSize;
                         return vEVideoCompileEncodeSettings;
                     }
@@ -450,7 +450,7 @@ public class VEVideoEncodeSettings implements Parcelable {
                 VEVideoHWEncodeSettings vEVideoHWEncodeSettings2222 = vEVideoCompileEncodeSettings.mHWEncodeSetting;
                 if (this.mUsage == 2) {
                 }
-                i = VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("hw").getString("profile")).ordinal();
+                i = VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("hw").getString(Scopes.PROFILE)).ordinal();
                 vEVideoHWEncodeSettings2222.mProfile = i;
                 VEVideoHWEncodeSettings vEVideoHWEncodeSettings32222 = vEVideoCompileEncodeSettings.mHWEncodeSetting;
                 if (this.mUsage == 2) {
@@ -473,7 +473,7 @@ public class VEVideoEncodeSettings implements Parcelable {
                 }
                 i4 = jSONObject.getJSONObject("sw").getInt("preset");
                 vEVideoSWEncodeSettings32222222.mPreset = i4;
-                vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile = (this.mUsage == 2 || !EnvironmentCompat.MEDIA_UNKNOWN.equals(jSONObject.getJSONObject("sw").getString("profile"))) ? VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("sw").getString("profile")).ordinal() : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile : this.exportVideoEncodeSettings.encodeProfile;
+                vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile = (this.mUsage == 2 || !"unknown".equals(jSONObject.getJSONObject("sw").getString(Scopes.PROFILE))) ? VEVideoEncodeProfile.valueOfString(jSONObject.getJSONObject("sw").getString(Scopes.PROFILE)).ordinal() : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mProfile : this.exportVideoEncodeSettings.encodeProfile;
                 vEVideoCompileEncodeSettings.mSWEncodeSetting.mGop = (this.mUsage == 2 || jSONObject.getJSONObject("sw").getInt("gop") != -1) ? jSONObject.getJSONObject("sw").getInt("gop") : this.exportVideoEncodeSettings.useHWEncoder ? vEVideoCompileEncodeSettings.mSWEncodeSetting.mGop : this.exportVideoEncodeSettings.gopSize;
             } catch (JSONException e2) {
                 e2.printStackTrace();

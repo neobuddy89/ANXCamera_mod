@@ -2,7 +2,7 @@ package com.android.zxing;
 
 import android.media.Image;
 import com.android.camera.log.Log;
-import com.xiaomi.stat.C0157d;
+import com.xiaomi.stat.C0161d;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 
@@ -31,7 +31,7 @@ public class PreviewImage {
         convertYUV420ToNV21(image);
         this.mOrientation = i;
         this.mPreviewStatus = 2;
-        Log.d(TAG, "PreviewDecodeManager convertYUV420ToNV21: cost = " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
+        Log.d(TAG, "PreviewDecodeManager convertYUV420ToNV21: cost = " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
     }
 
     private void convertYUV420ToNV21(Image image) {

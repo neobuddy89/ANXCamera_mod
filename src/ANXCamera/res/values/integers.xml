@@ -24,4 +24,6 @@
     <item type="integer" name="special_custom_watermark_startx">@integer/custom_watermark_startx</item>
     <integer name="status_bar_notification_info_maxnum">999</integer>
     <integer name="target_sdk_version">19</integer>
+    <integer name="google_play_services_version">12451000</integer>
+
 </resources>

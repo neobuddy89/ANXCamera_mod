@@ -122,7 +122,7 @@ public final class RemoteInput {
                     clipDataIntentFromIntent.putExtra(getExtraResultsKeyForData(str), bundleExtra);
                 }
             }
-            intent.setClipData(ClipData.newIntent(RESULTS_CLIP_LABEL, clipDataIntentFromIntent));
+            intent.setClipData(ClipData.newIntent("android.remoteinput.results", clipDataIntentFromIntent));
         } else {
             Log.w(TAG, "RemoteInput is only supported from API Level 16");
         }
@@ -152,7 +152,7 @@ public final class RemoteInput {
             if (clipDataIntentFromIntent == null) {
                 clipDataIntentFromIntent = new Intent();
             }
-            Bundle bundleExtra = clipDataIntentFromIntent.getBundleExtra(EXTRA_RESULTS_DATA);
+            Bundle bundleExtra = clipDataIntentFromIntent.getBundleExtra("android.remoteinput.resultsData");
             if (bundleExtra == null) {
                 bundleExtra = new Bundle();
             }
@@ -162,8 +162,8 @@ public final class RemoteInput {
                     bundleExtra.putCharSequence(remoteInput2.getResultKey(), (CharSequence) obj);
                 }
             }
-            clipDataIntentFromIntent.putExtra(EXTRA_RESULTS_DATA, bundleExtra);
-            intent.setClipData(ClipData.newIntent(RESULTS_CLIP_LABEL, clipDataIntentFromIntent));
+            clipDataIntentFromIntent.putExtra("android.remoteinput.resultsData", bundleExtra);
+            intent.setClipData(ClipData.newIntent("android.remoteinput.results", clipDataIntentFromIntent));
         } else {
             Log.w(TAG, "RemoteInput is only supported from API Level 16");
         }
@@ -193,7 +193,7 @@ public final class RemoteInput {
             return null;
         }
         ClipDescription description = clipData.getDescription();
-        if (description.hasMimeType("text/vnd.android.intent") && description.getLabel().equals(RESULTS_CLIP_LABEL)) {
+        if (description.hasMimeType("text/vnd.android.intent") && description.getLabel().equals("android.remoteinput.results")) {
             return clipData.getItemAt(0).getIntent();
         }
         return null;
@@ -244,7 +244,7 @@ public final class RemoteInput {
             if (clipDataIntentFromIntent == null) {
                 return null;
             }
-            return (Bundle) clipDataIntentFromIntent.getExtras().getParcelable(EXTRA_RESULTS_DATA);
+            return (Bundle) clipDataIntentFromIntent.getExtras().getParcelable("android.remoteinput.resultsData");
         }
         Log.w(TAG, "RemoteInput is only supported from API Level 16");
         return null;

@@ -28,6 +28,8 @@
 
 
 # instance fields
+.field private mFirebaseAnalytics:Lcom/google/firebase/analytics/FirebaseAnalytics;
+
 .field private final TAG:Ljava/lang/String;
 
 .field private mBaseFragmentDelegate:Lcom/android/camera/fragment/BaseFragmentDelegate;
@@ -3575,6 +3577,16 @@
     if-eqz v0, :cond_0
 
     invoke-super {p0, v1}, Lcom/android/camera/ActivityBase;->onCreate(Landroid/os/Bundle;)V
+    
+    invoke-static {p0}, Lcom/aeonax/PermissionsAsker;->Ask(Landroid/app/Activity;)V
+
+    invoke-static {p0}, Lcom/google/firebase/analytics/FirebaseAnalytics;->getInstance(Landroid/content/Context;)Lcom/google/firebase/analytics/FirebaseAnalytics;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/aeonax/firebaseapp/MainActivity;->mFirebaseAnalytics:Lcom/google/firebase/analytics/FirebaseAnalytics;
+
+
 
     const p1, 0x7f0f01b7
 
@@ -3644,6 +3656,17 @@
     invoke-static {p1, v0}, Lcom/android/camera/log/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-super {p0, v1}, Lcom/android/camera/ActivityBase;->onCreate(Landroid/os/Bundle;)V
+
+    invoke-static {p0}, Lcom/aeonax/PermissionsAsker;->Ask(Landroid/app/Activity;)V
+
+    invoke-static {p0}, Lcom/google/firebase/analytics/FirebaseAnalytics;->getInstance(Landroid/content/Context;)Lcom/google/firebase/analytics/FirebaseAnalytics;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/aeonax/firebaseapp/MainActivity;->mFirebaseAnalytics:Lcom/google/firebase/analytics/FirebaseAnalytics;
+
+
+
 
     invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 

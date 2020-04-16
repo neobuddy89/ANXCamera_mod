@@ -6,8 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.text.TextUtils;
-import com.xiaomi.stat.C0154a;
-import com.xiaomi.stat.C0156c;
+import com.xiaomi.stat.C0158a;
+import com.xiaomi.stat.C0160c;
 import com.xiaomi.stat.I;
 import com.xiaomi.stat.MiStatParams;
 import com.xiaomi.stat.a.l;
@@ -68,7 +68,7 @@ public class c {
 
     private void a(MiStatParams miStatParams) {
         miStatParams.putString(l.a.n, com.xiaomi.stat.d.c.b());
-        miStatParams.putString(l.a.o, C0154a.g);
+        miStatParams.putString(l.a.o, C0158a.g);
         miStatParams.putString(l.a.p, m.c());
         miStatParams.putString(l.a.q, m.d());
         miStatParams.putString(l.a.r, com.xiaomi.stat.d.l.b(I.a()));
@@ -374,7 +374,7 @@ public class c {
 
     public k a(b[] bVarArr) {
         FutureTask futureTask = new FutureTask(new e(this, bVarArr));
-        C0156c.a(futureTask);
+        C0160c.a(futureTask);
         try {
             return (k) futureTask.get();
         } catch (InterruptedException | ExecutionException unused) {
@@ -383,17 +383,17 @@ public class c {
     }
 
     public void a(l lVar) {
-        C0156c.a(new d(this, lVar));
+        C0160c.a(new d(this, lVar));
         k.c(f326a, "add event: name=" + lVar.f351a);
     }
 
     public void a(String str) {
-        C0156c.a(new h(this, str));
+        C0160c.a(new h(this, str));
     }
 
     public void a(ArrayList<Long> arrayList) {
         FutureTask futureTask = new FutureTask(new f(this, arrayList), (Object) null);
-        C0156c.a(futureTask);
+        C0160c.a(futureTask);
         try {
             futureTask.get();
         } catch (InterruptedException | ExecutionException unused) {
@@ -401,12 +401,12 @@ public class c {
     }
 
     public void b() {
-        C0156c.a(new g(this));
+        C0160c.a(new g(this));
     }
 
     public long c() {
         FutureTask futureTask = new FutureTask(new i(this));
-        C0156c.a(futureTask);
+        C0160c.a(futureTask);
         try {
             return ((Long) futureTask.get()).longValue();
         } catch (InterruptedException | ExecutionException unused) {

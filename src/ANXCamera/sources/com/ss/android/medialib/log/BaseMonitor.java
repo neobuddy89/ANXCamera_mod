@@ -1,6 +1,5 @@
 package com.ss.android.medialib.log;
 
-import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
 import com.ss.android.medialib.common.LogUtil;
 import java.util.HashMap;
@@ -22,7 +21,7 @@ public class BaseMonitor {
             for (String str3 : map.keySet()) {
                 jSONObject.put(str3, map.get(str3));
                 if (!TextUtils.isEmpty(str2)) {
-                    jSONObject.put(NotificationCompat.CATEGORY_SERVICE, str2);
+                    jSONObject.put("service", str2);
                 }
             }
             if (iMonitor == null) {

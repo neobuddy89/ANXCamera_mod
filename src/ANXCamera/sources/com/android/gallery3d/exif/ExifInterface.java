@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.provider.MiuiSettings;
-import android.support.v4.internal.view.SupportMenu;
 import android.util.Log;
 import android.util.SparseIntArray;
 import java.io.BufferedInputStream;
@@ -507,7 +506,7 @@ public class ExifInterface {
     }
 
     protected static int getComponentCountFromInfo(int i) {
-        return i & SupportMenu.USER_MASK;
+        return i & 65535;
     }
 
     public static ExifInterface getExif(byte[] bArr) {

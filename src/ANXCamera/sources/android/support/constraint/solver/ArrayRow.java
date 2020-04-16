@@ -2,8 +2,8 @@ package android.support.constraint.solver;
 
 import android.support.constraint.solver.LinearSystem;
 import android.support.constraint.solver.SolverVariable;
-import com.xiaomi.stat.C0155b;
-import com.xiaomi.stat.C0157d;
+import com.xiaomi.stat.C0159b;
+import com.xiaomi.stat.C0161d;
 
 public class ArrayRow implements LinearSystem.Row {
     private static final boolean DEBUG = false;
@@ -20,7 +20,7 @@ public class ArrayRow implements LinearSystem.Row {
 
     public ArrayRow addError(LinearSystem linearSystem, int i) {
         this.variables.put(linearSystem.createErrorVariable(i, "ep"), 1.0f);
-        this.variables.put(linearSystem.createErrorVariable(i, C0157d.ag), -1.0f);
+        this.variables.put(linearSystem.createErrorVariable(i, C0161d.ag), -1.0f);
         return this;
     }
 
@@ -398,7 +398,7 @@ public class ArrayRow implements LinearSystem.Row {
         if (z) {
             return str2;
         }
-        return str2 + C0155b.k;
+        return str2 + C0159b.k;
     }
 
     public String toString() {

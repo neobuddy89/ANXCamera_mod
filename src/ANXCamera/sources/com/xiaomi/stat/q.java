@@ -9,12 +9,12 @@ import com.xiaomi.stat.d.r;
 class q implements Application.ActivityLifecycleCallbacks {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ C0158e f579a;
+    final /* synthetic */ C0162e f579a;
 
     /* renamed from: b  reason: collision with root package name */
     private int f580b;
 
-    q(C0158e eVar) {
+    q(C0162e eVar) {
         this.f579a = eVar;
     }
 
@@ -54,11 +54,11 @@ class q implements Application.ActivityLifecycleCallbacks {
     }
 
     public void onActivityStopped(Activity activity) {
-        C0158e.m(this.f579a);
+        C0162e.m(this.f579a);
         if (this.f579a.i == 0) {
             long elapsedRealtime = SystemClock.elapsedRealtime() - this.f579a.l;
             long b2 = r.b();
-            C0158e eVar = this.f579a;
+            C0162e eVar = this.f579a;
             eVar.a(eVar.j, this.f579a.k, b2 - elapsedRealtime, b2);
             this.f579a.f551e.execute(new s(this));
         }

@@ -6,9 +6,9 @@ import java.util.concurrent.Callable;
 class n implements Callable<String> {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ C0158e f570a;
+    final /* synthetic */ C0162e f570a;
 
-    n(C0158e eVar) {
+    n(C0162e eVar) {
         this.f570a = eVar;
     }
 

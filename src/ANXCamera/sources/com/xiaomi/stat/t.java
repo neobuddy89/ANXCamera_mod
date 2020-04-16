@@ -14,9 +14,9 @@ class t implements Runnable {
     final /* synthetic */ long f585c;
 
     /* renamed from: d  reason: collision with root package name */
-    final /* synthetic */ C0158e f586d;
+    final /* synthetic */ C0162e f586d;
 
-    t(C0158e eVar, String str, long j, long j2) {
+    t(C0162e eVar, String str, long j, long j2) {
         this.f586d = eVar;
         this.f583a = str;
         this.f584b = j;
@@ -24,7 +24,7 @@ class t implements Runnable {
     }
 
     public void run() {
-        if (C0155b.a() && this.f586d.g()) {
+        if (C0159b.a() && this.f586d.g()) {
             this.f586d.a(l.a(this.f583a, this.f584b, this.f585c));
         }
     }

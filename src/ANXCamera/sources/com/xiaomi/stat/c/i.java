@@ -6,8 +6,8 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
-import com.xiaomi.stat.C0155b;
-import com.xiaomi.stat.C0157d;
+import com.xiaomi.stat.C0159b;
+import com.xiaomi.stat.C0161d;
 import com.xiaomi.stat.I;
 import com.xiaomi.stat.a.b;
 import com.xiaomi.stat.a.k;
@@ -109,24 +109,24 @@ public class i {
         try {
             jSONObject.put("id", str);
             a(str, jSONObject);
-            jSONObject.put(C0157d.I, e.d());
+            jSONObject.put(C0161d.I, e.d());
             jSONObject.put("rc", m.h());
-            jSONObject.put(C0157d.j, c.b());
-            jSONObject.put(C0157d.k, C0155b.t());
-            jSONObject.put(C0157d.l, h);
-            jSONObject.put(C0157d.Z, m.a(I.a()));
-            jSONObject.put(C0157d.m, this.q != null ? this.q.a() : 0);
-            jSONObject.put(C0157d.n, String.valueOf(r.b()));
-            jSONObject.put(C0157d.o, m.e());
-            jSONObject.put(C0157d.p, a.a(I.b()));
-            String[] o2 = C0155b.o();
+            jSONObject.put(C0161d.j, c.b());
+            jSONObject.put(C0161d.k, C0159b.t());
+            jSONObject.put(C0161d.l, h);
+            jSONObject.put(C0161d.Z, m.a(I.a()));
+            jSONObject.put(C0161d.m, this.q != null ? this.q.a() : 0);
+            jSONObject.put(C0161d.n, String.valueOf(r.b()));
+            jSONObject.put(C0161d.o, m.e());
+            jSONObject.put(C0161d.p, a.a(I.b()));
+            String[] o2 = C0159b.o();
             if (o2 != null && o2.length > 0) {
-                jSONObject.put(C0157d.v, a(o2));
+                jSONObject.put(C0161d.v, a(o2));
             }
-            jSONObject.put(C0157d.q, m.d());
+            jSONObject.put(C0161d.q, m.d());
             jSONObject.put("n", l.b(I.a()));
-            jSONObject.put(C0157d.t, C0155b.h());
-            jSONObject.put(C0157d.u, jSONArray);
+            jSONObject.put(C0161d.t, C0159b.h());
+            jSONObject.put(C0161d.u, jSONArray);
         } catch (JSONException e2) {
             e2.printStackTrace();
         }
@@ -158,12 +158,12 @@ public class i {
 
     private void a(String str, JSONObject jSONObject) {
         try {
-            if (!C0155b.e() && TextUtils.isEmpty(str)) {
+            if (!C0159b.e() && TextUtils.isEmpty(str)) {
                 Context a2 = I.a();
-                jSONObject.put(C0157d.C, e.b(a2));
-                jSONObject.put(C0157d.J, e.k(a2));
-                jSONObject.put(C0157d.L, e.n(a2));
-                jSONObject.put(C0157d.O, e.q(a2));
+                jSONObject.put(C0161d.C, e.b(a2));
+                jSONObject.put(C0161d.J, e.k(a2));
+                jSONObject.put(C0161d.L, e.n(a2));
+                jSONObject.put(C0161d.O, e.q(a2));
                 jSONObject.put("ai", e.p(a2));
             }
         } catch (Exception unused) {
@@ -344,12 +344,12 @@ public class i {
     private HashMap<String, String> c(String str) {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("ai", I.b());
-        hashMap.put(C0157d.f452b, "3.0.10");
-        hashMap.put(C0157d.f453c, f444a);
-        hashMap.put(C0157d.f454d, m.g());
+        hashMap.put(C0161d.f452b, "3.0.10");
+        hashMap.put(C0161d.f453c, f444a);
+        hashMap.put(C0161d.f454d, m.g());
         hashMap.put("p", str);
-        hashMap.put(C0157d.ak, h.a().c());
-        hashMap.put(C0157d.g, h.a().b());
+        hashMap.put(C0161d.ak, h.a().c());
+        hashMap.put(C0161d.g, h.a().b());
         return hashMap;
     }
 
@@ -391,7 +391,7 @@ public class i {
     /* access modifiers changed from: private */
     public void f() {
         if (h()) {
-            if (C0155b.e()) {
+            if (C0159b.e()) {
                 b(true);
                 b(false);
             } else {
@@ -402,7 +402,7 @@ public class i {
     }
 
     private ArrayList<String> g() {
-        String[] o2 = C0155b.o();
+        String[] o2 = C0159b.o();
         int length = o2 != null ? o2.length : 0;
         ArrayList<String> arrayList = new ArrayList<>();
         for (int i2 = 0; i2 < length; i2++) {
@@ -499,7 +499,7 @@ public class i {
     public void c() {
         if (!l.a()) {
             com.xiaomi.stat.d.k.b("UploaderEngine postToServer network is not connected ");
-        } else if (!C0155b.a() || !C0155b.b()) {
+        } else if (!C0159b.a() || !C0159b.b()) {
             com.xiaomi.stat.d.k.b("UploaderEngine postToServer statistic disable or network disable access! ");
         } else {
             Message obtain = Message.obtain();

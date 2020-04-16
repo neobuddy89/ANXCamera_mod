@@ -17,9 +17,9 @@ class w implements Runnable {
     final /* synthetic */ MiStatParams f594d;
 
     /* renamed from: e  reason: collision with root package name */
-    final /* synthetic */ C0158e f595e;
+    final /* synthetic */ C0162e f595e;
 
-    w(C0158e eVar, String str, long j, long j2, MiStatParams miStatParams) {
+    w(C0162e eVar, String str, long j, long j2, MiStatParams miStatParams) {
         this.f595e = eVar;
         this.f591a = str;
         this.f592b = j;
@@ -28,8 +28,8 @@ class w implements Runnable {
     }
 
     public void run() {
-        if (C0155b.a() && this.f595e.g(false)) {
-            C0158e eVar = this.f595e;
+        if (C0159b.a() && this.f595e.g(false)) {
+            C0162e eVar = this.f595e;
             String str = this.f591a;
             long j = this.f592b;
             eVar.a(l.a(str, j - this.f593c, j, this.f594d, eVar.f548b));

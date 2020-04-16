@@ -77,10 +77,10 @@ class NotificationCompatJellybean {
                 sActionsField.setAccessible(true);
             }
         } catch (ClassNotFoundException e2) {
-            Log.e(TAG, "Unable to access notification actions", e2);
+            Log.e("NotificationCompat", "Unable to access notification actions", e2);
             sActionsAccessFailed = true;
         } catch (NoSuchFieldException e3) {
-            Log.e(TAG, "Unable to access notification actions", e3);
+            Log.e("NotificationCompat", "Unable to access notification actions", e3);
             sActionsAccessFailed = true;
         }
         return !sActionsAccessFailed;
@@ -119,7 +119,7 @@ class NotificationCompatJellybean {
                     Object obj = actionObjectsLocked[i];
                     Bundle extras = getExtras(notification);
                     if (extras != null) {
-                        SparseArray sparseParcelableArray = extras.getSparseParcelableArray(NotificationCompatExtras.EXTRA_ACTION_EXTRAS);
+                        SparseArray sparseParcelableArray = extras.getSparseParcelableArray("android.support.actionExtras");
                         if (sparseParcelableArray != null) {
                             bundle = (Bundle) sparseParcelableArray.get(i);
                             NotificationCompat.Action readAction = readAction(sActionIconField.getInt(obj), (CharSequence) sActionTitleField.get(obj), (PendingIntent) sActionIntentField.get(obj), bundle);
@@ -131,7 +131,7 @@ class NotificationCompatJellybean {
                     return readAction2;
                 }
             } catch (IllegalAccessException e2) {
-                Log.e(TAG, "Unable to access notification actions", e2);
+                Log.e("NotificationCompat", "Unable to access notification actions", e2);
                 sActionsAccessFailed = true;
             } catch (Throwable th) {
                 throw th;
@@ -168,7 +168,7 @@ class NotificationCompatJellybean {
                 Object[] objArr = (Object[]) sActionsField.get(notification);
                 return objArr;
             } catch (IllegalAccessException e2) {
-                Log.e(TAG, "Unable to access notification actions", e2);
+                Log.e("NotificationCompat", "Unable to access notification actions", e2);
                 sActionsAccessFailed = true;
                 return null;
             }
@@ -208,7 +208,7 @@ class NotificationCompatJellybean {
                 if (sExtrasField == null) {
                     Field declaredField = Notification.class.getDeclaredField("extras");
                     if (!Bundle.class.isAssignableFrom(declaredField.getType())) {
-                        Log.e(TAG, "Notification.extras field is not of type Bundle");
+                        Log.e("NotificationCompat", "Notification.extras field is not of type Bundle");
                         sExtrasFieldAccessFailed = true;
                         return null;
                     }
@@ -222,11 +222,11 @@ class NotificationCompatJellybean {
                 }
                 return bundle;
             } catch (IllegalAccessException e2) {
-                Log.e(TAG, "Unable to access notification extras", e2);
+                Log.e("NotificationCompat", "Unable to access notification extras", e2);
                 sExtrasFieldAccessFailed = true;
                 return null;
             } catch (NoSuchFieldException e3) {
-                Log.e(TAG, "Unable to access notification extras", e3);
+                Log.e("NotificationCompat", "Unable to access notification extras", e3);
                 sExtrasFieldAccessFailed = true;
                 return null;
             }
@@ -238,7 +238,7 @@ class NotificationCompatJellybean {
         RemoteInput[] remoteInputArr;
         RemoteInput[] remoteInputArr2;
         if (bundle != null) {
-            remoteInputArr2 = fromBundleArray(getBundleArrayFromBundle(bundle, NotificationCompatExtras.EXTRA_REMOTE_INPUTS));
+            remoteInputArr2 = fromBundleArray(getBundleArrayFromBundle(bundle, "android.support.remoteInputs"));
             remoteInputArr = fromBundleArray(getBundleArrayFromBundle(bundle, EXTRA_DATA_ONLY_REMOTE_INPUTS));
             z = bundle.getBoolean(EXTRA_ALLOW_GENERATED_REPLIES);
         } else {
@@ -283,7 +283,7 @@ class NotificationCompatJellybean {
         builder.addAction(action.getIcon(), action.getTitle(), action.getActionIntent());
         Bundle bundle = new Bundle(action.getExtras());
         if (action.getRemoteInputs() != null) {
-            bundle.putParcelableArray(NotificationCompatExtras.EXTRA_REMOTE_INPUTS, toBundleArray(action.getRemoteInputs()));
+            bundle.putParcelableArray("android.support.remoteInputs", toBundleArray(action.getRemoteInputs()));
         }
         if (action.getDataOnlyRemoteInputs() != null) {
             bundle.putParcelableArray(EXTRA_DATA_ONLY_REMOTE_INPUTS, toBundleArray(action.getDataOnlyRemoteInputs()));

@@ -1,6 +1,5 @@
 package com.android.camera;
 
-import android.support.v4.view.MotionEventCompat;
 import com.android.camera.panorama.NativeMemoryAllocator;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -78,7 +77,7 @@ public class PanoUtil {
                 } else if (i20 <= 262143) {
                     i21 = i20;
                 }
-                iArr[i11] = -16777216 | ((i18 << 6) & 16711680) | ((i19 >> 2) & MotionEventCompat.ACTION_POINTER_INDEX_MASK) | ((i21 >> 10) & 255);
+                iArr[i11] = -16777216 | ((i18 << 6) & 16711680) | ((i19 >> 2) & 65280) | ((i21 >> 10) & 255);
                 i12 += 4;
                 i11++;
             }

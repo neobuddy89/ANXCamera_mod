@@ -3,6 +3,7 @@ package org.webrtc.videoengine;
 import android.hardware.Camera;
 import android.util.Log;
 import com.android.camera.statistic.MistatsConstants;
+import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -60,7 +61,7 @@ public class VideoCaptureDeviceInfoAndroid {
                         jSONObject3.put("max_mfps", next2[1]);
                         jSONArray3.put(jSONObject3);
                     }
-                    jSONObject.put("name", deviceUniqueName);
+                    jSONObject.put(AppMeasurementSdk.ConditionalUserProperty.NAME, deviceUniqueName);
                     jSONObject.put("front_facing", isFrontFacing(cameraInfo)).put("orientation", cameraInfo.orientation).put("sizes", jSONArray2).put("mfpsRanges", jSONArray3);
                 } catch (RuntimeException e2) {
                     Log.e(TAG, "Failed to open " + deviceUniqueName + ", skipping", e2);

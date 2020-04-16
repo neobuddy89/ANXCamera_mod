@@ -12,7 +12,7 @@ import com.android.camera.Util;
 import com.android.camera.data.DataRepository;
 import com.android.camera.data.data.DataItemBase;
 import com.android.camera.log.Log;
-import com.xiaomi.stat.C0157d;
+import com.xiaomi.stat.C0161d;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -140,7 +140,7 @@ public class a extends DataItemBase implements c {
         } catch (Throwable th) {
             r11.addSuppressed(th);
         }
-        Log.d(TAG, "parseJsonFile: end >>> " + str + ", firstInit = " + z + ", cost " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
+        Log.d(TAG, "parseJsonFile: end >>> " + str + ", firstInit = " + z + ", cost " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
     }
 
     public boolean Ab() {

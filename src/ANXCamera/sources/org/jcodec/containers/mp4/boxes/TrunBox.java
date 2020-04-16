@@ -1,6 +1,5 @@
 package org.jcodec.containers.mp4.boxes;
 
-import android.support.v4.internal.view.SupportMenu;
 import java.nio.ByteBuffer;
 import org.jcodec.platform.Platform;
 
@@ -140,7 +139,7 @@ public class TrunBox extends FullBox {
     }
 
     public static int flagsGetSampleDegradationPriority(int i) {
-        return (i >> 16) & SupportMenu.USER_MASK;
+        return (i >> 16) & 65535;
     }
 
     public static int flagsGetSampleDependsOn(int i) {

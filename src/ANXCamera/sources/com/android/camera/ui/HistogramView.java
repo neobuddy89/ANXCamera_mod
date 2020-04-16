@@ -6,7 +6,6 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
-import android.support.v4.internal.view.SupportMenu;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.View;
@@ -24,7 +23,7 @@ public class HistogramView extends View {
     private int mOrientation;
     private Paint mPaint = new Paint();
     private Path mPath = new Path();
-    private int mRedColor = SupportMenu.CATEGORY_MASK;
+    private int mRedColor = -65536;
     private int[] mRedHistogram = new int[256];
     private int mYColor = -1;
     private int[] mYHistogram = new int[256];

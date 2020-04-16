@@ -8,7 +8,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -68,7 +67,7 @@ public class FragmentLiveMusic extends DialogFragment implements View.OnClickLis
             this.mLocalMusicText.setTextColor(color);
             this.mLocalMusicText.setAlpha(1.0f);
             this.mHotMusicText.setAlpha(0.5f);
-            this.mHotMusicText.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+            this.mHotMusicText.setTextColor(-16777216);
             this.mViewPager.setCurrentItem(1, false);
         }
     }
@@ -78,7 +77,7 @@ public class FragmentLiveMusic extends DialogFragment implements View.OnClickLis
         int color = ContextCompat.getColor(getContext(), R.color.beautycamera_beauty_advanced_item_backgroud_pressed);
         if (this.mCurrentItemIndex == 1) {
             this.mCurrentItemIndex = 0;
-            this.mLocalMusicText.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+            this.mLocalMusicText.setTextColor(-16777216);
             this.mLocalMusicText.setAlpha(0.5f);
             this.mHotMusicText.setAlpha(1.0f);
             this.mHotMusicText.setTextColor(color);

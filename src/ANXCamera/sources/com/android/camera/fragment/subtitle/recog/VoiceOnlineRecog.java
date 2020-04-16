@@ -16,7 +16,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ss.android.ugc.effectmanager.EffectConfiguration;
 import com.ss.android.vesdk.VEEditor;
-import com.xiaomi.stat.C0157d;
+import com.xiaomi.stat.C0161d;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -248,7 +248,7 @@ public class VoiceOnlineRecog {
         if (asJsonObject4 == null) {
             return "";
         }
-        JsonObject asJsonObject5 = asJsonObject4.getAsJsonObject(C0157d.n);
+        JsonObject asJsonObject5 = asJsonObject4.getAsJsonObject(C0161d.n);
         if (asJsonObject5 == null) {
             return "";
         }

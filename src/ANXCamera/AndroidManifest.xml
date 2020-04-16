@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" 
     android:compileSdkVersion="29" 
     android:compileSdkVersionCodename="10" 
-    android:versionCode="177" 
-    android:versionName="177.HungryIcyAmethystsunbird" 
+    android:versionCode="178" 
+    android:versionName="178.MintcreamGrotesqueAngelfish" 
     package="com.android.camera" 
     platformBuildVersionCode="29" 
     platformBuildVersionName="10">
@@ -42,6 +42,8 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="com.miui.securitycenter.permission.PERM_USE_INFO"/>
     <uses-permission android:name="android.permission.CONTROL_DISPLAY_BRIGHTNESS"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
     <permission android:name="com.android.camera.permission.RESET_PREF" 
         android:protectionLevel="normal"/>
     <permission android:name="com.xiaomi.camera.AUX_CONTROL" 
@@ -107,6 +109,17 @@
             android:permission="com.android.camera.permission.RESET_PREF">
             <intent-filter>
                 <action android:name="miui.intent.action.RESET_CAMERA_PREF"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.google.android.gms.measurement.AppMeasurementReceiver" 
+            android:enabled="true" 
+            android:exported="false"/>
+        <receiver android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" 
+            android:permission="android.permission.INSTALL_PACKAGES" 
+            android:enabled="true" 
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
             </intent-filter>
         </receiver>
         <activity android:clearTaskOnLaunch="true" 
@@ -226,5 +239,37 @@
             android:syncable="false"/>
         <meta-data android:name="aia-compat-api-min-version" 
             android:value="1"/>
+            
+        <service android:name="com.google.android.gms.measurement.AppMeasurementService" 
+            android:enabled="true" 
+            android:exported="false"/>
+        <service android:name="com.google.android.gms.measurement.AppMeasurementJobService" 
+            android:permission="android.permission.BIND_JOB_SERVICE" 
+            android:enabled="true" 
+            android:exported="false"/>
+        <service android:name="com.google.firebase.components.ComponentDiscoveryService" 
+            android:exported="false" 
+            android:directBootAware="true">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" 
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" 
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" 
+            android:permission="com.google.android.c2dm.permission.SEND" 
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <provider android:name="com.google.firebase.provider.FirebaseInitProvider" 
+            android:exported="false" 
+            android:authorities="com.aeonax.firebaseapp.firebaseinitprovider" 
+            android:initOrder="100"/>
+        <activity android:theme="@style/ThemeCameraSettings" 
+            android:name="com.google.android.gms.common.api.GoogleApiActivity" 
+            android:exported="false"/>
+        <meta-data android:name="com.google.android.gms.version" 
+            android:value="@integer/google_play_services_version"/>
     </application>
 </manifest>

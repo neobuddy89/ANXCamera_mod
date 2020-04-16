@@ -1,12 +1,11 @@
 package com.android.camera.network.live;
 
-import android.support.v4.app.NotificationCompat;
 import com.android.camera.CameraSettings;
 import com.android.camera.fragment.music.LiveMusicInfo;
 import com.android.camera.log.Log;
 import com.android.camera.network.net.base.ErrorCode;
 import com.ss.android.ugc.effectmanager.EffectConfiguration;
-import com.xiaomi.stat.C0155b;
+import com.xiaomi.stat.C0159b;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -24,7 +23,7 @@ public class TTLiveMusicResourceRequest extends BaseJsonRequest<List<LiveMusicIn
         String md5 = Util.md5((long) nextInt, currentTimeMillis);
         addParam(EffectConfiguration.KEY_APP_ID, "2");
         addParam("randnum", Integer.toString(nextInt));
-        addParam(C0155b.j, Long.toString(currentTimeMillis));
+        addParam(C0159b.j, Long.toString(currentTimeMillis));
         addParam("generate", md5);
     }
 
@@ -42,7 +41,7 @@ public class TTLiveMusicResourceRequest extends BaseJsonRequest<List<LiveMusicIn
         if (jSONObject == null || !jSONObject.has("status_code")) {
             throw new BaseRequestException(ErrorCode.PARSE_ERROR, "response has no status_code");
         } else if (jSONObject.getInt("status_code") != 0) {
-            throw new BaseRequestException(ErrorCode.SERVER_ERROR, jSONObject.optString(NotificationCompat.CATEGORY_MESSAGE));
+            throw new BaseRequestException(ErrorCode.SERVER_ERROR, jSONObject.optString("msg"));
         } else if (!jSONObject.isNull("music_list")) {
             CameraSettings.setTTLiveMusicJsonCache(jSONObject.toString());
             ArrayList arrayList = new ArrayList();

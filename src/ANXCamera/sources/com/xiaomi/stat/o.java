@@ -17,9 +17,9 @@ class o implements Runnable {
     final /* synthetic */ long f574d;
 
     /* renamed from: e  reason: collision with root package name */
-    final /* synthetic */ C0158e f575e;
+    final /* synthetic */ C0162e f575e;
 
-    o(C0158e eVar, int i, int i2, long j, long j2) {
+    o(C0162e eVar, int i, int i2, long j, long j2) {
         this.f575e = eVar;
         this.f571a = i;
         this.f572b = i2;
@@ -28,7 +28,7 @@ class o implements Runnable {
     }
 
     public void run() {
-        if (C0155b.a() && this.f575e.g()) {
+        if (C0159b.a() && this.f575e.g()) {
             this.f575e.a(l.a(this.f571a, this.f572b, this.f573c, this.f574d));
         }
     }

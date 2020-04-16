@@ -387,7 +387,7 @@ public class FragmentFullScreen extends BaseFragment implements ModeProtocol.Ful
     private void initCoverView() {
         if (this.mPreviewCover == null) {
             this.mPreviewCover = new ImageView(getContext());
-            this.mPreviewCover.setBackgroundColor(ViewCompat.MEASURED_STATE_MASK);
+            this.mPreviewCover.setBackgroundColor(-16777216);
             this.mPreviewCover.setVisibility(8);
         }
     }

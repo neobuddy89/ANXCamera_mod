@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.IntentFilter;
 import android.text.TextUtils;
 import com.xiaomi.stat.A;
-import com.xiaomi.stat.C0155b;
+import com.xiaomi.stat.C0159b;
 import com.xiaomi.stat.I;
 import com.xiaomi.stat.c.c;
 import com.xiaomi.stat.d.k;
@@ -85,11 +85,11 @@ public class a {
             if (!TextUtils.isEmpty(str)) {
                 JSONObject jSONObject = new JSONObject(str);
                 if (jSONObject.getInt("errorCode") == 0) {
-                    long optLong = jSONObject.optLong(C0155b.j, 0);
+                    long optLong = jSONObject.optLong(C0159b.j, 0);
                     A.a().b(h, optLong);
-                    C0155b.c(jSONObject.optString(C0155b.i, C0155b.l));
-                    C0155b.c(jSONObject.optInt(C0155b.h, -1));
-                    C0155b.d(jSONObject.optInt(C0155b.g, 0) / 1000);
+                    C0159b.c(jSONObject.optString(C0159b.i, C0159b.l));
+                    C0159b.c(jSONObject.optInt(C0159b.h, -1));
+                    C0159b.d(jSONObject.optInt(C0159b.g, 0) / 1000);
                     r.a(optLong);
                     f.a().a(jSONObject);
                     if (this.r == 1) {
@@ -154,8 +154,8 @@ public class a {
         return;
      */
     public synchronized void a(boolean z, boolean z2) {
-        if (C0155b.a()) {
-            if (C0155b.b()) {
+        if (C0159b.a()) {
+            if (C0159b.b()) {
                 if (!l.a()) {
                     k.b(f369a, "network is not connected!");
                     this.r = 1;
@@ -179,7 +179,7 @@ public class a {
                 if (!z || z2) {
                     a(0);
                 } else {
-                    String[] split = C0155b.k().split(f370b);
+                    String[] split = C0159b.k().split(f370b);
                     if (split.length > 1) {
                         int parseInt = Integer.parseInt(split[0]);
                         int parseInt2 = Integer.parseInt(split[1]);

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.HandlerThread;
 import com.android.camera.log.Log;
 import com.android.camera.permission.PermissionManager;
-import com.xiaomi.stat.MiStat;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -142,7 +141,7 @@ public class LocationManager {
 
     private void startReceivingLocationUpdates() {
         if (this.mLocationManager == null) {
-            this.mLocationManager = (android.location.LocationManager) CameraAppImpl.getAndroidContext().getSystemService(MiStat.Param.LOCATION);
+            this.mLocationManager = (android.location.LocationManager) CameraAppImpl.getAndroidContext().getSystemService("location");
         }
         android.location.LocationManager locationManager = this.mLocationManager;
         if (locationManager != null) {

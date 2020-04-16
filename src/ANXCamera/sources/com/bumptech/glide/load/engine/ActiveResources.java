@@ -23,7 +23,7 @@ final class ActiveResources {
     @Nullable
     private volatile DequeuedResourceCallback cb;
     private u.a listener;
-    private final Handler qa = new Handler(Looper.getMainLooper(), new C0142a(this));
+    private final Handler qa = new Handler(Looper.getMainLooper(), new C0146a(this));
     @Nullable
     private ReferenceQueue<u<?>> ve;
     @Nullable
@@ -72,7 +72,7 @@ final class ActiveResources {
     private ReferenceQueue<u<?>> Ml() {
         if (this.ve == null) {
             this.ve = new ReferenceQueue<>();
-            this.we = new Thread(new C0143b(this), "glide-active-resources");
+            this.we = new Thread(new C0147b(this), "glide-active-resources");
             this.we.start();
         }
         return this.ve;

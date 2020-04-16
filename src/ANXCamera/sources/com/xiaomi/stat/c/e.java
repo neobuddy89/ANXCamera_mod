@@ -3,7 +3,7 @@ package com.xiaomi.stat.c;
 import android.os.IBinder;
 import android.os.RemoteException;
 import com.xiaomi.a.a.a.a;
-import com.xiaomi.stat.C0155b;
+import com.xiaomi.stat.C0159b;
 import com.xiaomi.stat.d.k;
 
 class e implements Runnable {
@@ -22,9 +22,9 @@ class e implements Runnable {
     public void run() {
         a a2 = a.C0015a.a(this.f429a);
         try {
-            if (!C0155b.e()) {
+            if (!C0159b.e()) {
                 this.f430b.f426a[0] = a2.a(this.f430b.f427b, this.f430b.f428c);
-            } else if (C0155b.x()) {
+            } else if (C0159b.x()) {
                 this.f430b.f426a[0] = a2.b(this.f430b.f427b, this.f430b.f428c);
             } else {
                 this.f430b.f426a[0] = null;

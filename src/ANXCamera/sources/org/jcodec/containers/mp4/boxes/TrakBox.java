@@ -1,5 +1,6 @@
 package org.jcodec.containers.mp4.boxes;
 
+import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
@@ -233,7 +234,7 @@ public class TrakBox extends NodeBox {
             nodeBox = new NodeBox(new Header("udta"));
             add(nodeBox);
         }
-        nodeBox.removeChildren(new String[]{"name"});
+        nodeBox.removeChildren(new String[]{AppMeasurementSdk.ConditionalUserProperty.NAME});
         nodeBox.add(NameBox.createNameBox(str));
     }
 

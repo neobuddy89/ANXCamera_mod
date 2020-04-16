@@ -1,6 +1,5 @@
 package okhttp3.internal.http2;
 
-import android.support.v4.internal.view.SupportMenu;
 import java.io.Closeable;
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -366,7 +365,7 @@ public final class Http2Connection implements Closeable {
         this.hostname = builder.hostname;
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 60, TimeUnit.SECONDS, new LinkedBlockingQueue(), Util.threadFactory(Util.format("OkHttp %s Push Observer", this.hostname), true));
         this.pushExecutor = threadPoolExecutor;
-        this.peerSettings.set(7, SupportMenu.USER_MASK);
+        this.peerSettings.set(7, 65535);
         this.peerSettings.set(5, 16384);
         this.bytesLeftInWriteWindow = (long) this.peerSettings.getInitialWindowSize();
         this.socket = builder.socket;
@@ -696,7 +695,7 @@ public final class Http2Connection implements Closeable {
             this.writer.settings(this.okHttpSettings);
             int initialWindowSize = this.okHttpSettings.getInitialWindowSize();
             if (initialWindowSize != 65535) {
-                this.writer.windowUpdate(0, (long) (initialWindowSize - SupportMenu.USER_MASK));
+                this.writer.windowUpdate(0, (long) (initialWindowSize - 65535));
             }
         }
         new Thread(this.readerRunnable).start();

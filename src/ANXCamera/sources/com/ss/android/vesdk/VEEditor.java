@@ -16,8 +16,6 @@ import android.os.Message;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.internal.view.SupportMenu;
-import android.support.v4.view.ViewCompat;
 import android.text.TextUtils;
 import android.view.Surface;
 import android.view.SurfaceHolder;
@@ -396,7 +394,7 @@ public class VEEditor implements SurfaceTexture.OnFrameAvailableListener, Lifecy
     }
 
     public enum VEState {
-        ANY(SupportMenu.USER_MASK),
+        ANY(65535),
         ERROR(0),
         NOTHING(1048576),
         IDLE(1),
@@ -574,7 +572,7 @@ public class VEEditor implements SurfaceTexture.OnFrameAvailableListener, Lifecy
         this.scaleW = 1.0f;
         this.scaleH = 1.0f;
         this.mPageMode = -1;
-        this.mBackGroundColor = ViewCompat.MEASURED_STATE_MASK;
+        this.mBackGroundColor = -16777216;
         this.mTextureListener = new TextureView.SurfaceTextureListener() {
             public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
                 if (VEEditor.this.mSurfaceTexture == surfaceTexture) {
@@ -810,7 +808,7 @@ public class VEEditor implements SurfaceTexture.OnFrameAvailableListener, Lifecy
         this.scaleW = 1.0f;
         this.scaleH = 1.0f;
         this.mPageMode = -1;
-        this.mBackGroundColor = ViewCompat.MEASURED_STATE_MASK;
+        this.mBackGroundColor = -16777216;
         this.mTextureListener = new TextureView.SurfaceTextureListener() {
             public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
                 if (VEEditor.this.mSurfaceTexture == surfaceTexture) {
@@ -1057,7 +1055,7 @@ public class VEEditor implements SurfaceTexture.OnFrameAvailableListener, Lifecy
         this.scaleW = 1.0f;
         this.scaleH = 1.0f;
         this.mPageMode = -1;
-        this.mBackGroundColor = ViewCompat.MEASURED_STATE_MASK;
+        this.mBackGroundColor = -16777216;
         this.mTextureListener = new TextureView.SurfaceTextureListener() {
             public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
                 if (VEEditor.this.mSurfaceTexture == surfaceTexture) {

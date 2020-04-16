@@ -186,7 +186,7 @@ public class FileProvider extends ContentProvider {
                 if (next == 2) {
                     String name = loadXmlMetaData.getName();
                     File file = null;
-                    String attributeValue = loadXmlMetaData.getAttributeValue((String) null, ATTR_NAME);
+                    String attributeValue = loadXmlMetaData.getAttributeValue((String) null, "name");
                     String attributeValue2 = loadXmlMetaData.getAttributeValue((String) null, "path");
                     if (TAG_ROOT_PATH.equals(name)) {
                         file = DEVICE_ROOT;

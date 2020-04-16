@@ -8,7 +8,6 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Shader;
 import android.support.annotation.Nullable;
-import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -77,7 +76,7 @@ public class EdgeHorizonScrollView extends HorizontalScrollView {
         this.mEdgePaint.setStyle(Paint.Style.FILL);
         this.mEdgePaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         Paint paint = this.mEdgePaint;
-        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, (float) this.mEdgeWidth, new int[]{ViewCompat.MEASURED_STATE_MASK, -1728053248, 0}, new float[]{0.0f, 0.3f, 2.0f}, Shader.TileMode.CLAMP);
+        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, (float) this.mEdgeWidth, new int[]{-16777216, -1728053248, 0}, new float[]{0.0f, 0.3f, 2.0f}, Shader.TileMode.CLAMP);
         paint.setShader(linearGradient);
         setFocusable(false);
     }

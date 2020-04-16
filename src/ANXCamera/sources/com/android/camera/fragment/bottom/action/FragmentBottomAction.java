@@ -64,7 +64,7 @@ import com.android.camera.ui.CameraSnapView;
 import com.android.camera.ui.EdgeHorizonScrollView;
 import com.android.camera.ui.ModeSelectView;
 import com.mi.config.b;
-import com.xiaomi.stat.C0157d;
+import com.xiaomi.stat.C0161d;
 import io.reactivex.Completable;
 import java.util.List;
 import java.util.Locale;
@@ -1262,7 +1262,7 @@ public class FragmentBottomAction extends BaseFragment implements View.OnClickLi
         if (isEnableClick()) {
             ModeProtocol.CameraActionTrack cameraActionTrack = (ModeProtocol.CameraActionTrack) ModeCoordinatorImpl.getInstance().getAttachProtocol(186);
             if (cameraActionTrack != null) {
-                Log.d(TAG, "onTrackSnapMissTaken " + j + C0157d.H);
+                Log.d(TAG, "onTrackSnapMissTaken " + j + C0161d.H);
                 cameraActionTrack.onTrackShutterButtonMissTaken(j);
             }
         }
@@ -1272,7 +1272,7 @@ public class FragmentBottomAction extends BaseFragment implements View.OnClickLi
         if (isEnableClick()) {
             ModeProtocol.CameraActionTrack cameraActionTrack = (ModeProtocol.CameraActionTrack) ModeCoordinatorImpl.getInstance().getAttachProtocol(186);
             if (cameraActionTrack != null) {
-                Log.d(TAG, "onTrackSnapTaken " + j + C0157d.H);
+                Log.d(TAG, "onTrackSnapTaken " + j + C0161d.H);
                 cameraActionTrack.onTrackShutterButtonTaken(j);
             }
         }

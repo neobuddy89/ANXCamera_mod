@@ -2,11 +2,10 @@ package com.xiaomi.stat.b;
 
 import android.content.Context;
 import android.os.Build;
-import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
 import com.android.camera.module.loader.FunctionParseBeautyBodySlimCount;
 import com.xiaomi.stat.A;
-import com.xiaomi.stat.C0155b;
+import com.xiaomi.stat.C0159b;
 import com.xiaomi.stat.I;
 import com.xiaomi.stat.c.c;
 import com.xiaomi.stat.d.a;
@@ -143,7 +142,7 @@ public class h {
             if (!TextUtils.isEmpty(a4)) {
                 k.b(f398a, "result:" + a4);
                 JSONObject jSONObject = new JSONObject(a4);
-                String optString = jSONObject.optString(NotificationCompat.CATEGORY_MESSAGE);
+                String optString = jSONObject.optString("msg");
                 int optInt = jSONObject.optInt("code");
                 long optLong = jSONObject.optLong("curTime");
                 JSONObject optJSONObject = jSONObject.optJSONObject("result");
@@ -255,8 +254,8 @@ public class h {
         return;
      */
     public synchronized void a(boolean z) {
-        if (C0155b.a()) {
-            if (C0155b.b()) {
+        if (C0159b.a()) {
+            if (C0159b.b()) {
                 if (l.a()) {
                     int i2 = 1;
                     while (i2 <= 3 && b(z) && i2 != 3) {
