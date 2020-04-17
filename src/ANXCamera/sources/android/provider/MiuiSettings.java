@@ -615,7 +615,7 @@ public class MiuiSettings {
         private static int mSupportForceTouch = -1;
 
         private static void checkHighend() {
-            if ("capricorn".equals(SystemProperties.get("ro.product.device", ""))) {
+            if ("capricorn".equals(SystemProperties.get("ro.product.vendor.device", ""))) {
                 long totalInternalMemory = getTotalInternalMemory();
                 long totalPhysicalMemory = HardwareInfo.getTotalPhysicalMemory();
                 if (totalInternalMemory < 128000000000L || totalPhysicalMemory < 4000000000L) {

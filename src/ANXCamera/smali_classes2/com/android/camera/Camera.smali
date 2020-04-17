@@ -3514,7 +3514,7 @@
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 4
+    .locals 6
 
     iget-object v0, p0, Lcom/android/camera/Camera;->TAG:Ljava/lang/String;
 
@@ -3586,7 +3586,11 @@
 
     iput-object v0, p0, Lcom/aeonax/firebaseapp/MainActivity;->mFirebaseAnalytics:Lcom/google/firebase/analytics/FirebaseAnalytics;
 
+    const-string v4, "device_codename"
 
+    sget-object v5, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
+
+    invoke-virtual {v0, v4, v5}, Lcom/google/firebase/analytics/FirebaseAnalytics;->setUserProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     const p1, 0x7f0f01b7
 
@@ -3664,6 +3668,13 @@
     move-result-object v0
 
     iput-object v0, p0, Lcom/aeonax/firebaseapp/MainActivity;->mFirebaseAnalytics:Lcom/google/firebase/analytics/FirebaseAnalytics;
+
+
+    const-string v4, "device_codename"
+
+    sget-object v5, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
+
+    invoke-virtual {v0, v4, v5}, Lcom/google/firebase/analytics/FirebaseAnalytics;->setUserProperty(Ljava/lang/String;Ljava/lang/String;)V
 
 
 

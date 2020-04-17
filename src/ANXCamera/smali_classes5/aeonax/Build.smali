@@ -5,6 +5,7 @@
 # static fields
 
 .field public static final ANXDEVICE:Ljava/lang/String;
+.field public static final ANXMODEL:Ljava/lang/String;
 
 
 # direct methods
@@ -25,6 +26,16 @@
     move-result-object v1
 
     sput-object v1, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
+
+    
+
+    const-string v1, "ro.product.model"
+
+    invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+    
+    move-result-object v1
+
+    sput-object v1, Laeonax/Build;->ANXMODEL:Ljava/lang/String;
     
     return-void
     :cond_0
@@ -36,6 +47,15 @@
     move-result-object v1
 
     sput-object v1, Laeonax/Build;->ANXDEVICE:Ljava/lang/String;
+    
+    
+    const-string v1, "ro.product.vendor.model"
+
+    invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+    
+    move-result-object v1
+
+    sput-object v1, Laeonax/Build;->ANXMODEL:Ljava/lang/String;
 
     return-void
 

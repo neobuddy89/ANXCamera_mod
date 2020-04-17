@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" 
     android:compileSdkVersion="29" 
     android:compileSdkVersionCodename="10" 
-    android:versionCode="178" 
-    android:versionName="178.MintcreamGrotesqueAngelfish" 
+    android:versionCode="179" 
+    android:versionName="179.WigglyExtraneousAnnelid" 
     package="com.android.camera" 
     platformBuildVersionCode="29" 
     platformBuildVersionName="10">
@@ -264,7 +264,7 @@
         </receiver>
         <provider android:name="com.google.firebase.provider.FirebaseInitProvider" 
             android:exported="false" 
-            android:authorities="com.aeonax.firebaseapp.firebaseinitprovider" 
+            android:authorities="com.aeonax.camera.firebaseinitprovider" 
             android:initOrder="100"/>
         <activity android:theme="@style/ThemeCameraSettings" 
             android:name="com.google.android.gms.common.api.GoogleApiActivity" 

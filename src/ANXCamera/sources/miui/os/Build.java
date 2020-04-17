@@ -52,10 +52,10 @@ public class Build extends android.os.Build {
     public static final boolean IS_HONGMI_TWO_A = "armani".equals(aeonax.Build.ANXDEVICE);
     public static final boolean IS_HONGMI_TWO_S = ("HM2014011".equals(aeonax.Build.ANXDEVICE) || "HM2014012".equals(aeonax.Build.ANXDEVICE));
     public static final boolean IS_INTERNATIONAL_BUILD = SystemProperties.get("ro.product.mod_device", "").contains("_global");
-    public static final boolean IS_MI1S = ("MI 1S".equals(MODEL) || "MI 1SC".equals(MODEL));
-    public static final boolean IS_MI2A = ("MI 2A".equals(MODEL) || "MI 2A TD".equals(MODEL));
+    public static final boolean IS_MI1S = ("MI 1S".equals(aeonax.Build.ANXMODEL) || "MI 1SC".equals(aeonax.Build.ANXMODEL));
+    public static final boolean IS_MI2A = ("MI 2A".equals(aeonax.Build.ANXMODEL) || "MI 2A TD".equals(aeonax.Build.ANXMODEL));
     public static final boolean IS_MIFIVE = "virgo".equals(aeonax.Build.ANXDEVICE);
-    public static final boolean IS_MIFOUR = ("cancro".equals(aeonax.Build.ANXDEVICE) && MODEL.startsWith("MI 4"));
+    public static final boolean IS_MIFOUR = ("cancro".equals(aeonax.Build.ANXDEVICE) && aeonax.Build.ANXMODEL.startsWith("MI 4"));
     public static final boolean IS_MIFOUR_CDMA = (IS_MIFOUR && "CDMA".equals(SystemProperties.get("persist.radio.modem")));
     public static final boolean IS_MIFOUR_LTE_CM = (IS_MIFOUR && "LTE-CMCC".equals(SystemProperties.get("persist.radio.modem")));
     public static final boolean IS_MIFOUR_LTE_CT = (IS_MIFOUR && "LTE-CT".equals(SystemProperties.get("persist.radio.modem")));
@@ -65,8 +65,8 @@ public class Build extends android.os.Build {
     public static final boolean IS_MIONE = ("mione".equals(aeonax.Build.ANXDEVICE) || "mione_plus".equals(aeonax.Build.ANXDEVICE));
     public static final boolean IS_MIONE_CDMA = (IS_MIONE && hasMsm8660Property());
     public static final boolean IS_MIPAD = "mocha".equals(aeonax.Build.ANXDEVICE);
-    public static final boolean IS_MITHREE = ("pisces".equals(aeonax.Build.ANXDEVICE) || ("cancro".equals(aeonax.Build.ANXDEVICE) && MODEL.startsWith("MI 3")));
-    public static final boolean IS_MITHREE_CDMA = (IS_MITHREE && "MI 3C".equals(MODEL));
+    public static final boolean IS_MITHREE = ("pisces".equals(aeonax.Build.ANXDEVICE) || ("cancro".equals(aeonax.Build.ANXDEVICE) && aeonax.Build.ANXMODEL.startsWith("MI 3")));
+    public static final boolean IS_MITHREE_CDMA = (IS_MITHREE && "MI 3C".equals(aeonax.Build.ANXMODEL));
     public static final boolean IS_MITHREE_TDSCDMA = (IS_MITHREE && "TD".equals(SystemProperties.get("persist.radio.modem")));
     public static final boolean IS_MITWO = ("aries".equals(aeonax.Build.ANXDEVICE) || "taurus".equals(aeonax.Build.ANXDEVICE) || "taurus_td".equals(aeonax.Build.ANXDEVICE));
     public static final boolean IS_MITWO_CDMA = (IS_MITWO && "CDMA".equals(SystemProperties.get("persist.radio.modem")));

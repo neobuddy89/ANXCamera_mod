@@ -1,5 +1,6 @@
 package com.mi.config;
 
+import aeonax.Build;
 import android.os.SystemProperties;
 import android.text.TextUtils;
 import com.android.camera.AutoLockManager;
@@ -10,28 +11,27 @@ import java.util.Collections;
 import java.util.Locale;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
-import miui.os.Build;
 
 /* compiled from: Device */
 public class b {
     private static final int Am = 100;
     private static final String An = "ro.boot.hwversion";
-    public static final String Bm = Build.MODEL;
+    public static final String Bm = Build.ANXMODEL;
     private static final AtomicReference<Optional<Boolean>> Bn = new AtomicReference<>(Optional.empty());
-    public static final boolean Cm = Build.IS_MITWO;
-    public static final boolean Dm = ("cancro".equals(xm) && Build.MODEL.startsWith("MI 3"));
+    public static final boolean Cm = miui.os.Build.IS_MITWO;
+    public static final boolean Dm = ("cancro".equals(xm) && Build.ANXMODEL.startsWith("MI 3"));
     public static final boolean Em = Dm;
-    public static final boolean Fm = (Build.IS_HONGMI_TWO && !Build.IS_HONGMI_TWO_A && !Build.IS_HONGMI_TWO_S);
-    public static final boolean Gm = Build.IS_HONGMI_TWO_S;
-    public static final boolean Hm = Build.IS_HONGMI_TWOS_LTE_MTK;
+    public static final boolean Fm = (miui.os.Build.IS_HONGMI_TWO && !miui.os.Build.IS_HONGMI_TWO_A && !miui.os.Build.IS_HONGMI_TWO_S);
+    public static final boolean Gm = miui.os.Build.IS_HONGMI_TWO_S;
+    public static final boolean Hm = miui.os.Build.IS_HONGMI_TWOS_LTE_MTK;
     public static final boolean IS_HONGMI = d.getBoolean(d.IS_HONGMI, false);
-    public static final boolean IS_MI2A = Build.IS_MI2A;
+    public static final boolean IS_MI2A = miui.os.Build.IS_MI2A;
     public static final boolean IS_XIAOMI = d.getBoolean(d.IS_XIAOMI, false);
-    public static final boolean Im = Build.IS_HONGMI_TWO_A;
-    public static final boolean Jm = Build.IS_HONGMI_THREE;
-    public static final boolean Km = Build.IS_HONGMI_TWOX_LC;
-    public static final boolean Lm = Build.IS_MIFOUR;
-    public static final boolean Mm = Build.IS_MIFIVE;
+    public static final boolean Im = miui.os.Build.IS_HONGMI_TWO_A;
+    public static final boolean Jm = miui.os.Build.IS_HONGMI_THREE;
+    public static final boolean Km = miui.os.Build.IS_HONGMI_TWOX_LC;
+    public static final boolean Lm = miui.os.Build.IS_MIFOUR;
+    public static final boolean Mm = miui.os.Build.IS_MIFIVE;
     public static final boolean Nm = "leo".equals(xm);
     public static final boolean Om = "lithium".equals(xm);
     public static final boolean Pm = "chiron".equals(xm);
@@ -60,12 +60,12 @@ public class b {
     public static final boolean pn = "draco".equals(xm);
     public static final boolean qn;
     public static final boolean rn = "crux".equals(xm);
-    public static final boolean sn = Build.IS_STABLE_VERSION;
-    public static final boolean tn = Build.IS_CM_CUSTOMIZATION_TEST;
-    public static final boolean un = Build.IS_CM_CUSTOMIZATION;
+    public static final boolean sn = miui.os.Build.IS_STABLE_VERSION;
+    public static final boolean tn = miui.os.Build.IS_CM_CUSTOMIZATION_TEST;
+    public static final boolean un = miui.os.Build.IS_CM_CUSTOMIZATION;
     private static final int vn = 1;
     private static final int wn = 4;
-    public static final String xm = aeonax.Build.ANXDEVICE;
+    public static final String xm = Build.ANXDEVICE;
     private static final int xn = 8;
     public static final String ym = "qcom";
     private static ArrayList<String> yn = null;
@@ -138,7 +138,7 @@ public class b {
     }
 
     public static boolean Kk() {
-        return !Build.IS_INTERNATIONAL_BUILD && d.getBoolean(d.Pn, false);
+        return !miui.os.Build.IS_INTERNATIONAL_BUILD && d.getBoolean(d.Pn, false);
     }
 
     public static boolean Lk() {
@@ -239,7 +239,7 @@ public class b {
     }
 
     public static boolean Vk() {
-        return !Build.IS_INTERNATIONAL_BUILD && d.getBoolean(d.Bo, false);
+        return !miui.os.Build.IS_INTERNATIONAL_BUILD && d.getBoolean(d.Bo, false);
     }
 
     public static boolean Wj() {
@@ -262,7 +262,7 @@ public class b {
     }
 
     public static boolean Yj() {
-        if (!Build.IS_INTERNATIONAL_BUILD) {
+        if (!miui.os.Build.IS_INTERNATIONAL_BUILD) {
             return false;
         }
         String str = Util.sRegion;
@@ -307,7 +307,7 @@ public class b {
     }
 
     public static boolean bl() {
-        return !Build.IS_INTERNATIONAL_BUILD && d.getBoolean(d.Co, false);
+        return !miui.os.Build.IS_INTERNATIONAL_BUILD && d.getBoolean(d.Co, false);
     }
 
     public static boolean ck() {
@@ -327,7 +327,7 @@ public class b {
     }
 
     public static boolean ek() {
-        return !Im && !Km && !Build.IS_HONGMI_TWOX && !Dm && !Jm && !Fm && !Gm && !Hm && !Cm && !IS_MI2A && !Em && d.getBoolean(d.Vo, true);
+        return !Im && !Km && !miui.os.Build.IS_HONGMI_TWOX && !Dm && !Jm && !Fm && !Gm && !Hm && !Cm && !IS_MI2A && !Em && d.getBoolean(d.Vo, true);
     }
 
     public static boolean el() {
@@ -335,7 +335,7 @@ public class b {
     }
 
     public static boolean fk() {
-        return Wm && Build.IS_INTERNATIONAL_BUILD;
+        return Wm && miui.os.Build.IS_INTERNATIONAL_BUILD;
     }
 
     public static boolean fl() {
@@ -347,7 +347,7 @@ public class b {
     }
 
     public static boolean gk() {
-        return xm.equalsIgnoreCase("davinci") && Build.IS_INTERNATIONAL_BUILD;
+        return xm.equalsIgnoreCase("davinci") && miui.os.Build.IS_INTERNATIONAL_BUILD;
     }
 
     public static boolean gl() {
@@ -355,7 +355,7 @@ public class b {
     }
 
     public static boolean hk() {
-        return xm.equalsIgnoreCase("raphael") && Build.IS_INTERNATIONAL_BUILD;
+        return xm.equalsIgnoreCase("raphael") && miui.os.Build.IS_INTERNATIONAL_BUILD;
     }
 
     public static boolean hl() {
@@ -367,7 +367,7 @@ public class b {
     }
 
     public static boolean ik() {
-        return en && Build.IS_INTERNATIONAL_BUILD;
+        return en && miui.os.Build.IS_INTERNATIONAL_BUILD;
     }
 
     public static boolean il() {
@@ -398,7 +398,7 @@ public class b {
     }
 
     public static boolean jk() {
-        return jn && Build.IS_INTERNATIONAL_BUILD;
+        return jn && miui.os.Build.IS_INTERNATIONAL_BUILD;
     }
 
     public static boolean jl() {
@@ -434,7 +434,7 @@ public class b {
     }
 
     public static boolean nl() {
-        return !Im && !Km && !Build.IS_HONGMI_TWOX && !Dm && !Jm && !Fm && !Gm && !Hm && !Cm && !IS_MI2A && !Em && !Lm && d.getBoolean(d.Xo, true);
+        return !Im && !Km && !miui.os.Build.IS_HONGMI_TWOX && !Dm && !Jm && !Fm && !Gm && !Hm && !Cm && !IS_MI2A && !Em && !Lm && d.getBoolean(d.Xo, true);
     }
 
     public static boolean ol() {
@@ -454,7 +454,7 @@ public class b {
     }
 
     public static boolean rk() {
-        return xm.equalsIgnoreCase("raphael") && Build.MODEL.endsWith("Premium Edition");
+        return xm.equalsIgnoreCase("raphael") && Build.ANXMODEL.endsWith("Premium Edition");
     }
 
     public static boolean sk() {

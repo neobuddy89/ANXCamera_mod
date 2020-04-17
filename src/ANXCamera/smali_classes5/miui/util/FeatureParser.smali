@@ -499,7 +499,7 @@
 
     if-eqz v4, :cond_1
 
-    sget-object v4, Lmiui/os/Build;->MODEL:Ljava/lang/String;
+    sget-object v4, Laeonax/Build;->ANXMODEL:Ljava/lang/String;
 
     const-string v5, "MI 3"
 
@@ -516,7 +516,7 @@
     goto :goto_0
 
     :cond_0
-    sget-object v4, Lmiui/os/Build;->MODEL:Ljava/lang/String;
+    sget-object v4, Laeonax/Build;->ANXMODEL:Ljava/lang/String;
 
     const-string v5, "MI 4"
 

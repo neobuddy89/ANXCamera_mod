@@ -144,7 +144,7 @@
 
     sput-object v0, Lcom/mi/config/b;->xm:Ljava/lang/String;
 
-    sget-object v0, Lmiui/os/Build;->MODEL:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXMODEL:Ljava/lang/String;
 
     sput-object v0, Lcom/mi/config/b;->Bm:Ljava/lang/String;
 
@@ -170,7 +170,7 @@
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lmiui/os/Build;->MODEL:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXMODEL:Ljava/lang/String;
 
     const-string v3, "MI 3"
 
@@ -2599,7 +2599,7 @@
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lmiui/os/Build;->MODEL:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXMODEL:Ljava/lang/String;
 
     const-string v1, "Premium Edition"
 

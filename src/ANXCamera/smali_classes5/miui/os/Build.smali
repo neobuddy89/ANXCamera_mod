@@ -199,7 +199,7 @@
     :goto_1
     sput-boolean v0, Lmiui/os/Build;->IS_MIONE:Z
 
-    sget-object v0, Lmiui/os/Build;->MODEL:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXMODEL:Ljava/lang/String;
 
     const-string v3, "MI 1S"
 
@@ -209,7 +209,7 @@
 
     if-nez v0, :cond_3
 
-    sget-object v0, Lmiui/os/Build;->MODEL:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXMODEL:Ljava/lang/String;
 
     const-string v3, "MI 1SC"
 
@@ -277,7 +277,7 @@
     :goto_5
     sput-boolean v0, Lmiui/os/Build;->IS_MITWO:Z
 
-    sget-object v0, Lmiui/os/Build;->MODEL:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXMODEL:Ljava/lang/String;
 
     const-string v3, "MI 2A"
 
@@ -287,7 +287,7 @@
 
     if-nez v0, :cond_7
 
-    sget-object v0, Lmiui/os/Build;->MODEL:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXMODEL:Ljava/lang/String;
 
     const-string v3, "MI 2A TD"
 
@@ -331,7 +331,7 @@
 
     if-eqz v0, :cond_8
 
-    sget-object v0, Lmiui/os/Build;->MODEL:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXMODEL:Ljava/lang/String;
 
     const-string v4, "MI 3"
 
@@ -363,7 +363,7 @@
 
     if-eqz v0, :cond_a
 
-    sget-object v0, Lmiui/os/Build;->MODEL:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXMODEL:Ljava/lang/String;
 
     const-string v3, "MI 4"
 
@@ -981,7 +981,7 @@
 
     if-eqz v0, :cond_22
 
-    sget-object v0, Lmiui/os/Build;->MODEL:Ljava/lang/String;
+    sget-object v0, Laeonax/Build;->ANXMODEL:Ljava/lang/String;
 
     const-string v8, "MI 3C"
 

@@ -46,9 +46,7 @@ ui_print "  willow"
 ui_print "  tucana"
 ui_print "  phoenix"
 ui_print ""
-ui_print "In decreasing order of support"
-ui_print "Needs Testing for"
-ui_print "old devices"
+ui_print "And 69 other devices (pending tests)"
 
 rm -rf /sdcard/.ANXCamera/cheatcodes/
 mkdir -p /sdcard/.ANXCamera/cheatcodes/

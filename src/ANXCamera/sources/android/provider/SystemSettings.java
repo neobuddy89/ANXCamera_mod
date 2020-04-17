@@ -1,5 +1,6 @@
 package android.provider;
 
+import aeonax.Build;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
@@ -8,7 +9,6 @@ import android.provider.Settings;
 import com.mi.config.d;
 import com.miui.system.internal.R;
 import java.util.Iterator;
-import miui.os.Build;
 import miui.os.SystemProperties;
 import miui.text.ChinesePinyinConverter;
 import miui.util.FeatureParser;
@@ -50,7 +50,7 @@ public class SystemSettings {
         }
 
         public static String getDeviceName(Context context) {
-            return SystemProperties.get(PERSIST_SYS_DEVICE_NAME, context.getString(FeatureParser.getBoolean("is_redmi", false) ? R.string.device_redmi : FeatureParser.getBoolean("is_poco", false) ? R.string.device_poco : FeatureParser.getBoolean(d.IS_HONGMI, false) ? R.string.device_hongmi : FeatureParser.getBoolean(d.IS_XIAOMI, false) ? E10_DEVICE.equals(SystemProperties.get("ro.product.device")) ? SystemProperties.get("ro.boot.hwc", "").contains(INDIA) ? R.string.device_poco_india : R.string.device_poco_global : R.string.device_xiaomi : FeatureParser.getBoolean(d.Cn, false) ? R.string.device_pad : R.string.miui_device_name));
+            return SystemProperties.get(PERSIST_SYS_DEVICE_NAME, context.getString(FeatureParser.getBoolean("is_redmi", false) ? R.string.device_redmi : FeatureParser.getBoolean("is_poco", false) ? R.string.device_poco : FeatureParser.getBoolean(d.IS_HONGMI, false) ? R.string.device_hongmi : FeatureParser.getBoolean(d.IS_XIAOMI, false) ? E10_DEVICE.equals(SystemProperties.get("ro.product.vendor.device")) ? SystemProperties.get("ro.boot.hwc", "").contains(INDIA) ? R.string.device_poco_india : R.string.device_poco_global : R.string.device_xiaomi : FeatureParser.getBoolean(d.Cn, false) ? R.string.device_pad : R.string.miui_device_name));
         }
 
         public static void setDeviceName(Context context, String str) {
@@ -61,7 +61,7 @@ public class SystemSettings {
         public static void setNetHostName(Context context) {
             String str = SystemProperties.get("net.hostname");
             StringBuilder sb = new StringBuilder();
-            sb.append(Build.MODEL);
+            sb.append(Build.ANXMODEL);
             sb.append("-");
             Iterator it = ChinesePinyinConverter.getInstance().get(getDeviceName(context)).iterator();
             while (it.hasNext()) {

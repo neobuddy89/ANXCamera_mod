@@ -46,7 +46,7 @@ public final class zzff extends zze {
 
     /* JADX DEBUG: Multi-variable search result rejected for TypeSearchVarInfo{r7v6, resolved type: android.database.sqlite.SQLiteDatabase} */
     /* JADX WARNING: type inference failed for: r2v0 */
-    /* JADX WARNING: type inference failed for: r2v1, types: [int, boolean] */
+    /* JADX WARNING: type inference failed for: r2v1, types: [boolean, int] */
     /* JADX WARNING: type inference failed for: r7v0 */
     /* JADX WARNING: type inference failed for: r7v1, types: [android.database.Cursor] */
     /* JADX WARNING: type inference failed for: r2v4 */

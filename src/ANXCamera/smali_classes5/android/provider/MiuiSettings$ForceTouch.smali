@@ -52,7 +52,7 @@
 .method private static checkHighend()V
     .locals 7
 
-    const-string/jumbo v0, "ro.product.device"
+    const-string/jumbo v0, "ro.product.vendor.device"
 
     const-string v1, ""
 

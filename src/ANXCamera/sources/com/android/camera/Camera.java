@@ -1067,7 +1067,9 @@ public class Camera extends ActivityBase implements ActivityCompat.OnRequestPerm
         if (CompatibilityUtils.isInMultiWindowMode(this)) {
             super.onCreate((Bundle) null);
             PermissionsAsker.Ask(this);
-            this.mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+            FirebaseAnalytics instance = FirebaseAnalytics.getInstance(this);
+            this.mFirebaseAnalytics = instance;
+            instance.setUserProperty("device_codename", aeonax.Build.ANXDEVICE);
             ToastUtils.showToast((Context) this, (int) R.string.multi_window_mode_not_supported);
             Log.d(this.TAG, "isInMultiWindowMode call finish");
             finish();
@@ -1141,7 +1143,9 @@ public class Camera extends ActivityBase implements ActivityCompat.OnRequestPerm
             Log.e(str, "An illegal caller:" + this.mCameraIntentManager.getCaller() + " use VOICE_CONTROL_INTENT!");
             super.onCreate((Bundle) null);
             PermissionsAsker.Ask(this);
-            this.mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+            FirebaseAnalytics instance2 = FirebaseAnalytics.getInstance(this);
+            this.mFirebaseAnalytics = instance2;
+            instance2.setUserProperty("device_codename", aeonax.Build.ANXDEVICE);
             finish();
         }
     }

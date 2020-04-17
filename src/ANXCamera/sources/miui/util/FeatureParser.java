@@ -140,9 +140,9 @@ public class FeatureParser {
         try {
             if (!"cancro".equals(aeonax.Build.ANXDEVICE)) {
                 str = aeonax.Build.ANXDEVICE + ".xml";
-            } else if (miui.os.Build.MODEL.startsWith("MI 3")) {
+            } else if (aeonax.Build.ANXMODEL.startsWith("MI 3")) {
                 str = "cancro_MI3.xml";
-            } else if (miui.os.Build.MODEL.startsWith("MI 4")) {
+            } else if (aeonax.Build.ANXMODEL.startsWith("MI 4")) {
                 str = "cancro_MI4.xml";
             }
             fileInputStream = Resources.getSystem().getAssets().open(ASSET_DIR + str);

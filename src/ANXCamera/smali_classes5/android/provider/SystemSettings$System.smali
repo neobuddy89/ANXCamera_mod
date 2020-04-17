@@ -111,7 +111,7 @@
 
     if-eqz v3, :cond_5
 
-    const-string v2, "ro.product.device"
+    const-string v2, "ro.product.vendor.device"
 
     invoke-static {v2}, Lmiui/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
@@ -213,7 +213,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v4, Lmiui/os/Build;->MODEL:Ljava/lang/String;
+    sget-object v4, Laeonax/Build;->ANXMODEL:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
