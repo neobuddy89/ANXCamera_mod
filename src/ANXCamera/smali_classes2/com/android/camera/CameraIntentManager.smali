@@ -1467,7 +1467,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_3
+    # if-eqz v0, :cond_3
 
     iget-object v0, p0, Lcom/android/camera/CameraIntentManager;->mIntent:Landroid/content/Intent;
 

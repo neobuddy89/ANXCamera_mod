@@ -4510,3 +4510,32 @@
 
     return p0
 .end method
+
+.method public anx_glo()Z
+    .locals 2
+
+    const-string v0, "anx_glo"
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lcom/android/camera/data/data/DataItemBase;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+
+.method public anx_intl()Z
+    .locals 2
+
+    const-string v0, "anx_intl"
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lcom/android/camera/data/data/DataItemBase;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result p0
+
+    return p0
+.end method

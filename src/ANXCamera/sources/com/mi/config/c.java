@@ -113,6 +113,8 @@ interface c {
     public static final String _s = "c_0x28";
     public static final String _t = "c_19039_0x0002";
     public static final String _u = "c_36658_0x0001";
+    public static final String anx_glo = "anx_glo";
+    public static final String anx_intl = "anx_intl";
     public static final String at = "c_0x29";
     public static final String au = "c_19039_0x0003";
     public static final String av = "s_a_u_e_f_m";

@@ -3200,7 +3200,7 @@ public final class Util {
     }
 
     public static boolean isGlobalVersion() {
-        return SystemProperties.get("ro.product.mod_device", "").contains("_global") || DataRepository.dataItemFeature().vb();
+        return SystemProperties.get("ro.product.mod_device", "").contains("_global") || DataRepository.dataItemFeature().vb() || DataRepository.dataItemFeature().anx_glo();
     }
 
     private static boolean isGyroscopeStable(float[] fArr) {
@@ -3224,7 +3224,7 @@ public final class Util {
     }
 
     public static boolean isInternationalBuild() {
-        return SystemProperties.get("ro.product.mod_device", "").endsWith("_global");
+        return SystemProperties.get("ro.product.mod_device", "").contains("_global") || DataRepository.dataItemFeature().anx_intl();
     }
 
     public static boolean isLabOptionsVisible() {

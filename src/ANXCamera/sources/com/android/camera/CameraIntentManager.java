@@ -458,9 +458,7 @@ public class CameraIntentManager {
     }
 
     public boolean isQuickLaunch() {
-        if (!DataRepository.dataItemFeature().vb()) {
-            return this.mIntent.getBooleanExtra("StartActivityWhenLocked", false);
-        }
+        boolean vb = DataRepository.dataItemFeature().vb();
         String action = this.mIntent.getAction();
         if (!TextUtils.equals(action, "android.media.action.STILL_IMAGE_CAMERA") && !TextUtils.equals(action, "android.media.action.STILL_IMAGE_CAMERA_SECURE")) {
             return false;

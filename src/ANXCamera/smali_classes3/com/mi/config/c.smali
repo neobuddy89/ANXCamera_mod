@@ -411,3 +411,7 @@
 .field public static final zt:Ljava/lang/String; = "c_0x50"
 
 .field public static final zu:Ljava/lang/String; = "c_22367_0x000A"
+
+.field public static final anx_glo:Ljava/lang/String; = "anx_glo"
+
+.field public static final anx_intl:Ljava/lang/String; = "anx_intl"

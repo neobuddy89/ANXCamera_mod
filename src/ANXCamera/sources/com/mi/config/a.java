@@ -593,6 +593,14 @@ public class a extends DataItemBase implements c {
         return getBoolean(c.vt, false);
     }
 
+    public boolean anx_glo() {
+        return getBoolean(c.anx_glo, false);
+    }
+
+    public boolean anx_intl() {
+        return getBoolean(c.anx_intl, false);
+    }
+
     public int bb() {
         return A(getString(c.cu, ""));
     }

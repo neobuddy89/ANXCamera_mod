@@ -584,7 +584,12 @@ public class Camera extends ActivityBase implements ActivityCompat.OnRequestPerm
                     int intentType = dataItemGlobal.getIntentType();
                     int currentMode = dataItemGlobal.getCurrentMode();
                     boolean isCameraAliveWhenResume = isCameraAliveWhenResume();
-                    dataItemGlobal.parseIntent(getIntent(), Boolean.valueOf(checkCallerLegality), startFromSecureKeyguard(), false, !isCameraAliveWhenResume);
+                    Intent intent = getIntent();
+                    Boolean valueOf = Boolean.valueOf(checkCallerLegality);
+                    boolean startFromSecureKeyguard = startFromSecureKeyguard();
+                    if (!isCameraAliveWhenResume) {
+                    }
+                    DataItemGlobal dataItemGlobal2 = dataItemGlobal;
                     int intentType2 = dataItemGlobal.getIntentType();
                     int currentMode2 = dataItemGlobal.getCurrentMode();
                     z = currentMode != currentMode2;

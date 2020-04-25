@@ -13982,6 +13982,18 @@
 
     move-result v0
 
+    # if-eqz v0, :cond_0
+    
+    if-nez v0, :cond_1
+
+    invoke-static {}, Lcom/android/camera/data/DataRepository;->dataItemFeature()Lcom/mi/config/a;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/mi/config/a;->anx_glo()Z
+
+    move-result v0
+
     if-eqz v0, :cond_0
 
     goto :goto_0
@@ -14096,6 +14108,23 @@
 .end method
 
 .method public static isInternationalBuild()Z
+    # .locals 2
+
+    # const-string v0, "ro.product.mod_device"
+
+    # const-string v1, ""
+
+    # invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    # move-result-object v0
+
+    # const-string v1, "_global"
+
+    # invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    # move-result v0
+
+    # return v0
     .locals 2
 
     const-string v0, "ro.product.mod_device"
@@ -14108,10 +14137,34 @@
 
     const-string v1, "_global"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
+    if-nez v0, :cond_1
+
+    invoke-static {}, Lcom/android/camera/data/DataRepository;->dataItemFeature()Lcom/mi/config/a;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/mi/config/a;->anx_intl()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 v0, 0x1
+
+    :goto_1
     return v0
 .end method
 

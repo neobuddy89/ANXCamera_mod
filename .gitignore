@@ -9,6 +9,7 @@ src/ANXCameraX/
 
 src/ANXCameraMagisk/system/priv-app/ANXCamera/lib/arm64/*.so
 src/ANXCameraUnity/system/priv-app/ANXCamera/lib/arm64/*.so
+src/ANXCameraUnity/system/priv-app/ANXCamera/lib/arm/*.so
 
 src/Arnob48MPFix/
 src/Dyneteve48MPFix/
@@ -18,6 +19,7 @@ src/ANXMimoji/
 src/LavendyFix/
 src/ANXCameraLibs/
 src/ANXFire/
+src/ANXVV/
 
 src/ANXCamera/assets/mimoji/data.zip
 src/ANXCamera/assets/mimoji/model.zip

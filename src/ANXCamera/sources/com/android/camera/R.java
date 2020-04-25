@@ -2458,57 +2458,59 @@ public final class R {
         /* added by JADX */
         public static final int feature_perseus = 2131624010;
         /* added by JADX */
-        public static final int feature_pisces = 2131624011;
+        public static final int feature_pine = 2131624011;
         /* added by JADX */
-        public static final int feature_platina = 2131624012;
+        public static final int feature_pisces = 2131624012;
         /* added by JADX */
-        public static final int feature_polaris = 2131624013;
+        public static final int feature_platina = 2131624013;
         /* added by JADX */
-        public static final int feature_prada = 2131624014;
+        public static final int feature_polaris = 2131624014;
         /* added by JADX */
-        public static final int feature_pyxis = 2131624015;
+        public static final int feature_prada = 2131624015;
         /* added by JADX */
-        public static final int feature_raphael = 2131624016;
+        public static final int feature_pyxis = 2131624016;
         /* added by JADX */
-        public static final int feature_raphaelin = 2131624017;
+        public static final int feature_raphael = 2131624017;
         /* added by JADX */
-        public static final int feature_riva = 2131624018;
+        public static final int feature_raphaelin = 2131624018;
         /* added by JADX */
-        public static final int feature_rolex = 2131624019;
+        public static final int feature_riva = 2131624019;
         /* added by JADX */
-        public static final int feature_rosy = 2131624020;
+        public static final int feature_rolex = 2131624020;
         /* added by JADX */
-        public static final int feature_santoni = 2131624021;
+        public static final int feature_rosy = 2131624021;
         /* added by JADX */
-        public static final int feature_sirius = 2131624022;
+        public static final int feature_santoni = 2131624022;
         /* added by JADX */
-        public static final int feature_taurus = 2131624023;
+        public static final int feature_sirius = 2131624023;
         /* added by JADX */
-        public static final int feature_tissot = 2131624024;
+        public static final int feature_taurus = 2131624024;
         /* added by JADX */
-        public static final int feature_tucana = 2131624025;
+        public static final int feature_tissot = 2131624025;
         /* added by JADX */
-        public static final int feature_tulip = 2131624026;
+        public static final int feature_tucana = 2131624026;
         /* added by JADX */
-        public static final int feature_ursa = 2131624027;
+        public static final int feature_tulip = 2131624027;
         /* added by JADX */
-        public static final int feature_vince = 2131624028;
+        public static final int feature_ursa = 2131624028;
         /* added by JADX */
-        public static final int feature_violet = 2131624029;
+        public static final int feature_vince = 2131624029;
         /* added by JADX */
-        public static final int feature_virgo = 2131624030;
+        public static final int feature_violet = 2131624030;
         /* added by JADX */
-        public static final int feature_wayne = 2131624031;
+        public static final int feature_virgo = 2131624031;
         /* added by JADX */
-        public static final int feature_whyred = 2131624032;
+        public static final int feature_wayne = 2131624032;
         /* added by JADX */
-        public static final int feature_willow = 2131624033;
+        public static final int feature_whyred = 2131624033;
         /* added by JADX */
-        public static final int feature_wt86047 = 2131624034;
+        public static final int feature_willow = 2131624034;
         /* added by JADX */
-        public static final int feature_wt88047 = 2131624035;
+        public static final int feature_wt86047 = 2131624035;
         /* added by JADX */
-        public static final int feature_ysl = 2131624036;
+        public static final int feature_wt88047 = 2131624036;
+        /* added by JADX */
+        public static final int feature_ysl = 2131624037;
     }
 
     public static final class string {

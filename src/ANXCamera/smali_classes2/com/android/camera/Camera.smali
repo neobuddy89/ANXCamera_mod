@@ -1362,7 +1362,7 @@
     :goto_0
     move-object v2, v0
 
-    invoke-virtual/range {v2 .. v7}, Lcom/android/camera/data/data/global/DataItemGlobal;->parseIntent(Landroid/content/Intent;Ljava/lang/Boolean;ZZZ)Landroid/support/v4/util/Pair;
+    # invoke-virtual/range {v2 .. v7}, Lcom/android/camera/data/data/global/DataItemGlobal;->parseIntent(Landroid/content/Intent;Ljava/lang/Boolean;ZZZ)Landroid/support/v4/util/Pair;
 
     invoke-virtual {v0}, Lcom/android/camera/data/data/global/DataItemGlobal;->getIntentType()I
 
@@ -3584,7 +3584,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/aeonax/firebaseapp/MainActivity;->mFirebaseAnalytics:Lcom/google/firebase/analytics/FirebaseAnalytics;
+    iput-object v0, p0, Lcom/android/camera/Camera;->mFirebaseAnalytics:Lcom/google/firebase/analytics/FirebaseAnalytics;
 
     const-string v4, "device_codename"
 
@@ -3667,7 +3667,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/aeonax/firebaseapp/MainActivity;->mFirebaseAnalytics:Lcom/google/firebase/analytics/FirebaseAnalytics;
+    iput-object v0, p0, Lcom/android/camera/Camera;->mFirebaseAnalytics:Lcom/google/firebase/analytics/FirebaseAnalytics;
 
 
     const-string v4, "device_codename"
