@@ -488,7 +488,7 @@
     
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
     
-    const-string v10, "/sdcard/.ANXCamera/cheatcodes/"
+    const-string v10, "/product/etc/ANXCamera/cheatcodes/"
     
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     invoke-virtual {v9, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;

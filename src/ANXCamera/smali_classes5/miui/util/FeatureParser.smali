@@ -6,7 +6,7 @@
 # static fields
 .field private static final ASSET_DIR:Ljava/lang/String; = "device_features/"
 
-.field private static final SYSTEM_DIR:Ljava/lang/String; = "/sdcard/.ANXCamera/features"
+.field private static final SYSTEM_DIR:Ljava/lang/String; = "/product/etc/device_features"
 
 .field private static final TAG:Ljava/lang/String; = "FeatureParser"
 
@@ -36,7 +36,7 @@
 
 .field public static final TYPE_STRING_ARRAY:I = 0x4
 
-.field private static final VENDOR_DIR:Ljava/lang/String; = "/sdcard/.ANXCamera/features"
+.field private static final VENDOR_DIR:Ljava/lang/String; = "/product/etc/device_features"
 
 .field private static sBooleanMap:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
@@ -194,7 +194,7 @@
 
     move-result v0
 
-    const-string v1, "/sdcard/.ANXCamera/features"
+    const-string v1, "/product/etc/device_features"
 
     if-nez v0, :cond_0
 
@@ -247,7 +247,7 @@
 
     if-lt v0, v2, :cond_1
 
-    const-string v1, "/sdcard/.ANXCamera/features"
+    const-string v1, "/product/etc/device_features"
 
     :cond_1
     return-object v1
