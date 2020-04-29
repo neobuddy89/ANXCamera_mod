@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">మీరు 8Kలో 6 నిమిషాల వరకు రికార్డ్ చేయవచ్చు</string>
     <string name="camera_disabled">కెమెరా నిలిపివేయబడింది</string>
     <string name="camera_error_title">కెమెరా లోపం</string>
-    <string name="camera_label">ANXకెమెరా</string>
+    <string name="camera_label">కెమెరా</string>
     <string name="camera_liveshot_off_tip">డైనమిక్ షాట్‌లు ఆఫ్ అయింది</string>
     <string name="camera_liveshot_on_tip">డైనమిక్ షాట్‌లు</string>
     <string name="camera_mode_options">మోడ్‌లు</string>

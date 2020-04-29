@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">আপুনি 8Kত 6 মিনিট পৰ্যন্ত ৰেকৰ্ড কৰিব পাৰে</string>
     <string name="camera_disabled">কেমেৰা অক্ষম কৰা হৈছে</string>
     <string name="camera_error_title">কেমেৰা ত্ৰুটী</string>
-    <string name="camera_label">ANXকেমেৰা</string>
+    <string name="camera_label">কেমেৰা</string>
     <string name="camera_liveshot_off_tip">ডায়নামিক শ্বট অফ কৰা হৈছে</string>
     <string name="camera_liveshot_on_tip">ডায়নামিক শ্বট</string>
     <string name="camera_mode_options">"ম'ড"</string>

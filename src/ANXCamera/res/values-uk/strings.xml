@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">Ви можете записати до 6 хвилин у 8К</string>
     <string name="camera_disabled">Камера була вимкнута через політику безпеки</string>
     <string name="camera_error_title">Помилка камери</string>
-    <string name="camera_label">ANXКамера</string>
+    <string name="camera_label">Камера</string>
     <string name="camera_liveshot_off_tip">Динамічни знімки вимкнено</string>
     <string name="camera_liveshot_on_tip">Динамічні знімки</string>
     <string name="camera_mode_options">Режими</string>

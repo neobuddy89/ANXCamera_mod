@@ -108,7 +108,7 @@ und die Präferenzen automatisch anpassen"</string>
     <string name="camcorder_tip_8k_max_video_duration">Bis zu 6 Minuten in 8K aufzeichnen</string>
     <string name="camera_disabled">Kamera wurde deaktiviert</string>
     <string name="camera_error_title">Kamerafehler</string>
-    <string name="camera_label">ANXKamera</string>
+    <string name="camera_label">Kamera</string>
     <string name="camera_liveshot_off_tip">Dynamische Schnappschüsse ausgeschaltet</string>
     <string name="camera_liveshot_on_tip">Dynamische Schnappschüsse</string>
     <string name="camera_mode_options">Modus</string>

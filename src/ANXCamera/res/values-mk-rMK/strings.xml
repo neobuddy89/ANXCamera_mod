@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">Може да снимите до 6 минути во 8К</string>
     <string name="camera_disabled">Камерата е оневозможена</string>
     <string name="camera_error_title">Грешка со камерата</string>
-    <string name="camera_label">ANXКамера</string>
+    <string name="camera_label">Камера</string>
     <string name="camera_liveshot_off_tip">Динамичните снимки се исклучени</string>
     <string name="camera_liveshot_on_tip">Динамични снимки</string>
     <string name="camera_mode_options">Режими</string>

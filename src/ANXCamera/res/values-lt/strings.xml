@@ -108,7 +108,7 @@ ir automatiškai derinti parinktis"</string>
     <string name="camcorder_tip_8k_max_video_duration">8K įrašymas galimas iki 6 minučių</string>
     <string name="camera_disabled">Fotoaparatas išjungtas</string>
     <string name="camera_error_title">Fotoaparato klaida</string>
-    <string name="camera_label">ANXFotoaparatas</string>
+    <string name="camera_label">Fotoaparatas</string>
     <string name="camera_liveshot_off_tip">Dinaminiai kadrai išjungti</string>
     <string name="camera_liveshot_on_tip">Dinaminiai kadrai</string>
     <string name="camera_mode_options">Režimai</string>

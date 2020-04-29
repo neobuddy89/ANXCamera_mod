@@ -108,7 +108,7 @@ dan foydalanib sahnalarni tanib oling va avtomatik ravishda sozlang"</string>
     <string name="camcorder_tip_8k_max_video_duration">8K da 6 daqiqagacha yozib olishingiz mumkin</string>
     <string name="camera_disabled">Kamera o‘chirildi</string>
     <string name="camera_error_title">Kamera xatosi</string>
-    <string name="camera_label">ANXKamera</string>
+    <string name="camera_label">Kamera</string>
     <string name="camera_liveshot_off_tip">Dinamik tasvirlar o‘chirildi</string>
     <string name="camera_liveshot_on_tip">Dinamik tasvirlar</string>
     <string name="camera_mode_options">Rejimlar</string>

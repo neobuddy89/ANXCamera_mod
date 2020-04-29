@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">ניתן להקליט סרטון באורך עד 6 דקות באיכות 8K</string>
     <string name="camera_disabled">המצלמה הושבתה</string>
     <string name="camera_error_title">שגיאת מצלמה</string>
-    <string name="camera_label">ANXמצלמה</string>
+    <string name="camera_label">מצלמה</string>
     <string name="camera_liveshot_off_tip">כבה צילום דינאמי</string>
     <string name="camera_liveshot_on_tip">צילום דינאמי</string>
     <string name="camera_mode_options">מצבים</string>

@@ -108,7 +108,7 @@ dan otomatis menyesuaikan preferensi"</string>
     <string name="camcorder_tip_8k_max_video_duration">Anda dapat rekam hingga 6 menit di 8K</string>
     <string name="camera_disabled">Kamera telah dinonaktifkan</string>
     <string name="camera_error_title">Kamera bermasalah</string>
-    <string name="camera_label">ANXKamera</string>
+    <string name="camera_label">Kamera</string>
     <string name="camera_liveshot_off_tip">Pemotretan dinamis dimatikan</string>
     <string name="camera_liveshot_on_tip">Pemotretan dinamis</string>
     <string name="camera_mode_options">Mode</string>

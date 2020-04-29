@@ -107,7 +107,7 @@
     <string name="camcorder_tip_8k_max_video_duration">Anda hanya boleh merakam sehingga 6 minit dalam 8K</string>
     <string name="camera_disabled">Kamera telah dilumpuhkan</string>
     <string name="camera_error_title">Ralat kamera</string>
-    <string name="camera_label">ANXKamera</string>
+    <string name="camera_label">Kamera</string>
     <string name="camera_liveshot_off_tip">Shot dinamik dimatikan</string>
     <string name="camera_liveshot_on_tip">Shot dinamik</string>
     <string name="camera_mode_options">Mod</string>

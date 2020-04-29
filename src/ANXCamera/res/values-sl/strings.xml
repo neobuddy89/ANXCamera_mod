@@ -108,7 +108,7 @@ in samodejno prilagajanje nastavitev"</string>
     <string name="camcorder_tip_8k_max_video_duration">8K lahko snemate največ do 6 minut</string>
     <string name="camera_disabled">Kamera je bila onemogočena</string>
     <string name="camera_error_title">Napaka kamere</string>
-    <string name="camera_label">ANXKamera</string>
+    <string name="camera_label">Kamera</string>
     <string name="camera_liveshot_off_tip">Izključeni dinamični posnetki</string>
     <string name="camera_liveshot_on_tip">Dinamični posnetki</string>
     <string name="camera_mode_options">Načini</string>

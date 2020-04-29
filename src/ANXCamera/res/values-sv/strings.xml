@@ -108,7 +108,7 @@ och justera preferenser automatiskt"</string>
     <string name="camcorder_tip_8k_max_video_duration">Du kan spela in upp till 6 minuter i 8K</string>
     <string name="camera_disabled">Kameran har inaktiverats</string>
     <string name="camera_error_title">Kamerafel</string>
-    <string name="camera_label">ANXKamera</string>
+    <string name="camera_label">Kamera</string>
     <string name="camera_liveshot_off_tip">Slå av dynamiska bilder</string>
     <string name="camera_liveshot_on_tip">Dynamiska bilder</string>
     <string name="camera_mode_options">Lägen</string>

@@ -108,7 +108,7 @@ dhe përshtat preferencat automatikisht"</string>
     <string name="camcorder_tip_8k_max_video_duration">Ju mund të regjistroni deri në 6 minuta në 8K</string>
     <string name="camera_disabled">Kamera është çaktivizuar</string>
     <string name="camera_error_title">Gabim në kamera</string>
-    <string name="camera_label">ANXKamer</string>
+    <string name="camera_label">Kamer</string>
     <string name="camera_liveshot_off_tip">U mbyllën sekuencat dinamike</string>
     <string name="camera_liveshot_on_tip">Sekuencat dinamike</string>
     <string name="camera_mode_options">Modalitetet</string>

@@ -108,7 +108,7 @@ eta doitu lehentasunak automatikoki"</string>
     <string name="camcorder_tip_8k_max_video_duration">6 minutu arte 8k bereizmenean grabatu ditzakezu</string>
     <string name="camera_disabled">Kamera desgaitua izan da</string>
     <string name="camera_error_title">Kamera akatsa</string>
-    <string name="camera_label">ANXKamera</string>
+    <string name="camera_label">Kamera</string>
     <string name="camera_liveshot_off_tip">Kliskatze dinamikoak desaktibatuta</string>
     <string name="camera_liveshot_on_tip">Kliskatze dinamikoak</string>
     <string name="camera_mode_options">Moduak</string>

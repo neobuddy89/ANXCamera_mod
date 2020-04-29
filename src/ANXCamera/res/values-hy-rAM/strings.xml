@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">8K- ում կարող եք գրանցել մինչև 6 րոպե</string>
     <string name="camera_disabled">Տեսախցիկն անջատվել է</string>
     <string name="camera_error_title">Տեսախցիկի սխալ</string>
-    <string name="camera_label">ANXՏեսախցիկ</string>
+    <string name="camera_label">Տեսախցիկ</string>
     <string name="camera_liveshot_off_tip">Դինամիկ նկարները անջատված է</string>
     <string name="camera_liveshot_on_tip">Դինամիկ նկարներ</string>
     <string name="camera_mode_options">Ռեժիմներ</string>

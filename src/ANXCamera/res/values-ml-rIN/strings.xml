@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">നിങ്ങൾക്ക് 8 K-യിൽ 6 മിനിറ്റ് വരെ റെക്കോർഡുചെയ്യാനാകും</string>
     <string name="camera_disabled">ക്യാമറ പ്രവർത്തനരഹിതമാക്കിയിരിക്കുന്നു</string>
     <string name="camera_error_title">ക്യാമറയിൽ പിശക്</string>
-    <string name="camera_label">ANXക്യാമറ</string>
+    <string name="camera_label">ക്യാമറ</string>
     <string name="camera_liveshot_off_tip">ഡൈനാമിക് ഷോട്ടുകൾ ഓഫാക്കി</string>
     <string name="camera_liveshot_on_tip">ഡൈനാമിക് ഷോട്ടുകൾ</string>
     <string name="camera_mode_options">മോഡുകൾ</string>

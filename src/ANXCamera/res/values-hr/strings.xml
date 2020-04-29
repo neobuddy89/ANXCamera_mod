@@ -108,7 +108,7 @@ i automatski podesite preference"</string>
     <string name="camcorder_tip_8k_max_video_duration">Možete snimati do 6 minuta u 8K</string>
     <string name="camera_disabled">Fotoaparat je onemogućen</string>
     <string name="camera_error_title">Pogreška Fotoaparata</string>
-    <string name="camera_label">ANXFotoaparat</string>
+    <string name="camera_label">Fotoaparat</string>
     <string name="camera_liveshot_off_tip">Isključili su dinamičke snimke</string>
     <string name="camera_liveshot_on_tip">Dinamički snimci</string>
     <string name="camera_mode_options">Načini</string>

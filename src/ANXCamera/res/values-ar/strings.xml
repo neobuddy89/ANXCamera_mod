@@ -108,7 +108,7 @@
     <string name="camcorder_tip_8k_max_video_duration">يمكنك تسجيل مايصل إلى ٦ دقائق في جودة 8K</string>
     <string name="camera_disabled">تم تعطيل الكاميرا</string>
     <string name="camera_error_title">خطأ في الكاميرا</string>
-    <string name="camera_label">ANXالكاميرا</string>
+    <string name="camera_label">الكاميرا</string>
     <string name="camera_liveshot_off_tip">اللقطات الديناميكية متوقفة</string>
     <string name="camera_liveshot_on_tip">لقطات ديناميكية</string>
     <string name="camera_mode_options">خيارات</string>

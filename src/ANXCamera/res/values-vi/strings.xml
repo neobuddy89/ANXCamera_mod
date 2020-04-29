@@ -108,7 +108,7 @@ và điều chỉnh ưu tiên tự động"</string>
     <string name="camcorder_tip_8k_max_video_duration">Bạn có thể quay tối đa 6 phút ở chất lượng 8K</string>
     <string name="camera_disabled">Máy ảnh đã bị vô hiệu hóa</string>
     <string name="camera_error_title">Lỗi máy ảnh</string>
-    <string name="camera_label">ANXMáy ảnh</string>
+    <string name="camera_label">Máy ảnh</string>
     <string name="camera_liveshot_off_tip">Tắt chụp ảnh động</string>
     <string name="camera_liveshot_on_tip">Chụp ảnh động</string>
     <string name="camera_mode_options">Chế độ</string>
