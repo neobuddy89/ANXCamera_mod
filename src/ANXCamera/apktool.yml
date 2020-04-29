@@ -49,5 +49,5 @@ usesFramework:
   tag: null
 version: 2.4.1-661f92-SNAPSHOT
 versionInfo:
-  versionCode: '3'
-  versionName: '3.0'
+  versionCode: '1'
+  versionName: 1.0
