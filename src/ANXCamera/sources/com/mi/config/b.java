@@ -243,7 +243,7 @@ public class b {
     }
 
     public static boolean Wj() {
-        return !Om() && DataRepository.dataItemFeature().Ec() && Rj() != null && !Rj().isEmpty();
+        return false;
     }
 
     public static boolean Wk() {
@@ -363,7 +363,7 @@ public class b {
     }
 
     public static boolean ie() {
-        return DataRepository.dataItemFeature().ie();
+        return true;
     }
 
     public static boolean ik() {

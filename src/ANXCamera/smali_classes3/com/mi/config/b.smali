@@ -1431,54 +1431,11 @@
 .end method
 
 .method public static Wj()Z
-    .locals 2
+    .locals 1
 
-    invoke-static {}, Lcom/mi/config/b;->Om()Z
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    return v1
-
-    :cond_0
-    invoke-static {}, Lcom/android/camera/data/DataRepository;->dataItemFeature()Lcom/mi/config/a;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/mi/config/a;->Ec()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    return v1
-
-    :cond_1
-    invoke-static {}, Lcom/mi/config/b;->Rj()Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_2
-
-    invoke-static {}, Lcom/mi/config/b;->Rj()Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     return v0
-
-    :cond_2
-    return v1
 .end method
 
 .method public static Wk()Z
@@ -2120,13 +2077,7 @@
 .method public static ie()Z
     .locals 1
 
-    invoke-static {}, Lcom/android/camera/data/DataRepository;->dataItemFeature()Lcom/mi/config/a;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/mi/config/a;->ie()Z
-
-    move-result v0
+    const/4 v0, 0x0
 
     return v0
 .end method

@@ -4118,51 +4118,6 @@
 
     const/4 v0, 0x1
 
-    if-eqz p1, :cond_0
-
-    return v0
-
-    :cond_0
-    sget-boolean p1, Lcom/mi/config/b;->fn:Z
-
-    if-eqz p1, :cond_1
-
-    return v0
-
-    :cond_1
-    invoke-static {}, Lcom/android/camera/data/DataRepository;->dataItemFeature()Lcom/mi/config/a;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/mi/config/a;->vb()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    return v0
-
-    :cond_2
-    invoke-static {}, Lcom/mi/config/b;->ie()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_3
-
-    return v0
-
-    :cond_3
-    invoke-static {p0}, Lcom/android/camera/CameraSettings;->isInAllRecordModeSet(I)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_4
-
-    return v0
-
-    :cond_4
-    const/4 p0, 0x0
-
     return p0
 .end method
 
@@ -9095,67 +9050,10 @@
 .end method
 
 .method public static isScanQRCode(Landroid/content/Context;)Z
-    .locals 2
+    .locals 1
 
-    invoke-static {}, Lcom/android/camera/CameraSettings;->isFrontCamera()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-static {p0}, Lcom/android/camera/CameraSettings;->isQRCodeReceiverAvailable(Landroid/content/Context;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    invoke-static {}, Lcom/mi/config/b;->pk()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    invoke-static {}, Lcom/mi/config/b;->ie()Z
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    invoke-static {}, Lcom/android/camera/data/DataRepository;->dataItemGlobal()Lcom/android/camera/data/data/global/DataItemGlobal;
-
-    move-result-object p0
-
-    const v0, 0x7f0f03d1
-
-    invoke-static {v0}, Lcom/android/camera/CameraSettings;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Ljava/lang/String;)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    const-string v1, "pref_scan_qrcode_key"
-
-    invoke-virtual {p0, v1, v0}, Lcom/android/camera/data/data/DataItemBase;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
+    const/4 v0, 0x0
+    return v0
 .end method
 
 .method public static isShowFirstUseHint()Z

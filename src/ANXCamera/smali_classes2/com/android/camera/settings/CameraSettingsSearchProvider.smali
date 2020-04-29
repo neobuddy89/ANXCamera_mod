@@ -180,21 +180,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-static {}, Lcom/mi/config/b;->ie()Z
-
-    move-result v1
-
-    if-nez v1, :cond_5
-
-    const v1, 0x7f0f03d3
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_5
     invoke-static {}, Lcom/mi/config/b;->Uk()Z
 
     move-result v1
