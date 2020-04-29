@@ -22,27 +22,6 @@
       ]
     },
     {
-      "id": "vv.anx1",
-      "uri": "assets://vv/anx1.zip",
-      "fragments": [
-        2600,
-        2400,
-        2666,
-        2333,
-        2333
-      ],
-      "i18n": [
-        {
-          "lang": "default",
-          "name": "ANX.1"
-        },
-        {
-          "lang": "cn",
-          "name": "ANX.1"
-        }
-      ]
-    },
-    {
       "id": "vv.citytravel",
       "uri": "assets://vv/citytravel.zip",
       "fragments": [
