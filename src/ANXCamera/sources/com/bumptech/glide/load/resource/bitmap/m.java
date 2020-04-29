@@ -1,6 +1,8 @@
 package com.bumptech.glide.load.resource.bitmap;
 
 import android.support.annotation.NonNull;
+import android.support.v4.internal.view.SupportMenu;
+import android.support.v4.view.MotionEventCompat;
 import android.util.Log;
 import com.bumptech.glide.load.ImageHeaderParser;
 import com.bumptech.glide.util.i;
@@ -46,7 +48,7 @@ public final class m implements ImageHeaderParser {
         }
 
         public int Q() {
-            return (getByte() & 255) | ((getByte() << 8) & 65280);
+            return (getByte() & 255) | ((getByte() << 8) & MotionEventCompat.ACTION_POINTER_INDEX_MASK);
         }
 
         public short aa() {
@@ -138,7 +140,7 @@ public final class m implements ImageHeaderParser {
         }
 
         public int Q() throws IOException {
-            return (this.Gi.read() & 255) | ((this.Gi.read() << 8) & 65280);
+            return (this.Gi.read() & 255) | ((this.Gi.read() << 8) & MotionEventCompat.ACTION_POINTER_INDEX_MASK);
         }
 
         public short aa() throws IOException {
@@ -285,7 +287,7 @@ public final class m implements ImageHeaderParser {
         if (Q == Ji) {
             return ImageHeaderParser.ImageType.JPEG;
         }
-        int Q2 = ((Q << 16) & -65536) | (cVar.Q() & 65535);
+        int Q2 = ((Q << 16) & SupportMenu.CATEGORY_MASK) | (cVar.Q() & SupportMenu.USER_MASK);
         if (Q2 == Ii) {
             cVar.skip(21);
             return cVar.getByte() >= 3 ? ImageHeaderParser.ImageType.PNG_A : ImageHeaderParser.ImageType.PNG;
@@ -296,10 +298,10 @@ public final class m implements ImageHeaderParser {
                 return ImageHeaderParser.ImageType.UNKNOWN;
             }
             cVar.skip(4);
-            if ((((cVar.Q() << 16) & -65536) | (cVar.Q() & 65535)) != Vi) {
+            if ((((cVar.Q() << 16) & SupportMenu.CATEGORY_MASK) | (cVar.Q() & SupportMenu.USER_MASK)) != Vi) {
                 return ImageHeaderParser.ImageType.UNKNOWN;
             }
-            int Q3 = ((cVar.Q() << 16) & -65536) | (cVar.Q() & 65535);
+            int Q3 = ((cVar.Q() << 16) & SupportMenu.CATEGORY_MASK) | (cVar.Q() & SupportMenu.USER_MASK);
             if ((Q3 & -256) != Wi) {
                 return ImageHeaderParser.ImageType.UNKNOWN;
             }

@@ -9,6 +9,7 @@ import android.hardware.Camera;
 import android.os.Build;
 import android.provider.MiuiSettings;
 import android.support.annotation.Keep;
+import android.support.v4.app.NotificationManagerCompat;
 import android.text.TextUtils;
 import com.android.camera.Util;
 import com.android.camera.constant.AutoFocus;
@@ -55,7 +56,7 @@ public class CameraInstance {
     }
 
     private static int clamp(int i) {
-        return clamp(i, -1000, 1000);
+        return clamp(i, NotificationManagerCompat.IMPORTANCE_UNSPECIFIED, 1000);
     }
 
     private static int clamp(int i, int i2, int i3) {
@@ -106,11 +107,11 @@ public class CameraInstance {
     public Rect calculateTapArea(float f2, float f3, float f4, int i) {
         int intValue = Float.valueOf(f4 * 1000.0f).intValue();
         int i2 = intValue / 2;
-        int clamp = clamp((((int) (f2 * 2000.0f)) - 1000) - i2, -1000, 1000);
-        int clamp2 = clamp((((int) (f3 * 2000.0f)) - 1000) - i2, -1000, 1000);
+        int clamp = clamp((((int) (f2 * 2000.0f)) - 1000) - i2, NotificationManagerCompat.IMPORTANCE_UNSPECIFIED, 1000);
+        int clamp2 = clamp((((int) (f3 * 2000.0f)) - 1000) - i2, NotificationManagerCompat.IMPORTANCE_UNSPECIFIED, 1000);
         RectF rectF = new RectF((float) clamp, (float) clamp2, (float) clamp(clamp + intValue), (float) clamp(clamp2 + intValue));
         Rect rect = new Rect(Math.round(rectF.left), Math.round(rectF.top), Math.round(rectF.right), Math.round(rectF.bottom));
-        rotateRectForOrientation(i, new Rect(-1000, -1000, 1000, 1000), rect);
+        rotateRectForOrientation(i, new Rect(NotificationManagerCompat.IMPORTANCE_UNSPECIFIED, NotificationManagerCompat.IMPORTANCE_UNSPECIFIED, 1000, 1000), rect);
         Rect rect2 = new Rect(rect.left - 1000, rect.top - 1000, rect.right - 1000, rect.bottom - 1000);
         rect2.left = clamp(rect2.left);
         rect2.right = clamp(rect2.right);

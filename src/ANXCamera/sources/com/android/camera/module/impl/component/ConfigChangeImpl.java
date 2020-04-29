@@ -521,7 +521,7 @@ public class ConfigChangeImpl implements ModeProtocol.ConfigChanges {
     }
 
     private void configMoonBacklight() {
-        getBaseModule().ifPresent(C0034a.INSTANCE);
+        getBaseModule().ifPresent(C0030a.INSTANCE);
     }
 
     private void configMoonNight() {
@@ -1077,7 +1077,7 @@ public class ConfigChangeImpl implements ModeProtocol.ConfigChanges {
         ComponentConfigAi componentConfigAi = DataRepository.dataItemConfig().getComponentConfigAi();
         if (!componentConfigAi.isEmpty() && componentConfigAi.isClosed() != z) {
             componentConfigAi.setClosed(z);
-            getBaseModule().ifPresent(new C0036c(z));
+            getBaseModule().ifPresent(new C0032c(z));
             ((ModeProtocol.TopAlert) ModeCoordinatorImpl.getInstance().getAttachProtocol(172)).updateConfigItem(201);
         }
     }
@@ -1649,7 +1649,7 @@ public class ConfigChangeImpl implements ModeProtocol.ConfigChanges {
 
     public void configMeter(String str) {
         reCheckParameterResetTip(false);
-        getBaseModule().ifPresent(C0035b.INSTANCE);
+        getBaseModule().ifPresent(C0031b.INSTANCE);
     }
 
     public void configPortraitSwitch(int i) {

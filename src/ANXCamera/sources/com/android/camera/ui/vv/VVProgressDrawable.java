@@ -12,6 +12,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.view.ViewCompat;
 import com.android.camera.R;
 import java.util.List;
 import java.util.Locale;
@@ -39,7 +40,7 @@ public class VVProgressDrawable extends Drawable {
         this.mSplitPaint = new Paint();
         this.mSplitPaint.setAntiAlias(true);
         this.mSplitPaint.setStyle(Paint.Style.FILL);
-        this.mSplitPaint.setColor(-16777216);
+        this.mSplitPaint.setColor(ViewCompat.MEASURED_STATE_MASK);
         this.mSplitPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         this.mSplitOffset = context.getResources().getDimensionPixelSize(R.dimen.vv_duration_split_offset);
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(R.style.SettingStatusBarText, new int[]{16842901, 16842904});

@@ -241,15 +241,15 @@ public class FontsContractCompat {
         Uri build2 = new Uri.Builder().scheme("content").authority(str2).appendPath(ComposerHelper.COMPOSER_PATH).build();
         Cursor cursor = null;
         try {
-            cursor = Build.VERSION.SDK_INT > 16 ? context.getContentResolver().query(build, new String[]{"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"}, "query = ?", new String[]{fontRequest.getQuery()}, (String) null, cancellationSignal) : context.getContentResolver().query(build, new String[]{"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"}, "query = ?", new String[]{fontRequest.getQuery()}, (String) null);
+            cursor = Build.VERSION.SDK_INT > 16 ? context.getContentResolver().query(build, new String[]{"_id", Columns.FILE_ID, Columns.TTC_INDEX, Columns.VARIATION_SETTINGS, Columns.WEIGHT, Columns.ITALIC, Columns.RESULT_CODE}, "query = ?", new String[]{fontRequest.getQuery()}, (String) null, cancellationSignal) : context.getContentResolver().query(build, new String[]{"_id", Columns.FILE_ID, Columns.TTC_INDEX, Columns.VARIATION_SETTINGS, Columns.WEIGHT, Columns.ITALIC, Columns.RESULT_CODE}, "query = ?", new String[]{fontRequest.getQuery()}, (String) null);
             if (cursor != null && cursor.getCount() > 0) {
-                int columnIndex = cursor.getColumnIndex("result_code");
+                int columnIndex = cursor.getColumnIndex(Columns.RESULT_CODE);
                 ArrayList arrayList2 = new ArrayList();
                 int columnIndex2 = cursor.getColumnIndex("_id");
-                int columnIndex3 = cursor.getColumnIndex("file_id");
-                int columnIndex4 = cursor.getColumnIndex("font_ttc_index");
-                int columnIndex5 = cursor.getColumnIndex("font_weight");
-                int columnIndex6 = cursor.getColumnIndex("font_italic");
+                int columnIndex3 = cursor.getColumnIndex(Columns.FILE_ID);
+                int columnIndex4 = cursor.getColumnIndex(Columns.TTC_INDEX);
+                int columnIndex5 = cursor.getColumnIndex(Columns.WEIGHT);
+                int columnIndex6 = cursor.getColumnIndex(Columns.ITALIC);
                 while (cursor.moveToNext()) {
                     int i = columnIndex != -1 ? cursor.getInt(columnIndex) : 0;
                     FontInfo fontInfo = new FontInfo(columnIndex3 == -1 ? ContentUris.withAppendedId(build, cursor.getLong(columnIndex2)) : ContentUris.withAppendedId(build2, cursor.getLong(columnIndex3)), columnIndex4 != -1 ? cursor.getInt(columnIndex4) : 0, columnIndex5 != -1 ? cursor.getInt(columnIndex5) : 400, columnIndex6 != -1 && cursor.getInt(columnIndex6) == 1, i);

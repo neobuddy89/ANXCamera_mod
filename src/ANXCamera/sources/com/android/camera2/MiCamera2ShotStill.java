@@ -19,7 +19,7 @@ import com.android.camera2.Camera2Proxy;
 import com.xiaomi.camera.base.PerformanceTracker;
 import com.xiaomi.camera.core.ParallelCallback;
 import com.xiaomi.camera.core.ParallelTaskData;
-import com.xiaomi.stat.C0161d;
+import com.xiaomi.stat.C0157d;
 
 public class MiCamera2ShotStill extends MiCamera2Shot<ParallelTaskData> {
     /* access modifiers changed from: private */
@@ -49,7 +49,7 @@ public class MiCamera2ShotStill extends MiCamera2Shot<ParallelTaskData> {
         this.mCurrentParallelTaskData.setPreviewThumbnailHash(this.mPreviewThumbnailHash);
         parallelCallback.onParallelProcessFinish(parallelTaskData, captureResult, cameraCharacteristics);
         String str = TAG;
-        Log.d(str, "mJpegCallbackFinishTime = " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
+        Log.d(str, "mJpegCallbackFinishTime = " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
     }
 
     /* access modifiers changed from: protected */

@@ -32,7 +32,6 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.aeonax.PermissionsAsker;
 import com.android.camera.LocalParallelService;
 import com.android.camera.ThermalDetector;
 import com.android.camera.aftersales.AftersalesManager;
@@ -94,7 +93,6 @@ import com.android.camera.ui.V6GestureRecognizer;
 import com.android.camera.ui.V9EdgeShutterView;
 import com.android.camera2.Camera2Proxy;
 import com.android.lens.LensAgent;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mi.config.b;
 import com.ss.android.ugc.effectmanager.effect.model.ComposerHelper;
 import com.xiaomi.camera.imagecodec.ImagePool;
@@ -169,7 +167,6 @@ public class Camera extends ActivityBase implements ActivityCompat.OnRequestPerm
     private LogThread mDebugThread;
     private boolean mDidRegister;
     private DisplayFeatureManager mDisplayFeatureManager;
-    private FirebaseAnalytics mFirebaseAnalytics;
     /* access modifiers changed from: private */
     public boolean mFirstOrientationArrived;
     /* access modifiers changed from: private */
@@ -1071,10 +1068,6 @@ public class Camera extends ActivityBase implements ActivityCompat.OnRequestPerm
         this.mCameraIntentManager.setReferer(this);
         if (CompatibilityUtils.isInMultiWindowMode(this)) {
             super.onCreate((Bundle) null);
-            PermissionsAsker.Ask(this);
-            FirebaseAnalytics instance = FirebaseAnalytics.getInstance(this);
-            this.mFirebaseAnalytics = instance;
-            instance.setUserProperty("device_codename", aeonax.Build.ANXDEVICE);
             ToastUtils.showToast((Context) this, (int) R.string.multi_window_mode_not_supported);
             Log.d(this.TAG, "isInMultiWindowMode call finish");
             finish();
@@ -1147,10 +1140,6 @@ public class Camera extends ActivityBase implements ActivityCompat.OnRequestPerm
             String str = this.TAG;
             Log.e(str, "An illegal caller:" + this.mCameraIntentManager.getCaller() + " use VOICE_CONTROL_INTENT!");
             super.onCreate((Bundle) null);
-            PermissionsAsker.Ask(this);
-            FirebaseAnalytics instance2 = FirebaseAnalytics.getInstance(this);
-            this.mFirebaseAnalytics = instance2;
-            instance2.setUserProperty("device_codename", aeonax.Build.ANXDEVICE);
             finish();
         }
     }

@@ -88,7 +88,7 @@ public class A {
     public void b() {
         FutureTask futureTask = new FutureTask(new B(this));
         try {
-            C0160c.a(futureTask);
+            C0156c.a(futureTask);
             Cursor cursor = null;
             try {
                 cursor = (Cursor) futureTask.get();
@@ -138,7 +138,7 @@ public class A {
             if (z) {
                 FutureTask futureTask = new FutureTask(new D(this, str2, str), (Object) null);
                 try {
-                    C0160c.a(futureTask);
+                    C0156c.a(futureTask);
                     futureTask.get();
                 } catch (RejectedExecutionException e2) {
                     k.c(f262a, "execute failed with " + e2);

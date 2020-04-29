@@ -79,7 +79,7 @@ public class ResourceDownloadManager {
             public void onResponse(Object... objArr) {
                 try {
                     JSONObject jSONObject = objArr[0];
-                    String string = jSONObject.getString("url");
+                    String string = jSONObject.getString(RequestContracts.Download.JSON_KEY_URL);
                     String string2 = jSONObject.getString(RequestContracts.Download.JSON_KEY_SHA1);
                     Log.v(ResourceDownloadManager.TAG, String.format("download %s, %s", new Object[]{string, string2}));
                     Request request = new Request(Long.toString(j), Uri.parse(string), file);

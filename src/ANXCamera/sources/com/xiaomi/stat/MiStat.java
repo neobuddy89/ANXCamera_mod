@@ -5,7 +5,7 @@ import android.content.Context;
 public class MiStat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static C0162e f304a;
+    private static C0158e f304a;
 
     public final class Event {
         public static final String ADD_TO_CART = "add_to_cart";
@@ -103,7 +103,7 @@ public class MiStat {
 
     public static void initialize(Context context, String str, String str2, boolean z) {
         if (f304a == null) {
-            f304a = new C0162e(context, str, str2, z);
+            f304a = new C0158e(context, str, str2, z);
             return;
         }
         throw new IllegalStateException("duplicate sdk init!");
@@ -111,7 +111,7 @@ public class MiStat {
 
     public static void initialize(Context context, String str, String str2, boolean z, String str3) {
         if (f304a == null) {
-            C0162e eVar = new C0162e(context, str, str2, z, str3);
+            C0158e eVar = new C0158e(context, str, str2, z, str3);
             f304a = eVar;
             return;
         }

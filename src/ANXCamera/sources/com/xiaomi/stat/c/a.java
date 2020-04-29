@@ -1,7 +1,7 @@
 package com.xiaomi.stat.c;
 
 import android.content.Context;
-import com.xiaomi.stat.C0159b;
+import com.xiaomi.stat.C0155b;
 import com.xiaomi.stat.I;
 import com.xiaomi.stat.d.k;
 import java.util.HashMap;
@@ -55,10 +55,10 @@ public class a {
 
     private static boolean a(int i, String str) {
         if (i == 1) {
-            return C0159b.u();
+            return C0155b.u();
         }
         if (i == 2) {
-            return C0159b.d(str);
+            return C0155b.d(str);
         }
         if (i == 3) {
             return k.a();
@@ -67,7 +67,7 @@ public class a {
             return false;
         }
         try {
-            return C0159b.g();
+            return C0155b.g();
         } catch (Exception e2) {
             k.d(f411a, "checkSetting exception", e2);
             return false;

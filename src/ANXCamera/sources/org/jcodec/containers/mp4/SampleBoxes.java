@@ -2,7 +2,7 @@ package org.jcodec.containers.mp4;
 
 import com.android.camera.CameraIntentManager;
 import com.ss.android.vesdk.VEEditor;
-import com.xiaomi.stat.C0159b;
+import com.xiaomi.stat.C0155b;
 import org.jcodec.containers.mp4.boxes.AudioSampleEntry;
 import org.jcodec.containers.mp4.boxes.SampleEntry;
 import org.jcodec.containers.mp4.boxes.TimecodeSampleEntry;
@@ -94,7 +94,7 @@ public class SampleBoxes extends Boxes {
         override("mp4a", AudioSampleEntry.class);
         override("lpcm", AudioSampleEntry.class);
         override("tmcd", TimecodeSampleEntry.class);
-        override(C0159b.j, TimecodeSampleEntry.class);
+        override(C0155b.j, TimecodeSampleEntry.class);
         override("c608", SampleEntry.class);
         override("c708", SampleEntry.class);
         override(VEEditor.MVConsts.TYPE_TEXT, SampleEntry.class);

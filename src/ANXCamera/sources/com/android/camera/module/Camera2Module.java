@@ -133,7 +133,7 @@ import com.xiaomi.camera.liveshot.LivePhotoResult;
 import com.xiaomi.engine.BufferFormat;
 import com.xiaomi.engine.GraphDescriptorBean;
 import com.xiaomi.protocol.ISessionStatusCallBackListener;
-import com.xiaomi.stat.C0161d;
+import com.xiaomi.stat.C0157d;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.FlowableEmitter;
@@ -1668,10 +1668,10 @@ public class Camera2Module extends BaseModule implements FocusManager2.Listener,
                 String generateFilepath = Storage.generateFilepath(str, Storage.JPEG_SUFFIX);
                 if (Storage.isIdCardPictureOne(str)) {
                     this.mIDCardPaths[0] = generateFilepath;
-                    AndroidSchedulers.mainThread().scheduleDirect(C0026b.INSTANCE);
+                    AndroidSchedulers.mainThread().scheduleDirect(C0022b.INSTANCE);
                     return;
                 }
-                AndroidSchedulers.mainThread().scheduleDirect(new C0032h(this));
+                AndroidSchedulers.mainThread().scheduleDirect(new C0028h(this));
                 String[] strArr = this.mIDCardPaths;
                 strArr[1] = generateFilepath;
                 callGalleryIDCardPage(strArr);
@@ -2072,7 +2072,7 @@ public class Camera2Module extends BaseModule implements FocusManager2.Listener,
         this.mShutterCallbackTime = System.currentTimeMillis();
         this.mShutterLag = this.mShutterCallbackTime - this.mCaptureStartTime;
         String str = TAG;
-        Log.v(str, "mShutterLag = " + this.mShutterLag + C0161d.H);
+        Log.v(str, "mShutterLag = " + this.mShutterLag + C0157d.H);
         updateEnablePreviewThumbnail(z);
         if (this.mEnabledPreviewThumbnail) {
             this.mActivity.getCameraScreenNail().requestReadPixels();
@@ -2538,7 +2538,7 @@ public class Camera2Module extends BaseModule implements FocusManager2.Listener,
         if (!isDeparted()) {
             if (!(this.mCamera2Device == null || this.mOrientation == -1)) {
                 if (!isFrameAvailable() || getCameraState() != 1) {
-                    GlobalConstant.sCameraSetupScheduler.scheduleDirect(new C0027c(this));
+                    GlobalConstant.sCameraSetupScheduler.scheduleDirect(new C0023c(this));
                 } else {
                     updatePreferenceInWorkThread(35);
                 }
@@ -2745,7 +2745,7 @@ public class Camera2Module extends BaseModule implements FocusManager2.Listener,
                     Camera2Module.this.playCameraSound(7);
                     ModeProtocol.TopAlert topAlert = (ModeProtocol.TopAlert) ModeCoordinatorImpl.getInstance().getAttachProtocol(172);
                     if (topAlert != null) {
-                        AndroidSchedulers.mainThread().scheduleDirect(new C0029e(topAlert), 120, TimeUnit.MILLISECONDS);
+                        AndroidSchedulers.mainThread().scheduleDirect(new C0025e(topAlert), 120, TimeUnit.MILLISECONDS);
                     }
                     Camera2Module.this.mMainProtocol.clearFocusView(7);
                     Camera2Module.this.mMainProtocol.showDelayNumber(i);
@@ -2834,7 +2834,7 @@ public class Camera2Module extends BaseModule implements FocusManager2.Listener,
                 enableCameraControls(true);
             }
             if (isFrontCamera() && DataRepository.dataItemFeature().fd() && 32775 != this.mOperatingMode) {
-                this.mCamera2Device.registerCaptureCallback(new C0028d(this));
+                this.mCamera2Device.registerCaptureCallback(new C0024d(this));
                 return;
             }
             return;
@@ -5441,7 +5441,7 @@ public class Camera2Module extends BaseModule implements FocusManager2.Listener,
             } else if (DataRepository.dataItemGlobal().getString("pref_camera_long_press_viewfinder_key", (String) null) == null) {
                 CameraStatUtils.trackGoogleLensPicker();
                 FragmentManager fragmentManager = this.mActivity.getFragmentManager();
-                C0031g gVar = new C0031g(this, f2, f3, i, i2);
+                C0027g gVar = new C0027g(this, f2, f3, i, i2);
                 GoogleLensFragment.showOptions(fragmentManager, gVar);
             } else {
                 CameraStatUtils.trackGoogleLensTouchAndHold();
@@ -5492,7 +5492,7 @@ public class Camera2Module extends BaseModule implements FocusManager2.Listener,
         setAiSceneEffect(0);
         releaseEffectProcessor();
         if (Util.isGlobalVersion() && !b.ie()) {
-            this.mActivity.runOnUiThread(new C0033i(this));
+            this.mActivity.runOnUiThread(new C0029i(this));
         }
         Handler handler = this.mHandler;
         if (handler != null) {
@@ -5521,7 +5521,7 @@ public class Camera2Module extends BaseModule implements FocusManager2.Listener,
             trackPictureTaken(pictureTakenParameter);
             CameraStatUtils.trackTakePictureCost(System.currentTimeMillis() - this.mCaptureStartTime, isFrontCamera(), this.mModuleIndex);
             ScenarioTrackUtil.trackCaptureTimeEnd();
-            Log.d(TAG, "mCaptureStartTime(from onShutterButtonClick start to jpegCallback finished) = " + r1 + C0161d.H);
+            Log.d(TAG, "mCaptureStartTime(from onShutterButtonClick start to jpegCallback finished) = " + r1 + C0157d.H);
             if (this.mIsImageCaptureIntent) {
                 if (this.mQuickCapture) {
                     doAttach();
@@ -5715,7 +5715,7 @@ public class Camera2Module extends BaseModule implements FocusManager2.Listener,
         }
         keepScreenOnAwhile();
         if (Util.isGlobalVersion() && !b.ie()) {
-            this.mActivity.runOnUiThread(new C0037j(this));
+            this.mActivity.runOnUiThread(new C0033j(this));
         }
     }
 
@@ -6111,7 +6111,7 @@ public class Camera2Module extends BaseModule implements FocusManager2.Listener,
         if (this.mIsGoogleLensAvailable) {
             Camera camera = this.mActivity;
             if (camera != null) {
-                camera.runOnUiThread(new C0025a(this));
+                camera.runOnUiThread(new C0021a(this));
             }
         }
     }
@@ -6597,7 +6597,7 @@ public class Camera2Module extends BaseModule implements FocusManager2.Listener,
         ComponentConfigHdr componentHdr = DataRepository.dataItemConfig().getComponentHdr();
         boolean z2 = !componentHdr.isEmpty() && componentHdr.isHdrOnWithChecker(componentHdr.getComponentValue(this.mModuleIndex));
         if (triggerHDR(z) && !z2) {
-            this.mHandler.post(new C0038k(z));
+            this.mHandler.post(new C0034k(z));
         }
     }
 
@@ -6615,7 +6615,7 @@ public class Camera2Module extends BaseModule implements FocusManager2.Listener,
             if (1 == this.mCamera2Device.getFocusMode() && this.m3ALocked) {
                 Camera camera = this.mActivity;
                 if (camera != null) {
-                    camera.runOnUiThread(new C0030f(this));
+                    camera.runOnUiThread(new C0026f(this));
                 }
                 unlockAEAF();
             }

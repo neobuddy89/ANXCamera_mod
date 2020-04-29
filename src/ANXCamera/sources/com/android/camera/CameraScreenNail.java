@@ -5,6 +5,7 @@ import android.graphics.Rect;
 import android.graphics.SurfaceTexture;
 import android.opengl.GLES20;
 import android.opengl.Matrix;
+import android.support.v4.view.ViewCompat;
 import com.android.camera.SurfaceTextureScreenNail;
 import com.android.camera.effect.FrameBuffer;
 import com.android.camera.effect.draw_mode.DrawBasicTexAttribute;
@@ -18,7 +19,7 @@ import com.android.gallery3d.ui.BitmapTexture;
 import com.android.gallery3d.ui.GLCanvas;
 import com.android.gallery3d.ui.RawTexture;
 import com.mi.config.b;
-import com.xiaomi.stat.C0161d;
+import com.xiaomi.stat.C0157d;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.nio.ByteBuffer;
@@ -392,7 +393,7 @@ public class CameraScreenNail extends SurfaceTextureScreenNail {
                 this.mBitmapTexture.draw(gLCanvas, i10, i9, i8, i7);
             } else if (this.mIsDrawBlackFrame) {
                 Log.d(TAG, "draw: skip frame...");
-                FillRectAttribute fillRectAttribute = new FillRectAttribute((float) i11, (float) i12, (float) i13, (float) i14, -16777216);
+                FillRectAttribute fillRectAttribute = new FillRectAttribute((float) i11, (float) i12, (float) i13, (float) i14, ViewCompat.MEASURED_STATE_MASK);
                 gLCanvas2.draw(fillRectAttribute);
                 postRequestListener();
             } else {
@@ -578,7 +579,7 @@ public class CameraScreenNail extends SurfaceTextureScreenNail {
         Bitmap createBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         createBitmap.copyPixelsFromBuffer(ByteBuffer.wrap(array));
         this.mLastFrameGaussianBitmap = createBitmap;
-        Log.d(TAG, "readLastFrameGaussian end... bitmap = " + this.mLastFrameGaussianBitmap + ", cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
+        Log.d(TAG, "readLastFrameGaussian end... bitmap = " + this.mLastFrameGaussianBitmap + ", cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
     }
 
     public Rect getDisplayRect() {

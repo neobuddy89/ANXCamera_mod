@@ -127,7 +127,7 @@ public class Constraints extends ViewGroup {
     }
 
     private void init(AttributeSet attributeSet) {
-        Log.v("Constraints", " ################# init");
+        Log.v(TAG, " ################# init");
     }
 
     /* access modifiers changed from: protected */

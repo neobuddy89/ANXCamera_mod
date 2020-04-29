@@ -18,7 +18,7 @@ class C extends FileObserver {
             synchronized (this.f275a) {
                 this.f275a.b();
             }
-            C0159b.n();
+            C0155b.n();
         }
     }
 }

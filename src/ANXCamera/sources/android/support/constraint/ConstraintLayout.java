@@ -14,6 +14,8 @@ import android.support.constraint.solver.widgets.ConstraintWidget;
 import android.support.constraint.solver.widgets.ConstraintWidgetContainer;
 import android.support.constraint.solver.widgets.Guideline;
 import android.support.constraint.solver.widgets.ResolutionAnchor;
+import android.support.v4.internal.view.SupportMenu;
+import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.SparseArray;
@@ -1764,7 +1766,7 @@ public class ConstraintLayout extends ViewGroup {
                             int i2 = (int) ((((float) parseInt) / 1080.0f) * width);
                             int i3 = (int) ((((float) parseInt2) / 1920.0f) * height);
                             Paint paint = new Paint();
-                            paint.setColor(-65536);
+                            paint.setColor(SupportMenu.CATEGORY_MASK);
                             float f2 = (float) i2;
                             float f3 = (float) (i2 + ((int) ((((float) parseInt3) / 1080.0f) * width)));
                             Canvas canvas2 = canvas;
@@ -2122,8 +2124,12 @@ public class ConstraintLayout extends ViewGroup {
                 int width3 = this.mLayoutWidget.getWidth() + paddingRight;
                 int height3 = this.mLayoutWidget.getHeight() + paddingBottom;
                 if (Build.VERSION.SDK_INT < 11) {
-                    int min = Math.min(this.mMaxWidth, ViewGroup.resolveSizeAndState(width3, i, i3) & 16777215);
-                    int min2 = Math.min(this.mMaxHeight, ViewGroup.resolveSizeAndState(height3, i7, i3 << 16) & 16777215);
+                    int resolveSizeAndState = ViewGroup.resolveSizeAndState(width3, i, i3);
+                    int resolveSizeAndState2 = ViewGroup.resolveSizeAndState(height3, i7, i3 << 16);
+                    int i19 = resolveSizeAndState & ViewCompat.MEASURED_SIZE_MASK;
+                    int i20 = resolveSizeAndState2 & ViewCompat.MEASURED_SIZE_MASK;
+                    int min = Math.min(this.mMaxWidth, i19);
+                    int min2 = Math.min(this.mMaxHeight, i20);
                     if (this.mLayoutWidget.isWidthMeasuredTooSmall()) {
                         min |= 16777216;
                     }

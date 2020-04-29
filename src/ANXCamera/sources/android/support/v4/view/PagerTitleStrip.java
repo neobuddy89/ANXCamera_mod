@@ -255,7 +255,7 @@ public class PagerTitleStrip extends ViewGroup {
 
     public void setNonPrimaryAlpha(@FloatRange(from = 0.0d, to = 1.0d) float f2) {
         this.mNonPrimaryAlpha = ((int) (f2 * 255.0f)) & 255;
-        int i = (this.mNonPrimaryAlpha << 24) | (this.mTextColor & 16777215);
+        int i = (this.mNonPrimaryAlpha << 24) | (this.mTextColor & ViewCompat.MEASURED_SIZE_MASK);
         this.mPrevText.setTextColor(i);
         this.mNextText.setTextColor(i);
     }
@@ -263,7 +263,7 @@ public class PagerTitleStrip extends ViewGroup {
     public void setTextColor(@ColorInt int i) {
         this.mTextColor = i;
         this.mCurrText.setTextColor(i);
-        int i2 = (this.mNonPrimaryAlpha << 24) | (this.mTextColor & 16777215);
+        int i2 = (this.mNonPrimaryAlpha << 24) | (this.mTextColor & ViewCompat.MEASURED_SIZE_MASK);
         this.mPrevText.setTextColor(i2);
         this.mNextText.setTextColor(i2);
     }

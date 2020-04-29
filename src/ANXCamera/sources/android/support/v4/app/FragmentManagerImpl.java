@@ -21,6 +21,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.os.EnvironmentCompat;
 import android.support.v4.util.ArraySet;
 import android.support.v4.util.DebugUtils;
 import android.support.v4.util.LogWriter;
@@ -2300,7 +2301,7 @@ final class FragmentManagerImpl extends FragmentManager implements LayoutInflate
                                 try {
                                     str = fragment.getResources().getResourceName(fragment2.mContainerId);
                                 } catch (Resources.NotFoundException unused) {
-                                    str = "unknown";
+                                    str = EnvironmentCompat.MEDIA_UNKNOWN;
                                 }
                                 throwException(new IllegalArgumentException("No view found for id 0x" + Integer.toHexString(fragment2.mContainerId) + " (" + str + ") for fragment " + fragment2));
                                 throw null;

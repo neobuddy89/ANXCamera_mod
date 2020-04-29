@@ -9,7 +9,7 @@ import com.android.camera.FileCompat;
 import com.android.camera.Thumbnail;
 import com.android.camera.Util;
 import com.android.camera.log.Log;
-import com.xiaomi.stat.C0161d;
+import com.xiaomi.stat.C0157d;
 import java.io.Closeable;
 import java.io.File;
 
@@ -41,7 +41,7 @@ public class VideoSaveRequest implements SaveRequest {
         try {
             long currentTimeMillis = System.currentTimeMillis();
             uri = this.context.getContentResolver().insert(Storage.getMediaUri(this.context, true, str), contentValues);
-            Log.d(TAG, "addVideoToMediaStore: insert video cost: " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
+            Log.d(TAG, "addVideoToMediaStore: insert video cost: " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
             sb = new StringBuilder();
         } catch (Exception e2) {
             Log.e(TAG, "failed to add video to media store", (Throwable) e2);
@@ -107,7 +107,7 @@ public class VideoSaveRequest implements SaveRequest {
         try {
             long currentTimeMillis = System.currentTimeMillis();
             i = this.context.getContentResolver().update(uri, contentValues, (String) null, (String[]) null);
-            Log.d(TAG, "updateVideoToMediaStore: insert video cost: " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
+            Log.d(TAG, "updateVideoToMediaStore: insert video cost: " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
             sb = new StringBuilder();
         } catch (Exception e2) {
             Log.e(TAG, "failed to add video to media store", (Throwable) e2);

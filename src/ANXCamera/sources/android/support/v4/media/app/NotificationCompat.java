@@ -141,13 +141,13 @@ public class NotificationCompat {
                 return null;
             }
             if (Build.VERSION.SDK_INT >= 21) {
-                Parcelable parcelable = extras.getParcelable("android.mediaSession");
+                Parcelable parcelable = extras.getParcelable(android.support.v4.app.NotificationCompat.EXTRA_MEDIA_SESSION);
                 if (parcelable != null) {
                     return MediaSessionCompat.Token.fromToken(parcelable);
                 }
                 return null;
             }
-            IBinder binder = BundleCompat.getBinder(extras, "android.mediaSession");
+            IBinder binder = BundleCompat.getBinder(extras, android.support.v4.app.NotificationCompat.EXTRA_MEDIA_SESSION);
             if (binder == null) {
                 return null;
             }

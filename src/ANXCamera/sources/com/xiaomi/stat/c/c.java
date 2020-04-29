@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import com.xiaomi.stat.C0159b;
-import com.xiaomi.stat.C0161d;
+import com.xiaomi.stat.C0155b;
+import com.xiaomi.stat.C0157d;
 import com.xiaomi.stat.I;
 import com.xiaomi.stat.d.i;
 import java.io.IOException;
@@ -28,7 +28,7 @@ public class c {
     }
 
     public static String a(String str, Map<String, String> map, boolean z) throws IOException {
-        return (!C0159b.u() || !a()) ? i.b(str, map, z) : b(str, map, z);
+        return (!C0155b.u() || !a()) ? i.b(str, map, z) : b(str, map, z);
     }
 
     public static boolean a() {
@@ -55,7 +55,7 @@ public class c {
 
     public static String b(String str, Map<String, String> map, boolean z) {
         if (z) {
-            map.put(C0161d.f456f, i.a(map));
+            map.put(C0157d.f456f, i.a(map));
         }
         Intent intent = new Intent();
         intent.setClassName(f423a, f424b);

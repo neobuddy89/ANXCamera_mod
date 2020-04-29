@@ -18,7 +18,7 @@ import com.android.camera2.compat.MiCameraCompat;
 import com.xiaomi.camera.base.PerformanceTracker;
 import com.xiaomi.camera.core.ParallelCallback;
 import com.xiaomi.camera.core.ParallelTaskData;
-import com.xiaomi.stat.C0161d;
+import com.xiaomi.stat.C0157d;
 import java.util.ArrayList;
 
 public class MiCamera2ShotRawBurst extends MiCamera2Shot<ParallelTaskData> {
@@ -110,7 +110,7 @@ public class MiCamera2ShotRawBurst extends MiCamera2Shot<ParallelTaskData> {
         this.mCurrentParallelTaskData.setPreviewThumbnailHash(this.mPreviewThumbnailHash);
         parallelCallback.onParallelProcessFinish(this.mCurrentParallelTaskData, (CaptureResult) null, (CameraCharacteristics) null);
         long currentTimeMillis2 = System.currentTimeMillis() - currentTimeMillis;
-        Log.d(TAG, "mJpegCallbackFinishTime = " + currentTimeMillis2 + C0161d.H);
+        Log.d(TAG, "mJpegCallbackFinishTime = " + currentTimeMillis2 + C0157d.H);
     }
 
     /* access modifiers changed from: protected */

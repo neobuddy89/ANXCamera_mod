@@ -1,6 +1,5 @@
 package io.reactivex.parallel;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
 import io.reactivex.Flowable;
 import io.reactivex.Scheduler;
 import io.reactivex.annotations.BackpressureKind;
@@ -65,7 +64,7 @@ public abstract class ParallelFlowable<T> {
     @CheckReturnValue
     @NonNull
     public static <T> ParallelFlowable<T> from(@NonNull Publisher<? extends T> publisher, int i, int i2) {
-        ObjectHelper.requireNonNull(publisher, FirebaseAnalytics.Param.SOURCE);
+        ObjectHelper.requireNonNull(publisher, "source");
         ObjectHelper.verifyPositive(i, "parallelism");
         ObjectHelper.verifyPositive(i2, "prefetch");
         return RxJavaPlugins.onAssembly(new ParallelFromPublisher(publisher, i, i2));

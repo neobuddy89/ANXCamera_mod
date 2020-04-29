@@ -2,6 +2,7 @@ package com.ss.android.ttve.monitor;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import com.ss.android.medialib.log.VEMonitorKeys;
@@ -94,7 +95,7 @@ public class TEMonitor {
         JSONObject jSONObject = new JSONObject();
         try {
             if (!TextUtils.isEmpty(str2)) {
-                jSONObject.put("service", str2);
+                jSONObject.put(NotificationCompat.CATEGORY_SERVICE, str2);
             }
             if (!str2.equals("iesve_veeditor_record_finish")) {
                 if (!str2.equals("iesve_veeditor_composition_finish")) {
@@ -117,7 +118,7 @@ public class TEMonitor {
         try {
             jSONObject = new JSONObject(str3);
             try {
-                jSONObject.put("service", str2);
+                jSONObject.put(NotificationCompat.CATEGORY_SERVICE, str2);
             } catch (JSONException e2) {
                 e = e2;
             }
@@ -137,8 +138,8 @@ public class TEMonitor {
         }
         String str = "";
         try {
-            if (jSONObject.has("service")) {
-                str = jSONObject.getString("service");
+            if (jSONObject.has(NotificationCompat.CATEGORY_SERVICE)) {
+                str = jSONObject.getString(NotificationCompat.CATEGORY_SERVICE);
             }
         } catch (JSONException e2) {
             e2.printStackTrace();
@@ -279,8 +280,8 @@ public class TEMonitor {
         if (jSONObject != null) {
             i = getIsComplete(jSONObject);
             try {
-                if (jSONObject.has("service")) {
-                    str2 = jSONObject.getString("service");
+                if (jSONObject.has(NotificationCompat.CATEGORY_SERVICE)) {
+                    str2 = jSONObject.getString(NotificationCompat.CATEGORY_SERVICE);
                 }
                 if (!str2.equals("iesve_veeditor_record_finish")) {
                 }

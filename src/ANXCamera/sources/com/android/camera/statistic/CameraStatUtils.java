@@ -34,7 +34,6 @@ import com.android.camera.module.ModuleManager;
 import com.android.camera.module.loader.FunctionParseBeautyBodySlimCount;
 import com.android.camera.module.loader.camera2.Camera2DataContainer;
 import com.android.camera.statistic.MistatsConstants;
-import com.google.android.gms.common.util.GmsVersion;
 import com.mi.config.b;
 import com.miui.filtersdk.filter.helper.FilterType;
 import java.util.HashMap;
@@ -100,7 +99,7 @@ public class CameraStatUtils {
         sExposureTimeLessThan1sToName.put(1000000, "1s");
         sExposureTimeLessThan1sToName.put(2000000, "2s");
         sExposureTimeLessThan1sToName.put(4000000, "4s");
-        sExposureTimeLessThan1sToName.put(GmsVersion.VERSION_SAGA, "8s");
+        sExposureTimeLessThan1sToName.put(8000000, "8s");
         sExposureTimeLessThan1sToName.put(16000000, "16s");
         sExposureTimeLessThan1sToName.put(32000000, "32s");
         sBeautyTypeToName.put("pref_beautify_level_key_capture", MistatsConstants.BeautyAttr.BEAUTY_LEVEL);
@@ -1255,7 +1254,7 @@ public class CameraStatUtils {
         if (!MistatsWrapper.isCounterEventDisabled()) {
             HashMap hashMap = new HashMap();
             hashMap.put(MistatsConstants.Live.PARAM_LIVE_STICKER_NAME, str);
-            hashMap.put(MistatsConstants.Live.PARAM_LIVE_STICKER_DOWNLOAD, z ? "success" : MistatsConstants.BaseEvent.VALUE_FAILED);
+            hashMap.put(MistatsConstants.Live.PARAM_LIVE_STICKER_DOWNLOAD, z ? MistatsConstants.BaseEvent.VALUE_SUCCESS : MistatsConstants.BaseEvent.VALUE_FAILED);
             MistatsWrapper.mistatEvent(MistatsConstants.ModuleName.LIVE, hashMap);
         }
     }

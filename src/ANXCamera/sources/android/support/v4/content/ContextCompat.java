@@ -56,6 +56,7 @@ import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.NotificationCompat;
 import android.telecom.TelecomManager;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
@@ -67,6 +68,7 @@ import android.view.accessibility.CaptioningManager;
 import android.view.inputmethod.InputMethodManager;
 import android.view.textservice.TextServicesManager;
 import com.ss.android.vesdk.VEEditor;
+import com.xiaomi.stat.MiStat;
 import java.io.File;
 import java.util.HashMap;
 
@@ -116,7 +118,7 @@ public class ContextCompat {
             SERVICES.put(AccessibilityService.class, "accessibility");
             SERVICES.put(AccountManager.class, "account");
             SERVICES.put(ActivityManager.class, "activity");
-            SERVICES.put(AlarmManager.class, "alarm");
+            SERVICES.put(AlarmManager.class, NotificationCompat.CATEGORY_ALARM);
             SERVICES.put(AudioManager.class, VEEditor.MVConsts.TYPE_AUDIO);
             SERVICES.put(ClipboardManager.class, "clipboard");
             SERVICES.put(ConnectivityManager.class, "connectivity");
@@ -126,11 +128,11 @@ public class ContextCompat {
             SERVICES.put(InputMethodManager.class, "input_method");
             SERVICES.put(KeyguardManager.class, "keyguard");
             SERVICES.put(LayoutInflater.class, "layout_inflater");
-            SERVICES.put(LocationManager.class, "location");
+            SERVICES.put(LocationManager.class, MiStat.Param.LOCATION);
             SERVICES.put(NfcManager.class, "nfc");
             SERVICES.put(NotificationManager.class, "notification");
             SERVICES.put(PowerManager.class, "power");
-            SERVICES.put(SearchManager.class, "search");
+            SERVICES.put(SearchManager.class, MiStat.Event.SEARCH);
             SERVICES.put(SensorManager.class, "sensor");
             SERVICES.put(StorageManager.class, "storage");
             SERVICES.put(TelephonyManager.class, "phone");

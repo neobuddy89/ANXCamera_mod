@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
+import android.support.v4.content.IntentCompat;
 
 public class AppLaunchChecker {
     private static final String KEY_STARTED_FROM_LAUNCHER = "startedFromLauncher";
@@ -21,7 +22,7 @@ public class AppLaunchChecker {
             if (intent == null || !"android.intent.action.MAIN".equals(intent.getAction())) {
                 return;
             }
-            if (intent.hasCategory("android.intent.category.LAUNCHER") || intent.hasCategory("android.intent.category.LEANBACK_LAUNCHER")) {
+            if (intent.hasCategory("android.intent.category.LAUNCHER") || intent.hasCategory(IntentCompat.CATEGORY_LEANBACK_LAUNCHER)) {
                 sharedPreferences.edit().putBoolean(KEY_STARTED_FROM_LAUNCHER, true).apply();
             }
         }

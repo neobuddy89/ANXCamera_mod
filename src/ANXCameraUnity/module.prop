@@ -1,7 +1,12 @@
 id=ANXMiuiCamera
 name=ANXCamera
+<<<<<<< HEAD
 version=180.ImpoliteMediumIberiannase
 versionCode=180
+=======
+version=177.HungryIcyAmethystsunbird
+versionCode=177
+>>>>>>> parent of fe46e827... FireBase Analytics, Attempt Permission Asker
 author=AEonAX
 description=ANXCamera Magisk Module
 support=https://forum.xda-developers.com/poco-f1/themes/port-t3879357

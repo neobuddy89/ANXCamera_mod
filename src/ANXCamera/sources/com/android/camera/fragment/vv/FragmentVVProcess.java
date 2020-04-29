@@ -270,7 +270,7 @@ public class FragmentVVProcess extends BaseFragment implements View.OnClickListe
                     ((Animatable) drawable).start();
                 }
                 animateIn(this.mConcatProgress);
-                this.mPreviewLayout.setBackgroundColor(-16777216);
+                this.mPreviewLayout.setBackgroundColor(ViewCompat.MEASURED_STATE_MASK);
                 this.mTextureVideoView.setVisibility(0);
                 return;
             case 4:
@@ -357,7 +357,7 @@ public class FragmentVVProcess extends BaseFragment implements View.OnClickListe
             }
         }
         this.mBottomActionView.setVisibility(4);
-        this.mPreviewLayout.setBackgroundColor(-16777216);
+        this.mPreviewLayout.setBackgroundColor(ViewCompat.MEASURED_STATE_MASK);
         this.mTextureVideoView.setVisibility(0);
         this.mTextureVideoView.setVideoPath(((ModeProtocol.LiveConfigVV) ModeCoordinatorImpl.getInstance().getAttachProtocol(228)).getSegmentPath(i));
         this.mTextureVideoView.start();

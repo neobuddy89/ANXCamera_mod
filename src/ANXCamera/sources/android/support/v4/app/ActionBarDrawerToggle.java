@@ -15,6 +15,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.util.AttributeSet;
@@ -274,18 +275,18 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
         if (menuItem == null || menuItem.getItemId() != ID_HOME || !this.mDrawerIndicatorEnabled) {
             return false;
         }
-        if (this.mDrawerLayout.isDrawerVisible(8388611)) {
-            this.mDrawerLayout.closeDrawer(8388611);
+        if (this.mDrawerLayout.isDrawerVisible((int) GravityCompat.START)) {
+            this.mDrawerLayout.closeDrawer((int) GravityCompat.START);
             return true;
         }
-        this.mDrawerLayout.openDrawer(8388611);
+        this.mDrawerLayout.openDrawer((int) GravityCompat.START);
         return true;
     }
 
     public void setDrawerIndicatorEnabled(boolean z) {
         if (z != this.mDrawerIndicatorEnabled) {
             if (z) {
-                setActionBarUpIndicator(this.mSlider, this.mDrawerLayout.isDrawerOpen(8388611) ? this.mCloseDrawerContentDescRes : this.mOpenDrawerContentDescRes);
+                setActionBarUpIndicator(this.mSlider, this.mDrawerLayout.isDrawerOpen((int) GravityCompat.START) ? this.mCloseDrawerContentDescRes : this.mOpenDrawerContentDescRes);
             } else {
                 setActionBarUpIndicator(this.mHomeAsUpIndicator, 0);
             }
@@ -311,13 +312,13 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
     }
 
     public void syncState() {
-        if (this.mDrawerLayout.isDrawerOpen(8388611)) {
+        if (this.mDrawerLayout.isDrawerOpen((int) GravityCompat.START)) {
             this.mSlider.setPosition(1.0f);
         } else {
             this.mSlider.setPosition(0.0f);
         }
         if (this.mDrawerIndicatorEnabled) {
-            setActionBarUpIndicator(this.mSlider, this.mDrawerLayout.isDrawerOpen(8388611) ? this.mCloseDrawerContentDescRes : this.mOpenDrawerContentDescRes);
+            setActionBarUpIndicator(this.mSlider, this.mDrawerLayout.isDrawerOpen((int) GravityCompat.START) ? this.mCloseDrawerContentDescRes : this.mOpenDrawerContentDescRes);
         }
     }
 }

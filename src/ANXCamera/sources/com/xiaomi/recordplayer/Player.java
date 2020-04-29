@@ -9,7 +9,7 @@ import com.xiaomi.recordplayer.enums.PlayerCacheType;
 import com.xiaomi.recordplayer.enums.PlayerPlaybackState;
 import com.xiaomi.recordplayer.enums.PlayerSeekingMode;
 import com.xiaomi.recordplayer.enums.PlayerWorkingMode;
-import com.xiaomi.stat.C0161d;
+import com.xiaomi.stat.C0157d;
 
 public class Player {
     private static String TAG = "Player";
@@ -383,7 +383,7 @@ public class Player {
 
     public void onStartWithTimeInvalid(long j) {
         String str = TAG;
-        Log.d(str, "debug::onStartWithTimeInvalid, the file duration is " + j + C0161d.H);
+        Log.d(str, "debug::onStartWithTimeInvalid, the file duration is " + j + C0157d.H);
         this.pc.onStartWithTimeInvalid(j);
     }
 

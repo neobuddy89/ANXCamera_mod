@@ -45,6 +45,8 @@ import android.os.UserHandle;
 import android.provider.MiuiSettings;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FrameMetricsAggregator;
+import android.support.v4.os.EnvironmentCompat;
 import android.support.v4.view.ViewCompat;
 import android.telephony.TelephonyManager;
 import android.text.SpannableStringBuilder;
@@ -94,8 +96,8 @@ import com.mi.config.d;
 import com.xiaomi.camera.core.PictureInfo;
 import com.xiaomi.camera.liveshot.CircularMediaRecorder;
 import com.xiaomi.camera.liveshot.LivePhotoResult;
-import com.xiaomi.stat.C0159b;
-import com.xiaomi.stat.C0161d;
+import com.xiaomi.stat.C0155b;
+import com.xiaomi.stat.C0157d;
 import dalvik.system.VMRuntime;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -476,7 +478,7 @@ public final class Util {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         CameraSettings.setBroadcastKillServiceTime(elapsedRealtime);
         Intent intent = new Intent(ACTION_KILL_CAMERA_SERVICE);
-        intent.putExtra(C0159b.j, elapsedRealtime + FragmentTopAlert.HINT_DELAY_TIME);
+        intent.putExtra(C0155b.j, elapsedRealtime + FragmentTopAlert.HINT_DELAY_TIME);
         intent.putExtra("dump_backtrace", z);
         intent.putExtra("process_name", new String[]{"android.hardware.camera.provider@2.4-service", "android.hardware.camera.provider@2.4-service_64"});
         context.sendBroadcast(intent);
@@ -1087,7 +1089,7 @@ public final class Util {
             return "null";
         }
         int intValue = num.intValue();
-        return intValue != 0 ? intValue != 1 ? intValue != 2 ? intValue != 3 ? "unknown" : "locked" : "converged" : "searching" : "inactive";
+        return intValue != 0 ? intValue != 1 ? intValue != 2 ? intValue != 3 ? EnvironmentCompat.MEDIA_UNKNOWN : "locked" : "converged" : "searching" : "inactive";
     }
 
     public static String convertOutputFormatToFileExt(int i) {
@@ -1140,7 +1142,7 @@ public final class Util {
         }
         String parent = file.getParent();
         if (parent != null) {
-            mkdirs(new File(parent), 511, -1, -1);
+            mkdirs(new File(parent), FrameMetricsAggregator.EVERY_DURATION, -1, -1);
         }
         try {
             file.createNewFile();
@@ -1267,7 +1269,7 @@ public final class Util {
                     Canvas canvas2 = new Canvas(createBitmap);
                     canvas2.setDrawFilter(new PaintFlagsDrawFilter(0, 3));
                     Paint paint2 = new Paint();
-                    paint2.setColor(-16777216);
+                    paint2.setColor(ViewCompat.MEASURED_STATE_MASK);
                     paint2.setAntiAlias(true);
                     paint2.setFilterBitmap(true);
                     canvas2.drawBitmap(bitmap3, ((float) (width - i)) / 2.0f, 0.0f, paint2);
@@ -1598,7 +1600,7 @@ public final class Util {
         }
         saveCustomWatermark2File(loadAppCameraWatermark, false, false);
         DataRepository.dataItemGlobal().updateCustomWatermarkVersion();
-        Log.d(TAG, "generateWatermark2File cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
+        Log.d(TAG, "generateWatermark2File cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
         return loadAppCameraWatermark;
     }
 
@@ -4014,7 +4016,7 @@ public final class Util {
                         Log.e(TAG, "saveCustomWatermark2File Failed to write image", (Throwable) e);
                         closeSilently(fileOutputStream2);
                         z3 = false;
-                        Log.d(TAG, "saveCustomWatermark2File: watermarkBitmap = " + bitmap + ", save result = " + z3 + ", cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
+                        Log.d(TAG, "saveCustomWatermark2File: watermarkBitmap = " + bitmap + ", save result = " + z3 + ", cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
                     } catch (Throwable th) {
                         th = th;
                         closeSilently(fileOutputStream2);
@@ -4032,18 +4034,18 @@ public final class Util {
                     Log.e(TAG, "saveCustomWatermark2File Failed to write image", (Throwable) e);
                     closeSilently(fileOutputStream2);
                     z3 = false;
-                    Log.d(TAG, "saveCustomWatermark2File: watermarkBitmap = " + bitmap + ", save result = " + z3 + ", cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
+                    Log.d(TAG, "saveCustomWatermark2File: watermarkBitmap = " + bitmap + ", save result = " + z3 + ", cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
                 } catch (Throwable th2) {
                     th = th2;
                     fileOutputStream2 = fileOutputStream;
                     closeSilently(fileOutputStream2);
                     throw th;
                 }
-                Log.d(TAG, "saveCustomWatermark2File: watermarkBitmap = " + bitmap + ", save result = " + z3 + ", cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
+                Log.d(TAG, "saveCustomWatermark2File: watermarkBitmap = " + bitmap + ", save result = " + z3 + ", cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
             }
         }
         z3 = false;
-        Log.d(TAG, "saveCustomWatermark2File: watermarkBitmap = " + bitmap + ", save result = " + z3 + ", cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
+        Log.d(TAG, "saveCustomWatermark2File: watermarkBitmap = " + bitmap + ", save result = " + z3 + ", cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
     }
 
     public static void saveImageToJpeg(Image image) {
@@ -4082,7 +4084,7 @@ public final class Util {
                     Log.e(TAG, "saveLastFrameGaussian2File Failed to write image", (Throwable) e2);
                     closeSilently(fileOutputStream);
                     z = false;
-                    Log.d(TAG, "saveLastFrameGaussian2File: blurBitmap = " + bitmap + ", save result = " + z + ", cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
+                    Log.d(TAG, "saveLastFrameGaussian2File: blurBitmap = " + bitmap + ", save result = " + z + ", cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
                 } catch (Throwable th) {
                     th = th;
                     closeSilently(fileOutputStream);
@@ -4104,12 +4106,12 @@ public final class Util {
                 Log.e(TAG, "saveLastFrameGaussian2File Failed to write image", (Throwable) e2);
                 closeSilently(fileOutputStream);
                 z = false;
-                Log.d(TAG, "saveLastFrameGaussian2File: blurBitmap = " + bitmap + ", save result = " + z + ", cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
+                Log.d(TAG, "saveLastFrameGaussian2File: blurBitmap = " + bitmap + ", save result = " + z + ", cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
             }
-            Log.d(TAG, "saveLastFrameGaussian2File: blurBitmap = " + bitmap + ", save result = " + z + ", cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
+            Log.d(TAG, "saveLastFrameGaussian2File: blurBitmap = " + bitmap + ", save result = " + z + ", cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
         }
         z = false;
-        Log.d(TAG, "saveLastFrameGaussian2File: blurBitmap = " + bitmap + ", save result = " + z + ", cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
+        Log.d(TAG, "saveLastFrameGaussian2File: blurBitmap = " + bitmap + ", save result = " + z + ", cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
     }
 
     /* JADX WARNING: Removed duplicated region for block: B:17:0x004e A[SYNTHETIC, Splitter:B:17:0x004e] */

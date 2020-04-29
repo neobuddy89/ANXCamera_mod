@@ -11,6 +11,7 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -55,6 +56,7 @@ import com.android.camera.protocol.ModeProtocol;
 import com.android.camera.statistic.CameraStatUtils;
 import com.android.camera.statistic.MistatsConstants;
 import com.android.camera.statistic.MistatsWrapper;
+import com.xiaomi.stat.MiStat;
 import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import java.util.ArrayList;
@@ -325,14 +327,14 @@ public class FragmentTopConfig extends BaseFragment implements View.OnClickListe
             return 0;
         } else if (i == 0) {
             layoutParams.leftMargin = 0;
-            layoutParams.gravity = 8388611;
+            layoutParams.gravity = GravityCompat.START;
             imageView.setLayoutParams(layoutParams);
             return 0;
         } else {
             int i5 = configsSize - 1;
             if (i == i5) {
                 layoutParams.leftMargin = 0;
-                layoutParams.gravity = 8388613;
+                layoutParams.gravity = GravityCompat.END;
                 imageView.setLayoutParams(layoutParams);
                 return 0;
             }
@@ -1848,7 +1850,7 @@ public class FragmentTopConfig extends BaseFragment implements View.OnClickListe
                 RotateDrawable rotateDrawable = (RotateDrawable) ((LayerDrawable) drawable).getDrawable(0);
                 ObjectAnimator objectAnimator = this.mLiveShotAnimator;
                 if (objectAnimator == null || objectAnimator.getTarget() != rotateDrawable) {
-                    this.mLiveShotAnimator = ObjectAnimator.ofInt(rotateDrawable, "level", new int[]{0, 10000});
+                    this.mLiveShotAnimator = ObjectAnimator.ofInt(rotateDrawable, MiStat.Param.LEVEL, new int[]{0, 10000});
                     this.mLiveShotAnimator.setDuration(1000);
                     this.mLiveShotAnimator.setInterpolator(new CubicEaseInOutInterpolator());
                 }

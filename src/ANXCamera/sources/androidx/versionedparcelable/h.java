@@ -5,8 +5,9 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcelable;
 import android.support.annotation.RestrictTo;
+import android.support.v4.internal.view.SupportMenu;
 import android.util.SparseArray;
-import androidx.versionedparcelable.C0173VersionedParcel;
+import androidx.versionedparcelable.VersionedParcel;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
@@ -19,7 +20,7 @@ import java.util.Set;
 
 @RestrictTo({RestrictTo.Scope.LIBRARY})
 /* compiled from: VersionedParcelStream */
-class h extends C0173VersionedParcel {
+class h extends VersionedParcel {
     private static final int TYPE_BOOLEAN = 5;
     private static final int TYPE_DOUBLE = 7;
     private static final int TYPE_FLOAT = 13;
@@ -203,13 +204,13 @@ class h extends C0173VersionedParcel {
                 }
                 this.kb = null;
             } catch (IOException e2) {
-                throw new C0173VersionedParcel.ParcelException(e2);
+                throw new VersionedParcel.ParcelException(e2);
             }
         }
     }
 
     /* access modifiers changed from: protected */
-    public C0173VersionedParcel Ga() {
+    public VersionedParcel Ga() {
         return new h(this.ib, this.jb);
     }
 
@@ -245,11 +246,11 @@ class h extends C0173VersionedParcel {
         while (true) {
             try {
                 int readInt = this.fb.readInt();
-                int i2 = readInt & 65535;
+                int i2 = readInt & SupportMenu.USER_MASK;
                 if (i2 == 65535) {
                     i2 = this.fb.readInt();
                 }
-                b bVar2 = new b((readInt >> 16) & 65535, i2, this.fb);
+                b bVar2 = new b((readInt >> 16) & SupportMenu.USER_MASK, i2, this.fb);
                 if (bVar2.vb == i) {
                     this.ib = bVar2.mInputStream;
                     return true;
@@ -271,7 +272,7 @@ class h extends C0173VersionedParcel {
         try {
             return this.ib.readBoolean();
         } catch (IOException e2) {
-            throw new C0173VersionedParcel.ParcelException(e2);
+            throw new VersionedParcel.ParcelException(e2);
         }
     }
 
@@ -297,7 +298,7 @@ class h extends C0173VersionedParcel {
             this.ib.readFully(bArr);
             return bArr;
         } catch (IOException e2) {
-            throw new C0173VersionedParcel.ParcelException(e2);
+            throw new VersionedParcel.ParcelException(e2);
         }
     }
 
@@ -305,7 +306,7 @@ class h extends C0173VersionedParcel {
         try {
             return this.ib.readDouble();
         } catch (IOException e2) {
-            throw new C0173VersionedParcel.ParcelException(e2);
+            throw new VersionedParcel.ParcelException(e2);
         }
     }
 
@@ -313,7 +314,7 @@ class h extends C0173VersionedParcel {
         try {
             return this.ib.readFloat();
         } catch (IOException e2) {
-            throw new C0173VersionedParcel.ParcelException(e2);
+            throw new VersionedParcel.ParcelException(e2);
         }
     }
 
@@ -321,7 +322,7 @@ class h extends C0173VersionedParcel {
         try {
             return this.ib.readInt();
         } catch (IOException e2) {
-            throw new C0173VersionedParcel.ParcelException(e2);
+            throw new VersionedParcel.ParcelException(e2);
         }
     }
 
@@ -329,7 +330,7 @@ class h extends C0173VersionedParcel {
         try {
             return this.ib.readLong();
         } catch (IOException e2) {
-            throw new C0173VersionedParcel.ParcelException(e2);
+            throw new VersionedParcel.ParcelException(e2);
         }
     }
 
@@ -343,7 +344,7 @@ class h extends C0173VersionedParcel {
             this.ib.readFully(bArr);
             return new String(bArr, UTF_16);
         } catch (IOException e2) {
-            throw new C0173VersionedParcel.ParcelException(e2);
+            throw new VersionedParcel.ParcelException(e2);
         }
     }
 
@@ -355,7 +356,7 @@ class h extends C0173VersionedParcel {
         try {
             this.jb.writeBoolean(z);
         } catch (IOException e2) {
-            throw new C0173VersionedParcel.ParcelException(e2);
+            throw new VersionedParcel.ParcelException(e2);
         }
     }
 
@@ -369,7 +370,7 @@ class h extends C0173VersionedParcel {
                     writeObject(bundle.get(str));
                 }
             } catch (IOException e2) {
-                throw new C0173VersionedParcel.ParcelException(e2);
+                throw new VersionedParcel.ParcelException(e2);
             }
         } else {
             this.jb.writeInt(-1);
@@ -382,7 +383,7 @@ class h extends C0173VersionedParcel {
                 this.jb.writeInt(bArr.length);
                 this.jb.write(bArr);
             } catch (IOException e2) {
-                throw new C0173VersionedParcel.ParcelException(e2);
+                throw new VersionedParcel.ParcelException(e2);
             }
         } else {
             this.jb.writeInt(-1);
@@ -395,7 +396,7 @@ class h extends C0173VersionedParcel {
                 this.jb.writeInt(i2);
                 this.jb.write(bArr, i, i2);
             } catch (IOException e2) {
-                throw new C0173VersionedParcel.ParcelException(e2);
+                throw new VersionedParcel.ParcelException(e2);
             }
         } else {
             this.jb.writeInt(-1);
@@ -406,7 +407,7 @@ class h extends C0173VersionedParcel {
         try {
             this.jb.writeDouble(d2);
         } catch (IOException e2) {
-            throw new C0173VersionedParcel.ParcelException(e2);
+            throw new VersionedParcel.ParcelException(e2);
         }
     }
 
@@ -414,7 +415,7 @@ class h extends C0173VersionedParcel {
         try {
             this.jb.writeFloat(f2);
         } catch (IOException e2) {
-            throw new C0173VersionedParcel.ParcelException(e2);
+            throw new VersionedParcel.ParcelException(e2);
         }
     }
 
@@ -422,7 +423,7 @@ class h extends C0173VersionedParcel {
         try {
             this.jb.writeInt(i);
         } catch (IOException e2) {
-            throw new C0173VersionedParcel.ParcelException(e2);
+            throw new VersionedParcel.ParcelException(e2);
         }
     }
 
@@ -430,7 +431,7 @@ class h extends C0173VersionedParcel {
         try {
             this.jb.writeLong(j);
         } catch (IOException e2) {
-            throw new C0173VersionedParcel.ParcelException(e2);
+            throw new VersionedParcel.ParcelException(e2);
         }
     }
 
@@ -441,7 +442,7 @@ class h extends C0173VersionedParcel {
                 this.jb.writeInt(bytes.length);
                 this.jb.write(bytes);
             } catch (IOException e2) {
-                throw new C0173VersionedParcel.ParcelException(e2);
+                throw new VersionedParcel.ParcelException(e2);
             }
         } else {
             this.jb.writeInt(-1);

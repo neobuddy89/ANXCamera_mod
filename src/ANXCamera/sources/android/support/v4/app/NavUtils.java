@@ -80,7 +80,7 @@ public final class NavUtils {
         if (activityInfo.metaData == null) {
             return null;
         }
-        String string = activityInfo.metaData.getString("android.support.PARENT_ACTIVITY");
+        String string = activityInfo.metaData.getString(PARENT_ACTIVITY);
         if (string == null) {
             return null;
         }

@@ -24,7 +24,7 @@ import com.google.android.libraries.lens.lenslite.LensliteApi;
 import com.google.android.libraries.lens.lenslite.LensliteUiContainer;
 import com.google.android.libraries.lens.lenslite.LensliteUiController;
 import com.google.android.libraries.lens.lenslite.api.LinkImage;
-import com.xiaomi.stat.C0161d;
+import com.xiaomi.stat.C0157d;
 
 public class LensAgent {
     private static final String TAG = "LensAgent";
@@ -133,7 +133,7 @@ public class LensAgent {
         this.mLensliteApi = LensliteApi.create(activity.getApplicationContext(), 3);
         long currentTimeMillis = System.currentTimeMillis();
         this.mLensliteApi.onStart(new LensliteUiContainer(view, viewGroup), activity, a.INSTANCE);
-        Log.d(TAG, "LensliteApi init cost " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
+        Log.d(TAG, "LensliteApi init cost " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
         applyCustomStyle(activity.getApplicationContext(), viewGroup);
         this.mInitialized = true;
     }
@@ -166,7 +166,7 @@ public class LensAgent {
                 this.mIsResumed = false;
                 this.mLensliteApi.onPause();
             }
-            Log.d(TAG, "LensliteApi onPause cost " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
+            Log.d(TAG, "LensliteApi onPause cost " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
         }
     }
 
@@ -177,7 +177,7 @@ public class LensAgent {
                 this.mLensliteApi.onResume();
                 this.mIsResumed = true;
             }
-            Log.d(TAG, "LensliteApi onResume cost " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
+            Log.d(TAG, "LensliteApi onResume cost " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
         }
     }
 
@@ -185,7 +185,7 @@ public class LensAgent {
         if (this.mInitialized) {
             long currentTimeMillis = System.currentTimeMillis();
             this.mLensliteApi.onStop();
-            Log.d(TAG, "LensliteApi release cost " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
+            Log.d(TAG, "LensliteApi release cost " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
             this.mInitialized = false;
         }
     }

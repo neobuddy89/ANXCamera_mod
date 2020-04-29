@@ -25,23 +25,6 @@ unknownFiles:
   MODULE_LICENSE_BSD: '0'
   NOTICE: '8'
   okhttp3/internal/publicsuffix/publicsuffixes.gz: '8'
-  firebase-analytics.properties: '8'
-  play-services-base.properties: '8'
-  play-services-tasks.properties: '8'
-  play-services-measurement-base.properties: '8'
-  firebase-measurement-connector.properties: '8'
-  firebase-iid.properties: '8'
-  play-services-ads-identifier.properties: '8'
-  play-services-measurement-api.properties: '8'
-  play-services-measurement.properties: '8'
-  play-services-measurement-sdk-api.properties: '8'
-  firebase-common.properties: '8'
-  play-services-measurement-sdk.properties: '8'
-  firebase-components.properties: '8'
-  play-services-measurement-impl.properties: '8'
-  firebase-iid-interop.properties: '8'
-  play-services-basement.properties: '8'
-  play-services-stats.properties: '8'
 usesFramework:
   ids:
   - 1

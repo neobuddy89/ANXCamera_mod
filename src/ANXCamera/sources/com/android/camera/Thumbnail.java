@@ -23,7 +23,6 @@ import com.android.camera.lib.compatibility.util.CompatibilityUtils;
 import com.android.camera.log.Log;
 import com.android.camera.storage.Storage;
 import com.android.gallery3d.exif.ExifInterface;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.DataInputStream;
@@ -775,7 +774,7 @@ public class Thumbnail {
         Uri mediaUri = Storage.getMediaUri(context, false, str);
         Cursor cursor2 = null;
         try {
-            Cursor cursor3 = contentResolver.query(mediaUri.buildUpon().appendQueryParameter("blocking", "1").appendQueryParameter("orig_id", String.valueOf(j)).appendQueryParameter(FirebaseAnalytics.Param.GROUP_ID, String.valueOf(0)).build(), (String[]) null, (String) null, (String[]) null, (String) null);
+            Cursor cursor3 = contentResolver.query(mediaUri.buildUpon().appendQueryParameter("blocking", "1").appendQueryParameter("orig_id", String.valueOf(j)).appendQueryParameter("group_id", String.valueOf(0)).build(), (String[]) null, (String) null, (String[]) null, (String) null);
             if (cursor3 == null) {
                 if (cursor3 != null) {
                     cursor3.close();

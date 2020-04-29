@@ -12,12 +12,12 @@ public class e {
     }
 
     public static Parcelable a(i iVar) {
-        return new C0172ParcelImpl(iVar);
+        return new ParcelImpl(iVar);
     }
 
     public static <T extends i> T a(Parcelable parcelable) {
-        if (parcelable instanceof C0172ParcelImpl) {
-            return ((C0172ParcelImpl) parcelable).Ea();
+        if (parcelable instanceof ParcelImpl) {
+            return ((ParcelImpl) parcelable).Ea();
         }
         throw new IllegalArgumentException("Invalid parcel");
     }

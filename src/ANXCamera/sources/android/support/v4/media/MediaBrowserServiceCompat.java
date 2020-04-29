@@ -27,7 +27,7 @@ import android.support.v4.media.MediaBrowserServiceCompatApi26;
 import android.support.v4.media.MediaSessionManager;
 import android.support.v4.media.session.IMediaSession;
 import android.support.v4.media.session.MediaSessionCompat;
-import android.support.v4.os.C0171ResultReceiver;
+import android.support.v4.os.ResultReceiver;
 import android.support.v4.util.ArrayMap;
 import android.support.v4.util.Pair;
 import android.text.TextUtils;
@@ -648,7 +648,7 @@ public abstract class MediaBrowserServiceCompat extends Service {
             });
         }
 
-        public void getMediaItem(final String str, final C0171ResultReceiver resultReceiver, final ServiceCallbacks serviceCallbacks) {
+        public void getMediaItem(final String str, final ResultReceiver resultReceiver, final ServiceCallbacks serviceCallbacks) {
             if (!TextUtils.isEmpty(str) && resultReceiver != null) {
                 MediaBrowserServiceCompat.this.mHandler.postOrRun(new Runnable() {
                     public void run() {
@@ -699,13 +699,13 @@ public abstract class MediaBrowserServiceCompat extends Service {
             });
         }
 
-        public void search(String str, Bundle bundle, C0171ResultReceiver resultReceiver, ServiceCallbacks serviceCallbacks) {
+        public void search(String str, Bundle bundle, ResultReceiver resultReceiver, ServiceCallbacks serviceCallbacks) {
             if (!TextUtils.isEmpty(str) && resultReceiver != null) {
                 ServiceHandler serviceHandler = MediaBrowserServiceCompat.this.mHandler;
                 final ServiceCallbacks serviceCallbacks2 = serviceCallbacks;
                 final String str2 = str;
                 final Bundle bundle2 = bundle;
-                final C0171ResultReceiver resultReceiver2 = resultReceiver;
+                final ResultReceiver resultReceiver2 = resultReceiver;
                 AnonymousClass8 r1 = new Runnable() {
                     public void run() {
                         ConnectionRecord connectionRecord = MediaBrowserServiceCompat.this.mConnections.get(serviceCallbacks2.asBinder());
@@ -720,13 +720,13 @@ public abstract class MediaBrowserServiceCompat extends Service {
             }
         }
 
-        public void sendCustomAction(String str, Bundle bundle, C0171ResultReceiver resultReceiver, ServiceCallbacks serviceCallbacks) {
+        public void sendCustomAction(String str, Bundle bundle, ResultReceiver resultReceiver, ServiceCallbacks serviceCallbacks) {
             if (!TextUtils.isEmpty(str) && resultReceiver != null) {
                 ServiceHandler serviceHandler = MediaBrowserServiceCompat.this.mHandler;
                 final ServiceCallbacks serviceCallbacks2 = serviceCallbacks;
                 final String str2 = str;
                 final Bundle bundle2 = bundle;
-                final C0171ResultReceiver resultReceiver2 = resultReceiver;
+                final ResultReceiver resultReceiver2 = resultReceiver;
                 AnonymousClass9 r1 = new Runnable() {
                     public void run() {
                         ConnectionRecord connectionRecord = MediaBrowserServiceCompat.this.mConnections.get(serviceCallbacks2.asBinder());
@@ -833,7 +833,7 @@ public abstract class MediaBrowserServiceCompat extends Service {
                     this.mServiceBinderImpl.removeSubscription(data.getString(MediaBrowserProtocol.DATA_MEDIA_ITEM_ID), BundleCompat.getBinder(data, MediaBrowserProtocol.DATA_CALLBACK_TOKEN), new ServiceCallbacksCompat(message.replyTo));
                     return;
                 case 5:
-                    this.mServiceBinderImpl.getMediaItem(data.getString(MediaBrowserProtocol.DATA_MEDIA_ITEM_ID), (C0171ResultReceiver) data.getParcelable(MediaBrowserProtocol.DATA_RESULT_RECEIVER), new ServiceCallbacksCompat(message.replyTo));
+                    this.mServiceBinderImpl.getMediaItem(data.getString(MediaBrowserProtocol.DATA_MEDIA_ITEM_ID), (ResultReceiver) data.getParcelable(MediaBrowserProtocol.DATA_RESULT_RECEIVER), new ServiceCallbacksCompat(message.replyTo));
                     return;
                 case 6:
                     ServiceBinderImpl serviceBinderImpl = this.mServiceBinderImpl;
@@ -845,10 +845,10 @@ public abstract class MediaBrowserServiceCompat extends Service {
                     this.mServiceBinderImpl.unregisterCallbacks(new ServiceCallbacksCompat(message.replyTo));
                     return;
                 case 8:
-                    this.mServiceBinderImpl.search(data.getString(MediaBrowserProtocol.DATA_SEARCH_QUERY), data.getBundle(MediaBrowserProtocol.DATA_SEARCH_EXTRAS), (C0171ResultReceiver) data.getParcelable(MediaBrowserProtocol.DATA_RESULT_RECEIVER), new ServiceCallbacksCompat(message.replyTo));
+                    this.mServiceBinderImpl.search(data.getString(MediaBrowserProtocol.DATA_SEARCH_QUERY), data.getBundle(MediaBrowserProtocol.DATA_SEARCH_EXTRAS), (ResultReceiver) data.getParcelable(MediaBrowserProtocol.DATA_RESULT_RECEIVER), new ServiceCallbacksCompat(message.replyTo));
                     return;
                 case 9:
-                    this.mServiceBinderImpl.sendCustomAction(data.getString(MediaBrowserProtocol.DATA_CUSTOM_ACTION), data.getBundle(MediaBrowserProtocol.DATA_CUSTOM_ACTION_EXTRAS), (C0171ResultReceiver) data.getParcelable(MediaBrowserProtocol.DATA_RESULT_RECEIVER), new ServiceCallbacksCompat(message.replyTo));
+                    this.mServiceBinderImpl.sendCustomAction(data.getString(MediaBrowserProtocol.DATA_CUSTOM_ACTION), data.getBundle(MediaBrowserProtocol.DATA_CUSTOM_ACTION_EXTRAS), (ResultReceiver) data.getParcelable(MediaBrowserProtocol.DATA_RESULT_RECEIVER), new ServiceCallbacksCompat(message.replyTo));
                     return;
                 default:
                     Log.w(MediaBrowserServiceCompat.TAG, "Unhandled message: " + message + "\n  Service version: " + 2 + "\n  Client version: " + message.arg1);
@@ -1018,7 +1018,7 @@ public abstract class MediaBrowserServiceCompat extends Service {
     }
 
     /* access modifiers changed from: package-private */
-    public void performCustomAction(String str, Bundle bundle, ConnectionRecord connectionRecord, final C0171ResultReceiver resultReceiver) {
+    public void performCustomAction(String str, Bundle bundle, ConnectionRecord connectionRecord, final ResultReceiver resultReceiver) {
         AnonymousClass4 r0 = new Result<Bundle>(str) {
             /* access modifiers changed from: package-private */
             public void onErrorSent(Bundle bundle) {
@@ -1079,7 +1079,7 @@ public abstract class MediaBrowserServiceCompat extends Service {
     }
 
     /* access modifiers changed from: package-private */
-    public void performLoadItem(String str, ConnectionRecord connectionRecord, final C0171ResultReceiver resultReceiver) {
+    public void performLoadItem(String str, ConnectionRecord connectionRecord, final ResultReceiver resultReceiver) {
         AnonymousClass2 r0 = new Result<MediaBrowserCompat.MediaItem>(str) {
             /* access modifiers changed from: package-private */
             public void onResultSent(MediaBrowserCompat.MediaItem mediaItem) {
@@ -1101,7 +1101,7 @@ public abstract class MediaBrowserServiceCompat extends Service {
     }
 
     /* access modifiers changed from: package-private */
-    public void performSearch(String str, Bundle bundle, ConnectionRecord connectionRecord, final C0171ResultReceiver resultReceiver) {
+    public void performSearch(String str, Bundle bundle, ConnectionRecord connectionRecord, final ResultReceiver resultReceiver) {
         AnonymousClass3 r0 = new Result<List<MediaBrowserCompat.MediaItem>>(str) {
             /* access modifiers changed from: package-private */
             public void onResultSent(List<MediaBrowserCompat.MediaItem> list) {

@@ -343,7 +343,7 @@ public class SlidingPaneLayout extends ViewGroup {
     private void dimChildView(View view, float f2, int i) {
         LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
         if (f2 > 0.0f && i != 0) {
-            int i2 = (((int) (((float) ((-16777216 & i) >>> 24)) * f2)) << 24) | (i & 16777215);
+            int i2 = (((int) (((float) ((-16777216 & i) >>> 24)) * f2)) << 24) | (i & ViewCompat.MEASURED_SIZE_MASK);
             if (layoutParams.dimPaint == null) {
                 layoutParams.dimPaint = new Paint();
             }

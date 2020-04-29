@@ -1,5 +1,6 @@
 package okhttp3;
 
+import android.support.v4.app.NotificationCompat;
 import java.io.IOException;
 import java.util.ArrayList;
 import okhttp3.internal.NamedRunnable;
@@ -193,7 +194,7 @@ final class RealCall implements Call {
     public String toLoggableString() {
         StringBuilder sb = new StringBuilder();
         sb.append(isCanceled() ? "canceled " : "");
-        sb.append(this.forWebSocket ? "web socket" : "call");
+        sb.append(this.forWebSocket ? "web socket" : NotificationCompat.CATEGORY_CALL);
         sb.append(" to ");
         sb.append(redactedUrl());
         return sb.toString();

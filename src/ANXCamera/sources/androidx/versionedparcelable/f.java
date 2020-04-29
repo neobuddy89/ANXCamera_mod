@@ -7,10 +7,10 @@ import java.io.ObjectStreamClass;
 
 /* compiled from: VersionedParcel */
 class f extends ObjectInputStream {
-    final /* synthetic */ C0173VersionedParcel this$0;
+    final /* synthetic */ VersionedParcel this$0;
 
     /* JADX INFO: super call moved to the top of the method (can break code semantics) */
-    f(C0173VersionedParcel versionedParcel, InputStream inputStream) {
+    f(VersionedParcel versionedParcel, InputStream inputStream) {
         super(inputStream);
         this.this$0 = versionedParcel;
     }

@@ -2,7 +2,7 @@ package com.xiaomi.stat.d;
 
 import android.text.TextUtils;
 import com.ss.android.vesdk.runtime.cloudconfig.HttpRequest;
-import com.xiaomi.stat.C0161d;
+import com.xiaomi.stat.C0157d;
 import com.xiaomi.stat.I;
 import java.io.IOException;
 import java.io.InputStream;
@@ -227,7 +227,7 @@ public class i {
             if (sb.length() > 0) {
                 sb.append(f496e);
             }
-            sb.append(URLEncoder.encode(C0161d.f456f, "UTF-8"));
+            sb.append(URLEncoder.encode(C0157d.f456f, "UTF-8"));
             sb.append(f497f);
             sb.append(URLEncoder.encode(a2, "UTF-8"));
         }

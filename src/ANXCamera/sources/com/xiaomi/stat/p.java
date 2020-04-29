@@ -11,17 +11,17 @@ class p implements Runnable {
     final /* synthetic */ String f577b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ C0162e f578c;
+    final /* synthetic */ C0158e f578c;
 
-    p(C0162e eVar, String str, String str2) {
+    p(C0158e eVar, String str, String str2) {
         this.f578c = eVar;
         this.f576a = str;
         this.f577b = str2;
     }
 
     public void run() {
-        if (C0159b.a() && this.f578c.g(false)) {
-            C0162e eVar = this.f578c;
+        if (C0155b.a() && this.f578c.g(false)) {
+            C0158e eVar = this.f578c;
             eVar.a(l.a(this.f576a, this.f577b, eVar.f548b));
         }
     }

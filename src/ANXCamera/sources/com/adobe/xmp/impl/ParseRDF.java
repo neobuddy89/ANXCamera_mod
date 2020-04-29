@@ -6,6 +6,7 @@ import com.adobe.xmp.XMPException;
 import com.adobe.xmp.XMPMetaFactory;
 import com.adobe.xmp.XMPSchemaRegistry;
 import com.adobe.xmp.options.PropertyOptions;
+import com.xiaomi.stat.MiStat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.w3c.dom.Attr;
@@ -237,7 +238,7 @@ public class ParseRDF implements XMPError, XMPConst {
                         } else {
                             throw new XMPException("Empty property element can't have both rdf:value and rdf:resource", 203);
                         }
-                    } else if (!"value".equals(item.getLocalName()) || !XMPConst.NS_RDF.equals(item.getNamespaceURI())) {
+                    } else if (!MiStat.Param.VALUE.equals(item.getLocalName()) || !XMPConst.NS_RDF.equals(item.getNamespaceURI())) {
                         if (!XMPConst.XML_LANG.equals(item.getNodeName())) {
                             z5 = true;
                         }

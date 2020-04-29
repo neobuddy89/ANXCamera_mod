@@ -3,12 +3,12 @@ package b.a.a.a;
 import android.content.res.ColorStateList;
 import android.support.annotation.RestrictTo;
 import android.support.v4.graphics.drawable.IconCompat;
-import androidx.versionedparcelable.C0173VersionedParcel;
+import androidx.versionedparcelable.VersionedParcel;
 
 @RestrictTo({RestrictTo.Scope.LIBRARY})
 /* compiled from: IconCompatParcelizer */
 public class a {
-    public static IconCompat read(C0173VersionedParcel versionedParcel) {
+    public static IconCompat read(VersionedParcel versionedParcel) {
         IconCompat iconCompat = new IconCompat();
         iconCompat.mType = versionedParcel.readInt(iconCompat.mType, 1);
         iconCompat.mData = versionedParcel.a(iconCompat.mData, 2);
@@ -21,7 +21,7 @@ public class a {
         return iconCompat;
     }
 
-    public static void write(IconCompat iconCompat, C0173VersionedParcel versionedParcel) {
+    public static void write(IconCompat iconCompat, VersionedParcel versionedParcel) {
         versionedParcel.b(true, true);
         iconCompat.onPreParceling(versionedParcel.Ha());
         versionedParcel.c(iconCompat.mType, 1);

@@ -8,6 +8,7 @@ import com.ss.android.ttve.common.TECloudCtrlInvoker;
 import com.ss.android.ttve.common.TESpdLogManager;
 import com.ss.android.vesdk.VELogUtil;
 import com.ss.android.vesdk.runtime.persistence.VESP;
+import com.xiaomi.stat.MiStat;
 import java.text.SimpleDateFormat;
 import miui.reflect.Field;
 import org.json.JSONObject;
@@ -51,7 +52,7 @@ public class VECloudCtrlManager {
                     if (jSONObject.has("endtime")) {
                         str4 = jSONObject.getString("endtime");
                     }
-                    String string3 = jSONObject.has("level") ? jSONObject.getString("level") : "";
+                    String string3 = jSONObject.has(MiStat.Param.LEVEL) ? jSONObject.getString(MiStat.Param.LEVEL) : "";
                     if (!this.mCloudCtrlInvoker.verifyJson(str3 + string + string2 + str4 + string3, jSONObject.has("sign") ? jSONObject.getString("sign") : "")) {
                         storeCommand(str3, "");
                         VELogUtil.e(TAG, "Cloud Ctrl Command Json is doctored");

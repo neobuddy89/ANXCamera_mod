@@ -96,44 +96,43 @@ public final class RealConnection extends Http2Connection.Listener implements Co
     }
 
     /* JADX DEBUG: Multi-variable search result rejected for TypeSearchVarInfo{r2v0, resolved type: java.lang.String} */
+    /* JADX DEBUG: Multi-variable search result rejected for TypeSearchVarInfo{r1v1, resolved type: javax.net.ssl.SSLSocket} */
     /* JADX DEBUG: Multi-variable search result rejected for TypeSearchVarInfo{r2v1, resolved type: java.lang.String} */
+    /* JADX DEBUG: Multi-variable search result rejected for TypeSearchVarInfo{r1v2, resolved type: javax.net.ssl.SSLSocket} */
     /* JADX DEBUG: Multi-variable search result rejected for TypeSearchVarInfo{r1v4, resolved type: javax.net.ssl.SSLSocket} */
     /* JADX DEBUG: Multi-variable search result rejected for TypeSearchVarInfo{r2v2, resolved type: java.lang.String} */
     /* JADX DEBUG: Multi-variable search result rejected for TypeSearchVarInfo{r2v4, resolved type: java.lang.String} */
     /* JADX DEBUG: Multi-variable search result rejected for TypeSearchVarInfo{r2v5, resolved type: java.lang.String} */
-    /* JADX WARNING: type inference failed for: r1v1, types: [java.net.Socket, javax.net.ssl.SSLSocket] */
-    /* JADX WARNING: type inference failed for: r1v2 */
-    /* JADX WARNING: type inference failed for: r1v5 */
+    /* JADX DEBUG: Multi-variable search result rejected for TypeSearchVarInfo{r1v5, resolved type: javax.net.ssl.SSLSocket} */
     /* JADX WARNING: Multi-variable type inference failed */
     /* JADX WARNING: Removed duplicated region for block: B:31:0x0115 A[Catch:{ all -> 0x010b }] */
     /* JADX WARNING: Removed duplicated region for block: B:33:0x011b A[Catch:{ all -> 0x010b }] */
     /* JADX WARNING: Removed duplicated region for block: B:35:0x011e  */
-    /* JADX WARNING: Unknown variable types count: 1 */
     private void connectTls(ConnectionSpecSelector connectionSpecSelector) throws IOException {
-        ? r1;
+        SSLSocket sSLSocket;
         Address address = this.route.address();
         String str = null;
         try {
-            SSLSocket sSLSocket = (SSLSocket) address.sslSocketFactory().createSocket(this.rawSocket, address.url().host(), address.url().port(), true);
+            SSLSocket sSLSocket2 = (SSLSocket) address.sslSocketFactory().createSocket(this.rawSocket, address.url().host(), address.url().port(), true);
             try {
-                ConnectionSpec configureSecureSocket = connectionSpecSelector.configureSecureSocket(sSLSocket);
+                ConnectionSpec configureSecureSocket = connectionSpecSelector.configureSecureSocket(sSLSocket2);
                 if (configureSecureSocket.supportsTlsExtensions()) {
-                    Platform.get().configureTlsExtensions(sSLSocket, address.url().host(), address.protocols());
+                    Platform.get().configureTlsExtensions(sSLSocket2, address.url().host(), address.protocols());
                 }
-                sSLSocket.startHandshake();
-                Handshake handshake2 = Handshake.get(sSLSocket.getSession());
-                if (address.hostnameVerifier().verify(address.url().host(), sSLSocket.getSession())) {
+                sSLSocket2.startHandshake();
+                Handshake handshake2 = Handshake.get(sSLSocket2.getSession());
+                if (address.hostnameVerifier().verify(address.url().host(), sSLSocket2.getSession())) {
                     address.certificatePinner().check(address.url().host(), handshake2.peerCertificates());
                     if (configureSecureSocket.supportsTlsExtensions()) {
-                        str = Platform.get().getSelectedProtocol(sSLSocket);
+                        str = Platform.get().getSelectedProtocol(sSLSocket2);
                     }
-                    this.socket = sSLSocket;
+                    this.socket = sSLSocket2;
                     this.source = Okio.buffer(Okio.source(this.socket));
                     this.sink = Okio.buffer(Okio.sink(this.socket));
                     this.handshake = handshake2;
                     this.protocol = str != null ? Protocol.get(str) : Protocol.HTTP_1_1;
-                    if (sSLSocket != 0) {
-                        Platform.get().afterHandshake(sSLSocket);
+                    if (sSLSocket2 != 0) {
+                        Platform.get().afterHandshake(sSLSocket2);
                         return;
                     }
                     return;
@@ -142,25 +141,25 @@ public final class RealConnection extends Http2Connection.Listener implements Co
                 throw new SSLPeerUnverifiedException("Hostname " + address.url().host() + " not verified:\n    certificate: " + CertificatePinner.pin(x509Certificate) + "\n    DN: " + x509Certificate.getSubjectDN().getName() + "\n    subjectAltNames: " + OkHostnameVerifier.allSubjectAltNames(x509Certificate));
             } catch (AssertionError e2) {
                 e = e2;
-                str = sSLSocket;
+                str = sSLSocket2;
                 try {
                     if (!Util.isAndroidGetsocknameError(e)) {
                     }
                 } catch (Throwable th) {
                     th = th;
-                    r1 = str;
-                    if (r1 != 0) {
-                        Platform.get().afterHandshake(r1);
+                    sSLSocket = str;
+                    if (sSLSocket != 0) {
+                        Platform.get().afterHandshake(sSLSocket);
                     }
-                    Util.closeQuietly((Socket) r1);
+                    Util.closeQuietly((Socket) sSLSocket);
                     throw th;
                 }
             } catch (Throwable th2) {
                 th = th2;
-                r1 = sSLSocket;
-                if (r1 != 0) {
+                sSLSocket = sSLSocket2;
+                if (sSLSocket != 0) {
                 }
-                Util.closeQuietly((Socket) r1);
+                Util.closeQuietly((Socket) sSLSocket);
                 throw th;
             }
         } catch (AssertionError e3) {

@@ -279,7 +279,7 @@ public class LiveBeautyFilterFragment extends Fragment implements View.OnClickLi
         Bitmap createBitmap = Bitmap.createBitmap(i2, i2, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         Paint paint = new Paint();
-        paint.setColor(-16777216);
+        paint.setColor(ViewCompat.MEASURED_STATE_MASK);
         canvas.drawRoundRect(new RectF(4.0f, 4.0f, dimension, dimension), dimension2, dimension2, paint);
         Bitmap decodeResource = BitmapFactory.decodeResource(getResources(), i);
         Bitmap createBitmap2 = Bitmap.createBitmap(createBitmap.getWidth(), createBitmap.getHeight(), Bitmap.Config.ARGB_8888);

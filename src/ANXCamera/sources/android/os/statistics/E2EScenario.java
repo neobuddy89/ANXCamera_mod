@@ -3,7 +3,6 @@ package android.os.statistics;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.ss.android.ugc.effectmanager.EffectConfiguration;
 import java.io.Serializable;
 import org.json.JSONException;
@@ -82,7 +81,7 @@ public final class E2EScenario implements Parcelable, Serializable {
         try {
             jSONObject.put("namespace", this.namespace);
             jSONObject.put(EffectConfiguration.KEY_CATEGORY, this.category);
-            jSONObject.put(AppMeasurementSdk.ConditionalUserProperty.NAME, this.name);
+            jSONObject.put("name", this.name);
         } catch (JSONException e2) {
             e2.printStackTrace();
         }

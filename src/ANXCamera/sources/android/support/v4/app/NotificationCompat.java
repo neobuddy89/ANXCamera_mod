@@ -25,6 +25,7 @@ import android.support.annotation.RestrictTo;
 import android.support.compat.R;
 import android.support.v4.app.Person;
 import android.support.v4.text.BidiFormatter;
+import android.support.v4.view.ViewCompat;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.TextAppearanceSpan;
@@ -1122,7 +1123,7 @@ public class NotificationCompat {
             bundle.putParcelable(KEY_ON_REPLY, unreadConversation.getReplyPendingIntent());
             bundle.putParcelable(KEY_ON_READ, unreadConversation.getReadPendingIntent());
             bundle.putStringArray(KEY_PARTICIPANTS, unreadConversation.getParticipants());
-            bundle.putLong("timestamp", unreadConversation.getLatestTimestamp());
+            bundle.putLong(KEY_TIMESTAMP, unreadConversation.getLatestTimestamp());
             return bundle;
         }
 
@@ -1170,7 +1171,7 @@ public class NotificationCompat {
             if (remoteInput2 != null) {
                 remoteInput = new RemoteInput(remoteInput2.getResultKey(), remoteInput2.getLabel(), remoteInput2.getChoices(), remoteInput2.getAllowFreeFormInput(), remoteInput2.getExtras(), (Set<String>) null);
             }
-            UnreadConversation unreadConversation = new UnreadConversation(strArr, remoteInput, pendingIntent2, pendingIntent, stringArray, bundle2.getLong("timestamp"));
+            UnreadConversation unreadConversation = new UnreadConversation(strArr, remoteInput, pendingIntent2, pendingIntent, stringArray, bundle2.getLong(KEY_TIMESTAMP));
             return unreadConversation;
         }
 
@@ -1548,7 +1549,7 @@ public class NotificationCompat {
         @Nullable
         public static MessagingStyle extractMessagingStyleFromNotification(Notification notification) {
             Bundle extras = NotificationCompat.getExtras(notification);
-            if (extras != null && !extras.containsKey("android.selfDisplayName") && !extras.containsKey("android.messagingStyleUser")) {
+            if (extras != null && !extras.containsKey(NotificationCompat.EXTRA_SELF_DISPLAY_NAME) && !extras.containsKey(NotificationCompat.EXTRA_MESSAGING_STYLE_USER)) {
                 return null;
             }
             try {
@@ -1594,7 +1595,7 @@ public class NotificationCompat {
             BidiFormatter instance = BidiFormatter.getInstance();
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             boolean z = Build.VERSION.SDK_INT >= 21;
-            int i = z ? -16777216 : -1;
+            int i = z ? ViewCompat.MEASURED_STATE_MASK : -1;
             CharSequence charSequence = "";
             CharSequence name = message.getPerson() == null ? charSequence : message.getPerson().getName();
             if (TextUtils.isEmpty(name)) {
@@ -1615,18 +1616,18 @@ public class NotificationCompat {
 
         public void addCompatExtras(Bundle bundle) {
             super.addCompatExtras(bundle);
-            bundle.putCharSequence("android.selfDisplayName", this.mUser.getName());
-            bundle.putBundle("android.messagingStyleUser", this.mUser.toBundle());
-            bundle.putCharSequence("android.hiddenConversationTitle", this.mConversationTitle);
+            bundle.putCharSequence(NotificationCompat.EXTRA_SELF_DISPLAY_NAME, this.mUser.getName());
+            bundle.putBundle(NotificationCompat.EXTRA_MESSAGING_STYLE_USER, this.mUser.toBundle());
+            bundle.putCharSequence(NotificationCompat.EXTRA_HIDDEN_CONVERSATION_TITLE, this.mConversationTitle);
             if (this.mConversationTitle != null && this.mIsGroupConversation.booleanValue()) {
-                bundle.putCharSequence("android.conversationTitle", this.mConversationTitle);
+                bundle.putCharSequence(NotificationCompat.EXTRA_CONVERSATION_TITLE, this.mConversationTitle);
             }
             if (!this.mMessages.isEmpty()) {
-                bundle.putParcelableArray("android.messages", Message.getBundleArrayForMessages(this.mMessages));
+                bundle.putParcelableArray(NotificationCompat.EXTRA_MESSAGES, Message.getBundleArrayForMessages(this.mMessages));
             }
             Boolean bool = this.mIsGroupConversation;
             if (bool != null) {
-                bundle.putBoolean("android.isGroupConversation", bool.booleanValue());
+                bundle.putBoolean(NotificationCompat.EXTRA_IS_GROUP_CONVERSATION, bool.booleanValue());
             }
         }
 
@@ -1741,21 +1742,21 @@ public class NotificationCompat {
         @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
         public void restoreFromCompatExtras(Bundle bundle) {
             this.mMessages.clear();
-            if (bundle.containsKey("android.messagingStyleUser")) {
-                this.mUser = Person.fromBundle(bundle.getBundle("android.messagingStyleUser"));
+            if (bundle.containsKey(NotificationCompat.EXTRA_MESSAGING_STYLE_USER)) {
+                this.mUser = Person.fromBundle(bundle.getBundle(NotificationCompat.EXTRA_MESSAGING_STYLE_USER));
             } else {
-                this.mUser = new Person.Builder().setName(bundle.getString("android.selfDisplayName")).build();
+                this.mUser = new Person.Builder().setName(bundle.getString(NotificationCompat.EXTRA_SELF_DISPLAY_NAME)).build();
             }
-            this.mConversationTitle = bundle.getCharSequence("android.conversationTitle");
+            this.mConversationTitle = bundle.getCharSequence(NotificationCompat.EXTRA_CONVERSATION_TITLE);
             if (this.mConversationTitle == null) {
-                this.mConversationTitle = bundle.getCharSequence("android.hiddenConversationTitle");
+                this.mConversationTitle = bundle.getCharSequence(NotificationCompat.EXTRA_HIDDEN_CONVERSATION_TITLE);
             }
-            Parcelable[] parcelableArray = bundle.getParcelableArray("android.messages");
+            Parcelable[] parcelableArray = bundle.getParcelableArray(NotificationCompat.EXTRA_MESSAGES);
             if (parcelableArray != null) {
                 this.mMessages.addAll(Message.getMessagesFromBundleArray(parcelableArray));
             }
-            if (bundle.containsKey("android.isGroupConversation")) {
-                this.mIsGroupConversation = Boolean.valueOf(bundle.getBoolean("android.isGroupConversation"));
+            if (bundle.containsKey(NotificationCompat.EXTRA_IS_GROUP_CONVERSATION)) {
+                this.mIsGroupConversation = Boolean.valueOf(bundle.getBoolean(NotificationCompat.EXTRA_IS_GROUP_CONVERSATION));
             }
         }
 
@@ -2480,7 +2481,7 @@ public class NotificationCompat {
         Bundle bundle = null;
         if (i2 >= 19) {
             Notification.Action action = notification.actions[i];
-            SparseArray sparseParcelableArray = notification.extras.getSparseParcelableArray("android.support.actionExtras");
+            SparseArray sparseParcelableArray = notification.extras.getSparseParcelableArray(NotificationCompatExtras.EXTRA_ACTION_EXTRAS);
             if (sparseParcelableArray != null) {
                 bundle = sparseParcelableArray.get(i);
             }
@@ -2549,7 +2550,7 @@ public class NotificationCompat {
 
     @RequiresApi(19)
     public static CharSequence getContentTitle(Notification notification) {
-        return notification.extras.getCharSequence("android.title");
+        return notification.extras.getCharSequence(EXTRA_TITLE);
     }
 
     @Nullable
@@ -2570,10 +2571,10 @@ public class NotificationCompat {
             return notification.getGroup();
         }
         if (i >= 19) {
-            return notification.extras.getString("android.support.groupKey");
+            return notification.extras.getString(NotificationCompatExtras.EXTRA_GROUP_KEY);
         }
         if (i >= 16) {
-            return NotificationCompatJellybean.getExtras(notification).getString("android.support.groupKey");
+            return NotificationCompatJellybean.getExtras(notification).getString(NotificationCompatExtras.EXTRA_GROUP_KEY);
         }
         return null;
     }
@@ -2607,10 +2608,10 @@ public class NotificationCompat {
             return (notification.flags & 256) != 0;
         }
         if (i >= 19) {
-            return notification.extras.getBoolean("android.support.localOnly");
+            return notification.extras.getBoolean(NotificationCompatExtras.EXTRA_LOCAL_ONLY);
         }
         if (i >= 16) {
-            return NotificationCompatJellybean.getExtras(notification).getBoolean("android.support.localOnly");
+            return NotificationCompatJellybean.getExtras(notification).getBoolean(NotificationCompatExtras.EXTRA_LOCAL_ONLY);
         }
         return false;
     }
@@ -2641,10 +2642,10 @@ public class NotificationCompat {
             return notification.getSortKey();
         }
         if (i >= 19) {
-            return notification.extras.getString("android.support.sortKey");
+            return notification.extras.getString(NotificationCompatExtras.EXTRA_SORT_KEY);
         }
         if (i >= 16) {
-            return NotificationCompatJellybean.getExtras(notification).getString("android.support.sortKey");
+            return NotificationCompatJellybean.getExtras(notification).getString(NotificationCompatExtras.EXTRA_SORT_KEY);
         }
         return null;
     }
@@ -2662,10 +2663,10 @@ public class NotificationCompat {
             return (notification.flags & 512) != 0;
         }
         if (i >= 19) {
-            return notification.extras.getBoolean("android.support.isGroupSummary");
+            return notification.extras.getBoolean(NotificationCompatExtras.EXTRA_GROUP_SUMMARY);
         }
         if (i >= 16) {
-            return NotificationCompatJellybean.getExtras(notification).getBoolean("android.support.isGroupSummary");
+            return NotificationCompatJellybean.getExtras(notification).getBoolean(NotificationCompatExtras.EXTRA_GROUP_SUMMARY);
         }
         return false;
     }

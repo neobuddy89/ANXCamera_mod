@@ -19,12 +19,13 @@ import android.os.Process;
 import android.os.RemoteException;
 import android.provider.MiuiSettings;
 import android.provider.Settings;
+import android.support.v4.os.EnvironmentCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.view.Display;
 import android.view.WindowManager;
 import com.mi.config.d;
-import com.xiaomi.stat.C0159b;
+import com.xiaomi.stat.C0155b;
 import com.xiaomi.stat.I;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -467,7 +468,7 @@ public class e {
     }
 
     public static String a(Context context) {
-        if (C0159b.e()) {
+        if (C0155b.e()) {
             return "";
         }
         if (!TextUtils.isEmpty(n)) {
@@ -487,9 +488,9 @@ public class e {
     }
 
     public static void a() {
-        boolean z2 = r.b() - C0159b.v() > f477e;
-        if (TextUtils.isEmpty(C0159b.w()) || z2) {
-            C0159b.i(UUID.randomUUID().toString());
+        boolean z2 = r.b() - C0155b.v() > f477e;
+        if (TextUtils.isEmpty(C0155b.w()) || z2) {
+            C0155b.i(UUID.randomUUID().toString());
         }
     }
 
@@ -567,17 +568,17 @@ public class e {
         if (!TextUtils.isEmpty(H)) {
             return H;
         }
-        boolean e2 = C0159b.e();
-        String s2 = C0159b.s();
+        boolean e2 = C0155b.e();
+        String s2 = C0155b.s();
         if (!TextUtils.isEmpty(s2)) {
             if (!e2) {
                 H = s2;
                 return H;
             }
             long b2 = r.b();
-            if (b2 - C0159b.v() <= f477e) {
+            if (b2 - C0155b.v() <= f477e) {
                 H = s2;
-                C0159b.b(b2);
+                C0155b.b(b2);
                 return H;
             }
         }
@@ -591,15 +592,15 @@ public class e {
         if (TextUtils.isEmpty(H)) {
             H = e();
         }
-        C0159b.g(H);
+        C0155b.g(H);
         if (e2) {
-            C0159b.b(r.b());
+            C0155b.b(r.b());
         }
         return H;
     }
 
     public static String d(Context context) {
-        if (C0159b.e()) {
+        if (C0155b.e()) {
             return "";
         }
         if (!TextUtils.isEmpty(o)) {
@@ -623,12 +624,12 @@ public class e {
     }
 
     private static String e() {
-        String w2 = C0159b.w();
+        String w2 = C0155b.w();
         if (!TextUtils.isEmpty(w2)) {
             return w2;
         }
         String uuid = UUID.randomUUID().toString();
-        C0159b.i(uuid);
+        C0155b.i(uuid);
         return uuid;
     }
 
@@ -673,7 +674,7 @@ public class e {
     }
 
     public static String g(Context context) {
-        if (C0159b.e()) {
+        if (C0155b.e()) {
             return "";
         }
         if (!TextUtils.isEmpty(p)) {
@@ -765,7 +766,7 @@ public class e {
     }
 
     public static String j(Context context) {
-        if (C0159b.e()) {
+        if (C0155b.e()) {
             return "";
         }
         if (!TextUtils.isEmpty(q)) {
@@ -828,7 +829,7 @@ public class e {
     }
 
     public static String m(Context context) {
-        if (C0159b.e()) {
+        if (C0155b.e()) {
             return "";
         }
         if (!TextUtils.isEmpty(r)) {
@@ -981,7 +982,7 @@ public class e {
                 k.b(f473a, "querySerial failed ex: " + e2.getMessage());
             }
         }
-        if (TextUtils.isEmpty(str) || "unknown".equals(str)) {
+        if (TextUtils.isEmpty(str) || EnvironmentCompat.MEDIA_UNKNOWN.equals(str)) {
             return "";
         }
         r = str;

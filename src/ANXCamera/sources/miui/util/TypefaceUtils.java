@@ -10,7 +10,6 @@ import android.provider.Settings;
 import android.util.ArrayMap;
 import android.util.Log;
 import android.util.SparseArray;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.ss.android.ttve.common.TEDefine;
 import com.xiaomi.stat.c.c;
 import java.io.File;
@@ -342,8 +341,8 @@ public class TypefaceUtils {
 
         static {
             if (TypefaceUtils.USING_VAR_FONT) {
-                DEFAULT_NAME_MAP = new String[]{"thin", "thin", "light", "light", FirebaseAnalytics.Param.MEDIUM, FirebaseAnalytics.Param.MEDIUM, TEDefine.TETransition.BLACK, "heavy"};
-                VF_NAME_ARRAY = new String[]{"thin", "extralight", "light", "normal", "regular", FirebaseAnalytics.Param.MEDIUM, "demibold", "semibold", "bold", "heavy"};
+                DEFAULT_NAME_MAP = new String[]{"thin", "thin", "light", "light", "medium", "medium", TEDefine.TETransition.BLACK, "heavy"};
+                VF_NAME_ARRAY = new String[]{"thin", "extralight", "light", "normal", "regular", "medium", "demibold", "semibold", "bold", "heavy"};
                 MIUI_NAME_ARRAY = new String[]{"thin", "null", "light", "null", "regular", "bold"};
                 WEIGHT_KEYS = new int[]{100, 200, 300, TypefaceUtils.WEIGHT_NORMAL, TypefaceUtils.WEIGHT_REGULAR, 500, TypefaceUtils.WEIGHT_DEMIBOLD, TypefaceUtils.WEIGHT_SEMIBOLD, 700, 900};
                 MIUI_WGHT = new int[]{150, 200, 250, 305, 340, TypefaceUtils.WEIGHT_REGULAR, 480, 540, 630, 700};

@@ -105,11 +105,11 @@ public class PagerTabStrip extends PagerTitleStrip {
         int height = getHeight();
         int left = this.mCurrText.getLeft() - this.mTabPadding;
         int right = this.mCurrText.getRight() + this.mTabPadding;
-        this.mTabPaint.setColor((this.mTabAlpha << 24) | (this.mIndicatorColor & 16777215));
+        this.mTabPaint.setColor((this.mTabAlpha << 24) | (this.mIndicatorColor & ViewCompat.MEASURED_SIZE_MASK));
         float f2 = (float) height;
         canvas.drawRect((float) left, (float) (height - this.mIndicatorHeight), (float) right, f2, this.mTabPaint);
         if (this.mDrawFullUnderline) {
-            this.mTabPaint.setColor(-16777216 | (this.mIndicatorColor & 16777215));
+            this.mTabPaint.setColor(-16777216 | (this.mIndicatorColor & ViewCompat.MEASURED_SIZE_MASK));
             canvas.drawRect((float) getPaddingLeft(), (float) (height - this.mFullUnderlineHeight), (float) (getWidth() - getPaddingRight()), f2, this.mTabPaint);
         }
     }
@@ -142,7 +142,7 @@ public class PagerTabStrip extends PagerTitleStrip {
     public void setBackgroundColor(@ColorInt int i) {
         super.setBackgroundColor(i);
         if (!this.mDrawFullUnderlineSet) {
-            this.mDrawFullUnderline = (i & -16777216) == 0;
+            this.mDrawFullUnderline = (i & ViewCompat.MEASURED_STATE_MASK) == 0;
         }
     }
 

@@ -4,15 +4,15 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /* compiled from: ParcelImpl */
-class d implements Parcelable.Creator<C0172ParcelImpl> {
+class d implements Parcelable.Creator<ParcelImpl> {
     d() {
     }
 
-    public C0172ParcelImpl createFromParcel(Parcel parcel) {
-        return new C0172ParcelImpl(parcel);
+    public ParcelImpl createFromParcel(Parcel parcel) {
+        return new ParcelImpl(parcel);
     }
 
-    public C0172ParcelImpl[] newArray(int i) {
-        return new C0172ParcelImpl[i];
+    public ParcelImpl[] newArray(int i) {
+        return new ParcelImpl[i];
     }
 }

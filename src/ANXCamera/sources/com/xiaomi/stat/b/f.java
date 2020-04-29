@@ -5,7 +5,7 @@ import android.os.Build;
 import android.os.Looper;
 import android.text.TextUtils;
 import com.xiaomi.stat.A;
-import com.xiaomi.stat.C0159b;
+import com.xiaomi.stat.C0155b;
 import com.xiaomi.stat.I;
 import com.xiaomi.stat.d.h;
 import com.xiaomi.stat.d.k;
@@ -70,7 +70,7 @@ public class f {
     private String b(String str) {
         int i2 = I.a().getApplicationInfo().targetSdkVersion;
         String str2 = "https://";
-        if (!C0159b.e() && (Build.VERSION.SDK_INT < 28 || i2 < 28)) {
+        if (!C0155b.e() && (Build.VERSION.SDK_INT < 28 || i2 < 28)) {
             str2 = "http://";
         }
         return str2.concat(this.n).concat("/").concat(str);
@@ -107,7 +107,7 @@ public class f {
         String str = l.get(this.m);
         if (!TextUtils.isEmpty(str)) {
             this.n = str;
-        } else if (C0159b.e()) {
+        } else if (C0155b.e()) {
             this.m = f389d;
             this.n = l.get(this.m);
         }
@@ -117,7 +117,7 @@ public class f {
         e();
         this.q = new g();
         this.p = context.getFilesDir().getPath();
-        if (!C0159b.e()) {
+        if (!C0155b.e()) {
             this.m = f388c;
             this.n = f391f;
         } else {
@@ -151,7 +151,7 @@ public class f {
                     this.m = str;
                     this.n = str2;
                 }
-            } else if (C0159b.e()) {
+            } else if (C0155b.e()) {
                 this.m = f389d;
                 this.n = l.get(this.m);
             }
@@ -185,7 +185,7 @@ public class f {
     }
 
     public boolean b(Context context) {
-        return r.b(A.a().a("key_update_time", 0)) || !C0159b.e();
+        return r.b(A.a().a("key_update_time", 0)) || !C0155b.e();
     }
 
     public String c() {

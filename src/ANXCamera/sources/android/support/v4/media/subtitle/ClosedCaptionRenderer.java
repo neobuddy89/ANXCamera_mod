@@ -15,6 +15,8 @@ import android.support.v4.media.subtitle.Cea608CCParser;
 import android.support.v4.media.subtitle.ClosedCaptionWidget;
 import android.support.v4.media.subtitle.SubtitleController;
 import android.support.v4.media.subtitle.SubtitleTrack;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewCompat;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.TextPaint;
@@ -43,7 +45,7 @@ public class ClosedCaptionRenderer extends SubtitleController.Renderer {
 
             CCLayout(Context context) {
                 super(context);
-                setGravity(8388611);
+                setGravity(GravityCompat.START);
                 setOrientation(1);
                 for (int i = 0; i < 15; i++) {
                     this.mLineBoxes[i] = new CCLineBox(getContext());
@@ -122,7 +124,7 @@ public class ClosedCaptionRenderer extends SubtitleController.Renderer {
             private static final float EDGE_OUTLINE_RATIO = 0.1f;
             private static final float EDGE_SHADOW_RATIO = 0.05f;
             private static final float FONT_PADDING_RATIO = 0.75f;
-            private int mBgColor = -16777216;
+            private int mBgColor = ViewCompat.MEASURED_STATE_MASK;
             private int mEdgeColor = 0;
             private int mEdgeType = 0;
             private float mOutlineWidth;

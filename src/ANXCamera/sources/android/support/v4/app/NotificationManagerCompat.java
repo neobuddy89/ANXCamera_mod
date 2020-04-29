@@ -21,7 +21,7 @@ import android.provider.Settings;
 import android.support.annotation.GuardedBy;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.C0168INotificationSideChannel;
+import android.support.v4.app.INotificationSideChannel;
 import android.util.Log;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayDeque;
@@ -80,7 +80,7 @@ public final class NotificationManagerCompat {
             this.all = false;
         }
 
-        public void send(C0168INotificationSideChannel iNotificationSideChannel) throws RemoteException {
+        public void send(INotificationSideChannel iNotificationSideChannel) throws RemoteException {
             if (this.all) {
                 iNotificationSideChannel.cancelAll(this.packageName);
             } else {
@@ -106,7 +106,7 @@ public final class NotificationManagerCompat {
             this.notif = notification;
         }
 
-        public void send(C0168INotificationSideChannel iNotificationSideChannel) throws RemoteException {
+        public void send(INotificationSideChannel iNotificationSideChannel) throws RemoteException {
             iNotificationSideChannel.notify(this.packageName, this.id, this.tag, this.notif);
         }
 
@@ -140,7 +140,7 @@ public final class NotificationManagerCompat {
             boolean bound = false;
             final ComponentName componentName;
             int retryCount = 0;
-            C0168INotificationSideChannel service;
+            INotificationSideChannel service;
             ArrayDeque<Task> taskQueue = new ArrayDeque<>();
 
             ListenerRecord(ComponentName componentName2) {
@@ -159,7 +159,7 @@ public final class NotificationManagerCompat {
             if (listenerRecord.bound) {
                 return true;
             }
-            listenerRecord.bound = this.mContext.bindService(new Intent("android.support.BIND_NOTIFICATION_SIDE_CHANNEL").setComponent(listenerRecord.componentName), this, 33);
+            listenerRecord.bound = this.mContext.bindService(new Intent(NotificationManagerCompat.ACTION_BIND_SIDE_CHANNEL).setComponent(listenerRecord.componentName), this, 33);
             if (listenerRecord.bound) {
                 listenerRecord.retryCount = 0;
             } else {
@@ -195,7 +195,7 @@ public final class NotificationManagerCompat {
         private void handleServiceConnected(ComponentName componentName, IBinder iBinder) {
             ListenerRecord listenerRecord = this.mRecordMap.get(componentName);
             if (listenerRecord != null) {
-                listenerRecord.service = C0168INotificationSideChannel.Stub.asInterface(iBinder);
+                listenerRecord.service = INotificationSideChannel.Stub.asInterface(iBinder);
                 listenerRecord.retryCount = 0;
                 processListenerQueue(listenerRecord);
             }
@@ -263,7 +263,7 @@ public final class NotificationManagerCompat {
             Set<String> enabledListenerPackages = NotificationManagerCompat.getEnabledListenerPackages(this.mContext);
             if (!enabledListenerPackages.equals(this.mCachedEnabledPackages)) {
                 this.mCachedEnabledPackages = enabledListenerPackages;
-                List<ResolveInfo> queryIntentServices = this.mContext.getPackageManager().queryIntentServices(new Intent().setAction("android.support.BIND_NOTIFICATION_SIDE_CHANNEL"), 0);
+                List<ResolveInfo> queryIntentServices = this.mContext.getPackageManager().queryIntentServices(new Intent().setAction(NotificationManagerCompat.ACTION_BIND_SIDE_CHANNEL), 0);
                 HashSet<ComponentName> hashSet = new HashSet<>();
                 for (ResolveInfo next : queryIntentServices) {
                     if (enabledListenerPackages.contains(next.serviceInfo.packageName)) {
@@ -337,7 +337,7 @@ public final class NotificationManagerCompat {
     }
 
     private interface Task {
-        void send(C0168INotificationSideChannel iNotificationSideChannel) throws RemoteException;
+        void send(INotificationSideChannel iNotificationSideChannel) throws RemoteException;
     }
 
     private NotificationManagerCompat(Context context) {
@@ -384,7 +384,7 @@ public final class NotificationManagerCompat {
 
     private static boolean useSideChannelForNotification(Notification notification) {
         Bundle extras = NotificationCompat.getExtras(notification);
-        return extras != null && extras.getBoolean("android.support.useSideChannel");
+        return extras != null && extras.getBoolean(EXTRA_USE_SIDE_CHANNEL);
     }
 
     public boolean areNotificationsEnabled() {
@@ -426,10 +426,7 @@ public final class NotificationManagerCompat {
     }
 
     public int getImportance() {
-        if (Build.VERSION.SDK_INT >= 24) {
-            return this.mNotificationManager.getImportance();
-        }
-        return -1000;
+        return Build.VERSION.SDK_INT >= 24 ? this.mNotificationManager.getImportance() : IMPORTANCE_UNSPECIFIED;
     }
 
     public void notify(int i, @NonNull Notification notification) {

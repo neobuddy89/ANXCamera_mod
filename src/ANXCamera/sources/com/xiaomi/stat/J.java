@@ -5,7 +5,7 @@ import java.lang.Thread;
 public class J implements Thread.UncaughtExceptionHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    private C0162e f301a;
+    private C0158e f301a;
 
     /* renamed from: b  reason: collision with root package name */
     private Thread.UncaughtExceptionHandler f302b;
@@ -13,7 +13,7 @@ public class J implements Thread.UncaughtExceptionHandler {
     /* renamed from: c  reason: collision with root package name */
     private boolean f303c = true;
 
-    public J(C0162e eVar) {
+    public J(C0158e eVar) {
         this.f301a = eVar;
     }
 

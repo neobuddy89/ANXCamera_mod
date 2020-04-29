@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.MiuiSettings;
+import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
 import android.view.OrientationEventListener;
 import android.view.SurfaceHolder;
@@ -97,13 +98,7 @@ public class VideoCaptureAndroid implements Camera.PreviewCallback, SurfaceHolde
 
     private int clamp(int i, int i2) {
         int i3 = i2 / 2;
-        if (Math.abs(i) + i3 <= 1000) {
-            return i - i3;
-        }
-        if (i > 0) {
-            return 1000 - i2;
-        }
-        return -1000;
+        return Math.abs(i) + i3 > 1000 ? i > 0 ? 1000 - i2 : NotificationManagerCompat.IMPORTANCE_UNSPECIFIED : i - i3;
     }
 
     private void destroy() {

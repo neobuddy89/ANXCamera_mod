@@ -19,9 +19,9 @@ class E implements f, d.a<Object>, f.a {
     private volatile t.a<?> Fe;
     private final f.a cb;
     private int gg;
-    private C0148c hg;
+    private C0144c hg;
     private Object ig;
-    private C0149d jg;
+    private C0145d jg;
 
     E(g<?> gVar, f.a aVar) {
         this.Ae = gVar;
@@ -37,14 +37,14 @@ class E implements f, d.a<Object>, f.a {
         long Hj = e.Hj();
         try {
             a<X> l = this.Ae.l(obj);
-            C0150e eVar = new C0150e(l, obj, this.Ae.getOptions());
-            this.jg = new C0149d(this.Fe.Ce, this.Ae.getSignature());
+            C0146e eVar = new C0146e(l, obj, this.Ae.getOptions());
+            this.jg = new C0145d(this.Fe.Ce, this.Ae.getSignature());
             this.Ae.C().a(this.jg, eVar);
             if (Log.isLoggable(TAG, 2)) {
                 Log.v(TAG, "Finished encoding source to cache, key: " + this.jg + ", data: " + obj + ", encoder: " + l + ", duration: " + e.g(Hj));
             }
             this.Fe.li.cleanup();
-            this.hg = new C0148c(Collections.singletonList(this.Fe.Ce), this.Ae, this);
+            this.hg = new C0144c(Collections.singletonList(this.Fe.Ce), this.Ae, this);
         } catch (Throwable th) {
             this.Fe.li.cleanup();
             throw th;
@@ -57,7 +57,7 @@ class E implements f, d.a<Object>, f.a {
             this.ig = null;
             u(obj);
         }
-        C0148c cVar = this.hg;
+        C0144c cVar = this.hg;
         if (cVar != null && cVar.F()) {
             return true;
         }

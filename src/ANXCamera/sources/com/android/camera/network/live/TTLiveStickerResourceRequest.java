@@ -8,7 +8,6 @@ import com.android.camera.network.net.base.ErrorCode;
 import com.android.camera.network.net.base.ResponseListener;
 import com.android.camera.sticker.LiveStickerInfo;
 import com.google.android.apps.photos.api.PhotosOemApi;
-import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.ss.android.ugc.effectmanager.EffectConfiguration;
 import java.util.ArrayList;
 import java.util.List;
@@ -121,7 +120,7 @@ public class TTLiveStickerResourceRequest extends BaseJsonRequest<List<LiveStick
                     JSONObject jSONObject3 = jSONArray.getJSONObject(i);
                     LiveStickerInfo liveStickerInfo = new LiveStickerInfo();
                     liveStickerInfo.id = jSONObject3.optString("id");
-                    liveStickerInfo.name = jSONObject3.optString(AppMeasurementSdk.ConditionalUserProperty.NAME);
+                    liveStickerInfo.name = jSONObject3.optString("name");
                     liveStickerInfo.icon = jSONObject3.getJSONObject("icon_url").getJSONArray("url_list").optString(0);
                     liveStickerInfo.url = jSONObject3.getJSONObject("file_url").getJSONArray("url_list").optString(0);
                     liveStickerInfo.hash = jSONObject3.getJSONObject("file_url").optString("uri");

@@ -15,12 +15,12 @@ import android.util.Log;
 import android.view.Surface;
 import com.android.camera.Util;
 import com.android.camera.module.loader.FunctionParseBeautyBodySlimCount;
-import com.google.android.gms.common.Scopes;
 import com.ss.android.ttve.common.TEEglStateSaver;
 import com.ss.android.ttve.common.TESharedContext;
 import com.ss.android.ttve.common.TETextureDrawer;
 import com.ss.android.vesdk.VELogUtil;
 import com.ss.android.vesdk.VEResult;
+import com.xiaomi.stat.MiStat;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -294,8 +294,8 @@ public class TEAvcEncoder {
             if (findBestMatchedProfile != null) {
                 String str = TAG;
                 VELogUtil.d(str, "Set Profile: " + findBestMatchedProfile.profile + ", Level = " + findBestMatchedProfile.level);
-                this.m_codecFormat.setInteger(Scopes.PROFILE, findBestMatchedProfile.profile);
-                this.m_codecFormat.setInteger("level", findBestMatchedProfile.level);
+                this.m_codecFormat.setInteger("profile", findBestMatchedProfile.profile);
+                this.m_codecFormat.setInteger(MiStat.Param.LEVEL, findBestMatchedProfile.level);
                 int i = findBestMatchedProfile.profile;
                 if (i == 2) {
                     VELogUtil.d(TAG, "Set Main Profile");

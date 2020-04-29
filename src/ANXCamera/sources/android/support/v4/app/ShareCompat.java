@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.StringRes;
+import android.support.v4.content.IntentCompat;
 import android.text.Html;
 import android.text.Spanned;
 import android.util.Log;
@@ -33,8 +34,8 @@ public final class ShareCompat {
 
         private IntentBuilder(Activity activity) {
             this.mActivity = activity;
-            this.mIntent.putExtra("android.support.v4.app.EXTRA_CALLING_PACKAGE", activity.getPackageName());
-            this.mIntent.putExtra("android.support.v4.app.EXTRA_CALLING_ACTIVITY", activity.getComponentName());
+            this.mIntent.putExtra(ShareCompat.EXTRA_CALLING_PACKAGE, activity.getPackageName());
+            this.mIntent.putExtra(ShareCompat.EXTRA_CALLING_ACTIVITY, activity.getComponentName());
             this.mIntent.addFlags(524288);
         }
 
@@ -201,7 +202,7 @@ public final class ShareCompat {
         }
 
         public IntentBuilder setHtmlText(String str) {
-            this.mIntent.putExtra("android.intent.extra.HTML_TEXT", str);
+            this.mIntent.putExtra(IntentCompat.EXTRA_HTML_TEXT, str);
             if (!this.mIntent.hasExtra("android.intent.extra.TEXT")) {
                 setText(Html.fromHtml(str));
             }
@@ -343,7 +344,7 @@ public final class ShareCompat {
         }
 
         public String getHtmlText() {
-            String stringExtra = this.mIntent.getStringExtra("android.intent.extra.HTML_TEXT");
+            String stringExtra = this.mIntent.getStringExtra(IntentCompat.EXTRA_HTML_TEXT);
             if (stringExtra != null) {
                 return stringExtra;
             }
@@ -439,11 +440,11 @@ public final class ShareCompat {
 
     public static ComponentName getCallingActivity(Activity activity) {
         ComponentName callingActivity = activity.getCallingActivity();
-        return callingActivity == null ? (ComponentName) activity.getIntent().getParcelableExtra("android.support.v4.app.EXTRA_CALLING_ACTIVITY") : callingActivity;
+        return callingActivity == null ? (ComponentName) activity.getIntent().getParcelableExtra(EXTRA_CALLING_ACTIVITY) : callingActivity;
     }
 
     public static String getCallingPackage(Activity activity) {
         String callingPackage = activity.getCallingPackage();
-        return callingPackage == null ? activity.getIntent().getStringExtra("android.support.v4.app.EXTRA_CALLING_PACKAGE") : callingPackage;
+        return callingPackage == null ? activity.getIntent().getStringExtra(EXTRA_CALLING_PACKAGE) : callingPackage;
     }
 }

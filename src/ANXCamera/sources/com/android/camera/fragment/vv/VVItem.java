@@ -6,7 +6,6 @@ import android.os.statistics.E2EScenario;
 import com.android.camera.Util;
 import com.android.camera.fragment.top.FragmentTopAlert;
 import com.android.camera.resource.BaseResourceItem;
-import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.ss.android.ugc.effectmanager.effect.model.ComposerHelper;
 import java.io.File;
 import java.util.ArrayList;
@@ -113,9 +112,9 @@ public class VVItem extends BaseResourceItem {
             JSONObject optJSONObject = optJSONArray3.optJSONObject(i4);
             String optString = optJSONObject.optString("lang");
             if (optString.equalsIgnoreCase(E2EScenario.DEFAULT_CATEGORY)) {
-                this.name = optJSONObject.optString(AppMeasurementSdk.ConditionalUserProperty.NAME);
+                this.name = optJSONObject.optString("name");
             } else if (optString.equalsIgnoreCase(str)) {
-                this.name = optJSONObject.optString(AppMeasurementSdk.ConditionalUserProperty.NAME);
+                this.name = optJSONObject.optString("name");
                 return;
             }
         }

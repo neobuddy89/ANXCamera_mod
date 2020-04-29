@@ -2147,8 +2147,6 @@ public final class R {
         public static final int special_custom_watermark_startx = 2131361813;
         public static final int status_bar_notification_info_maxnum = 2131361814;
         public static final int target_sdk_version = 2131361815;
-        /* added by JADX */
-        public static final int google_play_services_version = 2131361816;
     }
 
     public static final class layout {
@@ -3695,58 +3693,6 @@ public final class R {
         public static final int APKTOOL_DUMMY_26f = 2131690095;
         /* added by JADX */
         public static final int APKTOOL_DUMMY_281 = 2131690113;
-        /* added by JADX */
-        public static final int common_google_play_services_enable_button = 2131690644;
-        /* added by JADX */
-        public static final int common_google_play_services_enable_text = 2131690645;
-        /* added by JADX */
-        public static final int common_google_play_services_enable_title = 2131690646;
-        /* added by JADX */
-        public static final int common_google_play_services_install_button = 2131690647;
-        /* added by JADX */
-        public static final int common_google_play_services_install_text = 2131690648;
-        /* added by JADX */
-        public static final int common_google_play_services_install_title = 2131690649;
-        /* added by JADX */
-        public static final int common_google_play_services_notification_channel_name = 2131690650;
-        /* added by JADX */
-        public static final int common_google_play_services_notification_ticker = 2131690651;
-        /* added by JADX */
-        public static final int common_google_play_services_unknown_issue = 2131690652;
-        /* added by JADX */
-        public static final int common_google_play_services_unsupported_text = 2131690653;
-        /* added by JADX */
-        public static final int common_google_play_services_update_button = 2131690654;
-        /* added by JADX */
-        public static final int common_google_play_services_update_text = 2131690655;
-        /* added by JADX */
-        public static final int common_google_play_services_update_title = 2131690656;
-        /* added by JADX */
-        public static final int common_google_play_services_updating_text = 2131690657;
-        /* added by JADX */
-        public static final int common_google_play_services_wear_update_text = 2131690658;
-        /* added by JADX */
-        public static final int common_open_on_phone = 2131690659;
-        /* added by JADX */
-        public static final int common_signin_button_text = 2131690660;
-        /* added by JADX */
-        public static final int common_signin_button_text_long = 2131690661;
-        /* added by JADX */
-        public static final int default_web_client_id = 2131690662;
-        /* added by JADX */
-        public static final int firebase_database_url = 2131690663;
-        /* added by JADX */
-        public static final int gcm_defaultSenderId = 2131690664;
-        /* added by JADX */
-        public static final int google_api_key = 2131690665;
-        /* added by JADX */
-        public static final int google_app_id = 2131690666;
-        /* added by JADX */
-        public static final int google_crash_reporting_api_key = 2131690667;
-        /* added by JADX */
-        public static final int google_storage_bucket = 2131690668;
-        /* added by JADX */
-        public static final int project_id = 2131690669;
     }
 
     public static final class style {

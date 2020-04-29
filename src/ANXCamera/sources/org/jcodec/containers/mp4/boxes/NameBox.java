@@ -1,6 +1,5 @@
 package org.jcodec.containers.mp4.boxes;
 
-import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import java.nio.ByteBuffer;
 import org.jcodec.common.JCodecUtil2;
 import org.jcodec.common.io.NIOUtils;
@@ -19,7 +18,7 @@ public class NameBox extends Box {
     }
 
     public static String fourcc() {
-        return AppMeasurementSdk.ConditionalUserProperty.NAME;
+        return "name";
     }
 
     /* access modifiers changed from: protected */

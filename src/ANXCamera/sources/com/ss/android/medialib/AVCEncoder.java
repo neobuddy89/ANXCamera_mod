@@ -11,12 +11,12 @@ import android.opengl.GLES20;
 import android.os.Build;
 import android.util.Pair;
 import android.view.Surface;
-import com.google.android.gms.common.Scopes;
 import com.ss.android.medialib.common.TextureDrawer;
 import com.ss.android.medialib.log.VEMonitorKeys;
 import com.ss.android.ttve.monitor.TEMonitor;
 import com.ss.android.ttve.monitor.TEMonitorNewKeys;
 import com.ss.android.vesdk.VELogUtil;
+import com.xiaomi.stat.MiStat;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -544,8 +544,8 @@ public class AVCEncoder {
                 } else {
                     VELogUtil.i(TAG, "Set Profile: " + codecProfileLevel.profile + ", Level = " + codecProfileLevel.level);
                     this.mProfile = codecProfileLevel.profile;
-                    createVideoFormat.setInteger(Scopes.PROFILE, codecProfileLevel.profile);
-                    createVideoFormat.setInteger("level", codecProfileLevel.level);
+                    createVideoFormat.setInteger("profile", codecProfileLevel.profile);
+                    createVideoFormat.setInteger(MiStat.Param.LEVEL, codecProfileLevel.level);
                     int i15 = codecProfileLevel.profile;
                     if (i15 == 2) {
                         VELogUtil.i(TAG, "Set Main Profile");

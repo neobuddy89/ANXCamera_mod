@@ -62,7 +62,6 @@ import com.android.camera2.Camera2Proxy;
 import com.android.camera2.CameraHardwareFace;
 import com.android.gallery3d.exif.ExifHelper;
 import com.arcsoft.camera.utils.d;
-import com.google.android.gms.common.util.GmsVersion;
 import com.mi.config.b;
 import com.xiaomi.camera.core.ParallelCallback;
 import com.xiaomi.camera.core.PictureInfo;
@@ -79,7 +78,7 @@ public class WideSelfieModule extends BaseModule implements ModeProtocol.CameraA
     private static final int MIN_SHOOTING_TIME = 600;
     public static final int STOP_ROTATION_THRESHOLD = 60;
     private static final String TAG = "WideSelfieModule";
-    private final int MAX_PICTURE_PIXEL = GmsVersion.VERSION_MANCHEGO;
+    private final int MAX_PICTURE_PIXEL = 6000000;
     private int MOVE_DISTANCE;
     private int MOVE_DISTANCE_VERTICAL;
     public int OFFSET_VERTICAL_X_STOP_CAPTURE_THRESHOLD;

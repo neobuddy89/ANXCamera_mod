@@ -7,11 +7,11 @@ import android.os.Binder;
 import android.os.Build;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.support.v4.app.C0168INotificationSideChannel;
+import android.support.v4.app.INotificationSideChannel;
 
 public abstract class NotificationCompatSideChannelService extends Service {
 
-    private class NotificationSideChannelStub extends C0168INotificationSideChannel.Stub {
+    private class NotificationSideChannelStub extends INotificationSideChannel.Stub {
         NotificationSideChannelStub() {
         }
 
@@ -68,7 +68,7 @@ public abstract class NotificationCompatSideChannelService extends Service {
     public abstract void notify(String str, int i, String str2, Notification notification);
 
     public IBinder onBind(Intent intent) {
-        if (!intent.getAction().equals("android.support.BIND_NOTIFICATION_SIDE_CHANNEL") || Build.VERSION.SDK_INT > 19) {
+        if (!intent.getAction().equals(NotificationManagerCompat.ACTION_BIND_SIDE_CHANNEL) || Build.VERSION.SDK_INT > 19) {
             return null;
         }
         return new NotificationSideChannelStub();

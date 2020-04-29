@@ -45,7 +45,7 @@ import com.android.camera.ui.V6CameraGLSurfaceView;
 import com.android.camera.ui.V9EdgeShutterView;
 import com.android.camera2.Camera2Proxy;
 import com.mi.config.b;
-import com.xiaomi.stat.C0161d;
+import com.xiaomi.stat.C0157d;
 import io.reactivex.Single;
 import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -884,7 +884,7 @@ public abstract class ActivityBase extends FragmentActivity implements AppContro
                                 } else {
                                     ActivityBase.this.showBlurView(bitmap);
                                 }
-                                Log.d(ActivityBase.TAG, "showBlurCover: show... cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0161d.H);
+                                Log.d(ActivityBase.TAG, "showBlurCover: show... cost time = " + (System.currentTimeMillis() - currentTimeMillis) + C0157d.H);
                             }
                         });
                     } else {
