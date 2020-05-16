@@ -484,20 +484,5 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_0
-
-    check-cast p0, Landroid/app/AlertDialog;
-
-    invoke-virtual {p0}, Landroid/app/AlertDialog;->getMessageView()Landroid/widget/TextView;
-
-    move-result-object p0
-
-    invoke-static {}, Landroid/text/method/LinkMovementMethod;->getInstance()Landroid/text/method/MovementMethod;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
-
-    :cond_0
     return-void
 .end method
